@@ -4,6 +4,8 @@
 
 # C# 11 and .NET 7 - Modern Cross-Platform Development, Seventh Edition
 
+Coming November 2022.
+
 The previous edition was published on Tuesday, November 9, 2021. Order today from [Packt](https://www.packtpub.com/product/c-10-and-net-6-modern-cross-platform-development-sixth-edition/9781801077361), [Amazon.com](https://www.amazon.com/10-NET-Cross-Platform-Development-websites-dp-1801077363/dp/1801077363/), [Amazon.co.uk](https://www.amazon.co.uk/10-NET-Cross-Platform-Development-websites-dp-1801077363/dp/1801077363/), [Amazon.com.au](https://www.amazon.com.au/10-NET-Cross-Platform-Development-websites-ebook/dp/B09JV37DM6/), and all good book stores. My author page on Amazon: https://www.amazon.com/Mark-J-Price/e/B071DW3QGN/ 
 
 ## Code solutions for Visual Studio 2022 and Visual Studio Code
@@ -35,8 +37,8 @@ Corrections for typos and other mistakes and improvements like refactoring code.
 ## Interviews with me
 Podcast interviews with me:
 - [The .NET Core Podcast - February 4, 2022](https://dotnetcore.show/episode-91-c-sharp-10-and-dotnet-6-with-mark-j-price/)
-- [The .NET Core Podcast - February 7, 2020](https://dotnetcore.show/episode-44-learning-net-core-with-mark-j-price/)
 - [Yet Another Podcast with Jesse Liberty - May 2021](http://jesseliberty.com/2021/05/16/mark-price-on-c9-and-net-6/)
+- [The .NET Core Podcast - February 7, 2020](https://dotnetcore.show/episode-44-learning-net-core-with-mark-j-price/)
 - [Yet Another Podcast with Jesse Liberty - February 2020](http://jesseliberty.com/2020/02/23/mark-price-c-net-core/)
 - [Packt Podcasts](https://soundcloud.com/packt-podcasts/csharp-8-dotnet-core-3-the-evolution-of-the-microsoft-ecosystem)
 
