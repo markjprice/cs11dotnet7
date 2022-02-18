@@ -1,0 +1,43 @@
+{
+	"folders": [
+		{
+			"path": "Arrays"
+		},
+		{
+			"path": "BitwiseAndShiftOperators"
+		},
+		{
+			"path": "BooleanOperators"
+		},
+		{
+			"path": "CastingConverting"
+		},
+		{
+			"path": "CheckingForOverflow"
+		},
+		{
+			"path": "HandlingExceptions"
+		},
+		{
+			"path": "IterationStatements"
+		},
+		{
+			"path": "Operators"
+		},
+		{
+			"path": "SelectionStatements"
+		},
+		{
+			"path": "Ch03Ex02LoopsAndOverflow"
+		},
+		{
+			"path": "Ch03Ex03FizzBuzz"
+		},
+		{
+			"path": "Ch03Ex04Exceptions"
+		},
+		{
+			"path": "Ch03Ex05Operators"
+		}
+	]
+}
