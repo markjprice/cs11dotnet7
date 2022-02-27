@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "PeopleApp"
+		},
+		{
+			"path": "Namespaces"
 		}
 	]
 }
