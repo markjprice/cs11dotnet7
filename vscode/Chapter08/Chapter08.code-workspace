@@ -1,0 +1,34 @@
+{
+	"folders": [
+		{
+			"path": "WorkingWithNumbers"
+		},
+		{
+			"path": "WorkingWithText"
+		},
+		{
+			"path": "WorkingWithRegularExpressions"
+		},
+		{
+			"path": "WorkingWithCollections"
+		},
+		{
+			"path": "WorkingWithRanges"
+		},
+		{
+			"path": "WorkingWithNetworkResources"
+		},
+		{
+			"path": "Ch08Ex02RegularExpressions"
+		},
+		{
+			"path": "Ch08Ex03NumbersAsWordsLib"
+		},
+		{
+			"path": "Ch08Ex03NumbersAsWordsApp"
+		},
+		{
+			"path": "Ch08Ex03NumbersAsWordsTests"
+		}
+	]
+}
