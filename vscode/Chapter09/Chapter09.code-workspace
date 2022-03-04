@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "WorkingWithFileSystems"
+		},
+		{
+			"path": "WorkingWithStreams"
+		},
+		{
+			"path": "WorkingWithEncodings"
+		},
+		{
+			"path": "WorkingWithSerialization"
+		},
+		{
+			"path": "WorkingWithJson"
+		},
+		{
+			"path": "Ch09Ex02SerializingShapes"
+		}
+	]
+}
