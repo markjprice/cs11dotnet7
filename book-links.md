@@ -601,6 +601,7 @@
 
 ## EF Core querying and manipulating
 - Filtered include: https://docs.microsoft.com/en-us/ef/core/querying/related-data/eager#filtered-include
+- Simple logging: https://docs.microsoft.com/en-us/ef/core/logging-events-diagnostics/simple-logging
 - Query tags: https://docs.microsoft.com/en-us/ef/core/querying/tags
 - Loading patterns: https://docs.microsoft.com/en-us/ef/core/querying/related-data
 - Pooling database contexts: https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-2.0#dbcontext-pooling
