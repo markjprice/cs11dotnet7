@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "LinqWithObjects"
+		},
+		{
+			"path": "LinqWithEFCore"
+		},
+		{
+			"path": "LinqInParallel"
+		},
+		{
+			"path": "Ch11Ex02LinqQueries"
+		}
+	]
+}
