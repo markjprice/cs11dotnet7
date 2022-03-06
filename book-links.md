@@ -78,57 +78,35 @@
   - [LINQ concepts](#linq-concepts)
   - [LINQ providers](#linq-providers)
   - [LINQ samples and tools](#linq-samples-and-tools)
-- [Chapter 12 - Improving Performance and Scalability Using Multitasking](#chapter-12---improving-performance-and-scalability-using-multitasking)
-  - [Threads](#threads)
-  - [Tasks](#tasks)
-  - [Thread safety](#thread-safety)
-  - [async and await](#async-and-await)
-  - [Parallel programming](#parallel-programming)
-  - [Sharing resouces and synchronization](#sharing-resouces-and-synchronization)
-- [Chapter 13 - Introducing Practical Applications of C# and .NET](#chapter-13---introducing-practical-applications-of-c-and-net)
+- [Chapter 12 - Introducing Web Development Using ASP.NET Core](#chapter-12---introducing-web-development-using-aspnet-core)
   - [.NET apps](#net-apps)
   - [.NET Content Management Systems](#net-content-management-systems)
   - [ASP.NET versions and features](#aspnet-versions-and-features)
   - [Web development technologies](#web-development-technologies)
-  - [Windows desktop app development](#windows-desktop-app-development)
-  - [Third-party cross-platform GUI development](#third-party-cross-platform-gui-development)
-- [Chapter 14 - Building Websites Using ASP.NET Core Razor Pages](#chapter-14---building-websites-using-aspnet-core-razor-pages)
+- [Chapter 13 - Building Websites Using ASP.NET Core Razor Pages](#chapter-13---building-websites-using-aspnet-core-razor-pages)
   - [General web development](#general-web-development)
   - [ASP.NET Core](#aspnet-core)
   - [Razor Pages and layouts](#razor-pages-and-layouts)
   - [Endpoint routing](#endpoint-routing)
-- [Chapter 15 - Building Websites Using the Model-View-Controller Pattern](#chapter-15---building-websites-using-the-model-view-controller-pattern)
+- [Chapter 14 - Building Websites Using the Model-View-Controller Pattern](#chapter-14---building-websites-using-the-model-view-controller-pattern)
   - [Security and privacy](#security-and-privacy)
   - [Setting up and configuring](#setting-up-and-configuring)
   - [Controllers](#controllers)
   - [Models](#models)
   - [Views](#views)
   - [Miscellaneous](#miscellaneous-2)
-- [Chapter 16 - Building and Consuming Web Services](#chapter-16---building-and-consuming-web-services)
+- [Chapter 15 - Building and Consuming Web Services](#chapter-15---building-and-consuming-web-services)
   - [Web service technologies](#web-service-technologies)
   - [Web service routing](#web-service-routing)
   - [Web service clients](#web-service-clients)
   - [Documenting web services](#documenting-web-services)
   - [Securing web services](#securing-web-services)
   - [Health checks and reliable web services](#health-checks-and-reliable-web-services)
-- [Chapter 17 - Building User Interfaces Using Blazor](#chapter-17---building-user-interfaces-using-blazor)
+- [Chapter 16 - Building User Interfaces Using Blazor](#chapter-16---building-user-interfaces-using-blazor)
   - [Blazor hosting models](#blazor-hosting-models)
   - [Blazor components](#blazor-components)
   - [Advanced techniques](#advanced-techniques)
   - [Other resources](#other-resources)
-- [Chapter 18 - Building and Consuming Other Services](#chapter-18---building-and-consuming-other-services)
-  - [WCF](#wcf)
-  - [gRPC](#grpc)
-  - [SignalR](#signalr)
-  - [OData](#odata)
-  - [Azure Functions](#azure-functions)
-- [Chapter 19 - Building Mobile and Desktop Apps Using .NET MAUI](#chapter-19---building-mobile-and-desktop-apps-using-net-maui)
-  - [.NET MAUI](#net-maui)
-  - [Mobile development](#mobile-development)
-- [Chapter 20 - Protecting Your Data and Applications](#chapter-20---protecting-your-data-and-applications)
-  - [Cross-platform cryptography](#cross-platform-cryptography)
-  - [General security knowledge](#general-security-knowledge)
-  - [Encryption](#encryption)
 - [Epilogue](#epilogue)
   - [Next steps on your C# and .NET learning journey](#next-steps-on-your-c-and-net-learning-journey)
   - [Learn from other Packt books](#learn-from-other-packt-books)
@@ -623,36 +601,7 @@
 - 101 LINQ Samples: https://docs.microsoft.com/en-us/samples/dotnet/try-samples/101-linq-samples/
 - LINQPad: https://www.linqpad.net/
 
-# Chapter 12 - Improving Performance and Scalability Using Multitasking
-
-## Threads
-- Threads and threading: https://docs.microsoft.com/en-us/dotnet/standard/threading/threads-and-threading
-- Thread pool: https://docs.microsoft.com/en-us/dotnet/standard/threading/the-managed-thread-pool
-
-## Tasks
-- Pros and cons of different ways to start tasks: https://devblogs.microsoft.com/pfxteam/task-factory-startnew-vs-new-task-start/
-- Task.Start Method: https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.start
-
-## Thread safety
-- Events and thread-safety: https://docs.microsoft.com/en-us/archive/blogs/cburrows/field-like-events-considered-harmful
-- Stephen Cleary's thoughts on events and thread-safety: https://blog.stephencleary.com/2009/06/threadsafe-events.html
-- Managed threading best practices: https://docs.microsoft.com/en-us/dotnet/standard/threading/managed-threading-best-practices
-- ThreadStaticAttribute Class: https://docs.microsoft.com/en-us/dotnet/api/system.threadstaticattribute
-
-## async and await
-- Async in depth: https://docs.microsoft.com/en-us/dotnet/standard/async-in-depth
-- await (C# reference): https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/await
-- Six Essential Tips for Async: https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async
-- Exploring the async/await State Machine – The Awaitable Pattern: https://vkontech.com/exploring-the-async-await-state-machine-the-awaitable-pattern/
-- There Is No Thread: https://blog.stephencleary.com/2013/11/there-is-no-thread.html
-
-## Parallel programming
-- Parallel Programming in .NET: https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/
-
-## Sharing resouces and synchronization
-- Overview of synchronization primitives: https://docs.microsoft.com/en-us/dotnet/standard/threading/overview-of-synchronization-primitives
-
-# Chapter 13 - Introducing Practical Applications of C# and .NET
+# Chapter 12 - Introducing Web Development Using ASP.NET Core
 
 ## .NET apps
 - .NET Application Architecture Guidance: https://www.microsoft.com/net/learn/architecture
@@ -680,21 +629,7 @@
 - WebAssembly: https://webassembly.org
 - TypeScript: https://www.typescriptlang.org
 
-## Windows desktop app development
-- Choices of platform for building Windows desktop apps: https://docs.microsoft.com/en-us/windows/apps/desktop/choose-your-platform
-- What’s new in Windows Forms in .NET 6.0: https://devblogs.microsoft.com/dotnet/whats-new-in-windows-forms-in-net-6-0/
-- Migrating WPF apps: https://devblogs.microsoft.com/dotnet/migrating-a-sample-wpf-app-to-net-core-3-part-1/
-- Windows Compatibility Pack: https://devblogs.microsoft.com/dotnet/announcing-the-windows-compatibility-pack-for-net-core/
-- Packt book about building WPF apps: https://www.packtpub.com/product/mastering-windows-presentation-foundation/9781785883002
-- UWP apps: https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide
-- Nine desktop development options, from WPF to Blazor: https://visualstudiomagazine.com/articles/2021/03/25/desktop-options.aspx
-
-## Third-party cross-platform GUI development
-- avalonia - A cross platform XAML framework for .NET: https://avaloniaui.net
-- Uno Platform: https://platform.uno
-- Getting Started with the Uno Platform (Project Reunion/WinUI): https://nicksnettravels.builttoroam.com/getting-started-uno-platform/
-
-# Chapter 14 - Building Websites Using ASP.NET Core Razor Pages
+# Chapter 13 - Building Websites Using ASP.NET Core Razor Pages
 
 ## General web development
 - HTML5 and CSS3: Building Responsive Websites: https://www.packtpub.com/producthtml5-and-css3-building-responsive-websites/9781787124813h
@@ -727,7 +662,7 @@
 - Configuring the HTTP pipeline with middleware: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware
 - DEEP DIVE: HOW IS THE ASP.NET CORE MIDDLEWARE PIPELINE BUILT? https://www.stevejgordon.co.uk/how-is-the-asp-net-core-middleware-pipeline-built
 
-# Chapter 15 - Building Websites Using the Model-View-Controller Pattern
+# Chapter 14 - Building Websites Using the Model-View-Controller Pattern
 
 ## Security and privacy
 - Built-in features for compliance with modern privacy requirements like GDPR: https://docs.microsoft.com/en-us/aspnet/core/security/gdpr
@@ -766,7 +701,7 @@
 - Free stock photos for commercial use with no attribution: https://www.pexels.com/
 - Images of eight categories: https://github.com/markjprice/cs9dotnet5/tree/master/Assets/Categories
 
-# Chapter 16 - Building and Consuming Web Services
+# Chapter 15 - Building and Consuming Web Services
 
 ## Web service technologies
 - Media types: http://en.wikipedia.org/wiki/Media_type
@@ -813,7 +748,7 @@
 - Use HttpClientFactory to implement resilient HTTP requests: https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests
 - Redis: https://redis.io
 
-# Chapter 17 - Building User Interfaces Using Blazor
+# Chapter 16 - Building User Interfaces Using Blazor
 
 ## Blazor hosting models
 - Blazor: https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor
@@ -840,59 +775,6 @@
 - Blazor - app building workshop: In this workshop, we will build a complete Blazor app and learn about the various Blazor framework features along the way: https://github.com/dotnet-presentations/blazor-workshop/
 - Carl Franklin's Blazor Train: https://www.youtube.com/playlist?list=PL8h4jt35t1wjvwFnvcB2LlYL4jLRzRmoz
 - Welcome to PACMAN written in C# and running on Blazor WebAssembly: https://github.com/SteveDunn/PacManBlazor
-
-# Chapter 18 - Building and Consuming Other Services
-
-## WCF
-- Core WCF repository: https://github.com/CoreWCF/CoreWCF
-
-## gRPC
-- gRPC: https://grpc.io
-- What’s new for gRPC in .NET 6: https://devblogs.microsoft.com/dotnet/grpc-in-dotnet-6/
-- Introduction to gRPC on .NET: https://docs.microsoft.com/en-us/aspnet/core/grpc/
-- gRPC as an alternative to WCF: https://devblogs.microsoft.com/premier-developer/grpc-asp-net-core-as-a-migration-path-for-wcfs-in-net-core/
-- How to use gRPC with ASP.NET Core: https://docs.microsoft.com/en-us/aspnet/core/grpc/aspnetcore
-
-## SignalR
-- SignalR: https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction
-
-## OData
-- OData - the best way to REST: https://www.odata.org
-- OData documentation: https://docs.microsoft.com/en-us/odata/
-
-## Azure Functions
-- Azure Functions documentation: https://docs.microsoft.com/en-us/azure/azure-functions/
-
-# Chapter 19 - Building Mobile and Desktop Apps Using .NET MAUI
-
-## .NET MAUI
-- Introduction to .NET MAUI: https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui/
-- GitHub repository for .NET MAUI: https://github.com/dotnet/maui
-
-## Mobile development
-- If you want to use Visual Studio 2019 to create a mobile app, then you can read how to connect to a Mac build host: https://docs.microsoft.com/en-us/xamarin/ios/get-started/installation/windows/connecting-to-mac/
-- Pros and cons of the two major mobile platforms based on aspects such as revenue generation and user engagement: https://fueled.com/blog/app-store-vs-google-play/
-- ATS: https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/ats
-- Handling self-signed certificates: https://docs.remotingsdk.com/Clients/Tasks/HandlingSelfSignedCertificates/NET/
-- Android and cleartext support: https://devblogs.microsoft.com/xamarin/cleartext-http-android-network-security/
-- Self Signed iOS Certifcates and Certificate Pinning in a Xamarin.Forms application: https://nicksnettravels.builttoroam.com/ios-certificate/
-- Protecting your users with certificate pinning: https://www.basdecort.com/protecting-your-users-with-certificate-pinning/
-- HttpClient and SSL/TLS implementation selector for iOS/macOS: https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/http-stack
-
-# Chapter 20 - Protecting Your Data and Applications
-
-## Cross-platform cryptography
-- Features supported by which OS: https://docs.microsoft.com/en-us/dotnet/standard/security/cross-platform-cryptography
-
-## General security knowledge
-- Key Security Concepts: https://docs.microsoft.com/en-us/dotnet/standard/security/key-security-concepts
-- Dictionary Attacks 101: https://blog.codinghorror.com/dictionary-attacks-101/
-- The first publicly known SHA1 collision happened in 2017: https://arstechnica.co.uk/information-technology/2017/02/at-deaths-door-for-years-widely-used-sha1-function-is-now-dead/
-
-## Encryption
-- The RSA algorithm is based on the factorization of large integers: http://mathworld.wolfram.com/RSAEncryption.html
-- Encrypting Data: https://docs.microsoft.com/en-us/dotnet/standard/security/encrypting-data
-- Cryptographic Signatures: https://docs.microsoft.com/en-us/dotnet/standard/security/cryptographic-signatures
 
 # Epilogue
 
