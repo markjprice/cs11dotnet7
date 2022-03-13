@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+		<!--remove the element below after GA release-->
+		<LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Using Include="System.Console" Static="true" />
+	</ItemGroup>
+
+	<!-- change Sqlite to SqlServer if you prefer -->
+	<ItemGroup>
+		<ProjectReference Include="..\Northwind.Common.DataContext.Sqlite\Northwind.Common.DataContext.Sqlite.csproj" />
+		<ProjectReference Include="..\Northwind.Razor.Employees\Northwind.Razor.Employees.csproj" />
+	</ItemGroup>
+
+</Project>
