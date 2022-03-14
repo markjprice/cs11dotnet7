@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithStreams", "Worki
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithEncodings", "WorkingWithEncodings\WorkingWithEncodings.csproj", "{70A9750E-5C55-4879-B601-20AC5F6CDCB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithSerialization", "WorkingWithSerialization\WorkingWithSerialization.csproj", "{7493AA42-910F-4FB2-B3D4-34553255BD54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithSerialization", "WorkingWithSerialization\WorkingWithSerialization.csproj", "{7493AA42-910F-4FB2-B3D4-34553255BD54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithJson", "WorkingWithJson\WorkingWithJson.csproj", "{CA13AF96-7EE4-42C4-A671-C373E218726A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithJson", "WorkingWithJson\WorkingWithJson.csproj", "{CA13AF96-7EE4-42C4-A671-C373E218726A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch09Ex02SerializingShapes", "Ch09Ex02SerializingShapes\Ch09Ex02SerializingShapes.csproj", "{27FA94CC-1856-4512-9D09-0214CF846311}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch09Ex02SerializingShapes", "Ch09Ex02SerializingShapes\Ch09Ex02SerializingShapes.csproj", "{27FA94CC-1856-4512-9D09-0214CF846311}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithRandomAccess", "WorkingWithRandomAccess\WorkingWithRandomAccess.csproj", "{EFC99F8A-CB39-48BB-A70D-5D7DB0A001D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{27FA94CC-1856-4512-9D09-0214CF846311}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27FA94CC-1856-4512-9D09-0214CF846311}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27FA94CC-1856-4512-9D09-0214CF846311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFC99F8A-CB39-48BB-A70D-5D7DB0A001D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFC99F8A-CB39-48BB-A70D-5D7DB0A001D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFC99F8A-CB39-48BB-A70D-5D7DB0A001D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFC99F8A-CB39-48BB-A70D-5D7DB0A001D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
