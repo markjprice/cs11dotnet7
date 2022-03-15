@@ -17,11 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallStackExceptionHandlingL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallStackExceptionHandling", "CallStackExceptionHandling\CallStackExceptionHandling.csproj", "{B856E873-E17A-400D-98B5-165C3DF976AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch04Ex02PrimeFactorsApp", "Ch04Ex02PrimeFactorsApp\Ch04Ex02PrimeFactorsApp.csproj", "{3B2B2F8A-FCB9-4C9D-85EE-D2433213D771}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch04Ex02PrimeFactorsApp", "Ch04Ex02PrimeFactorsApp\Ch04Ex02PrimeFactorsApp.csproj", "{3B2B2F8A-FCB9-4C9D-85EE-D2433213D771}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch04Ex02PrimeFactorsLib", "Ch04Ex02PrimeFactorsLib\Ch04Ex02PrimeFactorsLib.csproj", "{5BD87DA8-3F4B-4CF7-A225-3E7030A1944C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch04Ex02PrimeFactorsLib", "Ch04Ex02PrimeFactorsLib\Ch04Ex02PrimeFactorsLib.csproj", "{5BD87DA8-3F4B-4CF7-A225-3E7030A1944C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch04Ex02PrimeFactorsTests", "Ch04Ex02PrimeFactorsTests\Ch04Ex02PrimeFactorsTests.csproj", "{878F1F7E-D3AD-4BF2-A66E-4EDDE7229566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch04Ex02PrimeFactorsTests", "Ch04Ex02PrimeFactorsTests\Ch04Ex02PrimeFactorsTests.csproj", "{878F1F7E-D3AD-4BF2-A66E-4EDDE7229566}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotReloading", "HotReloading\HotReloading.csproj", "{419ABE5B-ED3A-4F4A-8D64-1346B9E50D65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{878F1F7E-D3AD-4BF2-A66E-4EDDE7229566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{878F1F7E-D3AD-4BF2-A66E-4EDDE7229566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{878F1F7E-D3AD-4BF2-A66E-4EDDE7229566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{419ABE5B-ED3A-4F4A-8D64-1346B9E50D65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{419ABE5B-ED3A-4F4A-8D64-1346B9E50D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{419ABE5B-ED3A-4F4A-8D64-1346B9E50D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{419ABE5B-ED3A-4F4A-8D64-1346B9E50D65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
