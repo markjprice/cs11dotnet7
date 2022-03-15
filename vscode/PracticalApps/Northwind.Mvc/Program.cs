@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity; // IdentityUser
 using Microsoft.EntityFrameworkCore; // UseSqlServer, UseSqlite
 using Northwind.Mvc.Data; // ApplicationDbContext
 using Packt.Shared; // AddNorthwindContext extension method
+using System.Net;
 using System.Net.Http.Headers; // MediaTypeWithQualityHeaderValue
 
 // Section 2 - configure the host web server including services
@@ -40,7 +41,11 @@ builder.Services.AddNorthwindContext();
 builder.Services.AddHttpClient(name: "Northwind.WebApi",
   configureClient: options =>
   {
+    options.DefaultRequestVersion = HttpVersion.Version30;
+    options.DefaultVersionPolicy = HttpVersionPolicy.RequestVersionOrLower;
+
     options.BaseAddress = new Uri("https://localhost:5002/");
+
     options.DefaultRequestHeaders.Accept.Add(
       new MediaTypeWithQualityHeaderValue(
       mediaType: "application/json", quality: 1.0));

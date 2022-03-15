@@ -4,8 +4,10 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-		<!--remove the element below after GA release-->
+		
+		<!--remove the elements below after GA release-->
 		<LangVersion>preview</LangVersion>
+		<EnablePreviewFeatures>true</EnablePreviewFeatures>
   </PropertyGroup>
 
 	<ItemGroup>

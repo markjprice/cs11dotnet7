@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Server.Kestrel.Core; // HttpProtocols
 using Packt.Shared; // AddNorthwindContext extension method
 
 // configure services
@@ -5,6 +6,16 @@ using Packt.Shared; // AddNorthwindContext extension method
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddNorthwindContext();
+
+builder.WebHost.ConfigureKestrel((context, options) =>
+{
+  options.ListenAnyIP(5001, listenOptions =>
+  {
+    listenOptions.Protocols = HttpProtocols.Http1AndHttp2AndHttp3;
+    listenOptions.UseHttps(); // HTTP/3 requires secure connections
+  });
+});
+
 var app = builder.Build();
 
 // configure the HTTP pipeline

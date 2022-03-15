@@ -5,6 +5,10 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 		<IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
+	
+		<!--remove the elements below after GA release-->
+		<LangVersion>preview</LangVersion>
+		<EnablePreviewFeatures>true</EnablePreviewFeatures>
 	</PropertyGroup>
 
   <ItemGroup>
