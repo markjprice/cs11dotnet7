@@ -9,7 +9,7 @@
   - [Git](#git)
   - [Help and learning](#help-and-learning)
 - [Chapter 2 - Speaking C](#chapter-2---speaking-c)
-  - [C# language version and the journey to C# 10](#c-language-version-and-the-journey-to-c-10)
+  - [C# language version and the journey to C# 11](#c-language-version-and-the-journey-to-c-11)
   - [C# language](#c-language)
   - [C# implemented proposals](#c-implemented-proposals)
   - [C# proposals being worked on](#c-proposals-being-worked-on)
@@ -210,7 +210,13 @@
 
 # Chapter 2 - Speaking C#
 
-## C# language version and the journey to C# 10
+## C# language version and the journey to C# 11
+- Early peek at C# 11 features: https://devblogs.microsoft.com/dotnet/early-peek-at-csharp-11-features/
+- What's new in C# 11: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-11
+- What's new in C# 10: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-10
+- What's new in C# 9.0: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9
+- What's new in C# 8.0: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8
+- What's new in C# 7.3: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7-3
 - Welcome to C# 10: https://devblogs.microsoft.com/dotnet/welcome-to-csharp-10/
 - Announcing Open Source C# standardization: https://devblogs.microsoft.com/dotnet/announcing-open-source-c-standardization-standards/
 - Rosalyn and C# compiler versions: https://github.com/dotnet/roslyn/blob/master/docs/wiki/NuGet-packages.md
@@ -218,8 +224,6 @@
 - Current status of the C# language: https://github.com/dotnet/roslyn/blob/master/docs/Language%20Feature%20Status.md
 - C# Language Specification 5.0: https://www.microsoft.com/en-us/download/details.aspx?id=7029
 - Draft proposals for C# Language Specifications for 6.0 and later: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/
-- What's new in C# 7.3: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7-3
-- New C# 9.0 features: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9
 - C# 9 Workshop: https://github.com/dotnet-presentations/csharp-workshop
 - C# language versioning: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version
 - The history of C#: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history
