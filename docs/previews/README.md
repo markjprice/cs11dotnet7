@@ -1,8 +1,6 @@
 # Previews
 
-If you have purchased the Early Access Program edition of C# 11 and .NET 7 - Modern Cross-Platform Development, then note that the chapters were written and tested with .NET 7 Preview 1.
-
-Microsoft will release monthly previews until November 2022. Each month I will add new content to this page that will then be added to the final drafts for publishing in November.
+Preliminary drafts of C# 11 and .NET 7 - Modern Cross-Platform Development were written and tested with .NET 7 Preview 1. Microsoft will release monthly previews until August, then two release candidates in September and October, before the general availablility (GA) release in November 2022. Each month I will add new content to this page that will then be added to the final drafts in September.
 
 ## New content for .NET 7 Preview 2
 
