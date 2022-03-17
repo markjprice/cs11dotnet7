@@ -1,5 +1,3 @@
-[![Open in Visual Studio Code](https://raw.githubusercontent.com/jongio/memealyzer/main/assets/open-in-vscode-insiders.svg)](vscode://github.remotehub/open?url%3Dhttps%3A%2F%2Fgithub.com%2Fmarkjprice%2Fcs11dotnet7)
-
 [Improvements & Errata - list of corrections](errata.md)
 
 # C# 11 and .NET 7 - Modern Cross-Platform Development, Seventh Edition
