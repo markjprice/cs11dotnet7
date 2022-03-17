@@ -1,4 +1,4 @@
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/markjprice/cs11dotnet7)
+[![Open in Visual Studio Code](https://raw.githubusercontent.com/jongio/memealyzer/main/assets/open-in-vscode-insiders.svg)](vscode://github.remotehub/open?url%3Dhttps%3A%2F%2Fgithub.com%2Fmarkjprice%2Fcs11dotnet7)
 
 [Improvements & Errata - list of corrections](errata.md)
 
