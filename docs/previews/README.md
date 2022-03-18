@@ -52,7 +52,21 @@ With C# 11, the above will compile. Finally!
 
 ## List pattern matching
 
+Any type that has an indexer, and `Length` and `Count` properties (like arrays and any type that implements `ICollection`) can use list pattern matches.
 
+```cs
+int[] numbers = { 1, 2, 3, 5, 7, 11 };
+
+string message = numbers switch
+{
+  [ 1, 2, 3, 5, 7, 11 ] => "This is an exact match.",
+  [ 1, 2, _, _, 7, _ ]  => "This is a wildcard match.",
+  [1, 2, .., 11]        => "This is a slice match.",
+  _                     => "This is NOT a match." 
+};
+```
+
+To use slice matches, the type must have an indexer that accepts a `Range` parameter, or implements a `Slice(int, int)` method.
 
 # Chapter 8 - Working with Common .NET Types
 
