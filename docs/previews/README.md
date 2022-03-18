@@ -1,27 +1,19 @@
-**Previews**
+# Previews
 
-Preliminary drafts of C# 11 and .NET 7 - Modern Cross-Platform Development were written and tested with .NET 7 Preview 1. Microsoft will release monthly previews until August, then two release candidates in September and October, before the general availablility (GA) release in November 2022. Each month I will add new content to this page that will then be added to the final drafts in September.
+Preliminary drafts of *C# 11 and .NET 7 - Modern Cross-Platform Development* were written and tested with **.NET 7 Preview 1**. Microsoft will release monthly previews until August, then two release candidates in September and October, before the general availablility (GA) release in November 2022. Each month I will add new content to this page that will then be added to the final drafts in September.
 
-- [New content for .NET 7 Preview 2](#new-content-for-net-7-preview-2)
-  - [Chapter 1](#chapter-1)
-    - [Command Line Interface commands](#command-line-interface-commands)
-    - [Line breaks in interpolated strings](#line-breaks-in-interpolated-strings)
-  - [Chapter 5](#chapter-5)
-    - [List pattern matching](#list-pattern-matching)
-  - [Chapter 8](#chapter-8)
-    - [Regular Expressions](#regular-expressions)
-- [New content for .NET 7 Preview 3 (April)](#new-content-for-net-7-preview-3-april)
-- [New content for .NET 7 Preview 4 (May)](#new-content-for-net-7-preview-4-may)
-- [New content for .NET 7 Preview 5 (June)](#new-content-for-net-7-preview-5-june)
-- [New content for .NET 7 Preview 6 (July)](#new-content-for-net-7-preview-6-july)
-- [New content for .NET 7 Preview 7 (August)](#new-content-for-net-7-preview-7-august)
-- [New content for .NET 7 Release Candidate 1 (September)](#new-content-for-net-7-release-candidate-1-september)
+- [Previews](#previews)
+- [Chapter 1 - Hello, C#! Welcome, .NET!](#chapter-1---hello-c-welcome-net)
+  - [Command Line Interface commands](#command-line-interface-commands)
+  - [Line breaks in interpolated strings](#line-breaks-in-interpolated-strings)
+- [Chapter 5 - Building Your Own Types with Object-Oriented Programming](#chapter-5---building-your-own-types-with-object-oriented-programming)
+  - [List pattern matching](#list-pattern-matching)
+- [Chapter 8 - Working with Common .NET Types](#chapter-8---working-with-common-net-types)
+  - [More efficient regular expressions](#more-efficient-regular-expressions)
 
-# New content for .NET 7 Preview 2
+# Chapter 1 - Hello, C#! Welcome, .NET!
 
-## Chapter 1 
-
-### Command Line Interface commands
+## Command Line Interface commands
 
 In .NET 7 Preview 2 and later, `dotnet` commands do not need to be prefixed with hyphens.
 
@@ -37,9 +29,9 @@ After:
 dotnet new list
 ```
 
-> Since I want to ensure that .NET 6 developers can follow the examples in the book, and Microsoft will support the use of hyphenated commands for a while, the book will continue to use the hyphenated commands but with a note that they are optional in .NET 7 and later.
+> **Note:** Since I want to ensure that .NET 6 developers can follow the examples in the book, and Microsoft will support the use of hyphenated commands for a while, the book will continue to use the hyphenated commands but with a note that they are optional in .NET 7 and later.
 
-### Line breaks in interpolated strings
+## Line breaks in interpolated strings
 
 One of my favorite new language features because it helps with printed code!
 
@@ -56,13 +48,15 @@ string message2 =
 
 With C# 11, the above will compile. Finally!
 
-## Chapter 5
+# Chapter 5 - Building Your Own Types with Object-Oriented Programming
 
-### List pattern matching
+## List pattern matching
 
-## Chapter 8 
 
-### Regular Expressions
+
+# Chapter 8 - Working with Common .NET Types
+
+## More efficient regular expressions
 
 In .NET 7 Preview 2 and later, you can use a more efficient Regex source generator.
 
@@ -96,15 +90,3 @@ public partial class Foo  // <-- Make the class a partial class
   }
 }
 ```
-
-# New content for .NET 7 Preview 3 (April)
-
-# New content for .NET 7 Preview 4 (May)
-
-# New content for .NET 7 Preview 5 (June)
-
-# New content for .NET 7 Preview 6 (July)
-
-# New content for .NET 7 Preview 7 (August)
-
-# New content for .NET 7 Release Candidate 1 (September)
