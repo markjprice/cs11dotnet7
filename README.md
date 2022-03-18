@@ -1,5 +1,3 @@
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/markjprice/cs11dotnet7)
-
 [Improvements & Errata - list of corrections](errata.md)
 
 # C# 11 and .NET 7 - Modern Cross-Platform Development, Seventh Edition
