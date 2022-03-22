@@ -60,7 +60,9 @@
 
   static string CardinalToOrdinal(int number)
   {
-    switch (number)
+    int lastTwoDigits = number % 100;
+
+    switch (lastTwoDigits)
     {
       case 11: // special cases for 11th to 13th
       case 12:
@@ -68,6 +70,7 @@
         return $"{number}th";
       default:
         int lastDigit = number % 10;
+
         string suffix = lastDigit switch
         {
           1 => "st",
@@ -75,13 +78,14 @@
           3 => "rd",
           _ => "th"
         };
+
         return $"{number}{suffix}";
     }
   }
 
   static void RunCardinalToOrdinal()
   {
-    for (int number = 1; number <= 40; number++)
+    for (int number = 1; number <= 1030; number++)
     {
       Write($"{CardinalToOrdinal(number)} ");
     }
