@@ -73,5 +73,19 @@ namespace Ch04Ex02PrimeFactorsTests
       // assert
       Assert.Equal(expected, actual);
     }
+
+    [Fact]
+    public void PrimeFactorsOf1001()
+    {
+      // arrange
+      int number = 1001;
+      string expected = "number must be between 1 and 1000.";
+
+      // act
+      string actual = Primes.PrimeFactors(number);
+
+      // assert
+      Assert.Equal(expected, actual);
+    }
   }
 }

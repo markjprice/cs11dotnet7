@@ -4,13 +4,13 @@
   {
     public static int[] PrimeNumbers = new[]
     {
-      997, 991, 983, 977, 971, 967, 953, 
+      997, 991, 983, 977, 971, 967, 953,
       947, 941, 937, 929, 919, 911, 907, 887,
-      883, 881, 877, 863, 859, 857, 853, 839, 
+      883, 881, 877, 863, 859, 857, 853, 839,
       829, 827, 823, 821, 811, 809, 797, 787,
-      773, 769, 761, 757, 751, 743, 739, 733, 
-      727, 719, 709, 701, 691, 683, 677, 673, 
-      661, 659, 653, 647, 643, 641, 631, 619, 
+      773, 769, 761, 757, 751, 743, 739, 733,
+      727, 719, 709, 701, 691, 683, 677, 673,
+      661, 659, 653, 647, 643, 641, 631, 619,
       617, 613, 607, 601, 599, 593, 587, 577,
       571, 569, 563, 557, 547, 541, 523, 521,
       509, 503, 499, 491, 487, 479, 467, 463,
@@ -27,8 +27,18 @@
       11, 7, 5, 3, 2
     };
 
+    /// <summary>
+    /// Calculates the prime factors of the input number between 1 and 1000.
+    /// </summary>
+    /// <param name="number">An integer between 1 and 1000.</param>
+    /// <returns>A string listing the prime factors of number, or an error message.</returns>
     public static string PrimeFactors(int number)
     {
+      if ((number < 1) || (number > 1000))
+      {
+        return $"{nameof(number)} must be between 1 and 1000.";
+      }
+
       string factors = string.Empty;
 
       foreach (int divisor in PrimeNumbers)
