@@ -9,6 +9,7 @@ int integerNumber = -23;
 float realNumber = 2.3F;
 
 // double means double-precision floating point
+// double is the default type for a number value with a decimal point .
 double anotherRealNumber = 2.3; // double literal
 
 // three variables that store the number 2 million
