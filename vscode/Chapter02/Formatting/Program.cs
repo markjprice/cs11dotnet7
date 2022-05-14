@@ -1,21 +1,19 @@
-﻿using static System.Console;
-
-int numberOfApples = 12;
+﻿int numberOfApples = 12;
 decimal pricePerApple = 0.35M;
 
 WriteLine(
-  format: "{0} apples costs {1:C}",
+  format: "{0} apples cost {1:C}",
   arg0: numberOfApples,
   arg1: pricePerApple * numberOfApples);
 
 string formatted = string.Format(
-  format: "{0} apples costs {1:C}",
+  format: "{0} apples cost {1:C}",
   arg0: numberOfApples,
   arg1: pricePerApple * numberOfApples);
 
 //WriteToFile(formatted); // writes the string into a file
 
-WriteLine($"{numberOfApples} apples costs {pricePerApple * numberOfApples:C}");
+WriteLine($"{numberOfApples} apples cost {pricePerApple * numberOfApples:C}");
 
 Write("Type your first name and press ENTER: ");
 string? firstName = ReadLine(); // nulls are expected
