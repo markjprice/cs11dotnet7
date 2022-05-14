@@ -22,7 +22,7 @@ something = new[] { 3, 5, 7 };
 // property named Length
 Console.WriteLine($"Length is {something.Length}");
 
-var population = 66_000_000; // 66 million in UK
+var population = 67_000_000; // 67 million in UK
 var weight = 1.88; // in kilograms
 var price = 4.99M; // in pounds sterling
 var fruit = "Apples"; // strings use double-quotes
