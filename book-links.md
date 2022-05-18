@@ -8,7 +8,7 @@
   - [Open source and other projects related to .NET](#open-source-and-other-projects-related-to-net)
   - [Git](#git)
   - [Help and learning](#help-and-learning)
-- [Chapter 2 - Speaking C](#chapter-2---speaking-c)
+- [Chapter 2 - Speaking C#](#chapter-2---speaking-c)
   - [C# language version and the journey to C# 11](#c-language-version-and-the-journey-to-c-11)
   - [C# language](#c-language)
   - [C# implemented proposals](#c-implemented-proposals)
@@ -17,7 +17,7 @@
   - [Number types](#number-types)
   - [Console apps and formatting](#console-apps-and-formatting)
   - [Miscellaneous](#miscellaneous)
-- [Chapter 3 - Controlling Flow and Converting Types](#chapter-3---controlling-flow-and-converting-types)
+- [Chapter 3 - Controlling Flow, Converting Types, and Handling Exceptions](#chapter-3---controlling-flow-converting-types-and-handling-exceptions)
   - [Operators](#operators)
   - [Branching statements and pattern matching](#branching-statements-and-pattern-matching)
   - [Casting, converting, rounding, and formatting data](#casting-converting-rounding-and-formatting-data)
@@ -276,7 +276,7 @@
 ## Miscellaneous
 - An Arabic programming language: https://youtu.be/dkO8cdwf6v8
 
-# Chapter 3 - Controlling Flow and Converting Types
+# Chapter 3 - Controlling Flow, Converting Types, and Handling Exceptions
 
 ## Operators
 - C# operators: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/operators
