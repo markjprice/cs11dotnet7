@@ -34,6 +34,8 @@ If you have Visual Studio 2022 for Windows and Visual Studio Code and its C# ext
 ## Sibling books
 ![Sibling books](B18857_01_01.png)
 
+[GitHub repository for Apps and Services with .NET 7](https://github.com/markjprice/apps-services-net7)
+
 ## Bonus content
 The appendix is available to download as a PDF:
 - Appendix A, Answers to the Test Your Knowledge Questions (coming November 2022)
