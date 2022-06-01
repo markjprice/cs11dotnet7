@@ -13,6 +13,27 @@ If you have Visual Studio 2022 for Windows and Visual Studio Code and its C# ext
 - [/vs4win](/vs4win): Visual Studio 2022 for Windows solution files and projects for each chapter
 - [/vscode](/vscode): Visual Studio Code workspace files and projects for each chapter
 
+## Chapters
+- Chapter 1 Hello C#, Welcome .NET!
+- Chapter 2 Speaking C#
+- Chapter 3 Controlling Flow, Converting Types, and Handling Exceptions
+- Chapter 4 Writing, Debugging, and Testing Functions
+- Chapter 5 Building Your Own Types with Object-Oriented Programming
+- Chapter 6 Implementing Interfaces and Inheriting Classes
+- Chapter 7 Packaging and Distributing .NET Types
+- Chapter 8 Working with Common .NET Types
+- Chapter 9 Working with Files, Streams, and Serialization
+- Chapter 10 Working with Data Using Entity Framework Core
+- Chapter 11 Querying and Manipulating Data Using LINQ
+- Chapter 12 Introducing Web Development Using ASP.NET Core
+- Chapter 13 Building Websites Using ASP.NET Core Razor Pages
+- Chapter 14 Building Websites Using the Model-View-Controller Pattern
+- Chapter 15 Building and Consuming Web Services
+- Chapter 16 Building User Interface Components Using Blazor
+
+## Sibling books
+![Sibling books](B18857_01_01.png)
+
 ## Bonus content
 The appendix is available to download as a PDF:
 - Appendix A, Answers to the Test Your Knowledge Questions (coming November 2022)
