@@ -92,7 +92,7 @@ public partial class Person
     if (married) return;
     spouse = partner;
     married = true;
-    partner.Marry(this);
+    partner.Marry(this); // this is the current object
   }
 
   // static method to "multiply"

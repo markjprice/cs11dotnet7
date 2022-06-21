@@ -1,29 +1,34 @@
 ﻿namespace Packt.Shared;
 
-public class BusinessClassPassenger
+public class Passenger
+{
+  public string? Name { get; set; }
+}
+
+public class BusinessClassPassenger : Passenger
 {
   public override string ToString()
   {
-    return "Business Class";
+    return $"Business Class: {Name}";
   }
 }
 
-public class FirstClassPassenger
+public class FirstClassPassenger : Passenger
 {
   public int AirMiles { get; set; }
 
   public override string ToString()
   {
-    return $"First Class with {AirMiles:N0} air miles";
+    return $"First Class with {AirMiles:N0} air miles: {Name}";
   }
 }
 
-public class CoachClassPassenger
+public class CoachClassPassenger : Passenger
 {
   public double CarryOnKG { get; set; }
 
   public override string ToString()
   {
-    return $"Coach Class with {CarryOnKG:N2} KG carry on";
+    return $"Coach Class with {CarryOnKG:N2} KG carry on: {Name}";
   }
 }

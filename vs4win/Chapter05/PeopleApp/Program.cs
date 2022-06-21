@@ -114,7 +114,7 @@ WriteLine($"{thing2.Name} has {thing2.Count} children.");
 WriteLine($"Deconstructed: {fruitName}, {fruitNumber}");
 
 // Deconstructing a Person
-var (name1, dob1) = bob;
+var (name1, dob1) = bob; // implicitly calls the Deconstruct method
 WriteLine($"Deconstructed: {name1}, {dob1}");
 
 var (name2, dob2, fav2) = bob;
@@ -227,12 +227,12 @@ WriteLine($"5! is {Person.Factorial(5)}");
 
 // Pattern matching with objects
 
-object[] passengers = {
-  new FirstClassPassenger { AirMiles = 1_419 },
-  new FirstClassPassenger { AirMiles = 16_562 },
-  new BusinessClassPassenger(),
-  new CoachClassPassenger { CarryOnKG = 25.7 },
-  new CoachClassPassenger { CarryOnKG = 0 },
+Passenger[] passengers = {
+  new FirstClassPassenger { AirMiles = 1_419, Name = "Suman" },
+  new FirstClassPassenger { AirMiles = 16_562, Name = "Lucy" },
+  new BusinessClassPassenger { Name = "Janice" },
+  new CoachClassPassenger { CarryOnKG = 25.7, Name = "Dave" },
+  new CoachClassPassenger { CarryOnKG = 0, Name = "Amit" },
 };
 
 foreach (object passenger in passengers)
