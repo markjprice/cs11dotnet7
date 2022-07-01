@@ -19,11 +19,13 @@ WriteLine(thisCouldAlsoBeNull);
 
 // Declaring non-nullable variables and parameters
 
-Address address = new();
-address.Building = null;
-address.Street = null!; // null-forgiving operator
-address.City = "London";
-address.Region = "UK";
+Address address = new()
+{
+  Building = null,
+  Street = null!, // null-forgiving operator
+  City = "London",
+  Region = "UK"
+};
 
 WriteLine(address.Building?.Length);
 WriteLine(address.Street.Length);
