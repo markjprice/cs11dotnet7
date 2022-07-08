@@ -14,7 +14,13 @@ else
   WriteLine($"This is not a valid age: {input}");
 }
 
-string films = "\"Monsters, Inc.\",\"I, Tonya\",\"Lock, Stock and Two Smoking Barrels\"";
+// C# 1 to 10: Use escaped double-quote characters \"
+// string films = "\"Monsters, Inc.\",\"I, Tonya\",\"Lock, Stock and Two Smoking Barrels\"";
+
+// C# 11 or later: Use """ to start and end a raw string literal
+string films = """
+"Monsters, Inc.","I, Tonya","Lock, Stock and Two Smoking Barrels"
+""";
 
 WriteLine($"Films to split: {films}");
 

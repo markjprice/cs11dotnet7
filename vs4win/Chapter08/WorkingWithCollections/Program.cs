@@ -65,7 +65,7 @@ foreach (KeyValuePair<string, string> item in keywords)
   WriteLine($"  {item.Key}: {item.Value}");
 }
 
-// lookup a value using a key
+// look up a value using a key
 string key = "long";
 WriteLine($"The definition of {key} is {keywords[key]}");
 
@@ -99,7 +99,7 @@ PriorityQueue<string, int> vaccine = new();
 
 // add some people
 // 1 = high priority people in their 70s or poor health
-// 2 = medium priority e.g. middle aged
+// 2 = medium priority e.g. middle-aged
 // 3 = low priority e.g. teens and twenties
 
 vaccine.Enqueue("Pamela", 1);  // my mum (70s)
