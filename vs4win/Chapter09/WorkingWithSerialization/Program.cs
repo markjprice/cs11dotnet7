@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization; // XmlSerializer
 using Packt.Shared; // Person 
-using NewJson = System.Text.Json.JsonSerializer;
+using FastJson = System.Text.Json.JsonSerializer;
 
 using static System.Environment;
 using static System.IO.Path;
@@ -93,7 +93,7 @@ WriteLine("Written {0:N0} bytes of JSON to: {1}",
   arg0: new FileInfo(jsonPath).Length,
   arg1: jsonPath);
 
-// Display the serialized object graph
+// display the serialized object graph
 WriteLine(File.ReadAllText(jsonPath));
 
 WriteLine();
@@ -103,7 +103,7 @@ using (FileStream jsonLoad = File.Open(jsonPath, FileMode.Open))
 {
   // deserialize object graph into a List of Person
   List<Person>? loadedPeople =
-    await NewJson.DeserializeAsync(utf8Json: jsonLoad,
+    await FastJson.DeserializeAsync(utf8Json: jsonLoad,
       returnType: typeof(List<Person>)) as List<Person>;
 
   if (loadedPeople is not null)

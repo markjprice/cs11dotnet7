@@ -56,19 +56,19 @@ string newFolder = Combine(
 WriteLine($"Working with: {newFolder}");
 
 // check if it exists
-WriteLine($"Does it exist? {Exists(newFolder)}");
+WriteLine($"Does it exist? {Path.Exists(newFolder)}");
 
 // create directory 
 WriteLine("Creating it...");
 CreateDirectory(newFolder);
-WriteLine($"Does it exist? {Exists(newFolder)}");
+WriteLine($"Does it exist? {Path.Exists(newFolder)}");
 Write("Confirm the directory exists, and then press ENTER: ");
 ReadLine();
 
 // delete directory 
 WriteLine("Deleting it...");
 Delete(newFolder, recursive: true);
-WriteLine($"Does it exist? {Exists(newFolder)}");
+WriteLine($"Does it exist? {Path.Exists(newFolder)}");
 
 SectionTitle("Managing files");
 
@@ -123,7 +123,7 @@ WriteLine($"File Extension: {GetExtension(textFile)}");
 WriteLine($"Random File Name: {GetRandomFileName()}");
 WriteLine($"Temporary File Name: {GetTempFileName()}");
 
-SectionTitle("Getting file information ");
+SectionTitle("Getting file information");
 
 FileInfo info = new(backupFile);
 WriteLine($"{backupFile}:");

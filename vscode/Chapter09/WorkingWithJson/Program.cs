@@ -4,7 +4,7 @@ using static System.Environment;
 using static System.IO.Path;
 
 Book mybook = new(title:
-  "C# 11 and .NET 7 - Modern Cross-platform Development")
+  "C# 11 and .NET 7 - Modern Cross-Platform Development Fundamentals")
 {
   Author = "Mark J Price",
   PublishDate = new(year: 2022, month: 11, day: 8),
@@ -35,5 +35,5 @@ WriteLine("Written {0:N0} bytes of JSON to {1}",
   arg1: filePath);
 WriteLine();
 
-// Display the serialized object graph 
+// display the serialized object graph 
 WriteLine(File.ReadAllText(filePath));
