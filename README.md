@@ -1,6 +1,6 @@
 [Improvements & Errata - list of corrections](errata.md)
 
-# C# 11 and .NET 7 - Modern Cross-Platform Development, Seventh Edition
+# C# 11 and .NET 7 - Modern Cross-Platform Development Fundamentals, Seventh Edition
 
 Coming November 2022.
 
