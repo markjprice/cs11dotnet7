@@ -17,7 +17,7 @@ public class Category
 
   public Category()
   {
-    // to enable developers to add products to a Category we must
+    // to enable developers to add products to a Category, we must
     // initialize the navigation property to an empty collection
     Products = new HashSet<Product>();
   }

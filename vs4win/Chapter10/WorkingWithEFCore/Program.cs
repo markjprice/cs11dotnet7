@@ -44,5 +44,5 @@ if (ReadKey(intercept: true).Key == ConsoleKey.Enter)
 }
 else
 {
-  WriteLine("Delete was cancelled.");
+  WriteLine("Delete was canceled.");
 }
