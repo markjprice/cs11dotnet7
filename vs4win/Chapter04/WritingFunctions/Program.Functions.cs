@@ -97,8 +97,8 @@
     if (number < 0)
     {
       throw new ArgumentException(message:
-        "The factorial function is defined for non-negative integers only.",
-        paramName: "number");
+        $"The factorial function is defined for non-negative integers only. Input: {number}",
+        paramName: nameof(number));
     }
     else if (number == 0)
     {
@@ -115,15 +115,19 @@
 
   static void RunFactorial()
   {
-    for (int i = 1; i <= 14; i++)
+    for (int i = -2; i <= 14; i++)
     {
       try
       {
         WriteLine($"{i}! = {Factorial(i):N0}");
       }
-      catch (System.OverflowException)
+      catch (OverflowException)
       {
         WriteLine($"{i}! is too big for a 32-bit integer.");
+      }
+      catch (Exception ex)
+      {
+        WriteLine($"{ex.GetType()}: {ex.Message}.");
       }
     }
   }
