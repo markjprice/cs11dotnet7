@@ -8,7 +8,7 @@ partial class Program
   {
     using (Northwind db = new())
     {
-      if ((db.Products is null) || (db.Products.Count() == 0))
+      if ((db.Products is null) || (!db.Products.Any()))
       {
         Fail("There are no products.");
         return;
