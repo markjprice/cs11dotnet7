@@ -66,6 +66,3 @@ Podcast interviews with me:
 Written interviews with me:
 - [C# 9 and .NET 5: Book Review and Q&A](https://www.infoq.com/articles/book-interview-mark-price/?itm_source=infoq&itm_campaign=user_page&itm_medium=link)
 - [Q&A with Episerver's Mark J. Price, author of C# 9 and .NET 5 - Modern Cross-Platform Development](https://www.episerver.com/articles/q-and-a-with-mark-price)
-
-## Book cover
-![C# 11 and .NET 7 by Packt Publishing](images/csdotnet-7e.png)
