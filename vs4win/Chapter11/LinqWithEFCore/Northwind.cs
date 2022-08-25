@@ -28,7 +28,8 @@ public class Northwind : DbContext
   protected override void OnModelCreating(
     ModelBuilder modelBuilder)
   {
-    if (Database.ProviderName.Contains("Sqlite"))
+    if ((Database.ProviderName is not null) 
+      && (Database.ProviderName.Contains("Sqlite")))
     {
       modelBuilder.Entity<Product>()
         .Property(product => product.UnitPrice)
