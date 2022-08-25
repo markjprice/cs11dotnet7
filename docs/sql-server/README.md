@@ -1,4 +1,4 @@
-# Using Microsoft SQL Server for Windows
+# Using SQL Server for Windows
 
 Microsoft offers various editions of its popular and capable SQL Server product 
 for Windows, Linux, and Docker containers. We will use a free version that can 

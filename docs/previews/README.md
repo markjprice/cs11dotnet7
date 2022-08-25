@@ -1,6 +1,6 @@
 # Previews
 
-Preliminary drafts of *C# 11 and .NET 7 - Modern Cross-Platform Development* were written and tested with **.NET 7 Preview 1**. Microsoft will release monthly previews until August, then two release candidates in September and October, before the general availablility (GA) release in November 2022. Each month I will add new content to this page that will then be added to the final drafts in September.
+Preliminary drafts of *C# 11 and .NET 7 - Modern Cross-Platform Development Fundamentals* were written and tested with **.NET 7 Preview 1**. Microsoft will release monthly previews until August, then two release candidates in September and October with Go Live licenses, before the general availablility (GA) release on 8 November 2022. Each month I will add new content to this page that will then be added to the final drafts in September.
 
 - [Previews](#previews)
 - [Chapter 1 - Hello, C#! Welcome, .NET!](#chapter-1---hello-c-welcome-net)
