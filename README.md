@@ -6,12 +6,19 @@ Coming November 2022.
 
 The previous edition was published on Tuesday, November 9, 2021. Order today from [Packt](https://www.packtpub.com/product/c-10-and-net-6-modern-cross-platform-development-sixth-edition/9781801077361), [Amazon.com](https://www.amazon.com/10-NET-Cross-Platform-Development-websites-dp-1801077363/dp/1801077363/), [Amazon.co.uk](https://www.amazon.co.uk/10-NET-Cross-Platform-Development-websites-dp-1801077363/dp/1801077363/), [Amazon.com.au](https://www.amazon.com.au/10-NET-Cross-Platform-Development-websites-ebook/dp/B09JV37DM6/), and all good book stores. My author page on Amazon: https://www.amazon.com/Mark-J-Price/e/B071DW3QGN/ 
 
+All of my books on Packt's website: https://subscription.packtpub.com/search?query=mark+j.+price
+
 ## Code solutions for Visual Studio 2022 and Visual Studio Code
 
 If you have Visual Studio 2022 for Windows and Visual Studio Code and its C# extension installed on the same computer, the build process can sometimes conflict. This is because Visual Studio has its own non-standard build server that is different from the standard build server used by .NET SDK. Visual Studio 2022 and Visual Studio Code also use different file types to group projects. So I have duplicated and separated solution code for each product:
 
 - [/vs4win](/vs4win): Visual Studio 2022 for Windows solution files and projects for each chapter
 - [/vscode](/vscode): Visual Studio Code workspace files and projects for each chapter
+
+## Sibling books
+![Sibling books](B18857_01_01.png)
+
+[GitHub repository for Apps and Services with .NET 7](https://github.com/markjprice/apps-services-net7)
 
 ## Chapters
 - Chapter 1 Hello C#, Welcome .NET!
@@ -30,11 +37,6 @@ If you have Visual Studio 2022 for Windows and Visual Studio Code and its C# ext
 - Chapter 14 Building Websites Using the Model-View-Controller Pattern
 - Chapter 15 Building and Consuming Web Services
 - Chapter 16 Building User Interface Components Using Blazor
-
-## Sibling books
-![Sibling books](B18857_01_01.png)
-
-[GitHub repository for Apps and Services with .NET 7](https://github.com/markjprice/apps-services-net7)
 
 ## Bonus content
 The appendix is available to download as a PDF:
