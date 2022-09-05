@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity; // IdentityUser
 using Microsoft.EntityFrameworkCore; // UseSqlServer, UseSqlite
 using Northwind.Mvc.Data; // ApplicationDbContext
 using Packt.Shared; // AddNorthwindContext extension method
-using System.Net;
+using System.Net; // HttpVersion
 using System.Net.Http.Headers; // MediaTypeWithQualityHeaderValue
 
 // Section 2 - configure the host web server including services
