@@ -6,21 +6,21 @@ namespace Northwind.WebApi.Repositories;
 
 public class CustomerRepository : ICustomerRepository
 {
-  // use a static thread-safe dictionary field to cache the customers
+  // Use a static thread-safe dictionary field to cache the customers.
   private static ConcurrentDictionary
     <string, Customer>? customersCache;
 
-  // use an instance data context field because it should not be
-  // cached due to their internal caching
+  // Use an instance data context field because it should not be
+  // cached due to the data context having internal caching.
   private NorthwindContext db;
 
   public CustomerRepository(NorthwindContext injectedContext)
   {
     db = injectedContext;
 
-    // pre-load customers from database as a normal
+    // Pre-load customers from database as a normal
     // Dictionary with CustomerId as the key,
-    // then convert to a thread-safe ConcurrentDictionary
+    // then convert to a thread-safe ConcurrentDictionary.
     if (customersCache is null)
     {
       customersCache = new ConcurrentDictionary<string, Customer>(
@@ -30,16 +30,16 @@ public class CustomerRepository : ICustomerRepository
 
   public async Task<Customer?> CreateAsync(Customer c)
   {
-    // normalize CustomerId into uppercase
+    // Normalize CustomerId into uppercase.
     c.CustomerId = c.CustomerId.ToUpper();
-    // add to database using EF Core
+    // Add to database using EF Core.
     EntityEntry<Customer> added = await db.Customers.AddAsync(c);
     int affected = await db.SaveChangesAsync();
     if (affected == 1)
     {
       if (customersCache is null) return c;
-      // if the customer is new, add it to cache, else
-      // call UpdateCache method
+      // If the customer is new, add it to cache, else
+      // call UpdateCache method.
       return customersCache.AddOrUpdate(c.CustomerId, c, UpdateCache);
     }
     else
@@ -50,14 +50,14 @@ public class CustomerRepository : ICustomerRepository
 
   public Task<IEnumerable<Customer>> RetrieveAllAsync()
   {
-    // for performance, get from cache
+    // For performance, get from cache.
     return Task.FromResult(customersCache is null
         ? Enumerable.Empty<Customer>() : customersCache.Values);
   }
 
   public Task<Customer?> RetrieveAsync(string id)
   {
-    // for performance, get from cache
+    // For performance, get from cache.
     id = id.ToUpper();
     if (customersCache is null) return null!;
     customersCache.TryGetValue(id, out Customer? c);
@@ -82,15 +82,15 @@ public class CustomerRepository : ICustomerRepository
 
   public async Task<Customer?> UpdateAsync(string id, Customer c)
   {
-    // normalize customer Id
+    // Normalize customer Id.
     id = id.ToUpper();
     c.CustomerId = c.CustomerId.ToUpper();
-    // update in database
+    // Update in database.
     db.Customers.Update(c);
     int affected = await db.SaveChangesAsync();
     if (affected == 1)
     {
-      // update in cache
+      // Update in cache.
       return UpdateCache(id, c);
     }
     return null;
@@ -99,7 +99,7 @@ public class CustomerRepository : ICustomerRepository
   public async Task<bool?> DeleteAsync(string id)
   {
     id = id.ToUpper();
-    // remove from database
+    // Remove from database.
     Customer? c = db.Customers.Find(id);
     if (c is null) return null;
     db.Customers.Remove(c);
@@ -107,7 +107,7 @@ public class CustomerRepository : ICustomerRepository
     if (affected == 1)
     {
       if (customersCache is null) return null;
-      // remove from cache
+      // Remove from cache.
       return customersCache.TryRemove(id, out c);
     }
     else
