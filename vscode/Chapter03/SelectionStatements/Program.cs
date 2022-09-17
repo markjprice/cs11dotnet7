@@ -46,61 +46,60 @@ WriteLine("After end of switch");
 A_label:
 WriteLine($"After A_label");
 
-// string path = "/Users/markjprice/cs11dotnet7/Chapter03";
-string path = @"C:\cs11dotnet7\Chapter03";
-Stream? s;
+// Pattern matching with the switch statement
 
-Write("Press R for read-only or W for writeable: ");
-ConsoleKeyInfo key = ReadKey();
-
-if (key.Key == ConsoleKey.R)
+Animal?[] animals = new Animal?[]
 {
-  s = File.Open(
-    Path.Combine(path, "file.txt"),
-    FileMode.OpenOrCreate,
-    FileAccess.Read);
-}
-else
-{
-  s = File.Open(
-    Path.Combine(path, "file.txt"),
-    FileMode.OpenOrCreate,
-    FileAccess.Write);
-}
-WriteLine();
-
-string message;
-switch (s)
-{
-  case FileStream writeableFile when s.CanWrite:
-    message = "The stream is a file that I can write to.";
-    break;
-  case FileStream readOnlyFile:
-    message = "The stream is a read-only file.";
-    break;
-  case MemoryStream ms:
-    message = "The stream is a memory address.";
-    break;
-  default: // always evaluated last despite its current position
-    message = "The stream is some other type.";
-    break;
-  case null:
-    message = "The stream is null.";
-    break;
-}
-WriteLine(message);
-
-message = s switch
-{
-  FileStream writeableFile when s.CanWrite
-    => "The stream is a file that I can write to.",
-  FileStream readOnlyFile
-    => "The stream is a read-only file.",
-  MemoryStream ms
-    => "The stream is a memory address.",
-  null
-    => "The stream is null.",
-  _
-    => "The stream is some other type."
+  new Cat { Name = "Karen", Born = new(year: 2022, month: 8, day: 23), 
+    Legs = 4, IsDomestic = true },
+  null,
+  new Cat { Name = "Mufasa", Born = new(year: 1994, month: 6, day: 12) },
+  new Spider { Name = "Sid Vicious", Born = DateTime.Today, 
+    IsPoisonous = true},
+  new Spider { Name = "Captain Furry", Born = DateTime.Today }
 };
-WriteLine(message);
+
+foreach (Animal? animal in animals)
+{
+  string message;
+
+  switch (animal)
+  {
+    case Cat fourLeggedCat when fourLeggedCat.Legs == 4:
+      message = $"The cat named {fourLeggedCat.Name} has four legs.";
+      break;
+    case Cat wildCat when wildCat.IsDomestic == false:
+      message = $"The non-domestic cat is named {wildCat.Name}.";
+      break;
+    case Cat cat:
+      message = $"The cat is named {cat.Name}.";
+      break;
+    default: // default is always evaluated last
+      message = $"The animal named {animal.Name} is a {animal.GetType().Name}.";
+      break;
+    case Spider spider when spider.IsPoisonous:
+      message = $"The {spider.Name} spider is poisonous. Run!";
+      break;
+    case null:
+      message = "The animal is null.";
+      break;
+  }
+  WriteLine($"switch statement: {message}");
+  
+  message = animal switch
+  {
+    Cat fourLeggedCat when fourLeggedCat.Legs == 4
+      => $"The cat named {fourLeggedCat.Name} has four legs.",
+    Cat wildCat when wildCat.IsDomestic == false
+      => $"The non-domestic cat is named {wildCat.Name}.",
+    Cat cat
+      => $"The cat is named {cat.Name}.",
+    Spider spider when spider.IsPoisonous
+      => $"The {spider.Name} spider is poisonous. Run!",
+    null
+      => "The animal is null.",
+    _
+      => $"The animal named {animal.Name} is a {animal.GetType().Name}."
+  };
+  WriteLine($"switch expression: {message}");
+}
