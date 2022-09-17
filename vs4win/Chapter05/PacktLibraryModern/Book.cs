@@ -7,7 +7,7 @@ public class Book
   public Book() { } // For use with initialization syntax.
 
   [SetsRequiredMembers]
-  public Book(string isbn, string title)
+  public Book(string? isbn, string? title)
   {
     Isbn = isbn;
     Title = title;
