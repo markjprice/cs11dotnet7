@@ -13,6 +13,9 @@
 			"path": "CodeAnalyzing"
 		},
 		{
+			"path": "WarningsAsErrors"
+		},
+		{
 			"path": "Ch06Ex02Inheritance"
 		}
 	]

@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NullHandling", "NullHandlin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAnalyzing", "CodeAnalyzing\CodeAnalyzing.csproj", "{2E477494-6458-437D-8CB7-A1803A64786C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch06Ex02Inheritance", "Ch06Ex02Inheritance\Ch06Ex02Inheritance.csproj", "{BE4C568B-3904-42DA-8F46-14E0F76E7BED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch06Ex02Inheritance", "Ch06Ex02Inheritance\Ch06Ex02Inheritance.csproj", "{BE4C568B-3904-42DA-8F46-14E0F76E7BED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarningsAsErrors", "WarningsAsErrors\WarningsAsErrors.csproj", "{F1DE0C2A-4988-46B8-AC6B-BF9E82F27E59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BE4C568B-3904-42DA-8F46-14E0F76E7BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE4C568B-3904-42DA-8F46-14E0F76E7BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE4C568B-3904-42DA-8F46-14E0F76E7BED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1DE0C2A-4988-46B8-AC6B-BF9E82F27E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1DE0C2A-4988-46B8-AC6B-BF9E82F27E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1DE0C2A-4988-46B8-AC6B-BF9E82F27E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1DE0C2A-4988-46B8-AC6B-BF9E82F27E59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
