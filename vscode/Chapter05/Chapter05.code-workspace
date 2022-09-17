@@ -1,13 +1,16 @@
 {
 	"folders": [
 		{
-			"path": "PacktLibrary"
+			"path": "PacktLibraryNetStandard2"
 		},
 		{
-			"path": "PeopleApp"
+			"path": "PacktLibraryModern"
 		},
 		{
 			"path": "Namespaces"
+		},
+		{
+			"path": "PeopleApp"
 		}
 	]
 }

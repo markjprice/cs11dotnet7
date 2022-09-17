@@ -161,8 +161,21 @@ WriteLine($"Sam's favorite ice-cream flavor is {sam.FavoriteIceCream}.");
 sam.FavoritePrimaryColor = "Red";
 WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}.");
 
-Book book = new();
-book.Title = "C# 11 and .NET 7 - Modern Cross-Platform Development";
+/*
+Book book = new()
+{
+  Isbn = "978-1803237800",
+  Title = "C# 11 and .NET 7 - Modern Cross-Platform Development Fundamentals"
+};
+*/
+Book book = new(isbn: "978-1803237800",
+  title: "C# 11 and .NET 7 - Modern Cross-Platform Development Fundamentals");
+
+book.Author = "Mark J. Price";
+book.PageCount = 821;
+
+WriteLine("{0}: {1} written by {2} has {3:N0} pages.",
+  book.Isbn, book.Title, book.Author, book.PageCount);
 
 sam.Children.Add(new() { Name = "Charlie", DateOfBirth = new(2010, 3, 18) });
 sam.Children.Add(new() { Name = "Ella", DateOfBirth = new(2020, 12, 24) });
@@ -235,7 +248,7 @@ Passenger[] passengers = {
   new CoachClassPassenger { CarryOnKG = 0, Name = "Amit" },
 };
 
-foreach (object passenger in passengers)
+foreach (Passenger passenger in passengers)
 {
   decimal flightCost = passenger switch
   {
