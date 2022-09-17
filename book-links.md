@@ -337,6 +337,7 @@
 - Fields (C# programming guide): https://docs.microsoft.com/en-us/dotnet/articles/csharp/programming-guide/classes-and-structs/fields
 - Access modifiers (C# programming guide): https://docs.microsoft.com/en-us/dotnet/articles/csharp/language-reference/keywords/access-modifiers
 - Enumeration types (C# reference): https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/enum
+- required modifier (C# Reference): https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/required
 
 ## Methods
 - Constructors (C# programming guide): https://docs.microsoft.com/en-us/dotnet/articles/csharp/programming-guide/classes-and-structs/constructors
