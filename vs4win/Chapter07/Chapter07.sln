@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32210.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssembliesAndNamespaces", "AssembliesAndNamespaces\AssembliesAndNamespaces.csproj", "{4FD636C5-91F6-46AC-97B7-2396F11A31A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssembliesAndNamespaces", "AssembliesAndNamespaces\AssembliesAndNamespaces.csproj", "{4FD636C5-91F6-46AC-97B7-2396F11A31A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{EDEB4531-EE20-440B-BB41-84CDA5715BA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{EDEB4531-EE20-440B-BB41-84CDA5715BA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetEverywhere", "DotNetEverywhere\DotNetEverywhere.csproj", "{7509E104-A3AE-4AEB-9656-D83A15D5CD70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetEverywhere", "DotNetEverywhere\DotNetEverywhere.csproj", "{7509E104-A3AE-4AEB-9656-D83A15D5CD70}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlSDK", "ControlSDK\ControlSDK.csproj", "{76808C33-E138-4170-9621-122C1993B36E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceLinks", "SourceLinks\SourceLinks.csproj", "{FA7C1721-0B08-42CA-A075-66FFEF57B9A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{76808C33-E138-4170-9621-122C1993B36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76808C33-E138-4170-9621-122C1993B36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76808C33-E138-4170-9621-122C1993B36E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA7C1721-0B08-42CA-A075-66FFEF57B9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA7C1721-0B08-42CA-A075-66FFEF57B9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA7C1721-0B08-42CA-A075-66FFEF57B9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA7C1721-0B08-42CA-A075-66FFEF57B9A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

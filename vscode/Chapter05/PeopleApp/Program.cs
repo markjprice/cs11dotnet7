@@ -158,8 +158,19 @@ WriteLine(sam.Age);
 
 sam.FavoriteIceCream = "Chocolate Fudge";
 WriteLine($"Sam's favorite ice-cream flavor is {sam.FavoriteIceCream}.");
-sam.FavoritePrimaryColor = "Red";
-WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}.");
+
+string color = "Black";
+
+try
+{
+  sam.FavoritePrimaryColor = color;
+  WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}.");
+}
+catch (Exception ex)
+{
+  WriteLine("Tried to set {0} to '{1}': {2}",
+    nameof(sam.FavoritePrimaryColor), color, ex.Message);
+}
 
 /*
 Book book = new()
@@ -237,7 +248,16 @@ for (int i = 0; i < lamech.Children.Count; i++)
 
 // Implementing functionality using local functions
 
-WriteLine($"5! is {Person.Factorial(5)}");
+int number = -1; // change to -1 to make the exception handling code execute
+
+try
+{
+  WriteLine($"{number}! is {Person.Factorial(number)}");
+}
+catch (Exception ex)
+{
+  WriteLine($"{ex.GetType()} says: {ex.Message} number was {number}.");
+}
 
 // Pattern matching with objects
 

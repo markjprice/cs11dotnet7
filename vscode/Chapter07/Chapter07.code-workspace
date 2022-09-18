@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "DotNetEverywhere"
+		},
+		{
+			"path": "SourceLinks"
 		}
 	]
 }

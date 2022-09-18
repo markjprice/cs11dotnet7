@@ -67,7 +67,7 @@
       case 11: // special cases for 11th to 13th
       case 12:
       case 13:
-        return $"{number}th";
+        return $"{number:N0}th";
       default:
         int lastDigit = number % 10;
 
@@ -79,13 +79,13 @@
           _ => "th"
         };
 
-        return $"{number}{suffix}";
+        return $"{number:N0}{suffix}";
     }
   }
 
   static void RunCardinalToOrdinal()
   {
-    for (int number = 1; number <= 1030; number++)
+    for (int number = 1; number <= 1500; number++)
     {
       Write($"{CardinalToOrdinal(number)} ");
     }
@@ -115,7 +115,7 @@
 
   static void RunFactorial()
   {
-    for (int i = -2; i <= 14; i++)
+    for (int i = -2; i <= 15; i++)
     {
       try
       {
@@ -127,7 +127,7 @@
       }
       catch (Exception ex)
       {
-        WriteLine($"{ex.GetType()}: {ex.Message}.");
+        WriteLine($"{i}! throws {ex.GetType()}: {ex.Message}");
       }
     }
   }
