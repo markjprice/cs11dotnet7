@@ -3,7 +3,7 @@
 Write("Enter your age: ");
 string input = ReadLine()!; // null-forgiving
 
-Regex ageChecker = new(@"^\d+$");
+Regex ageChecker = DigitsOnly();
 
 if (ageChecker.IsMatch(input))
 {
@@ -32,8 +32,7 @@ foreach (string film in filmsDumb)
   WriteLine(film);
 }
 
-Regex csv = new(
-  "(?:^|,)(?=[^\"]|(\")?)\"?((?(1)[^\"]*|[^,\"]*))\"?(?=,|$)");
+Regex csv = CommaSeparator();
 
 MatchCollection filmsSmart = csv.Matches(films);
 
