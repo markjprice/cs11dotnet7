@@ -10,13 +10,13 @@
 			"path": "WorkingWithEncodings"
 		},
 		{
-			"path": "WorkingWithRandomAccess"
-		},
-		{
 			"path": "WorkingWithSerialization"
 		},
 		{
 			"path": "WorkingWithJson"
+		},
+		{
+			"path": "WorkingWithTarArchives"
 		},
 		{
 			"path": "Ch09Ex02SerializingShapes"
