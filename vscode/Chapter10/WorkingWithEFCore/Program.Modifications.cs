@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking; // EntityEntry<T>
+﻿using Microsoft.EntityFrameworkCore; // ExecuteUpdate, ExecuteDelete
+using Microsoft.EntityFrameworkCore.ChangeTracking; // EntityEntry<T>
 using Microsoft.EntityFrameworkCore.Storage; // IDbContextTransaction
-using Packt.Shared;
+using Packt.Shared; // Northwind, Product
 
 partial class Program
 {
-  static void ListProducts(int? productIdToHighlight = null)
+  static void ListProducts(int[]? productIdsToHighlight = null)
   {
     using (Northwind db = new())
     {
@@ -21,7 +22,8 @@ partial class Program
       {
         ConsoleColor previousColor = ForegroundColor;
 
-        if (productIdToHighlight == p.ProductId)
+        if ((productIdsToHighlight is not null) &&
+          productIdsToHighlight.Contains(p.ProductId))
         {
           ForegroundColor = ConsoleColor.Green;
         }
@@ -39,6 +41,8 @@ partial class Program
   {
     using (Northwind db = new())
     {
+      if (db.Products is null) return (0, 0);
+
       Product p = new()
       {
         CategoryId = categoryId,
@@ -64,7 +68,9 @@ partial class Program
   {
     using (Northwind db = new())
     {
-      // get first product whose name starts with name
+      if (db.Products is null) return (0, 0);
+
+      // Get the first product whose name starts with name.
       Product updateProduct = db.Products.First(
         p => p.ProductName.StartsWith(productNameStartsWith));
 
@@ -86,15 +92,16 @@ partial class Program
           arg0: t.GetDbTransaction().IsolationLevel);
 
         IQueryable<Product>? products = db.Products?.Where(
-        p => p.ProductName.StartsWith(productNameStartsWith));
+          p => p.ProductName.StartsWith(productNameStartsWith));
 
-        if (products is null)
+        if ((products is null) || (!products.Any()))
         {
           WriteLine("No products found to delete.");
           return 0;
         }
         else
         {
+          if (db.Products is null) return 0;
           db.Products.RemoveRange(products);
         }
 
@@ -102,6 +109,49 @@ partial class Program
         t.Commit();
         return affected;
       }
+    }
+  }
+
+  static (int affected, int[]? productIds) IncreaseProductPricesBetter(
+    string productNameStartsWith, decimal amount)
+  {
+    using (Northwind db = new())
+    {
+      if (db.Products is null) return (0, null);
+
+      // Get products whose name starts with name.
+      IQueryable<Product>? products = db.Products.Where(
+        p => p.ProductName.StartsWith(productNameStartsWith));
+
+      int affected = products.ExecuteUpdate(s => s.SetProperty(
+        p => p.Cost, // Property selector lambda expression.
+        p => p.Cost + amount)); // Value to update to lambda expression.
+
+      int[] productIds = products.Select(p => p.ProductId).ToArray();
+
+      return (affected, productIds);
+    }
+  }
+
+  static int DeleteProductsBetter(string productNameStartsWith)
+  {
+    using (Northwind db = new())
+    {
+      int affected = 0;
+
+      IQueryable<Product>? products = db.Products?.Where(
+        p => p.ProductName.StartsWith(productNameStartsWith));
+
+      if ((products is null) || (!products.Any()))
+      {
+        WriteLine("No products found to delete.");
+        return 0;
+      }
+      else
+      {
+        affected = products.ExecuteDelete();
+      }
+      return affected;
     }
   }
 }
