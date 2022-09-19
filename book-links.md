@@ -71,7 +71,6 @@
   - [EF Core database providers](#ef-core-database-providers)
   - [SQLite](#sqlite)
   - [Microsoft SQL Server](#microsoft-sql-server)
-  - [NoSQL data stores](#nosql-data-stores)
   - [EF Core models](#ef-core-models)
   - [EF Core querying and manipulating](#ef-core-querying-and-manipulating)
 - [Chapter 11 - Querying and Manipulating Data Using LINQ](#chapter-11---querying-and-manipulating-data-using-linq)
@@ -543,11 +542,9 @@
 
 ## EF Core
 - EF Core documentation: https://docs.microsoft.com/en-us/ef/core/
-- EF Core team's plans: https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-5.0/plan
-- New features in EF Core 5: https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-5.0/whatsnew
+- New features in EF Core 7: https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-7.0/whatsnew
 - New features in EF Core 6: https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-6.0/whatsnew
-- Get to Know EF Core 6: https://devblogs.microsoft.com/dotnet/get-to-know-ef-core-6/
-- Announcing the Plan for EF7: https://devblogs.microsoft.com/dotnet/announcing-the-plan-for-ef7/
+- New features in EF Core 5: https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-5.0/whatsnew
 - Plans for Entity Framework Core 6.0 revealed as Microsoft admits it is unlikely to match Dapper for performance: https://www.theregister.com/2021/01/19/entity_framework_core_6/
 - Entity Framework Community Standup - Performance Tuning an EF Core App: https://www.youtube.com/watch?v=VgNFFEqwZPU
 
@@ -563,16 +560,9 @@
 - Download SQLiteStudio: http://sqlitestudio.pl
 
 ## Microsoft SQL Server
-- Try SQL Server on-premises or in the cloud: https://www.microsoft.com/en-us/sql-server/sql-server-downloads
-- Download SQL Server Management Studio (SSMS): https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
-- Quickstart: Connect and query a SQL Server instance using SQL Server Management Studio (SSMS): https://docs.microsoft.com/en-us/sql/ssms/quickstarts/ssms-connect-query-sql-server
-- Quickstart: Connect and query an Azure SQL Database or an Azure Managed Instance using SQL Server Management Studio (SSMS): https://docs.microsoft.com/en-us/sql/ssms/quickstarts/ssms-connect-query-azure-sql
+- SQL Server downloads: https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 - Use Visual Studio Code to create and run Transact-SQL scripts: https://docs.microsoft.com/en-us/sql/tools/visual-studio-code/sql-server-develop-use-vscode
 - .NET Interactive with SQL!| .NET Notebooks in Visual Studio Code: https://devblogs.microsoft.com/dotnet/net-interactive-with-sql-net-notebooks-in-visual-studio-code/
-
-## NoSQL data stores
-- Welcome to Azure Cosmos DB: https://docs.microsoft.com/en-us/azure/cosmos-db/introduction
-- Use NoSQL databases as a persistence infrastructure: https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/nosql-database-persistence-infrastructure
 
 ## EF Core models
 - EF Core model conventions: https://docs.microsoft.com/en-us/ef/core/modeling/
@@ -581,6 +571,7 @@
 - Scaffolding: https://docs.microsoft.com/en-us/ef/core/managing-schemas/scaffolding?tabs=dotnet-core-cli
 - Deep Dive into Many-to-Many: A Tour of EF Core 5.0: https://channel9.msdn.com/Shows/On-NET/Deep-Dive-into-Many-to-Many-A-Tour-of-EF-Core-50-pt-2
 - Naming Conventions for Entity Framework Core Tables and Columns: https://github.com/efcore/EFCore.NamingConventions
+- Table-per-concrete-type (TPC) inheritance mapping: https://learn.microsoft.com/en-gb/ef/core/what-is-new/ef-core-7.0/whatsnew#table-per-concrete-type-tpc-inheritance-mapping
 
 ## EF Core querying and manipulating
 - Filtered include: https://docs.microsoft.com/en-us/ef/core/querying/related-data/eager#filtered-include
