@@ -21,9 +21,7 @@ List<string> result2 = query2.ToList();
 // Answer returned as we enumerate over the results
 foreach (string name in query1)
 {
-  WriteLine(name); // outputs Pam
-  names[2] = "Jimmy"; // change Jim to Jimmy
-  // on the second iteration Jimmy does not end with an M
+  WriteLine(name);
 }
 
 SectionTitle("Writing queries");

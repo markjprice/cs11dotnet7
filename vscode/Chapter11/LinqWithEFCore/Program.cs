@@ -6,8 +6,10 @@
 
 // AggregateProducts();
 
+PagingProducts();
+
 // CustomExtensionMethods();
 
 // OutputProductsAsXml();
 
-ProcessSettings();
+// ProcessSettings();

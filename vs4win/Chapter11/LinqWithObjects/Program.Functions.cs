@@ -4,6 +4,4 @@
   {
     return name.Length > 4;
   }
-
 }
-

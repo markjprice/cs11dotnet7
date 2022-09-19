@@ -103,9 +103,39 @@ partial class Program
 
     using (Northwind db = new())
     {
+      // Try to get an efficient count from EF Core DbSet<T>.
+      if (db.Products.TryGetNonEnumeratedCount(out int countDbSet))
+      {
+        WriteLine("{0,-25} {1,10}",
+          arg0: "Product count from DbSet:",
+          arg1: countDbSet);
+      }
+      else
+      {
+        WriteLine("Products DbSet does not have a Count property.");
+      }
+
+      // Try to get an efficient count from a List<T>.
+      List<Product> products = db.Products.ToList();
+
+      if (products.TryGetNonEnumeratedCount(out int countList))
+      {
+        WriteLine("{0,-25} {1,10}",
+          arg0: "Product count from list:",
+          arg1: countList);
+      }
+      else
+      {
+        WriteLine("Products list does not have a Count property.");
+      }
+
       WriteLine("{0,-25} {1,10}",
         arg0: "Product count:",
         arg1: db.Products.Count());
+
+      WriteLine("{0,-27} {1,8}", // Note the different column widths.
+        arg0: "Discontinued product count:",
+        arg1: db.Products.Count(product => product.Discontinued));
 
       WriteLine("{0,-25} {1,10:$#,##0.00}",
         arg0: "Highest product price:",
@@ -130,6 +160,76 @@ partial class Program
     }
   }
 
+  static void OutputTableOfProducts(Product[] products, 
+    int currentPage, int totalPages)
+  {
+    string line = new('-', count: 73);
+    string lineHalf = new('-', count: 30);
+
+    WriteLine(line);
+    WriteLine("{0,4} {1,-40} {2,12} {3,-15}",
+      "ID", "Product Name", "Unit Price", "Discontinued");
+    WriteLine(line);
+
+    foreach (Product p in products)
+    {
+      WriteLine("{0,4} {1,-40} {2,12:C} {3,-15}",
+        p.ProductId, p.ProductName, p.UnitPrice, p.Discontinued);
+    }
+    WriteLine("{0} Page {1} of {2} {3}",
+      lineHalf, currentPage + 1, totalPages + 1, lineHalf);
+  }
+
+  static void OutputPageOfProducts(IQueryable<Product> products,
+    int pageSize, int currentPage, int totalPages)
+  {
+    // We must order data before skipping and taking to ensure
+    // the data is not randomly sorted in each page.
+    var pagingQuery = products.OrderBy(p => p.ProductId)
+      .Skip(currentPage * pageSize).Take(pageSize);
+
+    // SectionTitle(pagingQuery.ToQueryString());
+
+    OutputTableOfProducts(pagingQuery.ToArray(), 
+      currentPage, totalPages);
+  }
+
+  static void PagingProducts()
+  {
+    SectionTitle("Paging products");
+
+    using (Northwind db = new())
+    {
+      int pageSize = 10;
+      int currentPage = 0;
+      int productCount = db.Products.Count();
+      int totalPages = productCount / pageSize;
+
+      while (true)
+      {
+        OutputPageOfProducts(db.Products, pageSize, currentPage, totalPages);
+
+        Write("Press <- to page back, press -> to page forward, any key to exit.");
+        ConsoleKey key = ReadKey().Key;
+
+        if (key == ConsoleKey.LeftArrow)
+          if (currentPage == 0)
+            currentPage = totalPages;
+          else
+            currentPage--;
+        else if (key == ConsoleKey.RightArrow)
+          if (currentPage == totalPages)
+            currentPage = 0;
+          else
+            currentPage++;
+        else
+          break; // out of the while loop.
+
+        WriteLine();
+      }
+    }
+  }
+
   static void CustomExtensionMethods()
   {
     SectionTitle("Custom aggregate extension methods");
@@ -143,20 +243,20 @@ partial class Program
       WriteLine("{0,-25} {1,10:$#,##0.00}",
         "Mean unit price:",
         db.Products.Average(p => p.UnitPrice));
-      
-      WriteLine("{0,-25} {1,10:N0}", 
+
+      WriteLine("{0,-25} {1,10:N0}",
         "Median units in stock:",
         db.Products.Median(p => p.UnitsInStock));
-      
-      WriteLine("{0,-25} {1,10:$#,##0.00}", 
+
+      WriteLine("{0,-25} {1,10:$#,##0.00}",
         "Median unit price:",
         db.Products.Median(p => p.UnitPrice));
-      
-      WriteLine("{0,-25} {1,10:N0}", 
+
+      WriteLine("{0,-25} {1,10:N0}",
         "Mode units in stock:",
         db.Products.Mode(p => p.UnitsInStock));
-      
-      WriteLine("{0,-25} {1,10:$#,##0.00}", 
+
+      WriteLine("{0,-25} {1,10:$#,##0.00}",
         "Mode unit price:",
         db.Products.Mode(p => p.UnitPrice));
     }
