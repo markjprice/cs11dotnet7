@@ -13,6 +13,9 @@
 			"path": "Northwind.Common.DataContext.SqlServer"
 		},
 		{
+			"path": "Northwind.Common.UnitTests"
+		},
+		{
 			"path": "Northwind.Web"
 		},
 		{

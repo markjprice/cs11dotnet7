@@ -31,7 +31,21 @@ namespace Packt.Shared
     {
       if (!optionsBuilder.IsConfigured)
       {
-        optionsBuilder.UseSqlite("Filename=../Northwind.db");
+        string dir = Environment.CurrentDirectory;
+        string path = string.Empty;
+
+        if (dir.EndsWith("net7.0"))
+        {
+          // Running in the <project>\bin\<Debug|Release>\net7.0 directory.
+          path = Path.Combine("..", "..", "..", "..", "Northwind.db");
+        }
+        else
+        {
+          // Running in the <project> directory.
+          path = Path.Combine("..", "Northwind.db");
+        }
+
+        optionsBuilder.UseSqlite($"Filename={path}");
       }
     }
 

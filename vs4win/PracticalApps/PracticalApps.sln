@@ -23,13 +23,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.WebApi", "Northwi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minimal.WebApi", "Minimal.WebApi\Minimal.WebApi.csproj", "{36CEABAE-DE5F-4784-B4FB-6C281B322ECD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.BlazorServer", "Northwind.BlazorServer\Northwind.BlazorServer.csproj", "{142A4264-F385-4982-906C-70C6C8C3EDBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.BlazorServer", "Northwind.BlazorServer\Northwind.BlazorServer.csproj", "{142A4264-F385-4982-906C-70C6C8C3EDBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.BlazorWasm.Server", "Northwind.BlazorWasm\Server\Northwind.BlazorWasm.Server.csproj", "{8CDA76AC-F6CE-4F76-81C7-5F92EE5BCCAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.BlazorWasm.Server", "Northwind.BlazorWasm\Server\Northwind.BlazorWasm.Server.csproj", "{8CDA76AC-F6CE-4F76-81C7-5F92EE5BCCAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.BlazorWasm.Client", "Northwind.BlazorWasm\Client\Northwind.BlazorWasm.Client.csproj", "{00A2DE18-4C31-4338-A387-0AB5BC5E378D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.BlazorWasm.Client", "Northwind.BlazorWasm\Client\Northwind.BlazorWasm.Client.csproj", "{00A2DE18-4C31-4338-A387-0AB5BC5E378D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.BlazorWasm.Shared", "Northwind.BlazorWasm\Shared\Northwind.BlazorWasm.Shared.csproj", "{5803C108-3748-46EB-9940-85AE15F699E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.BlazorWasm.Shared", "Northwind.BlazorWasm\Shared\Northwind.BlazorWasm.Shared.csproj", "{5803C108-3748-46EB-9940-85AE15F699E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Common.UnitTests", "Northwind.Common.UnitTests\Northwind.Common.UnitTests.csproj", "{691FCF8F-191C-47E9-9BCD-58BF412FE09D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,10 @@ Global
 		{5803C108-3748-46EB-9940-85AE15F699E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5803C108-3748-46EB-9940-85AE15F699E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5803C108-3748-46EB-9940-85AE15F699E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{691FCF8F-191C-47E9-9BCD-58BF412FE09D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{691FCF8F-191C-47E9-9BCD-58BF412FE09D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{691FCF8F-191C-47E9-9BCD-58BF412FE09D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{691FCF8F-191C-47E9-9BCD-58BF412FE09D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
