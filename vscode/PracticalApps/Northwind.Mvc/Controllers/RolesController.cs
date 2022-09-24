@@ -25,7 +25,7 @@ public class RolesController : Controller
     {
       await roleManager.CreateAsync(new IdentityRole(AdminRole));
     }
-    IdentityUser user = await userManager.FindByEmailAsync(UserEmail);
+    IdentityUser? user = await userManager.FindByEmailAsync(UserEmail);
 
     if (user == null)
     {

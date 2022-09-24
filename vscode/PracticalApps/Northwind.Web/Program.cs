@@ -7,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddNorthwindContext();
 
+builder.Services.AddRequestDecompression();
+
+/*
 builder.WebHost.ConfigureKestrel((context, options) =>
 {
   options.ListenAnyIP(5001, listenOptions =>
@@ -15,6 +18,7 @@ builder.WebHost.ConfigureKestrel((context, options) =>
     listenOptions.UseHttps(); // HTTP/3 requires secure connections
   });
 });
+*/
 
 var app = builder.Build();
 
@@ -50,6 +54,8 @@ app.Use(async (HttpContext context, Func<Task> next) =>
 });
 
 app.UseHttpsRedirection();
+
+app.UseRequestDecompression();
 
 app.UseDefaultFiles(); // index.html, default.html, and so on
 app.UseStaticFiles();

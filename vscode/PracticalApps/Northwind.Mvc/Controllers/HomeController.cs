@@ -75,14 +75,16 @@ namespace Northwind.Mvc.Controllers
       return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    public async Task<IActionResult> ProductDetail(int? id)
+    public async Task<IActionResult> ProductDetail(int? id, string alertstyle = "success")
     {
+      ViewData["alertstyle"] = alertstyle;
+
       if (!id.HasValue)
       {
         return BadRequest("You must pass a product ID in the route, for example, /Home/ProductDetail/21");
       }
 
-      Product? model = await db.Products
+      Product? model = await db.Products.Include(p => p.Category)
         .SingleOrDefaultAsync(p => p.ProductId == id);
 
       if (model is null)

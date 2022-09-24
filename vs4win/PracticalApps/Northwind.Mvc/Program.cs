@@ -38,6 +38,12 @@ else
 // if you are using SQLite default is ..\Northwind.db
 builder.Services.AddNorthwindContext();
 
+builder.Services.AddOutputCache(options =>
+{
+  options.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(20);
+  options.AddPolicy("views", p => p.VaryByQuery(""));
+});
+
 builder.Services.AddHttpClient(name: "Northwind.WebApi",
   configureClient: options =>
   {
@@ -77,16 +83,23 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseOutputCache();
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}")
+  .CacheOutput("views");
+
 app.MapRazorPages();
+
+app.MapGet("/notcached", () => DateTime.Now.ToString());
+
+app.MapGet("/cached", () => DateTime.Now.ToString()).CacheOutput();
 
 // Section 4 - start the host web server listening for HTTP requests
 app.Run();

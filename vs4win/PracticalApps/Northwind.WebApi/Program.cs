@@ -38,8 +38,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 builder.Services.AddHealthChecks()
-  .AddDbContextCheck<NorthwindContext>();
+  .AddDbContextCheck<NorthwindContext>()
+  // execute SELECT 1 using the specified connection string
+  .AddSqlServer("Data Source=.;Initial Catalog=Northwind;Integrated Security=true;");
 
+/*
 builder.WebHost.ConfigureKestrel((context, options) =>
 {
   options.ListenAnyIP(5002, listenOptions =>
@@ -48,6 +51,7 @@ builder.WebHost.ConfigureKestrel((context, options) =>
     listenOptions.UseHttps(); // HTTP/3 requires secure connections
   });
 });
+*/
 
 var app = builder.Build();
 

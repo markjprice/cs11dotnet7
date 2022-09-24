@@ -10,6 +10,10 @@
 		<EnablePreviewFeatures>true</EnablePreviewFeatures>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\favicon.ico" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<Using Include="System.Console" Static="true" />
 	</ItemGroup>
