@@ -70,7 +70,7 @@ partial class Program
     {
       if (db.Products is null) return (0, 0);
 
-      // Get the first product whose name starts with name.
+      // Get the first product whose name starts with the parameter value.
       Product updateProduct = db.Products.First(
         p => p.ProductName.StartsWith(productNameStartsWith));
 
@@ -119,7 +119,7 @@ partial class Program
     {
       if (db.Products is null) return (0, null);
 
-      // Get products whose name starts with name.
+      // Get products whose name starts with the parameter value.
       IQueryable<Product>? products = db.Products.Where(
         p => p.ProductName.StartsWith(productNameStartsWith));
 
