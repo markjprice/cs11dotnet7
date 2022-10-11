@@ -16,7 +16,7 @@ If you have Visual Studio 2022 for Windows and Visual Studio Code and its C# ext
 - [/vscode](/vscode): Visual Studio Code workspace files and projects for each chapter
 
 ## Sibling books
-![Sibling books](B18857_01_01.png)
+![Sibling books](images/B18857_01_01.png)
 
 [GitHub repository for Apps and Services with .NET 7](https://github.com/markjprice/apps-services-net7)
 
