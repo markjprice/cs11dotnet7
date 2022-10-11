@@ -1,4 +1,4 @@
-[Improvements & Errata - list of corrections](errata.md)
+[Improvements & Errata - list of corrections](docs/errata)
 
 # C# 11 and .NET 7 - Modern Cross-Platform Development Fundamentals, Seventh Edition
 
@@ -48,7 +48,8 @@ Supplementary print book materials available to download:
 ## Important
 Corrections for typos and other mistakes and improvements like refactoring code. Useful links to other related material. 
 - [Book Links](book-links.md)
-- [Improvements & Errata - list of corrections](errata.md)
+- [Improvements & Errata - list of corrections](docs/errata)
+- [Seventh edition's support for .NET 8](docs/dotnet8.md)
 
 ## Microsoft .NET community support
 - .NET Developer Community: https://dotnet.microsoft.com/platform/community
