@@ -4,36 +4,41 @@
 
 - [Exploring code using .NET Interactive Notebooks](#exploring-code-using-net-interactive-notebooks)
   - [Creating a notebook](#creating-a-notebook)
+  - [Updating the extension](#updating-the-extension)
   - [Writing and running code in a notebook](#writing-and-running-code-in-a-notebook)
   - [Saving a notebook](#saving-a-notebook)
   - [Adding Markdown and special commands to a notebook](#adding-markdown-and-special-commands-to-a-notebook)
   - [Executing code in multiple cells](#executing-code-in-multiple-cells)
   - [Using .NET Interactive Notebooks for the code in this book](#using-net-interactive-notebooks-for-the-code-in-this-book)
 
-.NET Interactive Notebooks makes writing code even easier than top-level programs. It requires Visual Studio Code, so if you did not install it and the .NET Interactive Notebooks extension earlier, please install them now.
+.NET Interactive Notebooks makes writing code even easier than top-level programs. It requires Visual Studio Code, so if you did not install it and the .NET Interactive Notebooks extension earlier, then please install them now.
 
-Visual Studio 2022 does have its own extension for notebooks named Notebook Editor that was created by Microsoft's machine learning team. It is not as mature as the .NET Interactive Notebooks extension for Visual Studio Code, so I do not recommend it. You can learn more and install Notebook Editor from the following link:
-
-https://marketplace.visualstudio.com/items?itemName=MLNET.notebook
+Visual Studio 2022 does have its own extension for notebooks named **Notebook Editor** that was created by Microsoft's machine learning team. It is not as mature as the **.NET Interactive Notebooks** extension for Visual Studio Code, so I do not recommend it. You can learn more and install **Notebook Editor** from the following link: https://marketplace.visualstudio.com/items?itemName=MLNET.notebook
 
 ## Creating a notebook
+
 First, we need to create a notebook:
+
 1. In Visual Studio Code, navigate to **File** | **Close Workspace**.
 2. Navigate to **View** | **Command Palette**.
-3. Type .net inter, and then select .NET Interactive: Create new blank notebook, as shown in *Figure 1.16*:
+3. Type `.net inter`, and then select **.NET Interactive: Create new blank notebook**, as shown in *Figure 1.16*:
    
 ![Figure 1.16: Creating a new blank .NET notebook](images/B18856_01_16.png)
 *Figure 1.16: Creating a new blank .NET notebook*
 
-1. When prompted to select the file extension, choose **Create as '.dib'**.
+4. When prompted to select the file extension, choose **Create as '.dib'**.
 
 > `.dib` is an experimental file format defined by Microsoft to avoid confusion and compatibility issues with the `.ipynb` format used by Python interactive notebooks. The file extension was historically only for Jupyter notebooks that can contain an interactive (I) mix of data, Python code (PY), and output in a notebook file (NB). With .NET Interactive Notebooks, the concept has expanded to allow a mix of C#, F#, SQL, HTML, JavaScript, Markdown, and other languages. `.dib` is polyglot, meaning it supports mixed languages. Conversion between the `.dib` and `.ipynb` file formats is supported.
 
 5. Select C# for the default language for code cells in the notebook.
 
-If a newer version of .NET Interactive is available, you might have to wait for it to uninstall the older version and install the newer one. Navigate to View | Output and select .NET Interactive : diagnostics in the drop-down list. Please be patient. It can take a few minutes for the notebook to appear because it must start up a hosting environment for .NET. If nothing happens after a few minutes, then close Visual Studio Code and restart it.
+## Updating the extension
 
-Once the .NET Interactive Notebooks extension is downloaded and installed, the OUTPUT window diagnostics will show that a kernel process has started (your process numbers will be different from the output below), as shown in the following output:
+If a newer version of .NET Interactive is available, you might have to wait for it to uninstall the older version and install the newer one. 
+
+1. Navigate to **View** | **Output** and then select **.NET Interactive : diagnostics** in the drop-down list. Please be patient. It can take a few minutes for the notebook to appear because it must start up a hosting environment for .NET. If nothing happens after a few minutes, then close Visual Studio Code and restart it.
+
+2. Once the .NET Interactive Notebooks extension is downloaded and installed, the **OUTPUT** window diagnostics will show that a kernel process has started (your process numbers will be different from the output below), as shown in the following output:
 ```
 Extension started for VS Code Stable.
 Started process 16088: dotnet tool run dotnet-interactive -- notebook-parser
@@ -48,7 +53,6 @@ Next, we can write code in the notebook cells:
 1. The first cell should already be set to **C# (.NET Interactive)**, but if it is set to anything else, then click the language selector in the bottom-right corner of the code cell and then select **C# (.NET Interactive)** as the language mode for that cell, and note your other choices of language for a code cell, as shown in *Figure 1.17*:
 
 ![Figure 1.17: Changing the language for a code cell in a .NET Interactive notebook](images/B18856_01_17.png)
- 
 *Figure 1.17: Changing the language for a code cell in a .NET Interactive notebook*
 
 2. Inside the **C# (.NET Interactive)** code cell, enter a statement to output a message to the console, and note that you do not need to end the statement with a semicolon, as you normally would in a full application, as shown in the following code:
@@ -60,7 +64,6 @@ Console.WriteLine("Hello, .NET Interactive!")
 3. Click the **Execute Cell** button to the left of the code cell and note the output that appears under the code cell, as shown in *Figure 1.18*:
 
 ![Figure 1.18: Executing a cell in a .NET Interactive notebook and seeing the output below](images/B18856_01_18.png)
-
 *Figure 1.18: Executing a cell in a .NET Interactive notebook and seeing the output below*
 
 ## Saving a notebook
@@ -94,7 +97,6 @@ Mixing *rich* **text** and code is cool!
 7. Click the **Execute Cell** button and note the output, as shown in *Figure 1.19*:
  
 ![Figure 1.19: Mixing Markdown, code, and special commands in a .NET Interactive notebook](images/B18856_01_19.png)
-
 *Figure 1.19: Mixing Markdown, code, and special commands in a .NET Interactive notebook*
 
 ## Executing code in multiple cells
@@ -109,14 +111,13 @@ int number = 8;
 ```cs
 Console.WriteLine(number);
 ```
-3. Note the second code cell does not know about the number variable because it was defined and assigned in another code cell, aka context, as shown in Figure 1.20:
+3. Note the second code cell does not know about the number variable because it was defined and assigned in another code cell, aka context, as shown in *Figure 1.20*:
 
 ![Figure 1.20: The number variable does not exist in the current cell or context](images/B18856_01_20.png)
-
 *Figure 1.20: The number variable does not exist in the current cell or context*
 
-4. In the first cell, click the Execute Cell button to declare and assign a value to the variable.
-5. In the second cell, click the Execute Cell button to output the number variable, and note that this works. (Alternatively, in the first cell, you can click the Execute Cell and Below button in the mini-toolbar in the top-right corner of that cell.)
+4. In the first cell, click the **Execute Cell** button to declare and assign a value to the variable.
+5. In the second cell, click the **Execute Cell** button to output the number variable, and note that this works. (Alternatively, in the first cell, you can click the **Execute Cell and Below** button in the mini-toolbar in the top-right corner of that cell.)
 
 > **Good Practice**: If you have related code split between two or more cells, remember to execute the preceding cells before executing the subsequent cells. At the top of the notebook, there are the following buttons: **Clear Outputs** and **Run All**. These are very handy because you can click one and then the other to ensure that all code cells are executed properly.
 
