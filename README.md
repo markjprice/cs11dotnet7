@@ -43,7 +43,7 @@ The appendix is available to download as a PDF:
 - Appendix A, Answers to the Test Your Knowledge Questions (coming November 2022)
 
 Supplementary print book materials available to download:
-- Color images of the screenshots/diagrams used in this book (coming November 2022)
+- Color images of the screenshots/diagrams used in this book: https://static.packt-cdn.com/downloads/9781803237800_ColorImages.pdf
 
 ## Important
 Corrections for typos and other mistakes and improvements like refactoring code. Useful links to other related material. 
