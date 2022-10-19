@@ -1,6 +1,6 @@
 # Exploring code using .NET Interactive Notebooks
 
-> This is a bonus section for Chapter 1.
+> This is an optional bonus section for Chapter 1. It is not required to complete the rest of the book.
 
 - [Exploring code using .NET Interactive Notebooks](#exploring-code-using-net-interactive-notebooks)
   - [Creating a notebook](#creating-a-notebook)

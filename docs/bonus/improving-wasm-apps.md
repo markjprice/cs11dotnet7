@@ -1,3 +1,3 @@
 # Improving Blazor WebAssembly apps
 
-This is a bonus section for Chapter 16.
+> This is an optional bonus section for Chapter 16. It is not required to complete the rest of the book.

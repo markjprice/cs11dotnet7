@@ -1,3 +1,3 @@
 # Working with network resources
 
-This is a bonus section for Chapter 8.
+> This is an optional bonus section for Chapter 8. It is not required to complete the rest of the book.
