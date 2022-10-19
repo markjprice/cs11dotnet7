@@ -2,6 +2,14 @@
 
 > This is a bonus section for Chapter 1.
 
+- [Exploring code using .NET Interactive Notebooks](#exploring-code-using-net-interactive-notebooks)
+  - [Creating a notebook](#creating-a-notebook)
+  - [Writing and running code in a notebook](#writing-and-running-code-in-a-notebook)
+  - [Saving a notebook](#saving-a-notebook)
+  - [Adding Markdown and special commands to a notebook](#adding-markdown-and-special-commands-to-a-notebook)
+  - [Executing code in multiple cells](#executing-code-in-multiple-cells)
+  - [Using .NET Interactive Notebooks for the code in this book](#using-net-interactive-notebooks-for-the-code-in-this-book)
+
 .NET Interactive Notebooks makes writing code even easier than top-level programs. It requires Visual Studio Code, so if you did not install it and the .NET Interactive Notebooks extension earlier, please install them now.
 
 Visual Studio 2022 does have its own extension for notebooks named Notebook Editor that was created by Microsoft's machine learning team. It is not as mature as the .NET Interactive Notebooks extension for Visual Studio Code, so I do not recommend it. You can learn more and install Notebook Editor from the following link:
