@@ -2,7 +2,7 @@
 
 # C# 11 and .NET 7 - Modern Cross-Platform Development Fundamentals, Seventh Edition
 
-Coming November 2022.
+Available Amazon in paperback and Kindle editions from November 8, 2022. Pre-orders open now: https://packt.link/0ypql
 
 The previous edition was published on Tuesday, November 9, 2021. Order today from [Packt](https://www.packtpub.com/product/c-10-and-net-6-modern-cross-platform-development-sixth-edition/9781801077361), [Amazon.com](https://www.amazon.com/10-NET-Cross-Platform-Development-websites-dp-1801077363/dp/1801077363/), [Amazon.co.uk](https://www.amazon.co.uk/10-NET-Cross-Platform-Development-websites-dp-1801077363/dp/1801077363/), [Amazon.com.au](https://www.amazon.com.au/10-NET-Cross-Platform-Development-websites-ebook/dp/B09JV37DM6/), and all good book stores. My author page on Amazon: https://www.amazon.com/Mark-J-Price/e/B071DW3QGN/ 
 
