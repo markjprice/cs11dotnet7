@@ -2,11 +2,11 @@
 
 # C# 11 and .NET 7 - Modern Cross-Platform Development Fundamentals, Seventh Edition
 
-Available on Amazon in paperback and Kindle editions from November 8, 2022 with pre-orders open now: https://packt.link/0ypql
-
-Available on Packt in ebook or paperback+ebook editions from November 8, 2022 with pre-orders open now  : https://packt.link/p2uyD
+Available on Amazon in Paperback or Kindle editions from November 8, 2022 with pre-orders open now: https://packt.link/0ypql
 
 My author page on Amazon: https://www.amazon.com/Mark-J-Price/e/B071DW3QGN/ 
+
+Available on Packt's website in eBook or Print + eBook editions, or included with a Packt Subscription, from November 8, 2022 with pre-orders open now  : https://packt.link/p2uyD
 
 All of my books on Packt's website: https://subscription.packtpub.com/search?query=mark+j.+price
 
