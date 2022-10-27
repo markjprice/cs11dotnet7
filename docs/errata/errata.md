@@ -4,11 +4,16 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 
 - [Errata](#errata)
 - [Print Book](#print-book)
+  - [Page 165 - Running unit tests using Visual Studio Code](#page-165---running-unit-tests-using-visual-studio-code)
 - [Bonus Content](#bonus-content)
 
 # Print Book
 
-None so far.
+## Page 165 - Running unit tests using Visual Studio Code
+
+> Thanks to [kwatsonkairosmgt](https://github.com/kwatsonkairosmgt) for raising this [issue on 27 October 2022](https://github.com/markjprice/cs10dotnet6/issues/106).
+
+In Step 1, the project name `CalculatorLibUnitTest` should be `CalculatorLibUnitTests`.
 
 # Bonus Content 
 
