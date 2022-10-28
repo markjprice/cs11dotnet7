@@ -136,6 +136,11 @@ public class Northwind : DbContext
         "Initial Catalog=Northwind;" +
         "Integrated Security=true;" +
         "MultipleActiveResultSets=true;";
+	
+    ConsoleColor previousColor = ForegroundColor;
+    ForegroundColor = ConsoleColor.DarkYellow;
+    WriteLine($"Connection: {connection}");
+    ForegroundColor = previousColor;
 
     optionsBuilder.UseSqlServer(connection);
   }
