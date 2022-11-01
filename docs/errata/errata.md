@@ -4,6 +4,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 
 - [Page n - Understanding the journey to one .NET and Understanding .NET support](#page-n---understanding-the-journey-to-one-net-and-understanding-net-support)
 - [Page n - Formatting using numbered positional arguments](#page-n---formatting-using-numbered-positional-arguments)
+- [Page n - Getting text input from the user](#page-n---getting-text-input-from-the-user)
 - [Page n - Running unit tests using Visual Studio Code](#page-n---running-unit-tests-using-visual-studio-code)
 
 # Page n - Understanding the journey to one .NET and Understanding .NET support
@@ -49,6 +50,10 @@ Console.WriteLine(
  "{0} {1} lived in {2} and worked in the {3} team at {4}.", 
  "Roger", "Cevung", "Stockholm", "Education", "Optimizely");
 ```
+
+# Page n - Getting text input from the user
+
+In Step 3, I wrote, "For the `firstName` variable" when I should have written, "For the `age` variable".
 
 # Page n - Running unit tests using Visual Studio Code
 
