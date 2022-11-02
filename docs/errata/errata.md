@@ -3,6 +3,7 @@
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
 - [Page n - Understanding the journey to one .NET and Understanding .NET support](#page-n---understanding-the-journey-to-one-net-and-understanding-net-support)
+- [Page n - Getting definitions of types and their members](#page-n---getting-definitions-of-types-and-their-members)
 - [Page n - Formatting using numbered positional arguments](#page-n---formatting-using-numbered-positional-arguments)
 - [Page n - Getting text input from the user](#page-n---getting-text-input-from-the-user)
 - [Page n - Running unit tests using Visual Studio Code](#page-n---running-unit-tests-using-visual-studio-code)
@@ -18,6 +19,31 @@ On October 11, 2022, the .NET team changed the name again, to [**Standard Suppor
 On October 28, 2022, the .NET team changed the name *again*, to [**Standard Term Support (STS)**](https://twitter.com/mairacw/status/1585789100879069185), probably because an initialism of **SS** is problematic and internal code and configuration was already using `sts`. Sadly, it was too late to update the PDFs that are sent to print.
 
 *Sigh.* Such are the perils of trying to be up-to-date on release day.
+
+# Page n - Getting definitions of types and their members
+
+In Step 3, I wrote, "Click inside `int` and then right-click and choose **Go To Definition**." 
+
+This used to show code reverse-engineered **from metadata** for the selected type (see *Figure 1.1*), including the comments that I talk about in the book, but it now shows **Source Link** code (see *Figure 1.2*) which does not have comments.
+
+![from metadata code](images/B18856_01_01.png)
+
+*Figure 1.1: [from metadata] code*
+
+![SourceLink code](images/B18856_01_02.png)
+
+*Figure 1.2: [SourceLink] code*
+
+To change back to the original behavior that is described in the book, please follow these steps:
+
+1. Navigate to **Tools** | **Options**.
+2. In the **Options** dialog, navigate to **Text Editor** | **C#** | **Advanced**.
+3. In the **Go To Definition** section, clear the check box named **Enable navigation to Source Link and Embedded sources**, as shown in *Figure 1.3*.
+4. Click **OK**.
+
+![Disabling Source Link for the Go To Definition feature](images/B18856_01_03.png)
+
+*Figure 1.3: Disabling Source Link for the Go To Definition feature*
 
 # Page n - Formatting using numbered positional arguments
 
