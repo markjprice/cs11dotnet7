@@ -2,11 +2,21 @@
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
+- [Page n - Pros and cons of the .NET Interactive Notebooks extension](#page-n---pros-and-cons-of-the-net-interactive-notebooks-extension)
+  - [Page n - Downloading and installing Visual Studio Code](#page-n---downloading-and-installing-visual-studio-code)
 - [Page n - Understanding the journey to one .NET and Understanding .NET support](#page-n---understanding-the-journey-to-one-net-and-understanding-net-support)
 - [Page n - Getting definitions of types and their members](#page-n---getting-definitions-of-types-and-their-members)
 - [Page n - Formatting using numbered positional arguments](#page-n---formatting-using-numbered-positional-arguments)
 - [Page n - Getting text input from the user](#page-n---getting-text-input-from-the-user)
 - [Page n - Running unit tests using Visual Studio Code](#page-n---running-unit-tests-using-visual-studio-code)
+
+# Page n - Pros and cons of the .NET Interactive Notebooks extension
+
+The **.NET Interactive Notebooks** extension has been renamed to **Polyglot Notebooks**. It still retains its original identifier `ms-dotnettools.dotnet-interactive-vscode`.
+
+## Page n - Downloading and installing Visual Studio Code
+
+The **.NET Interactive Notebooks** extension has been renamed to **Polyglot Notebooks**. It still retains its original identifier `ms-dotnettools.dotnet-interactive-vscode`.
 
 # Page n - Understanding the journey to one .NET and Understanding .NET support
 
