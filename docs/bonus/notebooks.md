@@ -1,19 +1,19 @@
-# Exploring code using .NET Interactive Notebooks
+# Exploring code using Polyglot Notebooks
 
 > This is an optional bonus section for Chapter 1. It is not required to complete the rest of the book.
 
-- [Exploring code using .NET Interactive Notebooks](#exploring-code-using-net-interactive-notebooks)
+- [Exploring code using Polyglot Notebooks](#exploring-code-using-polyglot-notebooks)
   - [Creating a notebook](#creating-a-notebook)
   - [Updating the extension](#updating-the-extension)
   - [Writing and running code in a notebook](#writing-and-running-code-in-a-notebook)
   - [Saving a notebook](#saving-a-notebook)
   - [Adding Markdown and special commands to a notebook](#adding-markdown-and-special-commands-to-a-notebook)
   - [Executing code in multiple cells](#executing-code-in-multiple-cells)
-  - [Using .NET Interactive Notebooks for the code in this book](#using-net-interactive-notebooks-for-the-code-in-this-book)
+  - [Using Polyglot Notebooks for the code in this book](#using-polyglot-notebooks-for-the-code-in-this-book)
 
-.NET Interactive Notebooks makes writing code even easier than top-level programs. It requires Visual Studio Code, so if you did not install it and the .NET Interactive Notebooks extension earlier, then please install them now.
+Polyglot Notebooks makes writing code even easier than top-level programs. It requires Visual Studio Code, so if you did not install it and the Polyglot Notebooks extension earlier, then please install them now.
 
-Visual Studio 2022 does have its own extension for notebooks named **Notebook Editor** that was created by Microsoft's machine learning team. It is not as mature as the **.NET Interactive Notebooks** extension for Visual Studio Code, so I do not recommend it. You can learn more and install **Notebook Editor** from the following link: https://marketplace.visualstudio.com/items?itemName=MLNET.notebook
+Visual Studio 2022 does have its own extension for notebooks named **Notebook Editor** that was created by Microsoft's machine learning team. It is not as mature as the **Polyglot Notebooks** extension for Visual Studio Code, so I do not recommend it. You can learn more and install **Notebook Editor** from the following link: https://marketplace.visualstudio.com/items?itemName=MLNET.notebook
 
 ## Creating a notebook
 
@@ -34,11 +34,11 @@ First, we need to create a notebook:
 
 ## Updating the extension
 
-If a newer version of .NET Interactive is available, you might have to wait for it to uninstall the older version and install the newer one. 
+If a newer version of Polyglot Notebooks is available, you might have to wait for it to uninstall the older version and install the newer one. 
 
-1. Navigate to **View** | **Output** and then select **.NET Interactive : diagnostics** in the drop-down list. Please be patient. It can take a few minutes for the notebook to appear because it must start up a hosting environment for .NET. If nothing happens after a few minutes, then close Visual Studio Code and restart it.
+1. Navigate to **View** | **Output** and then select **Polyglot Notebook : diagnostics** in the drop-down list. Please be patient. It can take a few minutes for the notebook to appear because it must start up a hosting environment for .NET. If nothing happens after a few minutes, then close Visual Studio Code and restart it.
 
-2. Once the .NET Interactive Notebooks extension is downloaded and installed, the **OUTPUT** window diagnostics will show that a kernel process has started (your process numbers will be different from the output below), as shown in the following output:
+2. Once the Polyglot Notebooks extension is downloaded and installed, the **OUTPUT** window diagnostics will show that a kernel process has started (your process numbers will be different from the output below), as shown in the following output:
 ```
 Extension started for VS Code Stable.
 Started process 16088: dotnet tool run dotnet-interactive -- notebook-parser
@@ -50,12 +50,12 @@ Kernel for 'untitled:Untitled-1.dib?dotnet-interactive' started (16392).
 
 Next, we can write code in the notebook cells:
 
-1. The first cell should already be set to **C# (.NET Interactive)**, but if it is set to anything else, then click the language selector in the bottom-right corner of the code cell and then select **C# (.NET Interactive)** as the language mode for that cell, and note your other choices of language for a code cell, as shown in *Figure 1.17*:
+1. The first cell should already be set to **C# (Polyglot Notebook)**, but if it is set to anything else, then click the language selector in the bottom-right corner of the code cell and then select **C# (Polyglot Notebook)** as the language mode for that cell, and note your other choices of language for a code cell, as shown in *Figure 1.17*:
 
-![Figure 1.17: Changing the language for a code cell in a .NET Interactive notebook](images/B18856_01_17.png)
-*Figure 1.17: Changing the language for a code cell in a .NET Interactive notebook*
+![Figure 1.17: Changing the language for a code cell in a Polyglot Notebook](images/B18856_01_17.png)
+*Figure 1.17: Changing the language for a code cell in a Polyglot Notebook*
 
-2. Inside the **C# (.NET Interactive)** code cell, enter a statement to output a message to the console, and note that you do not need to end the statement with a semicolon, as you normally would in a full application, as shown in the following code:
+2. Inside the **C# (Polyglot Notebook)** code cell, enter a statement to output a message to the console, and note that you do not need to end the statement with a semicolon, as you normally would in a full application, as shown in the following code:
 
 ```cs
 Console.WriteLine("Hello, .NET Interactive!")
@@ -63,8 +63,8 @@ Console.WriteLine("Hello, .NET Interactive!")
 
 3. Click the **Execute Cell** button to the left of the code cell and note the output that appears under the code cell, as shown in *Figure 1.18*:
 
-![Figure 1.18: Executing a cell in a .NET Interactive notebook and seeing the output below](images/B18856_01_18.png)
-*Figure 1.18: Executing a cell in a .NET Interactive notebook and seeing the output below*
+![Figure 1.18: Executing a cell in a Polyglot Notebook and seeing the output below](images/B18856_01_18.png)
+*Figure 1.18: Executing a cell in a Polyglot Notebook and seeing the output below*
 
 ## Saving a notebook
 
@@ -96,8 +96,8 @@ Mixing *rich* **text** and code is cool!
 ```
 7. Click the **Execute Cell** button and note the output, as shown in *Figure 1.19*:
  
-![Figure 1.19: Mixing Markdown, code, and special commands in a .NET Interactive notebook](images/B18856_01_19.png)
-*Figure 1.19: Mixing Markdown, code, and special commands in a .NET Interactive notebook*
+![Figure 1.19: Mixing Markdown, code, and special commands in a Polyglot Notebook](images/B18856_01_19.png)
+*Figure 1.19: Mixing Markdown, code, and special commands in a Polyglot Notebook*
 
 ## Executing code in multiple cells
 
@@ -121,7 +121,7 @@ Console.WriteLine(number);
 
 > **Good Practice**: If you have related code split between two or more cells, remember to execute the preceding cells before executing the subsequent cells. At the top of the notebook, there are the following buttons: **Clear Outputs** and **Run All**. These are very handy because you can click one and then the other to ensure that all code cells are executed properly.
 
-## Using .NET Interactive Notebooks for the code in this book
+## Using Polyglot Notebooks for the code in this book
 
 Throughout the rest of the chapters, I will not give explicit instructions to use notebooks, but the GitHub repository for the book has solution notebooks when appropriate. I expect many readers will want to run my pre-created notebooks for language and library features covered in Chapters 1 to 11 that they want to see in action and learn about without having to write a complete application:
 
