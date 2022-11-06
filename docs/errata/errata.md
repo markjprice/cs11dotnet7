@@ -14,7 +14,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 
 The **.NET Interactive Notebooks** extension has been renamed to **Polyglot Notebooks**. It still retains its original identifier `ms-dotnettools.dotnet-interactive-vscode`. 
 
-> Read more here: https://devblogs.microsoft.com/dotnet/dotnet-interactive-notebooks-is-now-polyglot-notebooks/
+> Read more here: https://devblogs.microsoft.com/dotnet/dotnet-interactive-notebooks-is-now-polyglot-notebooks/#why-the-name-change
 
 ## Page n - Downloading and installing Visual Studio Code
 
