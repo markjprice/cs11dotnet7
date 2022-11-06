@@ -12,7 +12,9 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 
 # Page n - Pros and cons of the .NET Interactive Notebooks extension
 
-The **.NET Interactive Notebooks** extension has been renamed to **Polyglot Notebooks**. It still retains its original identifier `ms-dotnettools.dotnet-interactive-vscode`.
+The **.NET Interactive Notebooks** extension has been renamed to **Polyglot Notebooks**. It still retains its original identifier `ms-dotnettools.dotnet-interactive-vscode`. 
+
+> Read more here: https://devblogs.microsoft.com/dotnet/dotnet-interactive-notebooks-is-now-polyglot-notebooks/
 
 ## Page n - Downloading and installing Visual Studio Code
 

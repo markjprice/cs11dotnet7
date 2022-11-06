@@ -1,6 +1,6 @@
 # Exploring code using Polyglot Notebooks
 
-> The **Polyglot Notebooks** extension was previously named **.NET Interactive Notebooks**. But it retains its original identifier: `ms-dotnettools.dotnet-interactive-vscode`.
+> The **Polyglot Notebooks** extension was previously named **.NET Interactive Notebooks**. But it retains its original identifier: `ms-dotnettools.dotnet-interactive-vscode`. Read more here: https://devblogs.microsoft.com/dotnet/dotnet-interactive-notebooks-is-now-polyglot-notebooks/
 
 > This is an optional bonus section for Chapter 1. It is not required to complete the rest of the book.
 
