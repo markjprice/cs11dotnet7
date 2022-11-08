@@ -4,20 +4,20 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 
 > Page numbers will be added as soon as I get my own copy of the final book. ;)
 
-- [Page n - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code](#page-n---pros-and-cons-of-the-net-interactive-notebooks-extension-downloading-and-installing-visual-studio-code)
-- [Page n - Understanding the journey to one .NET and Understanding .NET support](#page-n---understanding-the-journey-to-one-net-and-understanding-net-support)
-- [Page n - Getting definitions of types and their members](#page-n---getting-definitions-of-types-and-their-members)
-- [Page n - Formatting using numbered positional arguments](#page-n---formatting-using-numbered-positional-arguments)
-- [Page n - Getting text input from the user](#page-n---getting-text-input-from-the-user)
-- [Page n - Running unit tests using Visual Studio Code](#page-n---running-unit-tests-using-visual-studio-code)
+- [Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code](#page-4-8---pros-and-cons-of-the-net-interactive-notebooks-extension-downloading-and-installing-visual-studio-code)
+- [Page 11 - Understanding the journey to one .NET and Understanding .NET support](#page-11---understanding-the-journey-to-one-net-and-understanding-net-support)
+- [Page 37 - Getting definitions of types and their members](#page-37---getting-definitions-of-types-and-their-members)
+- [Page 83 - Formatting using numbered positional arguments](#page-83---formatting-using-numbered-positional-arguments)
+- [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
+- [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 
-# Page n - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
+# Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
 
 The **.NET Interactive Notebooks** extension has been renamed to **Polyglot Notebooks**. It still retains its original identifier `ms-dotnettools.dotnet-interactive-vscode`. The engine is still named *.NET Interactive*.
 
 > Read more here: https://devblogs.microsoft.com/dotnet/dotnet-interactive-notebooks-is-now-polyglot-notebooks/#why-the-name-change
 
-# Page n - Understanding the journey to one .NET and Understanding .NET support
+# Page 11 - Understanding the journey to one .NET and Understanding .NET support
 
 Even-numbered .NET releases like .NET 6 and .NET 8 have a support level named **Long Term Support (LTS)** with a duration of 3 years. Odd-numbered .NET releases like .NET 5 and .NET 7 had a support level named **Current** with a duration of 18 months. 
 
@@ -29,7 +29,7 @@ On October 28, 2022, the .NET team changed the name *again*, to [**Standard Term
 
 *Sigh.* Such are the perils of trying to be up-to-date on release day.
 
-# Page n - Getting definitions of types and their members
+# Page 37 - Getting definitions of types and their members
 
 In Step 3, I wrote, "Click inside `int` and then right-click and choose **Go To Definition**." 
 
@@ -54,7 +54,7 @@ To change back to the original Visual Studio 2022 behavior that is described in 
 
 *Figure 1.3: Disabling Source Link for the Go To Definition feature*
 
-# Page n - Formatting using numbered positional arguments
+# Page 83 - Formatting using numbered positional arguments
 
 At the end of the section, I say, "The `Write`, `WriteLine`, and `Format` methods can have up to four numbered arguments, named `arg0`, `arg1`, `arg2`, and `arg3`." 
 
@@ -72,11 +72,11 @@ Console.WriteLine(
  "Roger", "Cevung", "Stockholm", "Education", "Optimizely");
 ```
 
-# Page n - Getting text input from the user
+# Page 86 - Getting text input from the user
 
 In Step 3, I wrote, "For the `firstName` variable" when I should have written, "For the `age` variable".
 
-# Page n - Running unit tests using Visual Studio Code
+# Page 188 - Running unit tests using Visual Studio Code
 
 > Thanks to [kwatsonkairosmgt](https://github.com/kwatsonkairosmgt) for raising this [issue on 27 October 2022](https://github.com/markjprice/cs10dotnet6/issues/106).
 
