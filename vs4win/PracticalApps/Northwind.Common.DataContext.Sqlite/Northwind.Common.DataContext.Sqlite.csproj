@@ -12,7 +12,7 @@
 
 	<ItemGroup>
 		<PackageReference
-			Include="Microsoft.EntityFrameworkCore.SQLite" Version="7.0.0-*" />
+			Include="Microsoft.EntityFrameworkCore.SQLite" Version="7.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
