@@ -6,18 +6,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-	<ItemGroup>
-		<Using Include="System.Console" Static="true" />
-	</ItemGroup>
+  <ItemGroup>
+    <Using Include="System.Console" Static="true" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<PackageReference
-			Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0-*" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference
+      Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include=
+  <ItemGroup>
+    <ProjectReference Include=
       "..\Northwind.Common.EntityModels.SqlServer\Northwind.Common.EntityModels.SqlServer.csproj" />
-	</ItemGroup>
+  </ItemGroup>
 
 </Project>
