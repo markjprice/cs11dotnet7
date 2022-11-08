@@ -4,24 +4,20 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-		
-		<!--remove the elements below after GA release-->
-		<LangVersion>preview</LangVersion>
-		<EnablePreviewFeatures>true</EnablePreviewFeatures>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="wwwroot\favicon.ico" />
   </ItemGroup>
 
-	<ItemGroup>
-		<Using Include="System.Console" Static="true" />
-	</ItemGroup>
+  <ItemGroup>
+    <Using Include="System.Console" Static="true" />
+  </ItemGroup>
 
-	<!-- change Sqlite to SqlServer if you prefer -->
-	<ItemGroup>
-		<ProjectReference Include="..\Northwind.Common.DataContext.Sqlite\Northwind.Common.DataContext.Sqlite.csproj" />
-		<ProjectReference Include="..\Northwind.Razor.Employees\Northwind.Razor.Employees.csproj" />
-	</ItemGroup>
+  <!-- change Sqlite to SqlServer if you prefer -->
+  <ItemGroup>
+    <ProjectReference Include="..\Northwind.Common.DataContext.Sqlite\Northwind.Common.DataContext.Sqlite.csproj" />
+    <ProjectReference Include="..\Northwind.Razor.Employees\Northwind.Razor.Employees.csproj" />
+  </ItemGroup>
 
 </Project>
