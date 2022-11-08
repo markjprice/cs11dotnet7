@@ -33,19 +33,19 @@ On October 28, 2022, the .NET team changed the name *again*, to [**Standard Term
 
 In Step 3, I wrote, "Click inside `int` and then right-click and choose **Go To Definition**." 
 
-This used to show code reverse-engineered **from metadata** for the selected type (see *Figure 1.1*), including the comments that I talk about in the book, but it now shows **Source Link** code (see *Figure 1.2*) which does not have comments.
+Visual Studio 2022 used to show code reverse-engineered **from metadata** for the selected type like `int` (see *Figure 1.1*), including the comments that I talk about in the book, but it now shows **Source Link** code (see *Figure 1.2*) which does not have comments.
 
 ![from metadata code](images/B18856_01_01.png)
 
-*Figure 1.1: [from metadata] code*
+*Figure 1.1: Go To Definition file tab generated from metadata*
 
 ![SourceLink code](images/B18856_01_02.png)
 
-*Figure 1.2: [SourceLink] code*
+*Figure 1.2: Go To Definition file tab retrieved from embedded Source Link code*
 
-To change back to the original behavior that is described in the book, please follow these steps:
+To change back to the original Visual Studio 2022 behavior that is described in the book, please follow these steps:
 
-1. Navigate to **Tools** | **Options**.
+1. In Visual Studio 2022, navigate to **Tools** | **Options**.
 2. In the **Options** dialog, navigate to **Text Editor** | **C#** | **Advanced**.
 3. In the **Go To Definition** section, clear the check box named **Enable navigation to Source Link and Embedded sources**, as shown in *Figure 1.3*.
 4. Click **OK**.
@@ -56,31 +56,17 @@ To change back to the original behavior that is described in the book, please fo
 
 # Page n - Formatting using numbered positional arguments
 
-At the end of the section, I say, "The `Write`, `WriteLine`, and `Format` methods can have up to four numbered arguments, named `arg0`, 
-`arg1`, `arg2`, and `arg3`. If you need to pass more than four values, then you cannot name them, as shown in the following code:"
+At the end of the section, I say, "The `Write`, `WriteLine`, and `Format` methods can have up to four numbered arguments, named `arg0`, `arg1`, `arg2`, and `arg3`." 
+
+But the methods can only have up to *three* named arguments. I should have said, "The `Write`, `WriteLine`, and `Format` methods can have up to three numbered arguments, named `arg0`, `arg1`, and `arg2`. If you need to pass more than three values, then you cannot name the arguments using `arg0` and so on, as shown in the following code:"
 
 ```cs
-// Four parameter values can use named arguments.
-Console.WriteLine(
- format: "{0} {1} lived in {2}, {3}.", 
- arg0: "Roger", arg1: "Cevung", 
- arg2: "Stockholm", arg3: "Sweden");
-
-// Five or more parameter values cannot use named arguments.
-Console.WriteLine(
- format: "{0} {1} lived in {2}, {3} and worked in the {4} team at {5}.", 
- "Roger", "Cevung", "Stockholm", "Sweden", "Education", "Optimizely");
-```
-
-But the methods can only have up to *three* named arguments. I should have said, "The `Write`, `WriteLine`, and `Format` methods can have up to three numbered arguments, named `arg0`, `arg1`, and `arg2`. If you need to pass more than three values, then you cannot name them, as shown in the following code:"
-
-```cs
-// Three parameter values can use named arguments.
+// Passing three values can use named arguments.
 Console.WriteLine(
  format: "{0} {1} lived in {2}.", 
  arg0: "Roger", arg1: "Cevung", arg2: "Stockholm");
 
-// Four or more parameter values cannot use named arguments.
+// Passing four or more values cannot use named arguments.
 Console.WriteLine(
  "{0} {1} lived in {2} and worked in the {3} team at {4}.", 
  "Roger", "Cevung", "Stockholm", "Education", "Optimizely");
