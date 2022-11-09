@@ -1,14 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>preview</LangVersion>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>11</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
-	<ItemGroup>
-		<Using Include="System.Console" Static="true" />
-	</ItemGroup>
+  <ItemGroup>
+    <Using Include="System.Console" Static="true" />
+  </ItemGroup>
 
 </Project>
