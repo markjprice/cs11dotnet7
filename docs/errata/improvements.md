@@ -1,8 +1,7 @@
-# Improvements
+**Improvements (1 item)**
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
-- [Improvements](#improvements)
 - [Print Book](#print-book)
   - [Page 153 - Writing a function that returns a value](#page-153---writing-a-function-that-returns-a-value)
 - [Bonus Content](#bonus-content)
