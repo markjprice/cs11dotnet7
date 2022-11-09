@@ -7,18 +7,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-	<ItemGroup>
-		<Using Include="System.Console" Static="true" />
-	</ItemGroup>
+  <ItemGroup>
+    <Using Include="System.Console" Static="true" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<Using Remove="System" />
-	</ItemGroup>
+  <ItemGroup>
+    <Using Remove="System" />
+  </ItemGroup>
 
-	<ItemGroup>
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-		<PackageReference Include="packt.csdotnet.sharedlibrary" Version="7.0.0" />
-		<PackageReference Include="dialectsoftware.collections.matrix" Version="1.0.0" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="packt.csdotnet.sharedlibrary" Version="7.0.0" />
+    <PackageReference Include="dialectsoftware.collections.matrix" Version="1.0.0" />
+  </ItemGroup>
 
 </Project>
