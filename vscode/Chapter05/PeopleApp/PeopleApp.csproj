@@ -1,19 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<OutputType>Exe</OutputType>
-		<TargetFramework>net7.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-	</PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
 
-	<ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\PacktLibraryModern\PacktLibraryModern.csproj" />
     <ProjectReference Include="..\PacktLibraryNetStandard2\PacktLibraryNetStandard2.csproj" />
-	</ItemGroup>
+  </ItemGroup>
 
-	<ItemGroup>
-		<Using Include="System.Console" Static="true" />
-	</ItemGroup>
+  <ItemGroup>
+    <Using Include="System.Console" Static="true" />
+  </ItemGroup>
 
 </Project>
