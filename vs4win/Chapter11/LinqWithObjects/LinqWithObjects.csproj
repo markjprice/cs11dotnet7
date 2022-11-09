@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-	  <Using Include="System.Console" Static="true" />
-	  <!--<Using Remove="System.Linq" />-->
+    <Using Include="System.Console" Static="true" />
+    <!--<Using Remove="System.Linq" />-->
   </ItemGroup>
 
 </Project>
