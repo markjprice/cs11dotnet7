@@ -6,7 +6,7 @@ Available on Amazon in Paperback or Kindle editions from November 8, 2022 with p
 
 My author page on Amazon: https://www.amazon.com/Mark-J-Price/e/B071DW3QGN/ 
 
-Available on Packt's website in eBook or Print + eBook editions, or included with a Packt Subscription, from November 8, 2022 with pre-orders open now  : https://packt.link/p2uyD
+Available on Packt's website in eBook or Print + eBook editions, or included with a Packt Subscription, from November 8, 2022 with pre-orders open now: https://packt.link/p2uyD
 
 All of my books on Packt's website: https://subscription.packtpub.com/search?query=mark+j.+price
 
@@ -41,11 +41,11 @@ If you have Visual Studio 2022 for Windows and Visual Studio Code and its C# ext
 - Chapter 16 Building User Interface Components Using Blazor
 
 ## Bonus content
-The appendix is available to download as a PDF:
-- Appendix A, Answers to the Test Your Knowledge Questions (coming November 2022)
 
-Supplementary print book materials available to download:
-- Color images of the screenshots/diagrams used in this book: https://static.packt-cdn.com/downloads/9781803237800_ColorImages.pdf
+The appendix and color figures are available to download as PDFs:
+
+- [Appendix A, Answers to the Test Your Knowledge Questions](docs/B18856_Appendix.pdf)
+- [Color images of the screenshots/diagrams used in this book](docs/9781803237800_ColorImages.pdf)
 
 ## Important
 Corrections for typos and other mistakes and improvements like refactoring code. Useful links to other related material. 
@@ -54,11 +54,11 @@ Corrections for typos and other mistakes and improvements like refactoring code.
 - [Seventh edition's support for .NET 8](docs/dotnet8.md)
 
 ## Microsoft .NET community support
-- .NET Developer Community: https://dotnet.microsoft.com/platform/community
-- .NET Tech Community Forums for topic discussions: https://techcommunity.microsoft.com/t5/net/ct-p/dotnet
-- Q&A for .NET to get your questions answered: https://docs.microsoft.com/en-us/answers/products/dotnet
-- Technical questions about the C# programming language: https://docs.microsoft.com/en-us/answers/topics/dotnet-csharp.html
-- If you'd like to apply to be a reviewer: https://authors.packtpub.com/reviewers/
+- [.NET Developer Community](https://dotnet.microsoft.com/platform/community)
+- [.NET Tech Community Forums for topic discussions](https://techcommunity.microsoft.com/t5/net/ct-p/dotnet)
+- [Q&A for .NET to get your questions answered](https://docs.microsoft.com/en-us/answers/products/dotnet)
+- [Technical questions about the C# programming language](https://docs.microsoft.com/en-us/answers/topics/dotnet-csharp.html)
+- [If you'd like to apply to be a reviewer](https://authors.packtpub.com/reviewers/)
 
 ## Interviews with me
 Podcast interviews with me:
