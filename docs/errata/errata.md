@@ -1,4 +1,4 @@
-**Errata (6 items)**
+**Errata (7 items)**
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -10,6 +10,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 83 - Formatting using numbered positional arguments](#page-83---formatting-using-numbered-positional-arguments)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
+- [Page 244 - Init-only properties](#page-244---init-only-properties)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
 
@@ -81,3 +82,9 @@ In Step 3, I wrote, "For the `firstName` variable" when I should have written, "
 > Thanks to [kwatsonkairosmgt](https://github.com/kwatsonkairosmgt) for raising this [issue on 27 October 2022](https://github.com/markjprice/cs10dotnet6/issues/106).
 
 In Step 1, the project name `CalculatorLibUnitTest` should be `CalculatorLibUnitTests`.
+
+# Page 244 - Init-only properties
+
+> Thanks to Bob Molloy for raising this issue via email.
+
+In Step 1, I say to add a new file named `Records.cs` to the `PacktLibraryNetStandard2` project/folder. I should have said to the `PacktLibraryModern` project/folder.
