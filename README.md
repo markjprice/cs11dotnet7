@@ -2,6 +2,8 @@
 
 # C# 11 and .NET 7 - Modern Cross-Platform Development Fundamentals, Seventh Edition
 
+You can read reviews for this book on [Amazon UK](https://www.amazon.co.uk/11-NET-Cross-Platform-Development-Fundamentals/dp/1803237805#customerReviews) and [Amazon US](https://www.amazon.com/11-NET-Cross-Platform-Development-Fundamentals/dp/1803237805#customerReviews).
+
 Available on Amazon in Paperback or Kindle editions from November 8, 2022 with pre-orders open now: https://packt.link/0ypql
 
 My author page on Amazon: https://www.amazon.com/Mark-J-Price/e/B071DW3QGN/ 
