@@ -11,6 +11,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
+- [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
 
@@ -88,3 +89,18 @@ In Step 1, the project name `CalculatorLibUnitTest` should be `CalculatorLibUnit
 > Thanks to Bob Molloy for raising this issue via email.
 
 In Step 1, I say to add a new file named `Records.cs` to the `PacktLibraryNetStandard2` project/folder. I should have said to the `PacktLibraryModern` project/folder.
+
+# Page 322 - Revealing the location of a type
+
+> Thanks to Bob Molloy for raising this issue via email.
+
+In Steps 2 and 5, I say to "Navigate to the top of the code file and note the assembly filename..."
+
+If you have Source Link enabled, then you will not see the filename. I recommend that you [disable Source Link](#page-37---getting-definitions-of-types-and-their-members).
+
+If you have Source Link disabled, then to see the filename you must expand the collapsed region. You will then find the assembly filename within the region, as shown in the following code:
+```cs
+#region Assembly System.Runtime, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+// C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.0\ref\net7.0\System.Runtime.dll
+#endregion
+```
