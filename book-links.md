@@ -2,7 +2,7 @@
   - [Visual Studio 2022 for Windows](#visual-studio-2022-for-windows)
   - [Visual Studio Code](#visual-studio-code)
   - [Other C# code editors and platforms](#other-c-code-editors-and-platforms)
-  - [.NET Interactive](#net-interactive)
+  - [.NET Interactive and Polyglot Notebooks](#net-interactive-and-polyglot-notebooks)
   - [Command Line Interfaces](#command-line-interfaces)
   - [.NET](#net)
   - [.NET performance improvements](#net-performance-improvements)
@@ -39,6 +39,7 @@
   - [Memory, reference and value types](#memory-reference-and-value-types)
   - [Null and nullability](#null-and-nullability)
   - [Inheritance](#inheritance)
+  - [Language design](#language-design)
 - [Chapter 7 - Packaging and Distributing .NET Types](#chapter-7---packaging-and-distributing-net-types)
   - [.NET versions](#net-versions)
   - [.NET Standard](#net-standard)
@@ -122,6 +123,7 @@
   - [macOS shortcuts PDF](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
   - [Linux shortcuts PDF](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 - [Microsoft's roadmap for Visual Studio Code](https://github.com/Microsoft/vscode/wiki/Roadmap)
+- [Visual Studio Code for C# Developers | .NET Conf 2022](https://www.youtube.com/watch?v=fuBi4d7k1-M)
 - [Learning with VS Code on Chromebooks](https://code.visualstudio.com/blogs/2020/12/03/chromebook-get-started)
 - [The History of Visual Studio Code | BDL134](https://www.youtube.com/watch?v=Tw8l0WzQxmY)
 
@@ -134,7 +136,8 @@
 - [Rider documentation](https://www.jetbrains.com/help/rider/Introduction.html)
 - [.NET 6 is now in Ubuntu 22.04](https://devblogs.microsoft.com/dotnet/dotnet-6-is-now-in-ubuntu-2204/)
 
-## .NET Interactive
+## .NET Interactive and Polyglot Notebooks
+- [The Power of Polyglot Notebooks | .NET Conf 2022](https://www.youtube.com/watch?v=IXRGa5m-Lbo)
 - [.NET Interactive documentation](https://github.com/dotnet/interactive/blob/main/docs/README.md)
 - [VS Code Notebooks: A Deep Dive video](https://www.youtube.com/watch?v=D-AXZZDTQhM)
 - [Discuss: File format in the .NET Interactive VS Code extension](https://github.com/dotnet/interactive/issues/467)
@@ -149,6 +152,7 @@
 
 ## .NET
 - [Download .NET SDK](https://dotnet.microsoft.com/en-us/download)
+- [.NET Conf 2022 Keynote: Welcome to .NET 7 | .NET Conf 2022](https://www.youtube.com/watch?v=8V_BUGFKdaI)
 - [Stack Overflow survey 2021 - Most loved frameworks and libraries](https://insights.stackoverflow.com/survey/2021#section-most-loved-dreaded-and-wanted-other-frameworks-and-libraries)
 - [Themes of .NET](https://themesof.net/)
 - [Microsoft's positioning of .NET Core and .NET Framework](https://devblogs.microsoft.com/dotnet/update-on-net-core-3-0-and-net-framework-4-8/)
@@ -182,6 +186,7 @@
 - [Upgrading a WCF service to .NET 6 with CoreWCF](https://devblogs.microsoft.com/dotnet/upgrading-a-wcf-service-to-dotnet-6/)
 - [CoreWCF 1.0 has been Released, WCF for .NET Core and .NET 5+](https://devblogs.microsoft.com/dotnet/corewcf-v1-released/)
 - [Open source project for Blazor Web Forms components](https://github.com/FritzAndFriends/BlazorWebFormsComponents/blob/dev/README.md)
+- [OSS Spotlight - Build amazing cross-platform UI for .NET with Avalonia UI!](https://www.youtube.com/watch?v=qcZSr2ejH5I)
 
 ## Git
 - [Download Git](https://git-scm.com/download)
@@ -205,6 +210,7 @@
 # Chapter 2 - Speaking C#
 
 ## What's New in C#?
+- [What's New in C# 11 | .NET Conf 2022](https://www.youtube.com/watch?v=H18CfoinPZg)
 - [Early peek at C# 11 features](https://devblogs.microsoft.com/dotnet/early-peek-at-csharp-11-features/): Allow newlines in the “holes” of interpolated strings, List patterns, Parameter null-checking.
 - [C# 11 preview: generic math, required members, and more](https://devblogs.microsoft.com/dotnet/csharp-11-preview-august-update/)
 - [What's new in C# 11](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-11)
@@ -398,12 +404,15 @@
 ## Inheritance
 - [Inheritance (C# Programming Guide)](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/inheritance)
 
+## Language design
+- [Let's design a new C# language feature! | .NET Conf 2022](https://www.youtube.com/watch?v=ArN9R_8eL-E)
+
 # Chapter 7 - Packaging and Distributing .NET Types
 
 ## .NET versions
 The official announcement links are useful because they describe the most important new features in each release.
-
 - [Announcing .NET 7](https://devblogs.microsoft.com/dotnet/announcing-net-7/)
+- [Performance Improvements in .NET 7 | .NET Conf 2022](https://www.youtube.com/watch?v=yNPEdaxkTZw)
 - [Announcing .NET 6 — The Fastest .NET Yet](https://devblogs.microsoft.com/dotnet/announcing-net-6/)
 - [.NET 5 announcement](https://devblogs.microsoft.com/dotnet/announcing-net-5-0)
 - [.NET 5.0 Runtime Highlights](https://codemag.com/Article/2010092/.NET-5.0-Runtime-Highlights)
@@ -449,6 +458,7 @@ The official announcement links are useful because they describe the most import
 
 ## Porting from .NET Framework to modern .NET
 - [Overview of porting from .NET Framework to .NET Core](https://learn.microsoft.com/en-us/dotnet/core/porting/)
+- [Upgrading from .NET Framework to .NET 7 | .NET Conf 2022](https://www.youtube.com/watch?v=yyVUaXT0JoU)
 - [What .NET Developers ought to know](https://www.hanselman.com/blog/what-net-developers-ought-to-know-to-start-in-2017)
 - [Introducing the .NET Upgrade Assistant Preview](https://devblogs.microsoft.com/dotnet/introducing-the-net-upgrade-assistant-preview/)
 - [.NET Upgrade Assistant](https://dotnet.microsoft.com/en-us/platform/upgrade-assistant)
@@ -546,6 +556,7 @@ The official announcement links are useful because they describe the most import
 - [Deep Dive into Many-to-Many: A Tour of EF Core 5.0](https://channel9.msdn.com/Shows/On-NET/Deep-Dive-into-Many-to-Many-A-Tour-of-EF-Core-50-pt-2)
 - [Naming Conventions for Entity Framework Core Tables and Columns](https://github.com/efcore/EFCore.NamingConventions)
 - [Table-per-concrete-type (TPC) inheritance mapping](https://learn.microsoft.com/en-gb/ef/core/what-is-new/ef-core-7.0/whatsnew#table-per-concrete-type-tpc-inheritance-mapping)
+- [T4 goodness with Entity Framework Core 7 | .NET Conf 2022](https://www.youtube.com/watch?v=PUexkGWErNk)
 
 ## EF Core querying and manipulating
 - [Filtered include](https://learn.microsoft.com/en-us/ef/core/querying/related-data/eager#filtered-include)
@@ -578,9 +589,10 @@ The official announcement links are useful because they describe the most import
 
 ## .NET Content Management Systems
 - [Piranha CMS](https://piranhacms.org/)
-- [Orchard Core](http://orchardcore.net/)
 - [Umbraco CMS](https://umbraco.com/products/umbraco-cms/umbraco-9/)
 - [Optimizely Comtent Cloud (CMS 12)](https://docs.developers.optimizely.com/content-cloud)
+- [Orchard Core](http://orchardcore.net/)
+- [OSS Spotlight - Build websites with a modern ASP.NET Core CMS – Orchard Core](https://www.youtube.com/watch?v=cKhAVWm845o)
 
 ## General web development
 - [Responsive Web Design with HTML5 and CSS - Third Edition](https://www.packtpub.com/product/responsive-web-design-with-html5-and-css-third-edition/9781839211560)
@@ -593,7 +605,7 @@ The official announcement links are useful because they describe the most import
 
 ## ASP.NET versions and features
 The official announcement links are useful because they describe the most important new features in each release.
-
+- [State of ASP.NET Core | .NET Conf 2022](https://www.youtube.com/watch?v=gNyEpkJMmcM)
 - [ASP.NET Core 7.0 announcement](https://devblogs.microsoft.com/aspnet/announcing-asp-net-core-in-net-7/)
 - [ASP.NET Core 6.0 announcement](https://devblogs.microsoft.com/aspnet/announcing-asp-net-core-in-net-6/)
 - [ASP.NET Core 5.0 announcement](https://devblogs.microsoft.com/aspnet/announcing-asp-net-core-in-net-5/)
@@ -723,6 +735,7 @@ The official announcement links are useful because they describe the most import
 - [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
 - [Official list of supported Blazor platforms](https://learn.microsoft.com/en-us/aspnet/core/blazor/supported-platforms)
 - [Blazor hosting models](https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models)
+- [What's new for Blazor in .NET 7 | .NET Conf 2022](https://www.youtube.com/watch?v=evW4Gj4sHsk)
 
 ## Blazor components
 - [The reason for needing CSS isolation for Blazor components](https://github.com/dotnet/aspnetcore/issues/10170)
