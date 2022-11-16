@@ -249,6 +249,8 @@
 - [Naming guidelines](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines)
 - [Types (C# Programming Guide)](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/)
 - [Statements, Expressions, and Operators (C# Programming Guide)](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/)
+- [Pattern matching overview](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/pattern-matching)
+- [Patterns (C# reference)](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/patterns)
 
 ## C# implemented proposals
 - [C# 11](https://github.com/dotnet/csharplang/tree/main/proposals/csharp-11.0)
