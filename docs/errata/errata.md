@@ -1,4 +1,4 @@
-**Errata** (8 items)
+**Errata** (9 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -9,6 +9,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 37 - Getting definitions of types and their members](#page-37---getting-definitions-of-types-and-their-members)
 - [Page 83 - Formatting using numbered positional arguments](#page-83---formatting-using-numbered-positional-arguments)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
+- [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
 - [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
@@ -77,6 +78,10 @@ Console.WriteLine(
 # Page 86 - Getting text input from the user
 
 In Step 3, I wrote, "For the `firstName` variable" when I should have written, "For the `age` variable".
+
+# Page 185 - Creating a class library that needs testing
+
+In the "If you are using Visual Studio Code" section, in Step 5, the command in the book is `dotnet new console` but it should have been `dotnet new classlib`.
 
 # Page 188 - Running unit tests using Visual Studio Code
 
