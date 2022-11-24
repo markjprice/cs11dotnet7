@@ -40,7 +40,7 @@ partial class Program
     WriteLine("{0} contains {1:N0} bytes.",
       filePath, new FileInfo(filePath).Length);
 
-    WriteLine($"The compressed contents:");
+    WriteLine("The compressed contents:");
     WriteLine(File.ReadAllText(filePath));
 
     // read a compressed file
