@@ -39,7 +39,7 @@ partial class Program
     // output all the contents of the compressed file
     WriteLine("{0} contains {1:N0} bytes.",
       filePath, new FileInfo(filePath).Length);
-
+    
     WriteLine("The compressed contents:");
     WriteLine(File.ReadAllText(filePath));
 
