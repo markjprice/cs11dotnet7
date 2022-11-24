@@ -13,6 +13,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
 - [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
+  - [Page 412 - Compressing streams](#page-412---compressing-streams)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
 
@@ -108,4 +109,18 @@ If you have Source Link disabled, then to see the filename you must expand the c
 #region Assembly System.Runtime, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
 // C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.0\ref\net7.0\System.Runtime.dll
 #endregion
+```
+
+## Page 412 - Compressing streams
+
+> Thanks to Bob Molloy for raising this issue via email.
+
+In Step 2, the following statement enables interpolated strings unnecessarily:
+```cs
+WriteLine($"The compressed contents:");
+```
+
+It should be:
+```cs
+WriteLine("The compressed contents:");
 ```
