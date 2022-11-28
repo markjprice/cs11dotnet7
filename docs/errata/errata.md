@@ -1,4 +1,4 @@
-**Errata** (9 items)
+**Errata** (10 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -8,6 +8,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 11 - Understanding the journey to one .NET and Understanding .NET support](#page-11---understanding-the-journey-to-one-net-and-understanding-net-support)
 - [Page 37 - Getting definitions of types and their members](#page-37---getting-definitions-of-types-and-their-members)
 - [Page 83 - Formatting using numbered positional arguments](#page-83---formatting-using-numbered-positional-arguments)
+- [Page 85 - Getting text input from the user](#page-85---getting-text-input-from-the-user)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
@@ -20,6 +21,8 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 The **.NET Interactive Notebooks** extension has been renamed to **Polyglot Notebooks**. It still retains its original identifier `ms-dotnettools.dotnet-interactive-vscode`. The engine is still named *.NET Interactive*.
 
 > Read more here: https://devblogs.microsoft.com/dotnet/dotnet-interactive-notebooks-is-now-polyglot-notebooks/#why-the-name-change
+
+I wrote that "They cannot read input from the user, for example, you cannot use ReadLine or ReadKey." Although you cannot use the `Console` class methods, you can use the `Microsoft.DotNet.Interactive.Kernel` class and its `GetInputAsync` method. This uses the Visual Studio Code user interface to prompt the user for input.
 
 # Page 11 - Understanding the journey to one .NET and Understanding .NET support
 
@@ -75,6 +78,22 @@ Console.WriteLine(
  "{0} {1} lived in {2} and worked in the {3} team at {4}.", 
  "Roger", "Cevung", "Stockholm", "Education", "Optimizely");
 ```
+
+# Page 85 - Getting text input from the user
+
+I wrote that a notebook "does not support reading input from the console using `Console.ReadLine()`." Although this is true, you can use the `Microsoft.DotNet.Interactive.Kernel` class and its `GetInputAsync` method instead. This uses the .NET Interactive integration with the Visual Studio Code user interface to prompt the user for input.
+
+```cs
+using Microsoft.DotNet.Interactive; // to use the Kernel class
+
+string firstName = await Kernel.GetInputAsync("Type your first name: ");
+
+string age = await Kernel.GetInputAsync("Type your age: ");
+
+Console.WriteLine($"Hello {firstName}, you look good for {age}.");
+```
+
+![Getting input from the .NET Interactive kernel](images/kernel-getinputasync.png)
 
 # Page 86 - Getting text input from the user
 
