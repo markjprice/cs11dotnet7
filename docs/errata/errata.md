@@ -14,8 +14,8 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
 - [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
-  - [Page 412 - Compressing streams](#page-412---compressing-streams)
-  - [Page 477 - Inserting entities](#page-477---inserting-entities)
+- [Page 412 - Compressing streams](#page-412---compressing-streams)
+- [Page 477 - Inserting entities](#page-477---inserting-entities)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
 
@@ -131,7 +131,7 @@ If you have Source Link disabled, then to see the filename you must expand the c
 #endregion
 ```
 
-## Page 412 - Compressing streams
+# Page 412 - Compressing streams
 
 > Thanks to Bob Molloy for raising this issue via email.
 
@@ -145,7 +145,7 @@ It should be:
 WriteLine("The compressed contents:");
 ```
 
-## Page 477 - Inserting entities
+# Page 477 - Inserting entities
 
 > Thanks to [Chadwick Geyser](https://github.com/chadwickgeyser) for raising this [issue on 29 November 2022](https://github.com/markjprice/cs11dotnet7/issues/5).
 
