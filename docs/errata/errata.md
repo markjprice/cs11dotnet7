@@ -1,4 +1,4 @@
-**Errata** (10 items)
+**Errata** (11 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -15,6 +15,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
 - [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
   - [Page 412 - Compressing streams](#page-412---compressing-streams)
+  - [Page 477 - Inserting entities](#page-477---inserting-entities)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
 
@@ -142,4 +143,17 @@ WriteLine($"The compressed contents:");
 It should be:
 ```cs
 WriteLine("The compressed contents:");
+```
+
+## Page 477 - Inserting entities
+
+> Thanks to [Chadwick Geyser](https://github.com/chadwickgeyser) for raising this [issue on 29 November 2022](https://github.com/markjprice/cs11dotnet7/issues/5).
+
+In Step 4, the code statement to list the products uses an older version of the method signature that I removed before publishing that only allows a single `productId` to be highlighted, as shown in the following code:
+```cs
+ListProducts(productIdToHighlight: resultAdd.productId);
+```
+It should use the method signature that allows multiple `productIds` to be highlighted, as shown in the following code:
+```cs
+ListProducts(productIdsToHighlight: new[] { resultAdd.productId });
 ```
