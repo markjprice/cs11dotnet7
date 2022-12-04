@@ -1,4 +1,4 @@
-**Errata** (11 items)
+**Errata** (12 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -16,6 +16,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
 - [Page 412 - Compressing streams](#page-412---compressing-streams)
 - [Page 477 - Inserting entities](#page-477---inserting-entities)
+- [Page 627 - Defining a typed view](#page-627---defining-a-typed-view)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
 
@@ -157,3 +158,21 @@ It should use the method signature that allows multiple `productIds` to be highl
 ```cs
 ListProducts(productIdsToHighlight: new[] { resultAdd.productId });
 ```
+
+# Page 627 - Defining a typed view
+
+> Thanks to [Chadwick Geyser](https://github.com/chadwickgeyser) for raising this [issue on 4 December 2022](https://github.com/markjprice/cs11dotnet7/issues/6).
+
+In Step 3, the code in the book to render the carousel indicators has an incorrect attribute named `data-slide-to`, as shown in the following markup:
+```xml
+<li data-bs-target="#categories" data-slide-to="@c" 
+    class="@currentItem"></li>
+```
+
+Should be `data-bs-slide-to`, as shown in the following markup:
+```xml
+<li data-bs-target="#categories" data-bs-slide-to="@c" 
+    class="@currentItem"></li>
+```
+
+It was already correct in the GitHub copy of the code.
