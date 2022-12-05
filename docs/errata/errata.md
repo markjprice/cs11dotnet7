@@ -180,6 +180,8 @@ It was already correct in the GitHub copy of the code.
 
 # Page 649 - Varying cached data by query string
 
+> Thanks to [Chadwick Geyser](https://github.com/chadwickgeyser) for raising this [issue on 5 December 2022](https://github.com/markjprice/cs11dotnet7/issues/7).
+
 In Step 1, when defining a policy for output caching, the statement uses the method `VaryByQuery`, as shown in the following code:
 ```cs
 options.AddPolicy("views", p => p.VaryByQuery(""));
