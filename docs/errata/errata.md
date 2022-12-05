@@ -1,4 +1,4 @@
-**Errata** (12 items)
+**Errata** (13 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -17,6 +17,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 412 - Compressing streams](#page-412---compressing-streams)
 - [Page 477 - Inserting entities](#page-477---inserting-entities)
 - [Page 627 - Defining a typed view](#page-627---defining-a-typed-view)
+- [Page 649 - Varying cached data by query string](#page-649---varying-cached-data-by-query-string)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
 
@@ -176,3 +177,15 @@ Should be `data-bs-slide-to`, as shown in the following markup:
 ```
 
 It was already correct in the GitHub copy of the code.
+
+# Page 649 - Varying cached data by query string
+
+In Step 1, when defining a policy for output caching, the statement uses the method `VaryByQuery`, as shown in the following code:
+```cs
+options.AddPolicy("views", p => p.VaryByQuery(""));
+```
+
+The method name changed in Release Candidate 2, as described [here](https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/7.0/output-caching-renames), so statement should be changed to use the new method `SetVaryByQuery`, as shown in the following code:
+```cs
+options.AddPolicy("views", p => p.SetVaryByQuery(""));
+```

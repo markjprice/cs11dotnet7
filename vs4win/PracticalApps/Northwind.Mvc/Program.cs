@@ -41,7 +41,7 @@ builder.Services.AddNorthwindContext();
 builder.Services.AddOutputCache(options =>
 {
   options.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(20);
-  options.AddPolicy("views", p => p.VaryByQuery(""));
+  options.AddPolicy("views", p => p.SetVaryByQuery(""));
 });
 
 builder.Services.AddHttpClient(name: "Northwind.WebApi",
