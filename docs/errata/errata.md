@@ -1,4 +1,4 @@
-**Errata** (13 items)
+**Errata** (14 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -17,6 +17,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 412 - Compressing streams](#page-412---compressing-streams)
 - [Page 477 - Inserting entities](#page-477---inserting-entities)
 - [Page 627 - Defining a typed view](#page-627---defining-a-typed-view)
+- [Page 631 - Passing parameters using a route value](#page-631---passing-parameters-using-a-route-value)
 - [Page 649 - Varying cached data by query string](#page-649---varying-cached-data-by-query-string)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
@@ -177,6 +178,23 @@ Should be `data-bs-slide-to`, as shown in the following markup:
 ```
 
 It was already correct in the GitHub copy of the code.
+
+# Page 631 - Passing parameters using a route value
+
+In Step 3, the statements attempt to output the values of the category name and unit price for the product, as shown in the following markup:
+```xml
+<dt>Category</dt>
+<dd>@Model.CategoryId - @Model.Category.CategoryName</dd>
+<dt>Unit Price</dt>
+<dd>@Model.UnitPrice.Value.ToString("C")</dd>
+```
+But since the `Category` and `UnitPrice` properties could be null, we should use a null checks, as shown in the following markup:
+```xml
+<dt>Category</dt>
+<dd>@Model.CategoryId - @Model.Category?.CategoryName</dd>
+<dt>Unit Price</dt>
+<dd>@(Model.UnitPrice is null ? "zero" : Model.UnitPrice.Value.ToString("C"))</dd>
+```
 
 # Page 649 - Varying cached data by query string
 
