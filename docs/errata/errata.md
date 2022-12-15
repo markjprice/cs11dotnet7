@@ -18,6 +18,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 477 - Inserting entities](#page-477---inserting-entities)
 - [Page 627 - Defining a typed view](#page-627---defining-a-typed-view)
 - [Page 631 - Passing parameters using a route value](#page-631---passing-parameters-using-a-route-value)
+- [Page 641 - Enabling role management and creating a role programmatically](#page-641---enabling-role-management-and-creating-a-role-programmatically)
 - [Page 649 - Varying cached data by query string](#page-649---varying-cached-data-by-query-string)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
@@ -181,6 +182,8 @@ It was already correct in the GitHub copy of the code.
 
 # Page 631 - Passing parameters using a route value
 
+> Thanks to Bob Molloy for raising this issue via email.
+
 In Step 3, the statements attempt to output the values of the category name and unit price for the product, as shown in the following markup:
 ```xml
 <dt>Category</dt>
@@ -195,6 +198,22 @@ But since the `Category` and `UnitPrice` properties could be null, we should use
 <dt>Unit Price</dt>
 <dd>@(Model.UnitPrice is null ? "zero" : Model.UnitPrice.Value.ToString("C"))</dd>
 ```
+
+# Page 641 - Enabling role management and creating a role programmatically
+
+> Thanks to Bob Molloy for raising this issue via email.
+
+In Step 2, in the `Index` action method, the variable declaration for finding the email of the use is not nullable, as shown in the following code:
+```cs
+IdentityUser user = await userManager.FindByEmailAsync(UserEmail);
+```
+
+It should be nullable, as shown in the following code:
+```cs
+IdentityUser? user = await userManager.FindByEmailAsync(UserEmail);
+```
+
+It was already correct in the GitHub copy of the code.
 
 # Page 649 - Varying cached data by query string
 
