@@ -1,4 +1,4 @@
-**Errata** (14 items)
+**Errata** (15 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -203,7 +203,7 @@ But since the `Category` and `UnitPrice` properties could be null, we should use
 
 > Thanks to Bob Molloy for raising this issue via email.
 
-In Step 2, in the `Index` action method, the variable declaration for finding the email of the use is not nullable, as shown in the following code:
+In Step 2, in the `Index` action method, the variable declaration for finding the email of the user is not nullable, as shown in the following code:
 ```cs
 IdentityUser user = await userManager.FindByEmailAsync(UserEmail);
 ```
