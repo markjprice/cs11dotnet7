@@ -67,15 +67,17 @@ In ASP.NET Core 2.2 or later, there are API analyzers that reflect over controll
 
 To use it, your project must enable the OpenAPI Analyzers:
 
-1.	In the `Northwind.WebApi` project file, add the element that enables the OpenAPI Analyzers, as shown highlighted in the following markup:
+1.	In the `Northwind.WebApi` project file, add the element that enables the OpenAPI Analyzers to a project that targets the web SDK, as shown highlighted in the following markup:
 
 ```xml
-<PropertyGroup>
-  <TargetFramework>net7.0</TargetFramework>
-  <Nullable>enable</Nullable>
-  <ImplicitUsings>enable</ImplicitUsings>
-  <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
-</PropertyGroup>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
+  </PropertyGroup>
 ```
 
 2.	In `CustomersController.cs`, for the `Update` action method, comment out the three `[ProducesResponseType]` attributes, as shown highlighted in the following code:
