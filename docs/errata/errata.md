@@ -1,4 +1,4 @@
-**Errata** (16 items)
+**Errata** (17 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -20,7 +20,8 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 631 - Passing parameters using a route value](#page-631---passing-parameters-using-a-route-value)
 - [Page 641 - Enabling role management and creating a role programmatically](#page-641---enabling-role-management-and-creating-a-role-programmatically)
 - [Page 649 - Varying cached data by query string](#page-649---varying-cached-data-by-query-string)
-  - [Page 707 - Reviewing the Blazor Server project template](#page-707---reviewing-the-blazor-server-project-template)
+- [Page 707 - Reviewing the Blazor Server project template](#page-707---reviewing-the-blazor-server-project-template)
+- [Page 733 - Building customer create, edit, and delete components](#page-733---building-customer-create-edit-and-delete-components)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
 
@@ -230,7 +231,7 @@ The method name changed in Release Candidate 2, as described [here](https://lear
 options.AddPolicy("views", p => p.SetVaryByQuery(""));
 ```
 
-## Page 707 - Reviewing the Blazor Server project template
+# Page 707 - Reviewing the Blazor Server project template
 
 > Thanks to [Bob Molloy](https://github.com/BobMolloy) for raising this [issue on 19 December 2022](https://github.com/markjprice/cs11dotnet7/issues/12).
 
@@ -272,4 +273,21 @@ Microsoft changed this project template to merge them together so there is no sh
     <script src="_framework/blazor.server.js"></script>
 </body>
 </html>
+```
+
+# Page 733 - Building customer create, edit, and delete components
+
+> Thanks to [Bob Molloy](https://github.com/BobMolloy) for raising this [issue on 27 December 2022](https://github.com/markjprice/cs11dotnet7/issues/15).
+
+In Step 4, in the file named `EditCustomer.razor`, the code for the `Update` method is missing the last statement to navigate to the `customers` page component after updating the customer in the database, as shown in the following code:
+```cs
+private async Task Update()
+{
+  if (customer is not null)
+  {
+    await service.UpdateCustomerAsync(customer);
+  }
+
+  navigation.NavigateTo("customers");
+}
 ```
