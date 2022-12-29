@@ -1,4 +1,4 @@
-**Errata** (15 items)
+**Errata** (16 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -20,6 +20,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 631 - Passing parameters using a route value](#page-631---passing-parameters-using-a-route-value)
 - [Page 641 - Enabling role management and creating a role programmatically](#page-641---enabling-role-management-and-creating-a-role-programmatically)
 - [Page 649 - Varying cached data by query string](#page-649---varying-cached-data-by-query-string)
+  - [Page 707 - Reviewing the Blazor Server project template](#page-707---reviewing-the-blazor-server-project-template)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
 
@@ -227,4 +228,48 @@ options.AddPolicy("views", p => p.VaryByQuery(""));
 The method name changed in Release Candidate 2, as described [here](https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/7.0/output-caching-renames), so statement should be changed to use the new method `SetVaryByQuery`, as shown in the following code:
 ```cs
 options.AddPolicy("views", p => p.SetVaryByQuery(""));
+```
+
+## Page 707 - Reviewing the Blazor Server project template
+
+> Thanks to [Bob Molloy](https://github.com/BobMolloy) for raising this [issue on 19 December 2022](https://github.com/markjprice/cs11dotnet7/issues/12).
+
+In Steps 6 and 7, I wrote that there are two files that combine to product the home page for a Blazor Server project, named `_Host.cshtml` and `_Layout.cshtml`. 
+
+Microsoft changed this project template to merge them together so there is no shared layout file named `_Layout.cshtml`. The markup is now all in the `_Host.cshtml` file, as shown in the following markup:
+```html
+@page "/"
+@using Microsoft.AspNetCore.Components.Web
+@namespace Northwind.BlazorServer.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="Northwind.BlazorServer.styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+</head>
+<body>
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>
 ```
