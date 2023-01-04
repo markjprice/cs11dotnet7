@@ -1,4 +1,4 @@
-**Errata** (17 items)
+**Errata** (18 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -14,6 +14,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
 - [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
+- [Page 330 - Publishing a self-contained app, Page 354 - Exercise 7.3 – Explore PowerShell](#page-330---publishing-a-self-contained-app-page-354---exercise-73--explore-powershell)
 - [Page 412 - Compressing streams](#page-412---compressing-streams)
 - [Page 477 - Inserting entities](#page-477---inserting-entities)
 - [Page 627 - Defining a typed view](#page-627---defining-a-typed-view)
@@ -136,6 +137,10 @@ If you have Source Link disabled, then to see the filename you must expand the c
 // C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.0\ref\net7.0\System.Runtime.dll
 #endregion
 ```
+
+# Page 330 - Publishing a self-contained app, Page 354 - Exercise 7.3 – Explore PowerShell
+
+In the **Good Practice** box on page 330, I wrote about how you can automate commands using scripts written in the PowerShell language. My original plan was to write content about PowerShell in the GitHub repository. But PowerShell is a massive topic and there will always be higher priority content to create that is specifically about C# and .NET. In the next edition I will just reference the official PowerShell documentation: https://learn.microsoft.com/en-us/powershell/ And I will remove **Exercise 7.3** that suggests exploring PowerShell.
 
 # Page 412 - Compressing streams
 
