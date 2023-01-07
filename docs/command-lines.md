@@ -81,7 +81,7 @@ Creating a new **Console App** project:
 dotnet new console
 ```
 
-Creating a new **Console App** project that targets an older version:
+Creating a new **Console App** project that targets a specified framework version, for example, .NET 6:
 ```
 dotnet new console -f net6.0
 ```
@@ -109,7 +109,7 @@ Getting help for a `dotnet` command like `new`:
 dotnet help new
 ```
 
-Getting help for a project template like `console`:
+Getting help for a specified project template, for example, `console`:
 ```
 dotnet new console -h
 ```
@@ -183,7 +183,7 @@ Listing available project templates using .NET 6:
 dotnet new --list
 ```
 
-Listing available project templates using .NET 7 short form:
+Listing available project templates using .NET 6 short form:
 ```
 dotnet new -l
 ```
