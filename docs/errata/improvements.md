@@ -17,12 +17,17 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 # Page 453 - Scaffolding models using an existing database
 
-In Step 2, I show text that must be entered as a single line at the command-line, as shown in the following command:
+In Step 2, I show text that must be entered as a single line at the command-line, as shown in the following command formatted as in the print book:
 ```
 dotnet ef dbcontext scaffold "Filename=Northwind.db" Microsoft.
 EntityFrameworkCore.Sqlite --table Categories --table Products --output-
 dir AutoGenModels --namespace WorkingWithEFCore.AutoGen --data-
 annotations --context Northwind
+```
+
+Here is the same command as a single line to make it easier to copy and paste:
+```
+dotnet ef dbcontext scaffold "Filename=Northwind.db" Microsoft.EntityFrameworkCore.Sqlite --table Categories --table Products --output-dir AutoGenModels --namespace WorkingWithEFCore.AutoGen --data-annotations --context Northwind
 ```
 
 I recommend that you copy and paste long commands like this from the eBook into a plain text editor like Notepad, and then make sure that the whole command is properly formatted as a single line, before you then copy and paste it to the command-line. 
