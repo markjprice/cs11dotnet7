@@ -1,8 +1,9 @@
-**Improvements** (2 items)
+**Improvements** (3 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 153 - Writing a function that returns a value](#page-153---writing-a-function-that-returns-a-value)
+- [Page 179 - Reviewing project packages](#page-179---reviewing-project-packages)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 
 # Page 153 - Writing a function that returns a value
@@ -13,6 +14,38 @@ Add the following statement near the top of the code file before doing any writi
 
 ```cs
 Console.OutputEncoding = System.Text.Encoding.UTF8;
+```
+
+# Page 179 - Reviewing project packages
+
+In Step 1, the instruct the reader to add references to four packages, as shown in the following markup:
+```xml
+<ItemGroup>
+  <PackageReference
+    Include="Microsoft.Extensions.Configuration"
+    Version="7.0.0" />
+  <PackageReference
+    Include="Microsoft.Extensions.Configuration.Binder"
+    Version="7.0.0" />
+  <PackageReference
+    Include="Microsoft.Extensions.Configuration.FileExtensions"
+    Version="7.0.0" />
+  <PackageReference
+    Include="Microsoft.Extensions.Configuration.Json"
+    Version="7.0.0" />
+ </ItemGroup>
+```
+
+Due to transitive dependencies, you only actually need to explicitly reference two of the packages, as shown in the following markup:
+```xml
+<ItemGroup>
+  <PackageReference
+    Include="Microsoft.Extensions.Configuration.Binder"
+    Version="7.0.0" />
+  <PackageReference
+    Include="Microsoft.Extensions.Configuration.Json"
+    Version="7.0.0" />
+ </ItemGroup>
 ```
 
 # Page 453 - Scaffolding models using an existing database
