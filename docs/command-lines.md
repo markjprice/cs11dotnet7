@@ -26,7 +26,7 @@ To make it easier to enter commands at the prompt, this page lists all commands 
   - [Page 350 - .NET Upgrade Assistant](#page-350---net-upgrade-assistant)
 - [Chapter 10 - Working with Data Using Entity Framework Core](#chapter-10---working-with-data-using-entity-framework-core)
   - [Page 440 - Creating the Northwind sample database for SQLite](#page-440---creating-the-northwind-sample-database-for-sqlite)
-  - [Page 452 - Setting up the dotnet-ef too](#page-452---setting-up-the-dotnet-ef-too)
+  - [Page 452 - Setting up the dotnet-ef tool](#page-452---setting-up-the-dotnet-ef-tool)
   - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 - [Chapter 11 - Querying and Manipulating Data Using LINQ](#chapter-11---querying-and-manipulating-data-using-linq)
   - [Page 503 - Building an EF Core model](#page-503---building-an-ef-core-model)
@@ -252,7 +252,7 @@ Creating the Northwind SQLite database:
 sqlite3 Northwind.db -init Northwind4SQLite.sql
 ```
 
-## Page 452 - Setting up the dotnet-ef too
+## Page 452 - Setting up the dotnet-ef tool
 
 Listing installed `dotnet` global tools:
 ```

@@ -22,6 +22,10 @@ If you have Visual Studio 2022 for Windows and Visual Studio Code and its C# ext
 - [/vs4win](/vs4win): Visual Studio 2022 for Windows solution files and projects for each chapter
 - [/vscode](/vscode): Visual Studio Code workspace files and projects for each chapter
 
+## Command-Lines
+
+To make it easier to enter commands at the prompt, the [Command-Lines](docs/command-lines.md) page lists all commands as a single line that can be copied and pasted.
+
 ## Sibling books
 ![Sibling books](images/B18857_01_01.png)
 
