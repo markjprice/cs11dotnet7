@@ -1,4 +1,4 @@
-**Errata** (18 items)
+**Errata** (19 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -8,6 +8,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 11 - Understanding the journey to one .NET and Understanding .NET support](#page-11---understanding-the-journey-to-one-net-and-understanding-net-support)
 - [Page 37 - Getting definitions of types and their members](#page-37---getting-definitions-of-types-and-their-members)
 - [Page 83 - Formatting using numbered positional arguments](#page-83---formatting-using-numbered-positional-arguments)
+- [Page 83 - Formatting using interpolated strings](#page-83---formatting-using-interpolated-strings)
 - [Page 85 - Getting text input from the user](#page-85---getting-text-input-from-the-user)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
@@ -85,6 +86,22 @@ Console.WriteLine(
 Console.WriteLine(
  "{0} {1} lived in {2} and worked in the {3} team at {4}.", 
  "Roger", "Cevung", "Stockholm", "Education", "Optimizely");
+```
+
+# Page 83 - Formatting using interpolated strings
+
+In Step 1, you enter some statements to output some variables using an interpolated string, as shown in the following code:
+```cs
+// The following statement must be all on one line.
+Console.WriteLine($"{numberOfApples} apples cost {pricePerApple * numberOfApples:C}");
+```
+
+The comment says that it "must be all on one line". This is true for C# 10 and earlier (which is the default compiler if you target .NET 6), but if you use C# 11 then an expression inside an interpolation hole like `{pricePerApple * numberOfApples:C}` can now include line breaks. So we can, for example, enter the statement like this:
+```cs
+// The following statement must be all on one line when using C# 10 or earlier.
+// If using C# 11, we can include a line break, as shown here:
+Console.WriteLine($"{numberOfApples} apples cost {pricePerApple 
+  * numberOfApples:C}");
 ```
 
 # Page 85 - Getting text input from the user
