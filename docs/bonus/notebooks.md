@@ -23,7 +23,7 @@ First, we need to create a notebook:
 
 1. In Visual Studio Code, navigate to **File** | **Close Workspace**.
 2. Navigate to **View** | **Command Palette**.
-3. Type `.net inter`, and then select **.NET Interactive: Create new blank notebook**, as shown in *Figure 1.16*:
+3. Type `polyg`, and then select **Polyglot Notebook: Create new blank notebook**, as shown in *Figure 1.16*:
    
 ![Figure 1.16: Creating a new blank .NET notebook](images/B18856_01_16.png)
 *Figure 1.16: Creating a new blank .NET notebook*
