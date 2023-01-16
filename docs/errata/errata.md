@@ -1,4 +1,4 @@
-**Errata** (19 items)
+**Errata** (20 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -14,6 +14,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
+- [Page 275 - Releasing unmanaged resources](#page-275---releasing-unmanaged-resources)
 - [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
 - [Page 330 - Publishing a self-contained app, Page 354 - Exercise 7.3 – Explore PowerShell](#page-330---publishing-a-self-contained-app-page-354---exercise-73--explore-powershell)
 - [Page 412 - Compressing streams](#page-412---compressing-streams)
@@ -139,6 +140,14 @@ In Step 1, the project name `CalculatorLibUnitTest` should be `CalculatorLibUnit
 > Thanks to Bob Molloy for raising this issue via email.
 
 In Step 1, I say to add a new file named `Records.cs` to the `PacktLibraryNetStandard2` project/folder. I should have said to the `PacktLibraryModern` project/folder.
+
+# Page 275 - Releasing unmanaged resources
+
+> Thanks to `Wuu#0348` on the Packt Discord channels for raising this issue.
+
+In the second bullet point after the large code block, I wrote, "It needs to check the `disposing` parameter and `disposed` field because if the finalizer thread has already run and it called the `~ObjectWithUnmanagedResources` method, then only unmanaged resources need to be deallocated." I should have written **managed** not **unmanaged**. 
+
+It might be clearer if I wrote, "It needs to check the `disposing` parameter and `disposed` field because if the finalizer thread has already run and it called the `~ObjectWithUnmanagedResources` method, then unmanaged resources will already have been deallocated and only managed resources remain to be deallocated by the garbage collector." I will do this in the next edition.
 
 # Page 322 - Revealing the location of a type
 
