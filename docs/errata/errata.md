@@ -1,4 +1,4 @@
-**Errata** (20 items)
+**Errata** (21 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -14,6 +14,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
+- [Page 272 - Defining struct types](#page-272---defining-struct-types)
 - [Page 275 - Releasing unmanaged resources](#page-275---releasing-unmanaged-resources)
 - [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
 - [Page 330 - Publishing a self-contained app, Page 354 - Exercise 7.3 – Explore PowerShell](#page-330---publishing-a-self-contained-app-page-354---exercise-73--explore-powershell)
@@ -140,6 +141,12 @@ In Step 1, the project name `CalculatorLibUnitTest` should be `CalculatorLibUnit
 > Thanks to Bob Molloy for raising this issue via email.
 
 In Step 1, I say to add a new file named `Records.cs` to the `PacktLibraryNetStandard2` project/folder. I should have said to the `PacktLibraryModern` project/folder.
+
+# Page 272 - Defining struct types
+
+> Thanks to [Ali Koleiny Zadeh](https://github.com/alikzalikz) for raising this [issue on 15 January 2023](https://github.com/markjprice/cs11dotnet7/issues/18).
+
+In Step 4, the output should be formatted using the "command line" style like in Step 6 instead of the "code" style so that it has the black background. 
 
 # Page 275 - Releasing unmanaged resources
 
