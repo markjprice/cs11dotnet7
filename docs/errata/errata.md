@@ -129,6 +129,8 @@ In Step 3, I wrote, "For the `firstName` variable" when I should have written, "
 
 # Page 114 - Simplifying switch statements with switch expressions
 
+> Thanks to [Ricky](https://github.com/r1c5) for raising this [issue on 25 January 2023](https://github.com/markjprice/cs11dotnet7/issues/19).
+
 In Step 1, the code statement that outputs the four-legged cat information is missing the word "named", as shown in the following code:
 ```cs
 Cat fourLeggedCat when fourLeggedCat.Legs == 4
