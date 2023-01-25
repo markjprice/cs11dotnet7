@@ -1,4 +1,4 @@
-**Errata** (21 items)
+**Errata** (22 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -11,6 +11,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 83 - Formatting using interpolated strings](#page-83---formatting-using-interpolated-strings)
 - [Page 85 - Getting text input from the user](#page-85---getting-text-input-from-the-user)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
+- [Page 114 - Simplifying switch statements with switch expressions](#page-114---simplifying-switch-statements-with-switch-expressions)
 - [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
@@ -125,6 +126,19 @@ Console.WriteLine($"Hello {firstName}, you look good for {age}.");
 # Page 86 - Getting text input from the user
 
 In Step 3, I wrote, "For the `firstName` variable" when I should have written, "For the `age` variable".
+
+# Page 114 - Simplifying switch statements with switch expressions
+
+In Step 1, the code statement that outputs the four-legged cat information is missing the word "named", as shown in the following code:
+```cs
+Cat fourLeggedCat when fourLeggedCat.Legs == 4
+  => $"The cat {fourLeggedCat.Name} has four legs.",
+```
+It should be:
+```cs
+Cat fourLeggedCat when fourLeggedCat.Legs == 4
+  => $"The cat named {fourLeggedCat.Name} has four legs.",
+```
 
 # Page 185 - Creating a class library that needs testing
 
