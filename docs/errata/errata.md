@@ -1,4 +1,4 @@
-**Errata** (22 items)
+**Errata** (23 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -12,6 +12,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 85 - Getting text input from the user](#page-85---getting-text-input-from-the-user)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 114 - Simplifying switch statements with switch expressions](#page-114---simplifying-switch-statements-with-switch-expressions)
+- [Page 156 - Calculating factorials with recursion](#page-156---calculating-factorials-with-recursion)
 - [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
@@ -141,6 +142,12 @@ It should be:
 Cat fourLeggedCat when fourLeggedCat.Legs == 4
   => $"The cat named {fourLeggedCat.Name} has four legs.",
 ```
+
+# Page 156 - Calculating factorials with recursion
+
+> Thanks to [Ricky](https://github.com/r1c5) for raising this [issue on 29 January 2023](https://github.com/markjprice/cs11dotnet7/issues/21).
+
+In Step 1, in the third bullet that explains the code, I wrote, "If the input parameter number is more than 1, which it will be in all other cases..." I should have written, "If the input parameter number is more than 0, which it will be in all other cases..."
 
 # Page 185 - Creating a class library that needs testing
 
