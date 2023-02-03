@@ -1,4 +1,4 @@
-**Errata** (23 items)
+**Errata** (25 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -16,8 +16,10 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
+- [Page 258 - Defining and handling events](#page-258---defining-and-handling-events)
 - [Page 272 - Defining struct types](#page-272---defining-struct-types)
 - [Page 275 - Releasing unmanaged resources](#page-275---releasing-unmanaged-resources)
+- [Page 277 - Making a value type nullable](#page-277---making-a-value-type-nullable)
 - [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
 - [Page 330 - Publishing a self-contained app, Page 354 - Exercise 7.3 – Explore PowerShell](#page-330---publishing-a-self-contained-app-page-354---exercise-73--explore-powershell)
 - [Page 412 - Compressing streams](#page-412---compressing-streams)
@@ -165,6 +167,19 @@ In Step 1, the project name `CalculatorLibUnitTest` should be `CalculatorLibUnit
 
 In Step 1, I say to add a new file named `Records.cs` to the `PacktLibraryNetStandard2` project/folder. I should have said to the `PacktLibraryModern` project/folder.
 
+# Page 258 - Defining and handling events
+
+> Thanks to [Ricky](https://github.com/r1c5) for raising this [issue on 2 February 2023](https://github.com/markjprice/cs11dotnet7/issues/23).
+
+In Step 5, the statement that outputs the "Stop it!" message uses the `$` string interpolation prefix character unnecessarily, as shown in the following code:
+```cs
+WriteLine($"Stop it!");
+```
+The `$` can be removed, as shown in the following code:
+```cs
+WriteLine("Stop it!");
+```
+
 # Page 272 - Defining struct types
 
 > Thanks to [Ali Koleiny Zadeh](https://github.com/alikzalikz) for raising this [issue on 15 January 2023](https://github.com/markjprice/cs11dotnet7/issues/18).
@@ -178,6 +193,20 @@ In Step 4, the output should be formatted using the "command line" style like in
 In the second bullet point after the large code block, I wrote, "It needs to check the `disposing` parameter and `disposed` field because if the finalizer thread has already run and it called the `~ObjectWithUnmanagedResources` method, then only unmanaged resources need to be deallocated." I should have written **managed** not **unmanaged**. 
 
 It might be clearer if I wrote, "It needs to check the `disposing` parameter and `disposed` field because if the finalizer thread has already run and it called the `~ObjectWithUnmanagedResources` method, then unmanaged resources will already have been deallocated and only managed resources remain to be deallocated by the garbage collector." I will do this in the next edition.
+
+# Page 277 - Making a value type nullable
+
+> Thanks to [Ricky](https://github.com/r1c5) for raising this [issue on 2 February 2023](https://github.com/markjprice/cs11dotnet7/issues/24).
+
+In Step 6, the output should be formatted with a black background like other command-line blocks, and the output is missing the writing of the variable named `thisCannotBeNull`. The output should be:
+```
+4
+
+0
+7
+7
+```
+Step 7 should therefore say, "The **second** line is blank because it is outputting the null value!", and it should not be formatted as a numbered step because it is a not an instruction to the reader, it is a note.
 
 # Page 322 - Revealing the location of a type
 
