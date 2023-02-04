@@ -60,6 +60,7 @@ The appendix and color figures are available to download as PDFs:
 Corrections for typos and other mistakes and improvements like refactoring code. Useful links to other related material. 
 - [Book Links](book-links.md)
 - [Improvements & Errata - list of corrections](docs/errata)
+- [What's New in the 7th Edition](docs/whats-new.md)
 - [Seventh edition's support for .NET 8](docs/dotnet8.md)
 
 ## Microsoft Certifications
