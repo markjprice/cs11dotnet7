@@ -233,7 +233,9 @@ In the **Good Practice** box on page 330, I wrote about how you can automate com
 > Thanks to [Dario Bosco](https://github.com/DarioBosco) for raising this [issue on 6 February 2023](https://github.com/markjprice/cs11dotnet7/issues/26).
 
 In Step 1, in the second bullet, I wrote, "Check for the existence of the custom directory path using the `Exists` method of the 
-`Directory` class." But in the code I used the `Exists` method of the `Path` class. We have statically imported both the `Path` and the `Directory` classes and they both have an `Exists` method. If we try to call an `Exists` method without a classname prefix we get a compile error due to ambiguity of which one to call. After writing the second bullet text, I changed the code from using `Directory` to using `Path` simply because it is shorter. In the 8th edition, I will add a note about this since it is useful for the reader to understand my choice and how the reader could have done it differently.
+`Directory` class." But in the code I used the `Exists` method of the `Path` class. We have statically imported both the `Path` and the `Directory` classes and they both have an `Exists` method in .NET 7. If we try to call an `Exists` method without a classname prefix we get a compile error due to ambiguity of which one to call. After writing the second bullet text, I changed the code from using `Directory` to using `Path` simply because it is shorter. In the 8th edition, I will add a note about this since it is useful for the reader to understand my choice and how the reader could have done it differently.
+
+> Note: the `Path.Exists` method was added in .NET 7. It is not available in earlier versions of .NET.
 
 # Page 412 - Compressing streams
 
