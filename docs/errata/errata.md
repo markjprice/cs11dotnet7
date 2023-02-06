@@ -1,4 +1,4 @@
-**Errata** (25 items)
+**Errata** (26 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -22,6 +22,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 277 - Making a value type nullable](#page-277---making-a-value-type-nullable)
 - [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
 - [Page 330 - Publishing a self-contained app, Page 354 - Exercise 7.3 – Explore PowerShell](#page-330---publishing-a-self-contained-app-page-354---exercise-73--explore-powershell)
+- [Page 399 - Managing directories](#page-399---managing-directories)
 - [Page 412 - Compressing streams](#page-412---compressing-streams)
 - [Page 477 - Inserting entities](#page-477---inserting-entities)
 - [Page 627 - Defining a typed view](#page-627---defining-a-typed-view)
@@ -226,6 +227,13 @@ If you have Source Link disabled, then to see the filename you must expand the c
 # Page 330 - Publishing a self-contained app, Page 354 - Exercise 7.3 – Explore PowerShell
 
 In the **Good Practice** box on page 330, I wrote about how you can automate commands using scripts written in the PowerShell language. My original plan was to write content about PowerShell in the GitHub repository. But PowerShell is a massive topic and there will always be higher priority content to create that is specifically about C# and .NET. In the next edition I will just reference the official PowerShell documentation: https://learn.microsoft.com/en-us/powershell/ And I will remove **Exercise 7.3** that suggests exploring PowerShell.
+
+# Page 399 - Managing directories
+
+> Thanks to [Dario Bosco](https://github.com/DarioBosco) for raising this [issue on 6 February 2023](https://github.com/markjprice/cs11dotnet7/issues/26).
+
+In Step 1, in the second bullet, I wrote, "Check for the existence of the custom directory path using the `Exists` method of the 
+`Directory` class." But in the code I used the `Exists` method of the `Path` class. We have statically imported both the `Path` and the `Directory` classes and they both have an `Exists` method. If we try to call an `Exists` method without a classname prefix we get a compile error due to ambiguity of which one to call. After writing the second bullet text, I changed the code from using `Directory` to using `Path` simply because it is shorter. In the 8th edition, I will add a note about this since it is useful for the reader to understand my choice and how the reader could have done it differently.
 
 # Page 412 - Compressing streams
 
