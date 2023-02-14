@@ -1,4 +1,4 @@
-**Errata** (26 items)
+**Errata** (27 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -13,6 +13,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 114 - Simplifying switch statements with switch expressions](#page-114---simplifying-switch-statements-with-switch-expressions)
 - [Page 156 - Calculating factorials with recursion](#page-156---calculating-factorials-with-recursion)
+- [Page 166 - Setting a breakpoint and starting debugging - Using Visual Studio 2022](#page-166---setting-a-breakpoint-and-starting-debugging---using-visual-studio-2022)
 - [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
@@ -151,6 +152,14 @@ Cat fourLeggedCat when fourLeggedCat.Legs == 4
 > Thanks to [Ricky](https://github.com/r1c5) for raising this [issue on 29 January 2023](https://github.com/markjprice/cs11dotnet7/issues/21).
 
 In Step 1, in the third bullet that explains the code, I wrote, "If the input parameter number is more than 1, which it will be in all other cases..." I should have written, "If the input parameter number is more than 0, which it will be in all other cases..."
+
+# Page 166 - Setting a breakpoint and starting debugging - Using Visual Studio 2022
+
+> Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 12 February 2023](https://github.com/markjprice/cs11dotnet7/issues/28).
+
+At the end of this section I wrote, "If you do not want to see how to use Visual Studio Code to start debugging, then you can skip the next section and continue to the section titled *Navigating with the debugging toolbar*."
+
+But the immediately following section is *Navigating with the debugging toolbar*. The paragraph should move to after this section and before the section titled *Using Visual Studio Code*, and it should say, "If you do not want to see how to use Visual Studio Code to start debugging, then you can skip the next section and continue to the section titled *Debugging windows*."
 
 # Page 185 - Creating a class library that needs testing
 
