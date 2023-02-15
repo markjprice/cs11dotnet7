@@ -1,4 +1,4 @@
-**Improvements** (4 items)
+**Improvements** (5 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -6,6 +6,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 153 - Writing a function that returns a value](#page-153---writing-a-function-that-returns-a-value)
 - [Page 179 - Reviewing project packages](#page-179---reviewing-project-packages)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
+- [Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page](#page-655---exercise-142--practice-implementing-mvc-by-implementing-a-category-detail-page)
 
 # Page 128 - Rounding numbers
 
@@ -69,3 +70,65 @@ For convenience, here is the same command as a single line to make it easier to 
 ```
 dotnet ef dbcontext scaffold "Filename=Northwind.db" Microsoft.EntityFrameworkCore.Sqlite --table Categories --table Products --output-dir AutoGenModels --namespace WorkingWithEFCore.AutoGen --data-annotations --context Northwind
 ```
+
+# Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page
+
+Earlier in the chapter, and in Exercise 14.2, the link generated for a category detail page looks like this:
+```
+https://localhost:5001/category/1
+```
+
+Although it is possible to configure a route to respond to that format of link, it would be easier if the link used the following format:
+```
+https://localhost:5001/home/categorydetail/1
+```
+
+In `Index.cshtml`, change how the links are generated to match the improved format, as shown in the following markup:
+```xml
+<a class="btn btn-primary"
+  href="/home/categorydetail/@Model.Categories[c].CategoryId">View</a>
+```
+
+This would then allow you to add an action method to the `HomeController` class as shown in the following code:
+```cs
+public async Task<IActionResult> CategoryDetail(int? id)
+{
+  if (!id.HasValue)
+  {
+    return BadRequest("You must pass a category ID in the route, for example, /Home/CategoryDetail/6");
+  }
+
+  Category? model = await db.Categories.Include(p => p.Products)
+    .SingleOrDefaultAsync(p => p.CategoryId == id);
+
+  if (model is null)
+  {
+    return NotFound($"CategoryId {id} not found.");
+  }
+
+  return View(model); // pass model to view and then return result
+}
+```
+
+And create a view that matches the name `CategoryDetail.cshtml`, as shown in the following markup:
+```xml
+@model Packt.Shared.Category 
+@{
+  ViewData["Title"] = "Category Detail - " + Model.CategoryName;
+}
+<h2>Category Detail</h2>
+<div>
+  <dl class="dl-horizontal">
+    <dt>Category Id</dt>
+    <dd>@Model.CategoryId</dd>
+    <dt>Product Name</dt>
+    <dd>@Model.CategoryName</dd>
+    <dt>Products</dt>
+    <dd>@Model.Products.Count</dd>
+    <dt>Description</dt>
+    <dd>@Model.Description</dd>
+  </dl>
+</div>
+```
+
+> Note: You could also use the simpler link format `https://localhost:5001/home/category/1` but then both the action method and the view filename must be just `Category` instead of `CategoryDetail`.
