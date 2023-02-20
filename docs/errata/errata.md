@@ -21,6 +21,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 272 - Defining struct types](#page-272---defining-struct-types)
 - [Page 275 - Releasing unmanaged resources](#page-275---releasing-unmanaged-resources)
 - [Page 277 - Making a value type nullable](#page-277---making-a-value-type-nullable)
+- [Page 279 - Declaring non-nullable variables and parameters](#page-279---declaring-non-nullable-variables-and-parameters)
 - [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
 - [Page 330 - Publishing a self-contained app, Page 354 - Exercise 7.3 – Explore PowerShell](#page-330---publishing-a-self-contained-app-page-354---exercise-73--explore-powershell)
 - [Page 399 - Managing directories](#page-399---managing-directories)
@@ -217,6 +218,12 @@ In Step 6, the output should be formatted with a black background like other com
 7
 ```
 Step 7 should therefore say, "The **second** line is blank because it is outputting the null value!", and it should not be formatted as a numbered step because it is a not an instruction to the reader, it is a note.
+
+# Page 279 - Declaring non-nullable variables and parameters
+
+> Thanks to [Ricky](https://github.com/r1c5) for raising this [issue on 19 February 2023](https://github.com/markjprice/cs11dotnet7/issues/30).
+
+In Step 1, I wrote, "In `NullHandling.csproj`," which could be confusing because you do not need to modify that file. I should have written, "In the `NullHandling` project," because you need to add a new file to the project.
 
 # Page 322 - Revealing the location of a type
 
