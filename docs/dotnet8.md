@@ -12,7 +12,7 @@ Microsoft will release previews of .NET 8 regularly starting in February 2023 un
 - May, 2023: [Announcing .NET 8 Preview 4](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-4/)
 - April, 2023: [Announcing .NET 8 Preview 3](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-3/)
 - March, 2023: [Announcing .NET 8 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-2/)
-- February, 2023: [Announcing .NET 8 Preview 1](https://devblogs.microsoft.com/dotnet/announcing-net-8-preview-1/)
+- February 21, 2023: [Announcing .NET 8 Preview 1](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-1/)
 
 ## All Chapters
 
@@ -67,10 +67,10 @@ For the `CalculatorLibUnitTests` project, the additional referenced NuGet packag
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
-    <PackageReference Include="xunit" Version="2.4.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
-    <PackageReference Include="coverlet.collector" Version="3.1.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
+    <PackageReference Include="coverlet.collector" Version="3.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -159,7 +159,7 @@ For the `NorthwindMvc` project, the referenced NuGet packages should use the .NE
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0-*" />
     
     <!-- added in Chapter 15 to call a web service -->
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -183,7 +183,7 @@ For the `NorthwindService` project, the referenced NuGet packages should use the
   <ItemGroup>
     <ProjectReference Include="..\NorthwindContextLib\NorthwindContextLib.csproj" />
 
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" 
                       Version="8.0.0-*" />
   </ItemGroup>
