@@ -1,4 +1,4 @@
-**Errata** (27 items)
+**Errata** (29 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -27,12 +27,15 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 399 - Managing directories](#page-399---managing-directories)
 - [Page 412 - Compressing streams](#page-412---compressing-streams)
 - [Page 477 - Inserting entities](#page-477---inserting-entities)
+- [Page 548 - Creating a class library for a Northwind database context](#page-548---creating-a-class-library-for-a-northwind-database-context)
+- [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
 - [Page 627 - Defining a typed view](#page-627---defining-a-typed-view)
 - [Page 631 - Passing parameters using a route value](#page-631---passing-parameters-using-a-route-value)
 - [Page 641 - Enabling role management and creating a role programmatically](#page-641---enabling-role-management-and-creating-a-role-programmatically)
 - [Page 649 - Varying cached data by query string](#page-649---varying-cached-data-by-query-string)
 - [Page 707 - Reviewing the Blazor Server project template](#page-707---reviewing-the-blazor-server-project-template)
 - [Page 733 - Building customer create, edit, and delete components](#page-733---building-customer-create-edit-and-delete-components)
+- [Page 724 - Getting entities into a component](#page-724---getting-entities-into-a-component)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
 
@@ -280,6 +283,84 @@ It should use the method signature that allows multiple `productIds` to be highl
 ListProducts(productIdsToHighlight: new[] { resultAdd.productId });
 ```
 
+# Page 548 - Creating a class library for a Northwind database context
+
+In Step 11, you write an extension method that registers the `NorthwindContext` class for use as a dependency service. In later chapters, this will be used in ASP.NET Core and Blazor projects. By default, a `DbContext` class is registered using `Scope` lifetime, meaning that multiple threads can share the same instance. If more than one thread attempts to use the same `NorthwindContext` class instance at the same time then you will see the following runtime exception thrown:
+
+> "A second operation started on this context before a previous operation completed. This is usually caused by different threads using the same instance of a DbContext, however instance members are not guaranteed to be thread safe."
+
+To avoid this, we should register the `NorthwindContext` class with a `Transient` lifetime, as shown in the following code:
+```cs
+using Microsoft.EntityFrameworkCore; // UseSqlite
+using Microsoft.Extensions.DependencyInjection; // IServiceCollection
+
+namespace Packt.Shared;
+
+public static class NorthwindContextExtensions {
+  /// <summary>
+  /// Adds NorthwindContext to the specified IServiceCollection. Uses the Sqlite database provider.
+  /// </summary>
+  /// <param name="services"></param>
+  /// <param name="relativePath">Set to override the default of ".."</param>
+  /// <param name="databaseFilename">Set to override the default of "Northwind.db"</param>
+  /// <returns>An IServiceCollection that can be used to add more services.</returns>
+  public static IServiceCollection AddNorthwindContext(
+    this IServiceCollection services, 
+    string relativePath = "..",
+    string databaseFilename = "Northwind.db") {
+
+    string databasePath = Path.Combine(relativePath, databaseFilename);
+    
+    services.AddDbContext<NorthwindContext>(options => {
+      options.UseSqlite($"Data Source={databasePath}");
+      options.LogTo(Console.WriteLine,
+      new[] { Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.CommandExecuting });
+
+    }, // Register with a transient lifetime to avoid concurrency issues with multiple threads.
+    contextLifetime: ServiceLifetime.Transient, optionsLifetime: ServiceLifetime.Transient);
+
+    return services;
+  }
+}
+```
+
+# Page 551 - Creating a class library for entity models using SQL Server
+
+In Step 15, you write an extension method that registers the `NorthwindContext` class for use as a dependency service. In later chapters, this will be used in ASP.NET Core and Blazor projects. By default, a `DbContext` class is registered using `Scope` lifetime, meaning that multiple threads can share the same instance. If more than one thread attempts to use the same `NorthwindContext` class instance at the same time then you will see the following runtime exception thrown:
+
+> "A second operation started on this context before a previous operation completed. This is usually caused by different threads using the same instance of a DbContext, however instance members are not guaranteed to be thread safe."
+
+To avoid this, we should register the `NorthwindContext` class with a `Transient` lifetime, as shown in the following code:
+```cs
+using Microsoft.EntityFrameworkCore; // UseSqlServer
+using Microsoft.Extensions.DependencyInjection; // IServiceCollection
+
+namespace Packt.Shared;
+
+public static class NorthwindContextExtensions {
+  /// <summary>
+  /// Adds NorthwindContext to the specified IServiceCollection. Uses the SqlServer database provider.
+  /// </summary>
+  /// <param name="services"></param>
+  /// <param name="connectionString">Set to override the default.</param>
+  /// <returns>An IServiceCollection that can be used to add more services.</returns>
+  public static IServiceCollection AddNorthwindContext(
+    this IServiceCollection services,
+    string connectionString = "Data Source=.;Initial Catalog=Northwind;" +
+     "Integrated Security=true;MultipleActiveResultsets=true;Encrypt=false") {
+    
+    services.AddDbContext<NorthwindContext>(options => {
+      options.UseSqlServer(connectionString);
+      options.LogTo(Console.WriteLine,
+        new[] { Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.CommandExecuting });
+    }, // Register with a transient lifetime to avoid concurrency issues with multiple threads.
+    contextLifetime: ServiceLifetime.Transient, optionsLifetime: ServiceLifetime.Transient);
+
+    return services;
+  }
+}
+```
+
 # Page 627 - Defining a typed view
 
 > Thanks to [Chadwick Geyser](https://github.com/chadwickgeyser) for raising this [issue on 4 December 2022](https://github.com/markjprice/cs11dotnet7/issues/6).
@@ -407,3 +488,17 @@ private async Task Update()
   navigation.NavigateTo("customers");
 }
 ```
+
+# Page 724 - Getting entities into a component
+
+In Step 4, you write a statement to call an extension method that you previously created in Chapter 12, as shown in the following code:
+```cs
+builder.Services.AddNorthwindContext();
+```
+
+By default, this statement registers the database context with `Scope` lifetime. This is not a problem with most ASP.NET Core projects. But in a **Blazor Server** project the `Scope` lifetime instance is shared between multiple threads running on the server. This can cause concurrency issues as described here: 
+https://learn.microsoft.com/en-gb/ef/core/dbcontext-configuration/#implicitly-sharing-dbcontext-instances-via-dependency-injection
+
+To fix this issue, please make the changes shown in the following items:
+- [Page 548 - Creating a class library for a Northwind database context](#page-548---creating-a-class-library-for-a-northwind-database-context)
+- [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
