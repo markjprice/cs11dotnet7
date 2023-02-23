@@ -476,15 +476,17 @@ Microsoft changed this project template to merge them together so there is no sh
 
 # Page 724 - Getting entities into a component
 
-In Step 4, you write a statement to call an extension method that you previously created in Chapter 12, as shown in the following code:
+> Thanks to Amer Cejudo (via email) and [Christopher Targett-Adams](https://github.com/targettadams) for raising this [issue on 20 February 2023](https://github.com/markjprice/cs11dotnet7/issues/31).
+
+In Step 4, I tell the reader to write a statement to call an extension method that you previously created in Chapter 12, as shown in the following code:
 ```cs
 builder.Services.AddNorthwindContext();
 ```
 
-By default, this statement registers the database context with `Scope` lifetime. This is not a problem with most ASP.NET Core projects. But in a **Blazor Server** project the `Scope` lifetime instance is shared between multiple threads running on the server. This can cause concurrency issues as described here: 
-https://learn.microsoft.com/en-gb/ef/core/dbcontext-configuration/#implicitly-sharing-dbcontext-instances-via-dependency-injection
+By default, this statement registers the database context with `Scope` lifetime. This is not a problem with most ASP.NET Core projects. But in a **Blazor Server** project the `Scope` lifetime database context instance is shared between multiple threads running on the server. This can cause concurrency issues as described here: 
+https://learn.microsoft.com/en-us/ef/core/dbcontext-configuration/#implicitly-sharing-dbcontext-instances-via-dependency-injection
 
-To fix this issue, please make the changes shown in the following items:
+This often only affects the SQL Server database provider but it is best to apply the code change for both SQL Server and SQLite class libraries. To fix this issue, please make the changes as shown in the following items:
 - [Page 548 - Creating a class library for a Northwind database context](#page-548---creating-a-class-library-for-a-northwind-database-context)
 - [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
 
