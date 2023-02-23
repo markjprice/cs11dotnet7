@@ -23,7 +23,9 @@ public static class NorthwindContextExtensions
       options.LogTo(WriteLine, // Console
         new[] { Microsoft.EntityFrameworkCore
           .Diagnostics.RelationalEventId.CommandExecuting });
-    });
+    }, 
+    // Register with a transient lifetime to avoid concurrency issues with Blazor Server projects.
+    contextLifetime: ServiceLifetime.Transient, optionsLifetime: ServiceLifetime.Transient);
 
     return services;
   }

@@ -10,11 +10,13 @@ public static class NorthwindContextExtensions
   /// </summary>
   /// <param name="services"></param>
   /// <param name="relativePath">Set to override the default of ".."</param>
+  /// <param name="databaseFilename">Set to override the default of "Northwind.db"</param>
   /// <returns>An IServiceCollection that can be used to add more services.</returns>
   public static IServiceCollection AddNorthwindContext(
-    this IServiceCollection services, string relativePath = "..")
+    this IServiceCollection services, string relativePath = "..",
+    string databaseFilename = "Northwind.db")
   {
-    string databasePath = Path.Combine(relativePath, "Northwind.db");
+    string databasePath = Path.Combine(relativePath, databaseFilename);
 
     services.AddDbContext<NorthwindContext>(options =>
     {
@@ -23,7 +25,9 @@ public static class NorthwindContextExtensions
       options.LogTo(WriteLine, // Console
         new[] { Microsoft.EntityFrameworkCore
           .Diagnostics.RelationalEventId.CommandExecuting });
-    });
+    }, 
+    // Register with a transient lifetime to avoid concurrency issues with Blazor Server projects.
+    contextLifetime: ServiceLifetime.Transient, optionsLifetime: ServiceLifetime.Transient);
 
     return services;
   }
