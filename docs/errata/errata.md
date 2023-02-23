@@ -34,8 +34,8 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 641 - Enabling role management and creating a role programmatically](#page-641---enabling-role-management-and-creating-a-role-programmatically)
 - [Page 649 - Varying cached data by query string](#page-649---varying-cached-data-by-query-string)
 - [Page 707 - Reviewing the Blazor Server project template](#page-707---reviewing-the-blazor-server-project-template)
-- [Page 733 - Building customer create, edit, and delete components](#page-733---building-customer-create-edit-and-delete-components)
 - [Page 724 - Getting entities into a component](#page-724---getting-entities-into-a-component)
+- [Page 733 - Building customer create, edit, and delete components](#page-733---building-customer-create-edit-and-delete-components)
 
 # Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code
 
@@ -316,7 +316,8 @@ public static class NorthwindContextExtensions {
       options.LogTo(Console.WriteLine,
       new[] { Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.CommandExecuting });
 
-    }, // Register with a transient lifetime to avoid concurrency issues with multiple threads.
+    }, 
+    // Register with a transient lifetime to avoid concurrency issues in Blazor Server projects.
     contextLifetime: ServiceLifetime.Transient, optionsLifetime: ServiceLifetime.Transient);
 
     return services;
@@ -353,7 +354,8 @@ public static class NorthwindContextExtensions {
       options.UseSqlServer(connectionString);
       options.LogTo(Console.WriteLine,
         new[] { Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.CommandExecuting });
-    }, // Register with a transient lifetime to avoid concurrency issues with multiple threads.
+    }, 
+    // Register with a transient lifetime to avoid concurrency issues Blazor Server projects.
     contextLifetime: ServiceLifetime.Transient, optionsLifetime: ServiceLifetime.Transient);
 
     return services;
@@ -472,6 +474,20 @@ Microsoft changed this project template to merge them together so there is no sh
 </html>
 ```
 
+# Page 724 - Getting entities into a component
+
+In Step 4, you write a statement to call an extension method that you previously created in Chapter 12, as shown in the following code:
+```cs
+builder.Services.AddNorthwindContext();
+```
+
+By default, this statement registers the database context with `Scope` lifetime. This is not a problem with most ASP.NET Core projects. But in a **Blazor Server** project the `Scope` lifetime instance is shared between multiple threads running on the server. This can cause concurrency issues as described here: 
+https://learn.microsoft.com/en-gb/ef/core/dbcontext-configuration/#implicitly-sharing-dbcontext-instances-via-dependency-injection
+
+To fix this issue, please make the changes shown in the following items:
+- [Page 548 - Creating a class library for a Northwind database context](#page-548---creating-a-class-library-for-a-northwind-database-context)
+- [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
+
 # Page 733 - Building customer create, edit, and delete components
 
 > Thanks to [Bob Molloy](https://github.com/BobMolloy) for raising this [issue on 27 December 2022](https://github.com/markjprice/cs11dotnet7/issues/15).
@@ -488,17 +504,3 @@ private async Task Update()
   navigation.NavigateTo("customers");
 }
 ```
-
-# Page 724 - Getting entities into a component
-
-In Step 4, you write a statement to call an extension method that you previously created in Chapter 12, as shown in the following code:
-```cs
-builder.Services.AddNorthwindContext();
-```
-
-By default, this statement registers the database context with `Scope` lifetime. This is not a problem with most ASP.NET Core projects. But in a **Blazor Server** project the `Scope` lifetime instance is shared between multiple threads running on the server. This can cause concurrency issues as described here: 
-https://learn.microsoft.com/en-gb/ef/core/dbcontext-configuration/#implicitly-sharing-dbcontext-instances-via-dependency-injection
-
-To fix this issue, please make the changes shown in the following items:
-- [Page 548 - Creating a class library for a Northwind database context](#page-548---creating-a-class-library-for-a-northwind-database-context)
-- [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
