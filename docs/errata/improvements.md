@@ -64,8 +64,8 @@ In Chapter 1, I explain how to control which project starts when a Visual Studio
 In the 8th edition, I will add the same reminder to Chapter 6 as well, for example:
 
 8. Set the `PeopleApp` project as the startup/active project:
-  a. If you are using Visual Studio 2022, set the startup project for the solution to the current selection.
-  b. If you are using Visual Studio Code, select `PeopleApp` as the active OmniSharp project. When you see the pop-up warning 
+    a) If you are using Visual Studio 2022, set the startup project for the solution to the current selection.
+    b) If you are using Visual Studio Code, select `PeopleApp` as the active OmniSharp project. When you see the pop-up warning 
 message saying that required assets are missing, click Yes to add them.
 9. Run the `PeopleApp` project and note the result, as shown in the following output:
 ```
