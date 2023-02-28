@@ -1,10 +1,11 @@
-**Improvements** (5 items)
+**Improvements** (6 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 128 - Rounding numbers](#page-128---rounding-numbers)
 - [Page 153 - Writing a function that returns a value](#page-153---writing-a-function-that-returns-a-value)
 - [Page 179 - Reviewing project packages](#page-179---reviewing-project-packages)
+- [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 - [Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page](#page-655---exercise-142--practice-implementing-mvc-by-implementing-a-category-detail-page)
 
@@ -52,6 +53,23 @@ Due to transitive dependencies, you only actually need to explicitly reference t
     Include="Microsoft.Extensions.Configuration.Json"
     Version="7.0.0" />
  </ItemGroup>
+```
+
+# Page 251 - Setting up a class library and console application
+
+In Step 8, I wrote, "Run the `PeopleApp` project". 
+
+In Chapter 1, I explain how to control which project starts when a Visual Studio 2022 solution contains multiple projects by setting the startup project. In Chapters 2 to 5, I remind the reader to set the startup project. 
+
+In the 8th edition, I will add the same reminder to Chapter 6 as well, for example:
+
+8. Set the `PeopleApp` project as the startup/active project:
+  a. If you are using Visual Studio 2022, set the startup project for the solution to the current selection.
+  b. If you are using Visual Studio Code, select `PeopleApp` as the active OmniSharp project. When you see the pop-up warning 
+message saying that required assets are missing, click Yes to add them.
+9. Run the `PeopleApp` project and note the result, as shown in the following output:
+```
+Harry was born on a Sunday.
 ```
 
 # Page 453 - Scaffolding models using an existing database
