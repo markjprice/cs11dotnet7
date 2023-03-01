@@ -1,4 +1,4 @@
-**Errata** (29 items)
+**Errata** (30 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -16,6 +16,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 166 - Setting a breakpoint and starting debugging - Using Visual Studio 2022](#page-166---setting-a-breakpoint-and-starting-debugging---using-visual-studio-2022)
 - [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
+- [Page 231 - Requiring properties to be set during instantiation](#page-231---requiring-properties-to-be-set-during-instantiation)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
 - [Page 258 - Defining and handling events](#page-258---defining-and-handling-events)
 - [Page 272 - Defining struct types](#page-272---defining-struct-types)
@@ -174,6 +175,30 @@ In the "If you are using Visual Studio Code" section, in Step 5, the command in 
 > Thanks to [kwatsonkairosmgt](https://github.com/kwatsonkairosmgt) for raising this [issue on 27 October 2022](https://github.com/markjprice/cs10dotnet6/issues/106).
 
 In Step 1, the project name `CalculatorLibUnitTest` should be `CalculatorLibUnitTests`.
+
+# Page 231 - Requiring properties to be set during instantiation
+
+> Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 1 March 2023](https://github.com/markjprice/cs11dotnet7/issues/33).
+
+In Step 1, you are told to add a new class library project named `PacktLibraryModern`. 
+
+In Step 4, in the `PeopleApp` console app project, you are told to create an instance of the `Book` class that is defined in the class library. To do so, you must have added a reference to the `PacktLibraryModern` project. 
+
+In the next edition, I will add steps before Step 4 to remind readers how to do this, as shown below:
+
+*If you are using Visual Studio 2022:*
+- In **Solution Explorer**, select the `PeopleApp` project, navigate to **Project** | **Add Project Reference…**, check the box to select the **PacktLibraryModern** project, and then click **OK**.
+
+*If you are using Visual Studio Code:*
+- Edit `PeopleApp.csproj` to add a project reference to `PacktLibraryModern`, as shown in 
+the following markup:
+```xml
+<ItemGroup>
+  <ProjectReference Include="../PacktLibraryModern/PacktLibraryModern.csproj" />
+</ItemGroup>
+```
+
+- Build the `PeopleApp` project.
 
 # Page 244 - Init-only properties
 
