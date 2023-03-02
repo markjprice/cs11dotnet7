@@ -1,4 +1,4 @@
-**Improvements** (9 items)
+**Improvements** (10 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -10,6 +10,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 - [Page 547 - Creating a class library for a Northwind database context](#page-547---creating-a-class-library-for-a-northwind-database-context)
+- [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
 - [Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page](#page-655---exercise-142--practice-implementing-mvc-by-implementing-a-category-detail-page)
 
 # Page 86 - Getting text input from the user
@@ -171,6 +172,7 @@ protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     }
 
     path = Path.GetFullPath(path); // Convert to absolute path.
+    WriteLine($"Database path: {path}");
 
     if (!File.Exists(path))
     {
@@ -188,6 +190,100 @@ protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 The throwing of the exception is important because if the database file is missing, then the SQLite database provider will create an empty database file, and so if you test connecting to it, it works! But if you query it then you will see an exception related to missing tables because it does not have any tables! 
 
 On page 553, we write some unit tests for this class and for SQLite the first test seems to work even when the path is actually wrong due to this issue. By adding code to throw an exception if the database file is missing, this test will now correctly fail.
+
+In Step 11, in the `NorthwindContextExtensions.cs` file, we should also use a dynamically constructed string for the `AddNorthwindContext` method, as shown in the following code:
+```cs
+public static IServiceCollection AddNorthwindContext(
+  this IServiceCollection services, 
+  string relativePath = "..", 
+  string databaseName = "Northwind.db")
+{
+  string path = Path.Combine(relativePath, databaseName);
+  path = Path.GetFullPath(path);
+  WriteLine($"Database path: {path}");
+
+  services.AddDbContext<NorthwindContext>(options =>
+  {
+    // Data Source is the modern equivalent of Filename.
+    options.UseSqlite($"Data Source={path}");
+
+    options.LogTo(WriteLine, // Console
+      new[] { Microsoft.EntityFrameworkCore
+        .Diagnostics.RelationalEventId.CommandExecuting });
+  });
+
+  return services;
+}
+```
+
+# Page 551 - Creating a class library for entity models using SQL Server
+
+In Step 14, I tell the reader, "In the `Northwind.Common.DataContext.SqlServer` project, in `NorthwindContext.cs`, remove 
+the compiler warning about the connection string."
+
+It would be an improvement to also replace the hard-coded string value used for the database connection string with a dynamically constructed string using the `SqlConnectionStringBuilder` class, as shown in the following code:
+```cs
+// At the top of the NorthwindContext.cs file.
+using Microsoft.Data.SqlClient; // SqlConnectionStringBuilder
+```
+The `OnConfiguring` method:
+```cs
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+  if (!optionsBuilder.IsConfigured)
+  {
+    SqlConnectionStringBuilder builder = new();
+
+    builder.DataSource = "."; // "ServerName\InstanceName" e.g. @".\sqlexpress"
+    builder.InitialCatalog = "Northwind";
+    builder.IntegratedSecurity = true;
+    builder.TrustServerCertificate = true;
+    builder.MultipleActiveResultSets = true;
+    builder.ConnectTimeout = 3; // Because we want to fail fast. Default is 15 seconds.
+
+    optionsBuilder.UseSqlServer(builder.ConnectionString);
+  }
+}
+
+```
+
+In Step 15, in the `NorthwindContextExtensions.cs` file, we should also use a dynamically constructed string using the `SqlConnectionStringBuilder` class, as shown in the following code:
+```cs
+// At the top of the NorthwindContextExtensions.cs file.
+using Microsoft.Data.SqlClient; // SqlConnectionStringBuilder
+```
+The `AddNorthwindContext` method:
+```cs
+public static IServiceCollection AddNorthwindContext(
+  this IServiceCollection services,
+  string? connectionString = null)
+{
+  if (connectionString == null)
+  {
+    SqlConnectionStringBuilder builder = new();
+
+    builder.DataSource = "."; // "ServerName\InstanceName" e.g. @".\sqlexpress"
+    builder.InitialCatalog = "Northwind";
+    builder.IntegratedSecurity = true;
+    builder.TrustServerCertificate = true;
+    builder.MultipleActiveResultSets = true;
+    builder.ConnectTimeout = 3; // Because we want to fail fast. Default is 15 seconds.
+
+    connectionString = builder.ConnectionString;
+  }
+
+  services.AddDbContext<NorthwindContext>(options =>
+  {
+    options.UseSqlServer(connectionString);
+
+    options.LogTo(WriteLine, // Console
+      new[] { Microsoft.EntityFrameworkCore
+        .Diagnostics.RelationalEventId.CommandExecuting });
+  });
+
+  return services;
+}
+```
 
 # Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page
 
