@@ -183,7 +183,11 @@ protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 }
 ```
 
-> The throwing of the exception is important because if the database file is missing, then the SQLite database provider will create an empty database file, and so if you test connecting to it, it works! But if you query it then you will see exceptions because it does not have any tables! On page 553, we write some unit tests for this class and for SQLite the first test seems to work even when the path is actually wrong due to this issue.
+> After converting the relative path to an absolute path, you can set a breakpoint to more easily see where the database file is expected to be, or add a statement to log that path.
+
+The throwing of the exception is important because if the database file is missing, then the SQLite database provider will create an empty database file, and so if you test connecting to it, it works! But if you query it then you will see an exception related to missing tables because it does not have any tables! 
+
+On page 553, we write some unit tests for this class and for SQLite the first test seems to work even when the path is actually wrong due to this issue. By adding code to throw an exception if the database file is missing, this test will now correctly fail.
 
 # Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page
 
