@@ -81,7 +81,20 @@ So this section also shows how to disable some common warnings by adding extra c
 
 For example, one warning is caused by the compiler thinking there could be a null dereference. To disable the warning, you therefore need to check for a `null` value *even though we know that can never actually happen* as explained in the note. That extra code check is pointless if you run the console app and expect it to work correctly. 
 
-In the next edition, I will add another note to explicitly tell the reader not to run the project. The project implementation is not written to actually function as a check if someone has entered their name because that's not the point of this section. 
+In the next edition, I will add another note to explicitly tell the reader not to run the project. The project implementation is not written to actually function as a check if someone has entered their name because that's not the point of this section. I will also simplify the code.
+
+Current code:
+```cs
+if (name == null)
+{
+  Console.WriteLine("You did not enter a name.");
+  return;
+}
+```
+Code in next edition:
+```cs
+if (name == null) return; // must check for null to remove the warning
+```
 
 # Page 453 - Scaffolding models using an existing database
 
