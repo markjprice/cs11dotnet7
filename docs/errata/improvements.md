@@ -1,4 +1,4 @@
-**Improvements** (8 items)
+**Improvements** (9 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -9,6 +9,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
+- [Page 547 - Creating a class library for a Northwind database context](#page-547---creating-a-class-library-for-a-northwind-database-context)
 - [Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page](#page-655---exercise-142--practice-implementing-mvc-by-implementing-a-category-detail-page)
 
 # Page 86 - Getting text input from the user
@@ -119,6 +120,70 @@ For convenience, here is the same command as a single line to make it easier to 
 ```
 dotnet ef dbcontext scaffold "Filename=Northwind.db" Microsoft.EntityFrameworkCore.Sqlite --table Categories --table Products --output-dir AutoGenModels --namespace WorkingWithEFCore.AutoGen --data-annotations --context Northwind
 ```
+
+# Page 547 - Creating a class library for a Northwind database context
+
+In Step 8, you write code to implement the `OnConfiguring` method so that it sets the Filename path to the SQLite database file correctly when running in both Visual Studio 2022 and at the command-line with Visual Studio Code, as shown in the following code:
+```cs
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+  if (!optionsBuilder.IsConfigured)
+  {
+    string dir = Environment.CurrentDirectory;
+    string path = string.Empty;
+
+    if (dir.EndsWith("net7.0"))
+    {
+      // Running in the <project>\bin\<Debug|Release>\net7.0 directory.
+      path = Path.Combine("..", "..", "..", "..", "Northwind.db");
+    }
+    else
+    {
+      // Running in the <project> directory.
+      path = Path.Combine("..", "Northwind.db");
+    }
+
+    optionsBuilder.UseSqlite($"Filename={path}");
+  }
+}
+```
+
+In the next edition, it will be improved in two ways. First, by defining a string value once for the database name, and second, by checking that the database file exists and throwing an exception if it does not, as shown in the following code:
+```cs
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+  string databaseName = "Northwind.db";
+
+  if (!optionsBuilder.IsConfigured)
+  {
+    string dir = Environment.CurrentDirectory;
+    string path = string.Empty;
+
+    if (dir.EndsWith("net7.0"))
+    {
+      // Running in the <project>\bin\<Debug|Release>\net7.0 directory.
+      path = Path.Combine("..", "..", "..", "..", databaseName);
+    }
+    else
+    {
+      // Running in the <project> directory.
+      path = Path.Combine("..", databaseName);
+    }
+
+    path = Path.GetFullPath(path); // Convert to absolute path.
+
+    if (!File.Exists(path))
+    {
+      throw new FileNotFoundException(
+        message: $"{path} not found.", fileName: path);
+    }
+
+    optionsBuilder.UseSqlite($"Filename={path}");
+  }
+}
+```
+
+> The throwing of the exception is important because if the database file is missing, then the SQLite database provider will create an empty database file, and so if you test connecting to it, it works! But if you query it then you will see exceptions because it does not have any tables! On page 553, we write some unit tests for this class and for SQLite the first test seems to work even when the path is actually wrong due to this issue.
 
 # Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page
 
