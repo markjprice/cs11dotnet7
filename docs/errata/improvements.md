@@ -1,7 +1,8 @@
-**Improvements** (7 items)
+**Improvements** (8 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
+- [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 128 - Rounding numbers](#page-128---rounding-numbers)
 - [Page 153 - Writing a function that returns a value](#page-153---writing-a-function-that-returns-a-value)
 - [Page 179 - Reviewing project packages](#page-179---reviewing-project-packages)
@@ -9,6 +10,12 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 - [Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page](#page-655---exercise-142--practice-implementing-mvc-by-implementing-a-category-detail-page)
+
+# Page 86 - Getting text input from the user
+
+In Step 1, I note that the `ReadLine` method is declared to return `string?`, meaning that it could return a `null` value instead of a `string` value (including an empty one). I also note that this is treated as a warning by the compiler. 
+
+In the next edition, I will add a note to explain that this method never actually returns `null` so there is no point in checking for that in functional code. A more useful check is `string.IsNullOrEmpty` so I will add more steps to show how to use that method and `string.IsNullOrWhiteSpace` to validate text input. 
 
 # Page 128 - Rounding numbers
 
