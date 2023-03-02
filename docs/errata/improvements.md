@@ -202,6 +202,12 @@ public static IServiceCollection AddNorthwindContext(
   path = Path.GetFullPath(path);
   WriteLine($"Database path: {path}");
 
+  if (!File.Exists(path))
+  {
+    throw new FileNotFoundException(
+      message: $"{path} not found.", fileName: path);
+  }
+
   services.AddDbContext<NorthwindContext>(options =>
   {
     // Data Source is the modern equivalent of Filename.
