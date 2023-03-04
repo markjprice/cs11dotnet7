@@ -1,4 +1,4 @@
-**Improvements** (10 items)
+**Improvements** (11 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -11,6 +11,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 - [Page 547 - Creating a class library for a Northwind database context](#page-547---creating-a-class-library-for-a-northwind-database-context)
 - [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
+- [Page 654 - Making controller action methods asynchronous](#page-654---making-controller-action-methods-asynchronous)
 - [Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page](#page-655---exercise-142--practice-implementing-mvc-by-implementing-a-category-detail-page)
 
 # Page 86 - Getting text input from the user
@@ -289,6 +290,16 @@ public static IServiceCollection AddNorthwindContext(
 
   return services;
 }
+```
+
+# Page 654 - Making controller action methods asynchronous
+
+In an earlier task, you imported the `Microsoft.EntityFrameworkCore` namespace so that you could use the `Include` extension method. In Step 1, I tell you to use the `ToListAsync` method to implement the `Index` action method asynchronously. If you had not previously imported the `Microsoft.EntityFrameworkCore` namespace then you would have to import it now to use the `ToListAsync` method. 
+
+In the next edition, I will add a comment to make this more obvious, as shown in the following code:
+
+```cs
+using Microsoft.EntityFrameworkCore; // To use the Include and ToListAsync extension methods.
 ```
 
 # Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page

@@ -3,7 +3,7 @@ using Northwind.Mvc.Models; // ErrorViewModel
 using System.Diagnostics; // Activity
 using Microsoft.AspNetCore.Authorization; // [Authorize]
 using Packt.Shared; // NorthwindContext
-using Microsoft.EntityFrameworkCore; // Include extension method
+using Microsoft.EntityFrameworkCore; // Include and ToListAsync extension methods
 
 namespace Northwind.Mvc.Controllers
 {
