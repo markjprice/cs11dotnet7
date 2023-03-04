@@ -300,7 +300,7 @@ This section starts with a description of Razor Pages. The first bullet point sa
 
 In the next edition, I will add a warning, as shown in the following note:
 
-> **Warning!** *Razor Pages* are different from *Razor Views* (used in ASP.NET Core MVC) but they share the same file extension `.cshtml`. When creating a *Razor View*, do NOT use the `@page` directive! If you do, the controller will not pass the model to it and the model in the view will be `null`, throwing a `NullRefertenceException` when you try to access any of its members.
+> **Warning!** *Razor Pages* are different from *Razor Views* (used in ASP.NET Core MVC) but they share the same file extension `.cshtml`. When creating a *Razor View*, do NOT use the `@page` directive!
 
 # Page 601 - Setting up an ASP.NET Core MVC website
 
