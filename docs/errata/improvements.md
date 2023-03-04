@@ -1,4 +1,4 @@
-**Improvements** (13 items)
+**Improvements** (14 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -9,6 +9,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
+- [Page 533 - Building websites using ASP.NET Core](#page-533---building-websites-using-aspnet-core)
 - [Page 547 - Creating a class library for a Northwind database context](#page-547---creating-a-class-library-for-a-northwind-database-context)
 - [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
 - [Page 573 - Adding code to a Razor Page](#page-573---adding-code-to-a-razor-page)
@@ -124,6 +125,23 @@ For convenience, here is the same command as a single line to make it easier to 
 ```
 dotnet ef dbcontext scaffold "Filename=Northwind.db" Microsoft.EntityFrameworkCore.Sqlite --table Categories --table Products --output-dir AutoGenModels --namespace WorkingWithEFCore.AutoGen --data-annotations --context Northwind
 ```
+
+# Page 533 - Building websites using ASP.NET Core
+
+In this section, I introduce the various technologies like Razor Pages, MVC, and Blazor that are included with ASP.NET Core.
+
+In the next edition, I will add a section with a table summarizing the file types used by these technologies because they are similar but different and if the reader does not understand some subtle but important differences, it can cause much confusion when trying to implement their own projects.
+
+|Technology|File extension|Directive|
+|---|---|---|
+|Razor View (for MVC)|`.cshtml`|None|
+|Razor Page|`.cshtml`|`@page`|
+|Razor Component (for Blazor)|`.razor`|None|
+|Razor Page Component (for Blazor)|`.razor`|`@page`|
+
+> **Warning!** Be careful to use the correct file extension and directive at the top of the file or you will get unexpected behavior.
+
+![Visual Studio 2022 Razor project item types](images/razor-file-types.png)
 
 # Page 547 - Creating a class library for a Northwind database context
 
