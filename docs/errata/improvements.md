@@ -134,17 +134,13 @@ In the next edition, I will add a section with a table summarizing the file type
 
 |Technology|Special filename|File extension|Directive|
 |---|---|---|---|
-|Razor View (for MVC)||`.cshtml`|None|
-|Razor Page||`.cshtml`|`@page`|
 |Razor Component (for Blazor)||`.razor`|None|
 |Razor Component (for Blazor with page routing)||`.razor`|`@page`|
+|Razor Page||`.cshtml`|`@page`|
+|Razor View (for MVC)||`.cshtml`|None|
 |Razor Layout||`.cshtml`|None|
 |Razor View Start|`_ViewStart`|`.cshtml`|None|
 |Razor View Imports|`_ViewImports`|`.cshtml`|None|
-
-> **Warning!** Be careful to use the correct file extension and directive at the top of the file or you will get unexpected behavior.
-
-![Visual Studio 2022 Razor project item types](images/razor-file-types.png)
 
 A **Razor Layout** file like `_MyCustomLayout.cshtml` is identical to a **Razor View**. What makes it a layout is being set as the `Layout` property of another Razor file, as shown in the following code:
 ```cs
@@ -152,6 +148,10 @@ A **Razor Layout** file like `_MyCustomLayout.cshtml` is identical to a **Razor 
   Layout = "_MyCustomLayout";
 }
 ```
+
+> **Warning!** Be careful to use the correct file extension and directive at the top of the file or you will get unexpected behavior.
+
+![Visual Studio 2022 Razor project item types](images/razor-file-types.png)
 
 # Page 547 - Creating a class library for a Northwind database context
 
