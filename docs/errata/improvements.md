@@ -132,16 +132,26 @@ In this section, I introduce the various technologies like Razor Pages, MVC, and
 
 In the next edition, I will add a section with a table summarizing the file types used by these technologies because they are similar but different and if the reader does not understand some subtle but important differences, it can cause much confusion when trying to implement their own projects.
 
-|Technology|File extension|Directive|
-|---|---|---|
-|Razor View (for MVC)|`.cshtml`|None|
-|Razor Page|`.cshtml`|`@page`|
-|Razor Component (for Blazor)|`.razor`|None|
-|Razor Page Component (for Blazor)|`.razor`|`@page`|
+|Technology|Special filename|File extension|Directive|
+|---|---|---|---|
+|Razor View (for MVC)||`.cshtml`|None|
+|Razor Page||`.cshtml`|`@page`|
+|Razor Component (for Blazor)||`.razor`|None|
+|Razor Component (for Blazor with page routing)||`.razor`|`@page`|
+|Razor Layout||`.cshtml`|None|
+|Razor View Start|`_ViewStart`|`.cshtml`|None|
+|Razor View Imports|`_ViewImports`|`.cshtml`|None|
 
 > **Warning!** Be careful to use the correct file extension and directive at the top of the file or you will get unexpected behavior.
 
 ![Visual Studio 2022 Razor project item types](images/razor-file-types.png)
+
+A **Razor Layout** file like `_MyCustomLayout.cshtml` is identical to a **Razor View**. What makes it a layout is being set as the `Layout` property of another Razor file, as shown in the following code:
+```cs
+@{
+  Layout = "_MyCustomLayout";
+}
+```
 
 # Page 547 - Creating a class library for a Northwind database context
 
