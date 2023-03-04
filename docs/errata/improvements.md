@@ -1,4 +1,4 @@
-**Improvements** (11 items)
+**Improvements** (13 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -11,6 +11,8 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 - [Page 547 - Creating a class library for a Northwind database context](#page-547---creating-a-class-library-for-a-northwind-database-context)
 - [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
+- [Page 573 - Adding code to a Razor Page](#page-573---adding-code-to-a-razor-page)
+- [Page 601 - Setting up an ASP.NET Core MVC website](#page-601---setting-up-an-aspnet-core-mvc-website)
 - [Page 654 - Making controller action methods asynchronous](#page-654---making-controller-action-methods-asynchronous)
 - [Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page](#page-655---exercise-142--practice-implementing-mvc-by-implementing-a-category-detail-page)
 
@@ -291,6 +293,22 @@ public static IServiceCollection AddNorthwindContext(
   return services;
 }
 ```
+
+# Page 573 - Adding code to a Razor Page
+
+This section starts with a description of Razor Pages. The first bullet point says, "They require the `@page` directive at the top of the file."
+
+In the next edition, I will add a warning, as shown in the following note:
+
+> **Warning!** *Razor Pages* are different from *Razor Views* (used in ASP.NET Core MVC) but they share the same file extension `.cshtml`. When creating a *Razor View*, do NOT use the `@page` directive! If you do, the controller will not pass the model to it and the model in the view will be `null`, throwing a `NullRefertenceException` when you try to access any of its members.
+
+# Page 601 - Setting up an ASP.NET Core MVC website
+
+This sections starts with a description of the three parts of MVC. For views, I wrote, "Views: Razor files, that is, `.cshtml` files, that render data in view models into HTML web pages. Blazor uses the `.razor` file extension, but do not confuse them with Razor files!"
+
+In the next edition, I will changed this text and add a warning:
+
+"Views: *Razor View* files, that is, `.cshtml` files, that render data in view models into HTML web pages. *Razor Views* are different from *Razor Pages* but they share the same file extension `.cshtml`. When creating a *Razor Page*, you must add the `@page` directive at the top of the file. When creating a *Razor View*, do NOT use the `@page` directive! If you do, the controller will not pass the model to it and the model in the view will be `null`, throwing a `NullRefertenceException` when you try to access any of its members. Blazor uses the `.razor` file extension, but do not confuse them with *Razor View* or *Razor Page* files! Blazor can also use the `@page` directive to allow a Blazor component to act like a page!"
 
 # Page 654 - Making controller action methods asynchronous
 
