@@ -1,4 +1,4 @@
-**Improvements** (14 items)
+**Improvements** (15 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -6,6 +6,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 128 - Rounding numbers](#page-128---rounding-numbers)
 - [Page 153 - Writing a function that returns a value](#page-153---writing-a-function-that-returns-a-value)
 - [Page 179 - Reviewing project packages](#page-179---reviewing-project-packages)
+- [Page 237 - Implementing functionality using methods](#page-237---implementing-functionality-using-methods)
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
@@ -68,6 +69,20 @@ Due to transitive dependencies, you only actually need to explicitly reference t
     Version="7.0.0" />
  </ItemGroup>
 ```
+
+# Page 237 - Implementing functionality using methods
+
+In Step 4, I tell the reader to write some code that uses the `??` operator. But I do not explain how this operator works until later in the book, on page 282, as shown in the following text and code example:
+
+"Sometimes, you want to either assign a variable to a result or use an alternative value, such as `3`, if the 
+variable is `null`. You do this using the **null-coalescing operator**, `??`, as shown in the following code:
+```cs
+// result will be 3 if authorName?.Length is null 
+int result = authorName?.Length ?? 3; 
+Console.WriteLine(result);
+```
+
+In the 8th edition, I will add a similar explanation of the operator `??` to the **Chapter 3, Operating on variables** section.
 
 # Page 251 - Setting up a class library and console application
 
