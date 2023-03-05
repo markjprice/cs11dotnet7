@@ -1,4 +1,4 @@
-**Errata** (31 items)
+**Errata** (32 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -6,6 +6,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 
 - [Page 4, 8 - Pros and cons of the .NET Interactive Notebooks extension, Downloading and installing Visual Studio Code](#page-4-8---pros-and-cons-of-the-net-interactive-notebooks-extension-downloading-and-installing-visual-studio-code)
 - [Page 11 - Understanding the journey to one .NET and Understanding .NET support](#page-11---understanding-the-journey-to-one-net-and-understanding-net-support)
+- [Page 36 - Getting help for the dotnet tool](#page-36---getting-help-for-the-dotnet-tool)
 - [Page 37 - Getting definitions of types and their members](#page-37---getting-definitions-of-types-and-their-members)
 - [Page 83 - Formatting using numbered positional arguments](#page-83---formatting-using-numbered-positional-arguments)
 - [Page 83 - Formatting using interpolated strings](#page-83---formatting-using-interpolated-strings)
@@ -58,6 +59,25 @@ On October 11, 2022, the .NET team changed the name again, to [**Standard Suppor
 On October 28, 2022, the .NET team changed the name *again*, to [**Standard Term Support (STS)**](https://twitter.com/mairacw/status/1585789100879069185), probably because an initialism of **SS** is problematic and internal code and configuration was already using `sts`. Sadly, it was too late to update the PDFs that are sent to print.
 
 *Sigh.* Such are the perils of trying to be up-to-date on release day.
+
+# Page 36 - Getting help for the dotnet tool
+
+Step 1 is about opening a web browser to show the documentation help about a command. It follows this syntax:
+```
+dotnet help <command>
+```
+I gave the example of `dotnet help new`, and although this worked in .NET Core 3 up to .NET 6, with .NET 7 it gives an error! 
+
+Other examples, like `dotnet help run`, work correctly by opening a web browser to show the `run` command's documentation. 
+
+The other type of help, as described in Step 2, is command-line documenation and it follows this syntax:
+```
+dotnet <command> -?|-h|--help
+```
+For example, `dotnet new -?` or `dotnet new -h` or `dotnet new --help` outputs documentation about the `new` command at the command-line.
+
+And so `dotnet help help` opens a web browser for the `help` command, and `dotnet help -h` outputs documentation for the `help` command at the command-line! 
+
 
 # Page 37 - Getting definitions of types and their members
 
