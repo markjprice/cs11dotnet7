@@ -67,9 +67,9 @@ The namespace used by the `Program` class generated for the `Program.cs` file do
 
 You must delete the namespace declaration so that the `partial Program` class in the `Program.Functions.cs` file is in the same `null` namespace. 
 
-In the next edition I will add a note explaining this. 
+In the next edition I will add a note explaining this, and I will change the Step 4 text to read: "In `Program.Functions.cs`, replace any existing code with new statements to define a function named `TimesTable` in the `partial Program` class, ..."
 
-You can output the namespace of the `Program` class using rhe following code:
+You can output the namespace of the `Program` class by getting the `Program` type information and checking if its `Namespace` property is `null`, as shown in the following code:
 ```cs
 WriteLine($"typeof(Program).Namespace: {typeof(Program).Namespace ?? "null"}");
 ```
