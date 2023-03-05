@@ -62,21 +62,21 @@ On October 28, 2022, the .NET team changed the name *again*, to [**Standard Term
 
 # Page 36 - Getting help for the dotnet tool
 
-Step 1 is about opening a web browser to show the documentation help about a command. It follows this syntax:
+Step 1 is about opening a web browser to show the documentation for a `dotnet` command. It follows this syntax:
 ```
 dotnet help <command>
 ```
-I gave the example of `dotnet help new`, and although this worked in .NET Core 3 up to .NET 6, with .NET 7 it gives an error! 
+I gave the example of `dotnet help new`, and although this worked in .NET Core 3.1 to .NET 6, with .NET 7 it gives an unhelpful error!
 
 Other examples, like `dotnet help run`, work correctly by opening a web browser to show the `run` command's documentation. 
 
-The other type of help, as described in Step 2, is command-line documenation and it follows this syntax:
+The other type of help, as described in Step 2, is command-line documentation. It follows this syntax:
 ```
 dotnet <command> -?|-h|--help
 ```
 For example, `dotnet new -?` or `dotnet new -h` or `dotnet new --help` outputs documentation about the `new` command at the command-line.
 
-And so `dotnet help help` opens a web browser for the `help` command, and `dotnet help -h` outputs documentation for the `help` command at the command-line! 
+Interestingly, `dotnet help help` opens a web browser for the `help` command, and `dotnet help -h` outputs documentation for the `help` command at the command-line! 
 
 
 # Page 37 - Getting definitions of types and their members
