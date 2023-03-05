@@ -1,9 +1,10 @@
-**Improvements** (15 items)
+**Improvements** (16 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 128 - Rounding numbers](#page-128---rounding-numbers)
+- [Page 149 - Writing a times table function](#page-149---writing-a-times-table-function)
 - [Page 153 - Writing a function that returns a value](#page-153---writing-a-function-that-returns-a-value)
 - [Page 179 - Reviewing project packages](#page-179---reviewing-project-packages)
 - [Page 237 - Implementing functionality using methods](#page-237---implementing-functionality-using-methods)
@@ -27,6 +28,51 @@ In the next edition, I will add a note to explain that this method never actuall
 # Page 128 - Rounding numbers
 
 In this section, I wrote about rounding rules as taught in schools and compare them to rounding rules when using C# and .NET. In schools, children are introduced to rounding rules with positive numbers and so learn the term "rounding up" and "rounding down". I did not explicitly say that for negative numbers, those terms would be reversed which can be confusing, so those terms should be avoided. This is why the .NET API uses the enum values `AwayFromZero`, `ToZero`, `ToEven`, `ToPositiveInfinity` and `ToNegativeInfinity` for improved clarity. In the next edition I will add a note about this.
+
+# Page 149 - Writing a times table function
+
+In Step 4, in the `Program.Functions.cs` file, you are told to write the following code:
+```cs
+partial class Program
+{
+  static void TimesTable(byte number, byte size = 12)
+  {
+    WriteLine($"This is the {number} times table with {size} rows:");
+
+    for (int row = 1; row <= size; row++)
+    {
+      WriteLine($"{row} x {number} = {row * number}");
+    }
+    WriteLine();
+  }
+}
+```
+
+If you use Visual Studio 2022 to create the `Program.Functions.cs` file from the **Class** project item template, then it wraps the class definition in a namespace (and imports some unnecessary namespaces), for example:
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WritingFunctions
+{
+  internal class Program
+  {
+  }
+}
+```
+The namespace used by the `Program` class generated for the `Program.cs` file does not have a namespace (literally uses the `null` value for the name of its namespace), so the two `Program` classes never merge together as two `partial` definitions of a single class. 
+
+You must delete the namespace declaration so that the `partial Program` class in the `Program.Functions.cs` file is in the same `null` namespace. 
+
+In the next edition I will add a note explaining this. 
+
+You can output the namespace of the `Program` class using rhe following code:
+```cs
+WriteLine($"typeof(Program).Namespace: {typeof(Program).Namespace ?? "null"}");
+```
 
 # Page 153 - Writing a function that returns a value
 
