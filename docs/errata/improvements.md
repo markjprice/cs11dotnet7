@@ -72,6 +72,8 @@ Due to transitive dependencies, you only actually need to explicitly reference t
 
 # Page 237 - Implementing functionality using methods
 
+> Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 5 March 2023](https://github.com/markjprice/cs11dotnet7/issues/35).
+
 In Step 4, I tell the reader to write some code that uses the `??` operator. But I do not explain how this operator works until later in the book, on page 282, as shown in the following text and code example:
 
 "Sometimes, you want to either assign a variable to a result or use an alternative value, such as `3`, if the 
