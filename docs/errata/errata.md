@@ -1,4 +1,4 @@
-**Errata** (32 items)
+**Errata** (33 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -15,6 +15,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 114 - Simplifying switch statements with switch expressions](#page-114---simplifying-switch-statements-with-switch-expressions)
 - [Page 156 - Calculating factorials with recursion](#page-156---calculating-factorials-with-recursion)
 - [Page 166 - Setting a breakpoint and starting debugging - Using Visual Studio 2022](#page-166---setting-a-breakpoint-and-starting-debugging---using-visual-studio-2022)
+- [Page 178 - Reviewing project packages](#page-178---reviewing-project-packages)
 - [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 231 - Requiring properties to be set during instantiation](#page-231---requiring-properties-to-be-set-during-instantiation)
@@ -186,6 +187,33 @@ In Step 1, in the third bullet that explains the code, I wrote, "If the input pa
 At the end of this section I wrote, "If you do not want to see how to use Visual Studio Code to start debugging, then you can skip the next section and continue to the section titled *Navigating with the debugging toolbar*."
 
 But the immediately following section is *Navigating with the debugging toolbar*. The paragraph should move to after this section and before the section titled *Using Visual Studio Code*, and it should say, "If you do not want to see how to use Visual Studio Code to start debugging, then you can skip the next section and continue to the section titled *Debugging windows*."
+
+# Page 178 - Reviewing project packages
+
+> Thanks to [Nick Bettes](https://github.com/bettesn) and [Zhang Cheng](https://github.com/Matrix-Zhang) for raising this issue on [16 February 2023](https://github.com/markjprice/cs11dotnet7/issues/29), and a special thanks to [Huynh Loc Le](https://github.com/huynhloc-1110), who identified that the issue was caused by a Microsoft bug.
+
+In Step 1, you add package references to enable an `appsettings.json` file to configure a trace switch. If you reference `Microsoft.Extensions.Configuration.Binder` package version `7.0.3`, it has a bug that causes an exception to be thrown, as shown in the following output:
+```
+Reading from appsettings.json in C:\cs11dotnet7\Chapter04\Instrumenting\bin\Debug\net7.0
+Unhandled exception. System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.ArgumentException: Must specify valid information for parsing in the string. (Parameter 'value')
+   at System.Enum.TryParse[TEnum](ReadOnlySpan`1 value, Boolean ignoreCase, Boolean throwOnFailure, TEnum& result)
+   at System.Enum.TryParse[TEnum](String value, Boolean ignoreCase, Boolean throwOnFailure, TEnum& result)
+   at System.Enum.Parse[TEnum](String value, Boolean ignoreCase)
+   at System.Diagnostics.TraceSwitch.OnValueChanged()
+```
+
+Until Microsoft fixes the bug, use version `7.0.2`, the latest version that works correctly, as shown in the following markup:
+```xml
+<ItemGroup>
+  <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.2" />
+  <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+
+  <!--The following packages are included anyway due to dependencies-->
+  <!--<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />-->
+  <!--<PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />-->
+</ItemGroup>
+```
 
 # Page 185 - Creating a class library that needs testing
 
