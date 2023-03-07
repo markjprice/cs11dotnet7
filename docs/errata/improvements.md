@@ -1,7 +1,8 @@
-**Improvements** (16 items)
+**Improvements** (17 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
+- [Page 69 - Raw interpolated string literals](#page-69---raw-interpolated-string-literals)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 128 - Rounding numbers](#page-128---rounding-numbers)
 - [Page 149 - Writing a times table function](#page-149---writing-a-times-table-function)
@@ -18,6 +19,33 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 601 - Setting up an ASP.NET Core MVC website](#page-601---setting-up-an-aspnet-core-mvc-website)
 - [Page 654 - Making controller action methods asynchronous](#page-654---making-controller-action-methods-asynchronous)
 - [Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page](#page-655---exercise-142--practice-implementing-mvc-by-implementing-a-category-detail-page)
+
+# Page 69 - Raw interpolated string literals
+
+> Thanks to [Mahdi Jaberzadeh Ansari](https://github.com/mjza) who raised this issue on [6 March 2023](https://github.com/markjprice/cs11dotnet7/issues/36).
+
+In the example JSON used to illustrate a raw interpolated string literal, the comma after `"calculation"` should be a colon. Since we never use the JSON, it doesn't actually matter, but it would definitely be better as valid JSON, as shown in the following code: 
+```cs
+var person = new { FirstName = "Alice", Age = 56 };
+
+string json = $$"""
+              {
+                "first_name": "{{person.FirstName}}",
+                "age": {{person.Age}},
+                "calculation": {{{ 1 + 2 }}}"
+              }
+              """;
+
+Console.WriteLine(json);
+```
+And therefore the output should be:
+```
+{
+ "first_name": "Alice",
+ "age": 56,
+ "calculation": "{3}"
+}
+```
 
 # Page 86 - Getting text input from the user
 
