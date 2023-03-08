@@ -1,4 +1,4 @@
-**Improvements** (18 items)
+**Improvements** (19 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -10,6 +10,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 161 - Using lambdas in function implementations](#page-161---using-lambdas-in-function-implementations)
 - [Page 179 - Reviewing project packages](#page-179---reviewing-project-packages)
 - [Page 237 - Implementing functionality using methods](#page-237---implementing-functionality-using-methods)
+- [Page 241 - Defining flight passengers](#page-241---defining-flight-passengers)
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
@@ -175,6 +176,16 @@ Console.WriteLine(result);
 ```
 
 In the 8th edition, I will add a similar explanation of the operator `??` to the **Chapter 3, Operating on variables** section.
+
+# Page 241 - Defining flight passengers
+
+> Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 8 March 2023](https://github.com/markjprice/cs11dotnet7/issues/38).
+
+In Step 1, you are told to add a new file named `FlightPatterns.cs`. If you use Visual Studio 2022, then this file will contain a class named `FlightPatterns`. 
+
+In Step 2, you are given the complete code for that file that defines a file-scoped namespace named `Packt.Shared` with several classes like `Passenger` in it. If you define those classes inside the Visual Studio-generated `FlightPatterns` class then you will later have problems referencing the nested classes. 
+
+In the next edition, I will add a note for Visual Studio readers to explicitly tell them to delete the class named `FlightPatterns` as well as providing the complete code for the `FlightPatterns.cs` file.
 
 # Page 251 - Setting up a class library and console application
 
