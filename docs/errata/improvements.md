@@ -144,6 +144,15 @@ Due to transitive dependencies, you only actually need to explicitly reference t
  </ItemGroup>
 ```
 
+In Step 4, I tell Visual Studio 2022 readers to select the `appsettings.json` file and change its **Copy to Output Directory** to **Copy if newer**. To confirm this is done correctly, in the next edition, I will then tell them to review the change that was made to the project file, as shown in the following markup:
+```xml
+<ItemGroup>
+  <None Update="appsettings.json">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
+```
+
 # Page 237 - Implementing functionality using methods
 
 > Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 5 March 2023](https://github.com/markjprice/cs11dotnet7/issues/35).
