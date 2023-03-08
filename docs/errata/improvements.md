@@ -1,4 +1,4 @@
-**Improvements** (17 items)
+**Improvements** (18 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -7,6 +7,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 128 - Rounding numbers](#page-128---rounding-numbers)
 - [Page 149 - Writing a times table function](#page-149---writing-a-times-table-function)
 - [Page 153 - Writing a function that returns a value](#page-153---writing-a-function-that-returns-a-value)
+- [Page 161 - Using lambdas in function implementations](#page-161---using-lambdas-in-function-implementations)
 - [Page 179 - Reviewing project packages](#page-179---reviewing-project-packages)
 - [Page 237 - Implementing functionality using methods](#page-237---implementing-functionality-using-methods)
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
@@ -111,6 +112,12 @@ Add the following statement near the top of the code file before doing any writi
 ```cs
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 ```
+
+# Page 161 - Using lambdas in function implementations
+
+> Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 8 March 2023](https://github.com/markjprice/cs11dotnet7/issues/39).
+
+In the next edition, I will expand on the definition of **Immutability** e.g. a data value that cannot change. I will also note that C# `record` types are not necessarily immutable.
 
 # Page 179 - Reviewing project packages
 
