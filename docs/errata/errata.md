@@ -1,4 +1,4 @@
-**Errata** (33 items)
+**Errata** (34 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -16,6 +16,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 156 - Calculating factorials with recursion](#page-156---calculating-factorials-with-recursion)
 - [Page 166 - Setting a breakpoint and starting debugging - Using Visual Studio 2022](#page-166---setting-a-breakpoint-and-starting-debugging---using-visual-studio-2022)
 - [Page 178 - Reviewing project packages](#page-178---reviewing-project-packages)
+- [Page 180 - Reviewing project packages](#page-180---reviewing-project-packages)
 - [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 231 - Requiring properties to be set during instantiation](#page-231---requiring-properties-to-be-set-during-instantiation)
@@ -213,6 +214,42 @@ Until Microsoft fixes the bug, use version `7.0.2`, the latest version that work
   <!--<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />-->
   <!--<PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />-->
 </ItemGroup>
+```
+
+# Page 180 - Reviewing project packages
+
+> Thanks to [TheKuroEver](https://github.com/TheKuroEver) for raising this [issue on 7 March 2023](https://github.com/markjprice/cs11dotnet7/issues/37).
+
+In Step 6, I tell you to write a statement to add the `appsettings.json` file to the configuration builder so that it can be used to set the trace switch level. But in the print book, it sets the `optional` parameter to `true` when it should be `false`. 
+
+Fix the issue by setting the `optional` parameter to `false`, as shown in the following code:
+```cs
+builder.AddJsonFile("appsettings.json", 
+  optional: false, reloadOnChange: true);
+```
+
+> The statement was already correct in GitHub: https://github.com/markjprice/cs11dotnet7/blob/main/vs4win/Chapter04/Instrumenting/Program.cs#L28
+
+The `optional` parameter controls if the statement throws an exception at runtime if the file is missing. We want to ensure that we are notified with an exception if the file is missing, for example, as shown in the following output:
+```
+Reading from appsettings.json in C:\cs11dotnet7\Chapter04\Instrumenting\bin\Debug\net7.0
+Unhandled exception. System.IO.FileNotFoundException: The configuration file 'appsettings.json' was not found and is not optional. The expected physical path was 'C:\cs11dotnet7\Chapter04\Instrumenting\bin\Debug\net7.0\appsettings.json'.
+   at Microsoft.Extensions.Configuration.FileConfigurationProvider.HandleException(ExceptionDispatchInfo info)
+   at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+   at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load()
+   at Microsoft.Extensions.Configuration.ConfigurationRoot..ctor(IList`1 providers)
+   at Microsoft.Extensions.Configuration.ConfigurationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\cs11dotnet7\Chapter04\Instrumenting\Program.cs:line 30
+```
+
+If we set the `optional` parameter to `true` and the `appsettings.json` file is missing then this exception will not be thrown BUT the trace switch will not be set by the file and therefore defaults to `Off`. Therefore no output is written to the `log.txt` file on the desktop for the trace switch. 
+
+In the next edition, I will add a statement after binding to the packt switch configuration that outputs the trace switch level to the `Console` to make it clearer when there might be a problem because either the trace switch is set to `Off` or the `appsettings.json` file is missing and it has been made optional, as shown in the following code:
+```cs
+configuration.GetSection("PacktSwitch").Bind(ts);
+
+// Output the trace switch level.
+Console.WriteLine($"Trace switch level: {ts.Level}");
 ```
 
 # Page 185 - Creating a class library that needs testing
