@@ -203,7 +203,8 @@ class Delta : IAlpha, IBeta { void M1() { } void M2() { } }
 class Episilon : Delta { } 
 
 // A class with one inheritable method and one abstract method that must be implemented in sub classes.
-class Zeta { void M3() { } abstract void M4(); }
+// A class with at least one abstract member must be decorated with the abstract keyword to prevent instantiation.
+abstract class Zeta { void M3() { } abstract void M4(); }
 
 // A class inheriting the M3 method but must provide an implementarion for M4.
 class Eta : Zeta { void M4() { } }
