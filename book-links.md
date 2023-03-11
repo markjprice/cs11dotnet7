@@ -363,6 +363,7 @@
 - [Using Tuples in C# to Initialize Properties in the Constructor and to Deconstruct Your Object](https://www.thomasclaudiushuber.com/2021/03/25/csharp-using-tuples-to-initialize-properties/)
 
 ## Pattern matching, Records, and Miscellaneous
+- [Records (C# reference)](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record)
 - [Tutorial: Use pattern matching to build type-driven and data-driven algorithms](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/pattern-matching)
 - [Comparing struct and class records](https://devblogs.microsoft.com/dotnet/announcing-net-6-release-candidate-2/#record-structs)
 - [How do I calculate someone's age based on a DateTime type birthday?](https://stackoverflow.com/questions/9/how-do-i-calculate-someones-age-based-on-a-datetime-type-birthday)
