@@ -184,17 +184,19 @@ Classes can also have `abstract` members, for example, methods or properties wit
 
 ```cs
 // To simplify the examples, I have left out access modifiers.
+// Using "I" as a prefix for interfaces is a convention not a requirement.
+// It is useful since only interfaces support multiple inheritance.
 
-interface Alpha { void M1(); } // These are both "classic" interfaces in that they are pure contracts.
-interface Beta { void M2(); } // No functionality, just the signatures of members that must be implemented.
+interface IAlpha { void M1(); } // These are both "classic" interfaces in that they are pure contracts.
+interface IBeta { void M2(); } // No functionality, just the signatures of members that must be implemented.
 
 // A type (in this example a struct) implementing an interface.
-// ": Alpha" means Gamma promises to implement all members of Alpha.
+// ": IAlpha" means Gamma promises to implement all members of IAlpha.
 // "void M1() { }" is that minimum implementation.
-struct Gamma : Alpha { void M1() { } } 
+struct Gamma : IAlpha { void M1() { } } 
 
 // A type (in this example a class) implementing two interfaces.
-class Delta : Alpha, Beta { void M1() { } void M2() { } } 
+class Delta : IAlpha, IBeta { void M1() { } void M2() { } } 
 
 // A sub class inheriting from a base aka super class.
 // ": Delta" means inherit all members from Delta.
@@ -207,10 +209,10 @@ class Zeta { void M3() { } abstract void M4(); }
 class Eta : Zeta { void M4() { } }
 
 // In C# 8 and later, interfaces can have default implementatations as well as members that must be implemented.
-interface Theta { void M3() { } void M4(); }
+interface ITheta { void M3() { } void M4(); }
 
 // A class inheriting the default implementation from an interface and must provide an implementation for M4.
-class Iota : Theta { void M4() { } }
+class Iota : ITheta { void M4() { } }
 ```
 
 # Page 237 - Implementing functionality using methods
