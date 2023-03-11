@@ -200,17 +200,17 @@ struct Delta : Alpha, Beta { void M1() { } void M2() { } }
 // : Delta means inherit all members of that base class.
 class Episilon : Delta { } 
 
-// A class with an abstract method that must be implemented in sub classes.
-class Zeta { abstract void M4(); }
+// A class with one inheritable method and one abstract method that must be implemented in sub classes.
+class Zeta { void M3() { } abstract void M4(); }
 
-// A class that must provide an implement for the abstract method.
+// A class inheriting the M3 method but must provide an implementarion for M4.
 class Eta : Zeta { void M4() { } }
 
-// In C# 8 and later, interfaces can have default implementatations.
-interface Theta { void M3() { } }
+// In C# 8 and later, interfaces can have default implementatations as well as members that must be implemented.
+interface Theta { void M3() { } void M4(); }
 
-// A class inheriting the default implementation from an interface.
-class Iota : Theta { }
+// A class inheriting the default implementation from an interface and must provide an implementation for M4.
+class Iota : Theta { void M4() { } }
 ```
 
 # Page 237 - Implementing functionality using methods
