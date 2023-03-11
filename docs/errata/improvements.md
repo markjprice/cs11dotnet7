@@ -1,4 +1,4 @@
-**Improvements** (19 items)
+**Improvements** (20 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -9,6 +9,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 153 - Writing a function that returns a value](#page-153---writing-a-function-that-returns-a-value)
 - [Page 161 - Using lambdas in function implementations](#page-161---using-lambdas-in-function-implementations)
 - [Page 179 - Reviewing project packages](#page-179---reviewing-project-packages)
+- [Page 200 - Talking about OOP](#page-200---talking-about-oop)
 - [Page 237 - Implementing functionality using methods](#page-237---implementing-functionality-using-methods)
 - [Page 241 - Defining flight passengers](#page-241---defining-flight-passengers)
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
@@ -160,6 +161,43 @@ In Step 4, I tell Visual Studio 2022 readers to select the `appsettings.json` fi
   </None>
 </ItemGroup>
 ```
+
+# Page 200 - Talking about OOP
+
+In the next edition, I will add a summary table of the different categories of type and their capabilities, as shown in the following table:
+
+|Type|Can be instantiated with `new`|Can be inherited from with `:`|Multiple inheritance|
+|---|---|---|---|
+|`class`|Yes|Yes|No|
+|`sealed class`|Yes|No|No|
+|`abstract class`|No|Yes|No|
+|`interface`|No|Yes|Yes|
+|`struct`|Yes|No|No|
+
+```cs
+// To simplify the examples, I have left out access modifiers.
+
+interface Alpha { void M1(); }
+interface Beta { void M2(); }
+
+// A type (in this example a class) implementing an interface.
+// ": Alpha" means I promise to implement all members of Alpha.
+// "void M1() { }" is that minimum implementation.
+class Gamma : Alpha { void M1() { } } 
+
+// A type (in this example a struct) implementing two interfaces.
+struct Delta : Alpha, Beta { void M1() { } void M2() { } } 
+
+// A sub class inheriting from a base aka super class.
+// : Delta means inherit all members of that base class.
+class Episilon : Delta { } 
+```
+
+For me, the terms *inherit* and *implement* are different, and in the early days of C# and .NET you could strictly apply them to classes and interfaces respectfully. *Inherit* implies some functionality that a sub class gets "for free" from its base aka super class. *Implement* implies some functionality that is NOT inherited but instead MUST be provided by the sub class. 
+
+Before C# 8, interfaces were always purely contracts i.e. there was no functionality that you could *inherit*. In those days, you could strictly use the term *implement* for an interface that represents a list of members that your type must implement, and *inherit* for classes with functionality that your type can inherit and potentially override. 
+
+With C# 8, interfaces can now include default implementations, making them more like abstract classes, and the term *inherit* for an interface that has default implementations does make sense. But I feel uncomfortable with this capability as do many other .NET developers because it messes up what used to be a clean language design.
 
 # Page 237 - Implementing functionality using methods
 
