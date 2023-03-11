@@ -164,7 +164,7 @@ In Step 4, I tell Visual Studio 2022 readers to select the `appsettings.json` fi
 
 # Page 200 - Talking about OOP
 
-In the next edition, I will add a summary table of the different categories of type and their capabilities, as shown in the following table:
+In the next edition, I will add a summary table of the different categories of type and their capabilities, as well as several paragraphs of explanation. Parts of it might go at the start of Chapter 5 as an introduction but most of it is likely to go at the end of Chapter 6 as a review that brings together all the details from the two chapters.
 
 |Type|Can be instantiated with `new`|Can be inherited from with `:`|Multiple inheritance|
 |---|---|---|---|
@@ -174,13 +174,13 @@ In the next edition, I will add a summary table of the different categories of t
 |`interface`|No|Yes|Yes|
 |`struct`|Yes|No|No|
 
-For me, the terms *inherit* and *implement* are different, and in the early days of C# and .NET you could strictly apply them to classes and interfaces respectfully. *Inherit* implies some functionality that a sub class gets "for free" from its base aka super class. *Implement* implies some functionality that is NOT inherited but instead MUST be provided by the sub class. 
+For me, the terms *inherit* and *implement* are different, and in the early days of C# and .NET you could strictly apply them to classes and interfaces respectfully. *Inherit* implies some functionality that a sub class gets "for free" from its base aka super class. *Implement* implies some functionality that is NOT inherited but instead MUST be provided by the sub class. This is why **Chapter 6** is titled, **Implementing Interfaces and Inheriting Classes**.
 
 Before C# 8, interfaces were always purely contracts i.e. there was no functionality that you could *inherit*. In those days, you could strictly use the term *implement* for an interface that represents a list of members that your type must implement, and *inherit* for classes with functionality that your type can inherit and potentially override. 
 
 With C# 8, interfaces can now include default implementations, making them more like abstract classes, and the term *inherit* for an interface that has default implementations does make sense. But I feel uncomfortable with this capability as do many other .NET developers because it messes up what used to be a clean language design.
 
-Classes can also have `abstract` members, for example, methods or properties without any implementation, just like an interface could have. When a sub class inherits from this class, they MUST provide an implementation of those abstract members.
+Classes can also have `abstract` members, for example, methods or properties without any implementation, just like an interface could have. When a sub class inherits from this class, they MUST provide an implementation of those abstract members. And the base class must be decorated with the `abstract` keyword to prevent it being instantiated using `new` because it is missing some functionality.
 
 ```cs
 // To simplify the examples, I have left out access modifiers.
