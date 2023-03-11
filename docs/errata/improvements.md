@@ -185,19 +185,19 @@ Classes can also have `abstract` members, for example, methods or properties wit
 ```cs
 // To simplify the examples, I have left out access modifiers.
 
-interface Alpha { void M1(); }
-interface Beta { void M2(); }
+interface Alpha { void M1(); } // These are both "classic" interfaces in that they are pure contracts.
+interface Beta { void M2(); } // No functionality, just the signatures of members that must be implemented.
 
-// A type (in this example a class) implementing an interface.
-// ": Alpha" means I promise to implement all members of Alpha.
+// A type (in this example a struct) implementing an interface.
+// ": Alpha" means Gamma promises to implement all members of Alpha.
 // "void M1() { }" is that minimum implementation.
-class Gamma : Alpha { void M1() { } } 
+struct Gamma : Alpha { void M1() { } } 
 
-// A type (in this example a struct) implementing two interfaces.
-struct Delta : Alpha, Beta { void M1() { } void M2() { } } 
+// A type (in this example a class) implementing two interfaces.
+class Delta : Alpha, Beta { void M1() { } void M2() { } } 
 
 // A sub class inheriting from a base aka super class.
-// : Delta means inherit all members of that base class.
+// ": Delta" means inherit all members from Delta.
 class Episilon : Delta { } 
 
 // A class with one inheritable method and one abstract method that must be implemented in sub classes.
