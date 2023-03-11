@@ -174,6 +174,14 @@ In the next edition, I will add a summary table of the different categories of t
 |`interface`|No|Yes|Yes|
 |`struct`|Yes|No|No|
 
+For me, the terms *inherit* and *implement* are different, and in the early days of C# and .NET you could strictly apply them to classes and interfaces respectfully. *Inherit* implies some functionality that a sub class gets "for free" from its base aka super class. *Implement* implies some functionality that is NOT inherited but instead MUST be provided by the sub class. 
+
+Before C# 8, interfaces were always purely contracts i.e. there was no functionality that you could *inherit*. In those days, you could strictly use the term *implement* for an interface that represents a list of members that your type must implement, and *inherit* for classes with functionality that your type can inherit and potentially override. 
+
+With C# 8, interfaces can now include default implementations, making them more like abstract classes, and the term *inherit* for an interface that has default implementations does make sense. But I feel uncomfortable with this capability as do many other .NET developers because it messes up what used to be a clean language design.
+
+Classes can also have `abstract` members, for example, methods or properties without any implementation, just like an interface could have. When a sub class inherits from this class, they MUST provide an implementation of those abstract members.
+
 ```cs
 // To simplify the examples, I have left out access modifiers.
 
@@ -191,13 +199,19 @@ struct Delta : Alpha, Beta { void M1() { } void M2() { } }
 // A sub class inheriting from a base aka super class.
 // : Delta means inherit all members of that base class.
 class Episilon : Delta { } 
+
+// A class with an abstract method that must be implemented in sub classes.
+class Zeta { abstract void M4(); }
+
+// A class that must provide an implement for the abstract method.
+class Eta : Zeta { void M4() { } }
+
+// In C# 8 and later, interfaces can have default implementatations.
+interface Theta { void M3() { } }
+
+// A class inheriting the default implementation from an interface.
+class Iota : Theta { }
 ```
-
-For me, the terms *inherit* and *implement* are different, and in the early days of C# and .NET you could strictly apply them to classes and interfaces respectfully. *Inherit* implies some functionality that a sub class gets "for free" from its base aka super class. *Implement* implies some functionality that is NOT inherited but instead MUST be provided by the sub class. 
-
-Before C# 8, interfaces were always purely contracts i.e. there was no functionality that you could *inherit*. In those days, you could strictly use the term *implement* for an interface that represents a list of members that your type must implement, and *inherit* for classes with functionality that your type can inherit and potentially override. 
-
-With C# 8, interfaces can now include default implementations, making them more like abstract classes, and the term *inherit* for an interface that has default implementations does make sense. But I feel uncomfortable with this capability as do many other .NET developers because it messes up what used to be a clean language design.
 
 # Page 237 - Implementing functionality using methods
 
