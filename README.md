@@ -51,8 +51,9 @@ To make it easier to enter commands at the prompt, the [Command-Lines](docs/comm
 
 ## Bonus content
 
-The appendix and color figures are available to download as PDFs:
+Chapters 7 and 12, and the appendix and color figures are available to download as PDFs:
 
+- [Sample Chapters 7 and 12 - C# 11 and .NET 7 - Modern Cross-Platform Development Fundamentals](https://github.com/markjprice/cs11dotnet7/blob/main/docs/Sample%20Chapters%207%20and%2012%20-%20C%23%2011%20and%20.NET%207%20-%20Modern%20Cross-Platform%20Development%20Fundamentals.pdf)
 - [Appendix A, Answers to the Test Your Knowledge Questions](docs/B18856_Appendix.pdf)
 - [Color images of the screenshots/diagrams used in this book](docs/9781803237800_ColorImages.pdf)
 
