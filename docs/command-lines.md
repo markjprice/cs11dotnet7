@@ -312,8 +312,10 @@ dotnet ef dbcontext scaffold "Filename=../Northwind.db" Microsoft.EntityFramewor
 
 Creating the EF Core model for the Northwind database:
 ```
-dotnet ef dbcontext scaffold "Data Source=.;Initial Catalog=Northwind;Integrated Security=true;" Microsoft.EntityFrameworkCore.SqlServer --namespace Packt.Shared --data-annotations
+dotnet ef dbcontext scaffold "Data Source=.;Initial Catalog=Northwind;Integrated Security=true;TrustServerCertificate=true;" Microsoft.EntityFrameworkCore.SqlServer --namespace Packt.Shared --data-annotations
 ```
+
+> If you do not have a "full" edition of SQL Server installed with a default instance then you will need to changed the `.` to the correct `servername\instancename`.
 
 # Chapter 13 - Building Websites Using ASP.NET Core Razor Pages
 
