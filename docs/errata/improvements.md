@@ -515,7 +515,9 @@ In the next edition, I will add a warning, as shown in the following note:
 
 # Page 586 - Creating a Razor class library, Page 587 - Implementing a partial view to show a single employee
 
-In these sections you create two files named `Employees.cshtml` and `_Employee.cshtml`. To make it clearer how they are related, what they do, and what their names mean, in the next edition, I will tell the reader to create the partial view that shows a single employee first and keep its name as `_Employee.cshtml`. Then I will tell the reader to create the Razor Page that uses that partial view but name it `EmployeesList.cshtml`. 
+In these sections you create two files named `Employees.cshtml` and `_Employee.cshtml`. I think the order that these files are created and the similarity of their names can confuse some readers. I will start this section with more explanation about what the reader is about to do i.e. create a Razor Page and a partial view, and that the Razor Page will use the partial view.
+
+To make it clearer how they are related, what they do, and what their names mean, in the next edition, I will tell the reader to create the partial view that shows a single employee first and keep its name as `_Employee.cshtml`. Then I will tell the reader to create the Razor Page that uses that partial view but name it `EmployeesList.cshtml`. 
 
 # Page 601 - Setting up an ASP.NET Core MVC website
 
