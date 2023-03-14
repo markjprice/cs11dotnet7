@@ -334,6 +334,8 @@ A **Razor Layout** file like `_MyCustomLayout.cshtml` is identical to a **Razor 
 
 > **Warning!** Be careful to use the correct file extension and directive at the top of the file or you will get unexpected behavior.
 
+> **Convention**: The naming convention for special and shared Razor files like layouts and partial views is to prefix with an underscore `_`. For example, `_ViewStart.cshtml`, `_Layout.cshtml`, or `_Product.cshtml` (a partial view for rendering a product).
+
 ![Visual Studio 2022 Razor project item types](images/razor-file-types.png)
 
 # Page 547 - Creating a class library for a Northwind database context
