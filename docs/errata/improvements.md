@@ -1,4 +1,4 @@
-**Improvements** (21 items)
+**Improvements** (22 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -20,6 +20,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 547 - Creating a class library for a Northwind database context](#page-547---creating-a-class-library-for-a-northwind-database-context)
 - [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
 - [Page 573 - Adding code to a Razor Page](#page-573---adding-code-to-a-razor-page)
+- [Page 586 - Creating a Razor class library, Page 587 - Implementing a partial view to show a single employee](#page-586---creating-a-razor-class-library-page-587---implementing-a-partial-view-to-show-a-single-employee)
 - [Page 601 - Setting up an ASP.NET Core MVC website](#page-601---setting-up-an-aspnet-core-mvc-website)
 - [Page 654 - Making controller action methods asynchronous](#page-654---making-controller-action-methods-asynchronous)
 - [Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page](#page-655---exercise-142--practice-implementing-mvc-by-implementing-a-category-detail-page)
@@ -511,6 +512,10 @@ This section starts with a description of Razor Pages. The first bullet point sa
 In the next edition, I will add a warning, as shown in the following note:
 
 > **Warning!** *Razor Pages* are different from *Razor Views* (used in ASP.NET Core MVC) but they share the same file extension `.cshtml`. When creating a *Razor View*, do NOT use the `@page` directive!
+
+# Page 586 - Creating a Razor class library, Page 587 - Implementing a partial view to show a single employee
+
+In these sections you create two files named `Employees.cshtml` and `_Employee.cshtml`. To make it clearer how they are related, what they do, and what their names mean, in the next edition, I will tell the reader to create the partial view that shows a single employee first and keep its name as `_Employee.cshtml`. Then I will tell the reader to create the Razor Page that uses that partial view but name it `EmployeesList.cshtml`. 
 
 # Page 601 - Setting up an ASP.NET Core MVC website
 
