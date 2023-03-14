@@ -4,6 +4,6 @@ If you find any mistakes in the seventh edition, *C# 11 and .NET 7 - Modern Cros
 
 [**Errata** (34 items)](errata.md): Typos, tool user interface changes, or mistakes in code that would cause a compilation error that prevents a successful build.
 
-[**Improvements** (20 items)](improvements.md): Changes to text or code that would improve the content. These are optional.
+[**Improvements** (21 items)](improvements.md): Changes to text or code that would improve the content. These are optional.
 
 All errata and improvements will be included in the 8th edition planned for publishing in November 2023. To be included they must be submitted by mid-September 2023.

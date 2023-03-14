@@ -1,4 +1,4 @@
-**Improvements** (20 items)
+**Improvements** (21 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -14,6 +14,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 241 - Defining flight passengers](#page-241---defining-flight-passengers)
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
+- [Page 444 - Connecting to a database](#page-444---connecting-to-a-database)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 - [Page 533 - Building websites using ASP.NET Core](#page-533---building-websites-using-aspnet-core)
 - [Page 547 - Creating a class library for a Northwind database context](#page-547---creating-a-class-library-for-a-northwind-database-context)
@@ -281,6 +282,14 @@ Code in next edition:
 ```cs
 if (name == null) return; // must check for null to remove the warning
 ```
+
+# Page 444 - Connecting to a database
+
+I wrote, "To connect to a SQLite database, we just need to know the database filename, set using the parameter `Filename`." 
+
+In the next edition I will change this to, "To connect to a SQLite database, we just need to know the path to the database, set using the modern parameter named `Data Source` or the legacy parameter named `Filename`. The path can be relative to the current directory or an absolute path."
+
+Throughout the rest of the book, I will replace the `Filename` parameter with `Data Source` for consistency with modern parameters. For example on pages 445, 453, 456, 464, 504, 541, and 547.
 
 # Page 453 - Scaffolding models using an existing database
 
