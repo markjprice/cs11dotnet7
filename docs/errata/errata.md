@@ -1,4 +1,4 @@
-**Errata** (34 items)
+**Errata** (35 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -22,6 +22,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 231 - Requiring properties to be set during instantiation](#page-231---requiring-properties-to-be-set-during-instantiation)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
 - [Page 258 - Defining and handling events](#page-258---defining-and-handling-events)
+- [Page 263 - Comparing objects using a separate class](#page-263---comparing-objects-using-a-separate-class)
 - [Page 272 - Defining struct types](#page-272---defining-struct-types)
 - [Page 275 - Releasing unmanaged resources](#page-275---releasing-unmanaged-resources)
 - [Page 277 - Making a value type nullable](#page-277---making-a-value-type-nullable)
@@ -303,6 +304,19 @@ WriteLine($"Stop it!");
 The `$` can be removed, as shown in the following code:
 ```cs
 WriteLine("Stop it!");
+```
+
+# Page 263 - Comparing objects using a separate class
+
+> Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 15 March 2023](https://github.com/markjprice/cs11dotnet7/issues/43).
+
+In Step 1, the following comment has an extra slash:
+```cs
+/// ...if they are equal...
+```
+It should be:
+```cs
+// ...if they are equal...
 ```
 
 # Page 272 - Defining struct types
