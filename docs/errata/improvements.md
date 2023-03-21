@@ -271,7 +271,7 @@ In Step 1, I tell the reader to write a statement to output the values of two in
 ```cs
 WriteLine($"a == b: {(a == b)}");
 ```
-It is not necessary to wrap the equality expression in parentheses like this: `(a == b)`. In more complex expressions it might be necessary to control to order of a calculation, and some developers prefer adding parentheses, but here it is not needed, and some code editors like Visual Studio 2022 will recommend that they are removed.
+It is not necessary to wrap the equality expression in parentheses like this: `(a == b)`. In more complex expressions it might be necessary to control the order of a calculation, and some developers prefer adding parentheses, but here it is not needed, and some code editors like Visual Studio 2022 will recommend that they are removed.
 
 In the next edition, I will remove the parentheses, as shown in the following code:
 ```cs
@@ -315,9 +315,9 @@ if (name == null) return; // must check for null to remove the warning
 
 # Page 343 - Packaging a library for NuGet
 
-In Step 3, you modify `SharedLibrary.csproj` to add some elements to control how the class library is turned into a NuGet package. If you rely on IntelliSense you could mislead you to use deprecated tag names. For example, `<PackageIconUrl>` is deprecated in favor of `<PackageIcon>`.
+In Step 3, you modify `SharedLibrary.csproj` to add some elements to control how the class library is turned into a NuGet package. If you rely on IntelliSense then it could mislead you to use deprecated tag names. For example, `<PackageIconUrl>` is deprecated in favor of `<PackageIcon>`.
 
-In the next edition, I will add a warning about this and include a reference to the documentation. The tag names are documented in the **MSBuild Property** column in the table at in the following link:
+In the next edition, I will add a warning about this and include a reference to the documentation. The tag names are documented in the **MSBuild Property** column in the table found at the following link:
 
 https://learn.microsoft.com/en-us/nuget/reference/msbuild-targets#pack-target
 
