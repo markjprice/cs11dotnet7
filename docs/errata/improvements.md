@@ -1,4 +1,4 @@
-**Improvements** (22 items)
+**Improvements** (23 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -14,6 +14,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 241 - Defining flight passengers](#page-241---defining-flight-passengers)
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
+- [Page 343 - Packaging a library for NuGet](#page-343---packaging-a-library-for-nuget)
 - [Page 444 - Connecting to a database](#page-444---connecting-to-a-database)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 - [Page 533 - Building websites using ASP.NET Core](#page-533---building-websites-using-aspnet-core)
@@ -283,6 +284,14 @@ Code in next edition:
 ```cs
 if (name == null) return; // must check for null to remove the warning
 ```
+
+# Page 343 - Packaging a library for NuGet
+
+In Step 3, you modify `SharedLibrary.csproj` to add some elements to control how the class library is turned into a NuGet package. If you rely on IntelliSense you could mislead you to use deprecated tag names. For example, `<PackageIconUrl>` is deprecated in favor of `<PackageIcon>`.
+
+In the next edition, I will add a warning about this and include a reference to the documentation. The tag names are documented in the **MSBuild Property** column in the table at in the following link:
+
+https://learn.microsoft.com/en-us/nuget/reference/msbuild-targets#pack-target
 
 # Page 444 - Connecting to a database
 
