@@ -1,4 +1,4 @@
-**Improvements** (23 items)
+**Improvements** (24 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -13,6 +13,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 237 - Implementing functionality using methods](#page-237---implementing-functionality-using-methods)
 - [Page 241 - Defining flight passengers](#page-241---defining-flight-passengers)
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
+- [Page 270 - Equality of types](#page-270---equality-of-types)
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
 - [Page 343 - Packaging a library for NuGet](#page-343---packaging-a-library-for-nuget)
 - [Page 444 - Connecting to a database](#page-444---connecting-to-a-database)
@@ -260,6 +261,33 @@ message saying that required assets are missing, click Yes to add them.
 9. Run the `PeopleApp` project and note the result, as shown in the following output:
 ```
 Harry was born on a Sunday.
+```
+
+# Page 270 - Equality of types
+
+> Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 17 March 2023](https://github.com/markjprice/cs11dotnet7/issues/44).
+
+In Step 1, I tell the reader to write a statement to output the values of two integers and if they are equal, as shown in the following code:
+```cs
+WriteLine($"a == b: {(a == b)}");
+```
+It is not necessary to wrap the equality expression in parentheses like this: `(a == b)`. In more complex expressions it might be necessary to control to order of a calculation, and some developers prefer adding parentheses, but here it is not needed, and some code editors like Visual Studio 2022 will recommend that they are removed.
+
+In the next edition, I will remove the parentheses, as shown in the following code:
+```cs
+WriteLine($"a == b: {a == b}");
+```
+
+I will do the same for the output statements in Steps 3, 5, and 7, as shown in the following code:
+```cs
+// Step 3 statement will become:
+WriteLine($"p1 == p2: {p1 == p2}");
+
+// Step 5 statement will become:
+WriteLine($"p1 == p3: {p1 == p3}");
+
+// Step 7 statement will become:
+WriteLine($"p1.Name == p2.Name: {p1.Name == p2.Name}");
 ```
 
 # Page 299 - Treating warnings as errors
