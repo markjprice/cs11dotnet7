@@ -1,4 +1,4 @@
-**Improvements** (24 items)
+**Improvements** (25 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -15,6 +15,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
 - [Page 270 - Equality of types](#page-270---equality-of-types)
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
+- [Page 339 - Viewing source links with Visual Studio 2022](#page-339---viewing-source-links-with-visual-studio-2022)
 - [Page 343 - Packaging a library for NuGet](#page-343---packaging-a-library-for-nuget)
 - [Page 444 - Connecting to a database](#page-444---connecting-to-a-database)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
@@ -312,6 +313,15 @@ Code in next edition:
 ```cs
 if (name == null) return; // must check for null to remove the warning
 ```
+
+# Page 339 - Viewing source links with Visual Studio 2022
+
+In Step 3, I wrote, "Right-click in the `Count` method and select **Go To Implementation**."
+
+What happens next depends on a Visual Studio option that the reader can control. This is explained in the following item:
+https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/errata.md#page-37---getting-definitions-of-types-and-their-members
+
+In the next edition, I will add a note to remind readers about this. I will also add the explantion in the errata item above to Chapter 1 when the feature is first introduced.
 
 # Page 343 - Packaging a library for NuGet
 
