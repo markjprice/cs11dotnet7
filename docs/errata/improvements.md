@@ -316,6 +316,8 @@ if (name == null) return; // must check for null to remove the warning
 
 # Page 339 - Viewing source links with Visual Studio 2022
 
+> Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 24 March 2023](https://github.com/markjprice/cs11dotnet7/issues/48).
+
 In Step 3, I wrote, "Right-click in the `Count` method and select **Go To Implementation**."
 
 What happens next depends on a Visual Studio option that the reader can control. This is explained in the following item:
