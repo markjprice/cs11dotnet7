@@ -1,4 +1,4 @@
-**Improvements** (25 items)
+**Improvements** (26 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -17,6 +17,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
 - [Page 339 - Viewing source links with Visual Studio 2022](#page-339---viewing-source-links-with-visual-studio-2022)
 - [Page 343 - Packaging a library for NuGet](#page-343---packaging-a-library-for-nuget)
+- [Page 351 - Using non-.NET Standard libraries](#page-351---using-non-net-standard-libraries)
 - [Page 444 - Connecting to a database](#page-444---connecting-to-a-database)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 - [Page 533 - Building websites using ASP.NET Core](#page-533---building-websites-using-aspnet-core)
@@ -332,6 +333,36 @@ In Step 3, you modify `SharedLibrary.csproj` to add some elements to control how
 In the next edition, I will add a warning about this and include a reference to the documentation. The tag names are documented in the **MSBuild Property** column in the table found at the following link:
 
 https://learn.microsoft.com/en-us/nuget/reference/msbuild-targets#pack-target
+
+# Page 351 - Using non-.NET Standard libraries
+
+> Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 24 March 2023](https://github.com/markjprice/cs11dotnet7/issues/49).
+
+In Step 4, the code sets the `Label` of instances of `Axis` and `Matrix<T>` using the concatenate operator `+`, as shown in the following code:
+```cs
+for (int i = 0; i < matrix.Axes[0].Points.Length; i++)
+{
+  matrix.Axes[0].Points[i].Label = "x" + i.ToString();
+}
+
+for (int i = 0; i < matrix.Axes[1].Points.Length; i++)
+{
+  matrix.Axes[1].Points[i].Label = "y" + i.ToString();
+}
+```
+
+It would be an improvement if the expressions used interpolated strings, as shown in the following code:
+```cs
+for (int i = 0; i < matrix.Axes[0].Points.Length; i++)
+{
+  matrix.Axes[0].Points[i].Label = $"x{i}";
+}
+
+for (int i = 0; i < matrix.Axes[1].Points.Length; i++)
+{
+  matrix.Axes[1].Points[i].Label = $"y{i}";
+}
+```
 
 # Page 444 - Connecting to a database
 
