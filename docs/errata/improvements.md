@@ -1,4 +1,4 @@
-**Improvements** (26 items)
+**Improvements** (27 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -18,6 +18,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 339 - Viewing source links with Visual Studio 2022](#page-339---viewing-source-links-with-visual-studio-2022)
 - [Page 343 - Packaging a library for NuGet](#page-343---packaging-a-library-for-nuget)
 - [Page 351 - Using non-.NET Standard libraries](#page-351---using-non-net-standard-libraries)
+- [Page 357 - Working with complex numbers](#page-357---working-with-complex-numbers)
 - [Page 444 - Connecting to a database](#page-444---connecting-to-a-database)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 - [Page 533 - Building websites using ASP.NET Core](#page-533---building-websites-using-aspnet-core)
@@ -363,6 +364,24 @@ for (int i = 0; i < matrix.Axes[1].Points.Length; i++)
   matrix.Axes[1].Points[i].Label = $"y{i}";
 }
 ```
+
+# Page 357 - Working with complex numbers
+
+> Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 25 March 2023](https://github.com/markjprice/cs11dotnet7/issues/50).
+
+In Step 2, I show the default formatting for complex numbers in Western/British culture i.e. using round brackets and commas, as well as a custom format, as shown in the following output:
+```
+(4, 2) added to (3, 7) is (7, 9)
+4 + 2i added to 3 + 7i is 7 + 9i
+```
+
+In other cultures the default formatting for complex numbers might look different, for example, as shown in the following output:
+```
+<4; 2> added to <3; 7> is <7; 9>
+4 + 2i added to 3 + 7i is 7 + 9i
+```
+
+In the next edition, I will add a note about this for those readers in countries with unusual complex number formats.
 
 # Page 444 - Connecting to a database
 
