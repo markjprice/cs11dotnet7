@@ -375,6 +375,8 @@ In Step 2, I show the default formatting for complex numbers in Western/British 
 4 + 2i added to 3 + 7i is 7 + 9i
 ```
 
+> See the official documentation for the `Complex.ToString` method here: https://learn.microsoft.com/en-us/dotnet/api/system.numerics.complex.tostring
+
 In other cultures the default formatting for complex numbers might look different, for example, as shown in the following output:
 ```
 <4; 2> added to <3; 7> is <7; 9>
@@ -382,6 +384,11 @@ In other cultures the default formatting for complex numbers might look differen
 ```
 
 In the next edition, I will add a note about this for those readers in countries with unusual complex number formats.
+
+To force the formatting for complex numbers to match the book, add the following statement at the top of the `Program.cs` file:
+```cs
+System.Globalization.CultureInfo.CurrentCulture = 
+```
 
 # Page 444 - Connecting to a database
 
