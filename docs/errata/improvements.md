@@ -369,7 +369,7 @@ for (int i = 0; i < matrix.Axes[1].Points.Length; i++)
 
 > Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 25 March 2023](https://github.com/markjprice/cs11dotnet7/issues/50).
 
-In Step 2, I show the default formatting for complex numbers in Western/British culture i.e. using round brackets and commas, as well as a custom format, as shown in the following output:
+In Step 2, I show the default formatting for complex numbers i.e. using round brackets and commas, as well as a custom format, as shown in the following output:
 ```
 (4, 2) added to (3, 7) is (7, 9)
 4 + 2i added to 3 + 7i is 7 + 9i
@@ -377,18 +377,13 @@ In Step 2, I show the default formatting for complex numbers in Western/British 
 
 > See the official documentation for the `Complex.ToString` method here: https://learn.microsoft.com/en-us/dotnet/api/system.numerics.complex.tostring
 
-In other cultures the default formatting for complex numbers might look different, for example, as shown in the following output:
+Although this is the behavior in .NET 6, in .NET 7 (and .NET 8 previews), the formatting of complex numbers uses angle brackets and semi-colons, as shown in the following output:
 ```
 <4; 2> added to <3; 7> is <7; 9>
 4 + 2i added to 3 + 7i is 7 + 9i
 ```
 
-In the next edition, I will add a note about this for those readers in countries with unusual complex number formats.
-
-To force the formatting for complex numbers to match the book, add the following statement at the top of the `Program.cs` file:
-```cs
-System.Globalization.CultureInfo.CurrentCulture = 
-```
+In the next edition, I will add a note about this. Since the official documentation still shows the behavior of .NET 6, this seems very odd.
 
 # Page 444 - Connecting to a database
 
