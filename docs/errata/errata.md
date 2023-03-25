@@ -1,4 +1,4 @@
-**Errata** (35 items)
+**Errata** (36 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -29,6 +29,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 279 - Declaring non-nullable variables and parameters](#page-279---declaring-non-nullable-variables-and-parameters)
 - [Page 322 - Revealing the location of a type](#page-322---revealing-the-location-of-a-type)
 - [Page 330 - Publishing a self-contained app, Page 354 - Exercise 7.3 – Explore PowerShell](#page-330---publishing-a-self-contained-app-page-354---exercise-73--explore-powershell)
+- [Page 357 - Working with complex numbers](#page-357---working-with-complex-numbers)
 - [Page 399 - Managing directories](#page-399---managing-directories)
 - [Page 362 - Joining, formatting, and other string members](#page-362---joining-formatting-and-other-string-members)
 - [Page 412 - Compressing streams](#page-412---compressing-streams)
@@ -371,6 +372,26 @@ If you have Source Link disabled, then to see the filename you must expand the c
 # Page 330 - Publishing a self-contained app, Page 354 - Exercise 7.3 – Explore PowerShell
 
 In the **Good Practice** box on page 330, I wrote about how you can automate commands using scripts written in the PowerShell language. My original plan was to write content about PowerShell in the GitHub repository. But PowerShell is a massive topic and there will always be higher priority content to create that is specifically about C# and .NET. In the next edition I will just reference the official PowerShell documentation: https://learn.microsoft.com/en-us/powershell/ And I will remove **Exercise 7.3** that suggests exploring PowerShell.
+
+# Page 357 - Working with complex numbers
+
+> Thanks to [Masoud Nazari](https://github.com/MAS-OUD) for raising this [issue on 25 March 2023](https://github.com/markjprice/cs11dotnet7/issues/50).
+
+In Step 2, I show the default formatting for complex numbers i.e. using round brackets and commas, as well as a custom format, as shown in the following output:
+```
+(4, 2) added to (3, 7) is (7, 9)
+4 + 2i added to 3 + 7i is 7 + 9i
+```
+
+> See the official documentation for the `Complex.ToString` method here: https://learn.microsoft.com/en-us/dotnet/api/system.numerics.complex.tostring
+
+Although this is the behavior in .NET 6, in .NET 7 (and .NET 8 previews), the formatting of complex numbers uses angle brackets and semi-colons, as shown in the following output:
+```
+<4; 2> added to <3; 7> is <7; 9>
+4 + 2i added to 3 + 7i is 7 + 9i
+```
+
+In the next edition, I will add a note about this. Since the official documentation still shows the behavior of .NET 6, this seems odd. My guess is that they decided to change to angle brackets and semi-colons because some cultures use round brackets to indicate negative numbers and use commas for decimal numbers. Therefore it would be confusing to have a mix of round brackets and commas meaning different things. Its a shame the documentation does not explain this and show the .NET 7 and later new default formats.
 
 # Page 399 - Managing directories
 
