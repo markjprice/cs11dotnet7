@@ -1,4 +1,4 @@
-**Errata** (36 items)
+**Errata** (37 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -8,6 +8,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 11 - Understanding the journey to one .NET and Understanding .NET support](#page-11---understanding-the-journey-to-one-net-and-understanding-net-support)
 - [Page 36 - Getting help for the dotnet tool](#page-36---getting-help-for-the-dotnet-tool)
 - [Page 37 - Getting definitions of types and their members](#page-37---getting-definitions-of-types-and-their-members)
+- [Page 75 - Comparing double and decimal types](#page-75---comparing-double-and-decimal-types)
 - [Page 83 - Formatting using numbered positional arguments](#page-83---formatting-using-numbered-positional-arguments)
 - [Page 83 - Formatting using interpolated strings](#page-83---formatting-using-interpolated-strings)
 - [Page 85 - Getting text input from the user](#page-85---getting-text-input-from-the-user)
@@ -107,6 +108,12 @@ To change back to the original Visual Studio 2022 behavior that is described in 
 ![Disabling Source Link for the Go To Definition feature](images/B18856_01_03.png)
 
 *Figure 1.3: Disabling Source Link for the Go To Definition feature*
+
+# Page 75 - Comparing double and decimal types
+
+> Thanks to [Papa Smurf](https://github.com/GoPapaSmurf) for raising this [issue on 31 March 2023](https://github.com/markjprice/cs11dotnet7/issues/53).
+
+At the end of the last paragraph, I mention a method that can determine if a number value is *not-a-number*. The method name was written in the book as `IsNan`. It should be `IsNaN`.
 
 # Page 83 - Formatting using numbered positional arguments
 
