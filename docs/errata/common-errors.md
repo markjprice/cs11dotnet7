@@ -2,13 +2,14 @@
 
 If you have suggestions for other common errors, then please [raise an issue in this repository](https://github.com/markjprice/cs12dotnet8/issues) or email me at markjprice (at) gmail.com.
 
-- [Missing types and members in a utlity class](#missing-types-and-members-in-a-utlity-class)
+- [Missing types and members in a utility class](#missing-types-and-members-in-a-utility-class)
   - [CS0103 The name 'DoSomething' does not exist in the current context](#cs0103-the-name-dosomething-does-not-exist-in-the-current-context)
   - [CS0122 'Util.DoSomething()' is inaccessible due to its protection level](#cs0122-utildosomething-is-inaccessible-due-to-its-protection-level)
 - [Missing types and members in the Program class](#missing-types-and-members-in-the-program-class)
+  - [CS0103 The name 'DoSomething' does not exist in the current context](#cs0103-the-name-dosomething-does-not-exist-in-the-current-context-1)
 - [Microsoft introduces a bug in a later version](#microsoft-introduces-a-bug-in-a-later-version)
 
-# Missing types and members in a utlity class
+# Missing types and members in a utility class
 
 ## CS0103 The name 'DoSomething' does not exist in the current context
 
@@ -62,6 +63,8 @@ public class Util
 Now the method call works.
 
 # Missing types and members in the Program class
+
+## CS0103 The name 'DoSomething' does not exist in the current context
 
 In my book, I show how to define functions that can be easily called directly in the `Program.cs` file because you add them to the `partial Program` class definition. You can put these functions in a separate file, for example, `Program.Helpers.cs`, as shown in the following code:
 
