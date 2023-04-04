@@ -5,7 +5,7 @@ If you have suggestions for other common errors, then please [raise an issue in 
 - [Missing types and members in a utility class](#missing-types-and-members-in-a-utility-class)
   - [CS0103 The name 'DoSomething' does not exist in the current context](#cs0103-the-name-dosomething-does-not-exist-in-the-current-context)
   - [CS0122 'Util.DoSomething()' is inaccessible due to its protection level](#cs0122-utildosomething-is-inaccessible-due-to-its-protection-level)
-- [Missing types and members in the Program class](#missing-types-and-members-in-the-program-class)
+- [Missing functions in the partial Program class](#missing-functions-in-the-partial-program-class)
   - [CS0103 The name 'DoSomething' does not exist in the current context](#cs0103-the-name-dosomething-does-not-exist-in-the-current-context-1)
 - [Microsoft introduces a bug in a later version](#microsoft-introduces-a-bug-in-a-later-version)
 
@@ -62,7 +62,7 @@ public class Util
 
 Now the method call works.
 
-# Missing types and members in the Program class
+# Missing functions in the partial Program class
 
 ## CS0103 The name 'DoSomething' does not exist in the current context
 
