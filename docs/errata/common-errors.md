@@ -6,7 +6,7 @@ If you have suggestions for other common errors, then please [raise an issue in 
   - [CS0103 The name 'DoSomething' does not exist in the current context](#cs0103-the-name-dosomething-does-not-exist-in-the-current-context)
   - [CS0122 'Util.DoSomething()' is inaccessible due to its protection level](#cs0122-utildosomething-is-inaccessible-due-to-its-protection-level)
 - [Missing functions in the partial Program class](#missing-functions-in-the-partial-program-class)
-  - [CS0103 The name 'DoSomething' does not exist in the current context](#cs0103-the-name-dosomething-does-not-exist-in-the-current-context-1)
+  - [CS0103 The name 'DoSomethingElse' does not exist in the current context](#cs0103-the-name-dosomethingelse-does-not-exist-in-the-current-context)
 - [Microsoft introduces a bug in a later version](#microsoft-introduces-a-bug-in-a-later-version)
 
 # Missing types and members in a utility class
@@ -64,11 +64,9 @@ Now the method call works.
 
 # Missing functions in the partial Program class
 
-## CS0103 The name 'DoSomething' does not exist in the current context
+## CS0103 The name 'DoSomethingElse' does not exist in the current context
 
 In my book, I show how to define functions that can be easily called directly in the `Program.cs` file because you add them to the `partial Program` class definition. You can put these functions in a separate file, for example, `Program.Helpers.cs`, as shown in the following code:
-
-> Note: The filename is not important and you can have as many files as you like, for example, `Program.Helpers.cs`, `Program.Functions.cs`, `Any.Thing.cs`, and even `Muppets.cs`.
 
 ```cs
 // A file named Program.Helpers.cs.
@@ -90,16 +88,16 @@ namespace Common.Errors
 }
 ```
 
-> Note: The above file was created by the Visual Studio 2022 project item template. It imports five commonly used namespaces and wraps the class in a namespace that uses the name of the project.
+> Note: The above file might have been created by the Visual Studio 2022 project item template. It imports five commonly used namespaces and wraps the class in a namespace that is the name of the project.
 
 You try to call the method directly (without any class name prefix) in the `Program.cs` file, as shown in the following code:
 ```cs
-DoSomethingElse(); // This causes: CS0103 The name 'DoSomething' does not exist in the current context.
+DoSomethingElse(); // This causes: CS0103 The name 'DoSomethingElse' does not exist in the current context.
 ```
 
 The class is declared as `Program` and uses the `partial` keyword so why doesn't it merge with the auto-generated `Program` class? Because it is a different namespace and therefore you now have two classes named `Program`. The fully qualified name of your class is `Common.Errors.Program`. The fully-qualified name of the auto-generated class is just `Program`.
 
-To fix the problem, delete the explicit namespace (and remove the unncessary imported namespaces too), as shown in the following code:
+To fix the problem, delete the explicit namespace (and you might as well remove the unncessary imported namespaces at the same time), as shown in the following code:
 ```cs
 // A file named Program.Helpers.cs.
 partial class Program
@@ -111,12 +109,14 @@ partial class Program
 }
 ```
 
+> Note: The filename is not important and you can have as many files as you like, for example, `Program.Helpers.cs`, `Program.Functions.cs`, `Any.Thing.cs`, and even `Muppets.cs`.
+
 # Microsoft introduces a bug in a later version
 
 Although rare, it is possible that by using a later version of a NuGet package than the one I used to write the book, you experience different behavior, especially negative behavior if it is due to a bug. 
 
-For example, in the `Microsoft.Extensions.Configuration.Binder` package, version `7.0.3` has a bug. Previous versions from `7.0.0` to `7.0.0` do not have the bug.
+For example, in the `Microsoft.Extensions.Configuration.Binder` package, version `7.0.3` has a bug that causes an exception to be thrown when it tries to parse a trace level set in an `appsettings.json` file. Previous versions from `7.0.2` to `7.0.` did not have this bug.
 
-You can read more here: https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/errata.md#page-178---reviewing-project-packages
+You can read more this specific example here: https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/errata.md#page-178---reviewing-project-packages
 
-If you add packages using the Visual Studio 2022 user interface or the `dotnet add package` command-line tool then it will use the most recent version. If you have problems, try manually reverting to an older version.
+If you add packages using the Visual Studio 2022 user interface or the `dotnet add package` command-line tool then it will use the most recent version by default which can cause this issue when Microsoft adds any bugs to any packages in future. If you have problems, try manually reverting to an older version.
