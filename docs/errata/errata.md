@@ -1,4 +1,4 @@
-**Errata** (37 items)
+**Errata** (38 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -14,6 +14,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 85 - Getting text input from the user](#page-85---getting-text-input-from-the-user)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 114 - Simplifying switch statements with switch expressions](#page-114---simplifying-switch-statements-with-switch-expressions)
+- [Page 116 - Looping with the do statement](#page-116---looping-with-the-do-statement)
 - [Page 156 - Calculating factorials with recursion](#page-156---calculating-factorials-with-recursion)
 - [Page 166 - Setting a breakpoint and starting debugging - Using Visual Studio 2022](#page-166---setting-a-breakpoint-and-starting-debugging---using-visual-studio-2022)
 - [Page 178 - Reviewing project packages](#page-178---reviewing-project-packages)
@@ -182,6 +183,43 @@ It should be:
 ```cs
 Cat fourLeggedCat when fourLeggedCat.Legs == 4
   => $"The cat named {fourLeggedCat.Name} has four legs.",
+```
+
+# Page 116 - Looping with the do statement
+
+> Thanks to Norbert Duenki who raised this issue by email on 4 April 2023.
+
+In Step 3, I wrote, "As an optional challenge, add statements so that the user can only make ten attempts before 
+an error message is displayed."
+
+In my code solution in GitHub, I made a mistake in my logic so that if the user entered the correct password on their tenth attempt, it output the error message.
+
+I have updated the logic to fix this issue, as well as to use variables to store the actual password and the maximum number of attempts, as shown in the following code:
+```cs
+// Looping with the do statement
+
+string? actualPassword = "Pa$$w0rd";
+string? password;
+int maximumAttempts = 10;
+int attempts = 0;
+
+do
+{
+  attempts++;
+  Write("Enter your password: ");
+  password = ReadLine();
+}
+while ((password != actualPassword) & (attempts < maximumAttempts));
+
+if (password == actualPassword)
+{
+  WriteLine("Correct!");
+}
+else
+{
+  WriteLine("You have used {0} attempts! The password was {1}.",
+    arg0: maximumAttempts, arg1: actualPassword);
+}
 ```
 
 # Page 156 - Calculating factorials with recursion
