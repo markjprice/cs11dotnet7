@@ -1,7 +1,8 @@
-**Improvements** (26 items)
+**Improvements** (27 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
+- [Page 25 - Adding a second project using Visual Studio 2022](#page-25---adding-a-second-project-using-visual-studio-2022)
 - [Page 69 - Raw interpolated string literals](#page-69---raw-interpolated-string-literals)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 128 - Rounding numbers](#page-128---rounding-numbers)
@@ -28,6 +29,16 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 601 - Setting up an ASP.NET Core MVC website](#page-601---setting-up-an-aspnet-core-mvc-website)
 - [Page 654 - Making controller action methods asynchronous](#page-654---making-controller-action-methods-asynchronous)
 - [Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page](#page-655---exercise-142--practice-implementing-mvc-by-implementing-a-category-detail-page)
+
+# Page 25 - Adding a second project using Visual Studio 2022
+
+> Thanks to [yoshist](https://github.com/yoshist) who raised this issue on [10 April 2023](https://github.com/markjprice/cs11dotnet7/issues/56).
+
+In Step 6, I wrote, "In Solution Explorer, right-click the Chapter01 solution, select Set Startup Projects…, set 
+Current selection, and then click OK." Then in Step 7, I wrote, "In Solution Explorer, click the AboutMyEnvironment project (or any file or folder within it), and note that Visual Studio indicates that AboutMyEnvironment is now the startup project by 
+making the project name bold."
+
+In the next edition, I will add a note to explicitly explain that I recommend this way of setting the startup project because it then makes it very easy to switch startup projects by simply clicking a project (or any file in a project) to make it the startup project. Although you can right-click a project and set it as a startup project, if you then want to run a different project, you must manually change it again. Simply clicking anywhere in the project is easier. 
 
 # Page 69 - Raw interpolated string literals
 
