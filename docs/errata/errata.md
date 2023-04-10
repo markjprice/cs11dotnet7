@@ -1,4 +1,4 @@
-**Errata** (39 items)
+**Errata** (40 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -40,6 +40,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
   - [NorthwindDb class changes](#northwinddb-class-changes)
 - [Page 477 - Inserting entities](#page-477---inserting-entities)
 - [Page 548 - Creating a class library for a Northwind database context](#page-548---creating-a-class-library-for-a-northwind-database-context)
+- [Page 550 - Creating a class library for entity models using SQL Server](#page-550---creating-a-class-library-for-entity-models-using-sql-server)
 - [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
 - [Page 627 - Defining a typed view](#page-627---defining-a-typed-view)
 - [Page 631 - Passing parameters using a route value](#page-631---passing-parameters-using-a-route-value)
@@ -605,6 +606,34 @@ public static class NorthwindContextExtensions {
 }
 ```
 
+# Page 550 - Creating a class library for entity models using SQL Server
+
+> Thanks to Amer Cejudo for raising this issue by email on 8 April 2023.
+
+In Step 6, I tell the reader to enter a command to generate code from an existing SQL Server database, as shown in the following command:
+```
+dotnet ef dbcontext scaffold "Data Source=.;Initial Catalog=Northwind;Integrated Security=true;" Microsoft.EntityFrameworkCore.SqlServer --namespace Packt.Shared --data-annotations
+```
+
+If you get the error, "The certificate chain was issued by an authority that is not trusted.", then it is because the connection to the SQL Server database will be encrypted by default but the OS and therefore the app does not (yet) trust the local development server certificate. 
+
+You have three choices to fix this issue:
+
+1. Add the following to the database connection string to make the certicate trusted for this connection:
+```
+TrustServerCertificate=true;
+```
+
+2. Add the following to the database connection string to disable encryption so it does not need to trust the certificate for this connection:
+```
+Encrypt=false;
+```
+
+3. Run the following at the command-line to trust the certificate for all .NET apps in future:
+```
+dotnet dev-certs https --trust
+```
+
 # Page 551 - Creating a class library for entity models using SQL Server
 
 In Step 15, you write an extension method that registers the `NorthwindContext` class for use as a dependency service. In later chapters, this will be used in ASP.NET Core and Blazor projects. By default, a `DbContext` class is registered using `Scope` lifetime, meaning that multiple threads can share the same instance. If more than one thread attempts to use the same `NorthwindContext` class instance at the same time then you will see the following runtime exception thrown:
@@ -642,6 +671,8 @@ public static class NorthwindContextExtensions {
   }
 }
 ```
+
+> Note that I have also written a related improvement here: https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/improvements.md#page-551---creating-a-class-library-for-entity-models-using-sql-server
 
 # Page 627 - Defining a typed view
 
