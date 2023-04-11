@@ -1,4 +1,4 @@
-**Improvements** (27 items)
+**Improvements** (28 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -21,6 +21,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 351 - Using non-.NET Standard libraries](#page-351---using-non-net-standard-libraries)
 - [Page 444 - Connecting to a database](#page-444---connecting-to-a-database)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
+- [Page 512 - Group-joining sequences](#page-512---group-joining-sequences)
 - [Page 533 - Building websites using ASP.NET Core](#page-533---building-websites-using-aspnet-core)
 - [Page 547 - Creating a class library for a Northwind database context](#page-547---creating-a-class-library-for-a-northwind-database-context)
 - [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
@@ -398,6 +399,59 @@ I recommend that you type from the print book or copy and paste long commands li
 For convenience, here is the same command as a single line to make it easier to copy and paste:
 ```
 dotnet ef dbcontext scaffold "Filename=Northwind.db" Microsoft.EntityFrameworkCore.Sqlite --table Categories --table Products --output-dir AutoGenModels --namespace WorkingWithEFCore.AutoGen --data-annotations --context Northwind
+```
+
+# Page 512 - Group-joining sequences
+
+> Thanks to Amer Cejudo who raised this issue via email.
+
+After this section, I will add a new section titled **Grouping for lookups**. It will cover the `ToLookup` method that I later use in a solution to an exercise but never cover in the book itself!
+
+Imagine that you have a table named `Customers` in a database that includes a column for the country they reside in, as shown in the following table:
+
+|CompanyName|Country|
+|---|---|
+|Alfreds Futterkiste|Germany|
+|Blauer See Delikatessen|Germany|
+|Great Lakes Food Market|USA|
+|Hungry Coyote Import Store|USA|
+|Lazy K Kountry Store|USA|
+
+You might want to create a data structure in memory that can group the `Customer` objects by their country, and provide a quick way to look up all the customers in a specific country. You can create this using the `ToLookup` LINQ method, as shown in the following code:
+```cs
+ILookup<string?, Customer>? customersByCountry = db.Customers.ToLookup(c => c.Country);
+```
+This creates a dictionary-like data structure in memory that has unique country names for the key and a collection of `Customer` objects for the value, as shown in the following table:
+
+|Key|Value (collection of Customers)|
+|---|---|
+|Germany| [Alfreds Futterkiste] [Blauer See Delikatessen]|
+|USA|[Great Lakes Food Market] [Hungry Coyote Import Store] [Lazy K Kountry Store]|
+
+> Note the company names in square brackets like [Alfreds Futterkiste] represent an entire `Customer` object stored in a collection.
+
+We can then lookup an individual collection of customers for a specific country, as shown in the following code:
+```cs
+IEnumerable<Customer> customersInGermany = customersByCountry["Germany"];
+
+foreach (Customer customer in customersInGermany)
+{
+  WriteLine(customer.CompanyName);
+}
+```
+
+Or we can enumerate through the whole lookup, using an `IGrouping<string?, Customer>` to represent each *row* in the lookup dictionary, as shown in the following code:
+
+```cs
+foreach (IGrouping<string?, Customer> cbc in customersByCountry)
+{
+  WriteLine(cbc.Key); // Outputs: Germany, USA, and so on.
+  
+  foreach (Customer customer in cbc)
+  {
+    WriteLine(customer.CompanyName);
+  }
+}
 ```
 
 # Page 533 - Building websites using ASP.NET Core
