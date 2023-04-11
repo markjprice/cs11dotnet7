@@ -1,4 +1,4 @@
-**Errata** (40 items)
+**Errata** (41 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -39,6 +39,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
   - [Category class changes](#category-class-changes)
   - [NorthwindDb class changes](#northwinddb-class-changes)
 - [Page 477 - Inserting entities](#page-477---inserting-entities)
+- [Page 478 - Updating entities](#page-478---updating-entities)
 - [Page 548 - Creating a class library for a Northwind database context](#page-548---creating-a-class-library-for-a-northwind-database-context)
 - [Page 550 - Creating a class library for entity models using SQL Server](#page-550---creating-a-class-library-for-entity-models-using-sql-server)
 - [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
@@ -562,6 +563,20 @@ ListProducts(productIdToHighlight: resultAdd.productId);
 It should use the method signature that allows multiple `productIds` to be highlighted, as shown in the following code:
 ```cs
 ListProducts(productIdsToHighlight: new[] { resultAdd.productId });
+```
+
+# Page 478 - Updating entities
+
+> Thanks to [Masoud](https://github.com/MAS-OUD) for raising this [issue on 11 April 2023](https://github.com/markjprice/cs11dotnet7/issues/57).
+
+In Step 2, the statement to output the price increase, as shown in the following code:
+```cs
+WriteLine("Increase price success for ID: {resultUpdate.productId}.");
+```
+
+Is missing the `$` prefix to make it an interpolated string, as shown in the following code:
+```cs
+WriteLine($"Increase price success for ID: {resultUpdate.productId}.");
 ```
 
 # Page 548 - Creating a class library for a Northwind database context
