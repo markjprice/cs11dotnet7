@@ -1,4 +1,4 @@
-**Improvements** (28 items)
+**Improvements** (29 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -19,6 +19,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 339 - Viewing source links with Visual Studio 2022](#page-339---viewing-source-links-with-visual-studio-2022)
 - [Page 343 - Packaging a library for NuGet](#page-343---packaging-a-library-for-nuget)
 - [Page 351 - Using non-.NET Standard libraries](#page-351---using-non-net-standard-libraries)
+- [Page 378 - Dictionaries](#page-378---dictionaries)
 - [Page 444 - Connecting to a database](#page-444---connecting-to-a-database)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 - [Page 512 - Group-joining sequences](#page-512---group-joining-sequences)
@@ -375,6 +376,12 @@ for (int i = 0; i < matrix.Axes[1].Points.Length; i++)
   matrix.Axes[1].Points[i].Label = $"y{i}";
 }
 ```
+
+# Page 378 - Dictionaries
+
+In the next edition, I will add a note at the bottom of this section to set an expectation that readers will come across dictionaries again later in the book in more practical ways.
+
+> Note: In Chapter 11, LINQ, you will learn how to create dictionaries and lookups from existing data sources like tables in a database using LINQ methods like `ToDictionary` and `ToLookup`. This is a much more common use than manually adding items to a dictionary as shown in this section.
 
 # Page 444 - Connecting to a database
 
