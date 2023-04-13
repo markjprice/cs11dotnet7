@@ -1,4 +1,4 @@
-**Errata** (41 items)
+**Errata** (42 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -22,6 +22,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 185 - Creating a class library that needs testing](#page-185---creating-a-class-library-that-needs-testing)
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 231 - Requiring properties to be set during instantiation](#page-231---requiring-properties-to-be-set-during-instantiation)
+- [Page 235 - More about methods](#page-235---more-about-methods)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
 - [Page 258 - Defining and handling events](#page-258---defining-and-handling-events)
 - [Page 263 - Comparing objects using a separate class](#page-263---comparing-objects-using-a-separate-class)
@@ -337,6 +338,14 @@ the following markup:
 ```
 
 - Build the `PeopleApp` project.
+
+# Page 235 - More about methods
+
+> Thanks to [cgwid](https://github.com/cgwid) for raising this [issue on 12 April 2023](https://github.com/markjprice/cs11dotnet7/issues/59).
+
+In this section, we define some methods and operators so that two `Person` objects can get married and have babies. The example we model comes from the Bible story of Lamech and his two wives and their children. But the code I tell you to write does not allow Lamech to marry two women so later an exception is thrown when Lamech and his second wife try to make a baby. 
+
+cgwid suggested a solution in [the issue they raised](https://github.com/markjprice/cs11dotnet7/issues/59). I want to rethink this code example for the next edition to avoid it becoming overly complex so I will leave it to the reader to decide how they might want to solve it. 
 
 # Page 244 - Init-only properties
 
