@@ -211,14 +211,19 @@ Person zillah = new() { Name = "Zillah" };
 
 lamech.Marry(adah);
 // Person.Marry(zillah, lamech);
+
 if (zillah + lamech)
 {
   WriteLine($"{zillah.Name} and {lamech.Name} successfully got married.");
 }
+else
+{
+  WriteLine($"{zillah.Name} and {lamech.Name} failed to marry.");
+}
 
-WriteLine($"{lamech.Name} is married to {lamech.Spouse?.Name ?? "nobody"}");
-WriteLine($"{adah.Name} is married to {adah.Spouse?.Name ?? "nobody"}");
-WriteLine($"{zillah.Name} is married to {zillah.Spouse?.Name ?? "nobody"}");
+lamech.OutputSpouses();
+adah.OutputSpouses();
+zillah.OutputSpouses();
 
 // call instance method
 Person baby1 = lamech.ProcreateWith(adah);
@@ -248,7 +253,7 @@ for (int i = 0; i < lamech.Children.Count; i++)
 
 // Implementing functionality using local functions
 
-int number = -1; // change to -1 to make the exception handling code execute
+int number = 6; // change to -1 to make the exception handling code execute
 
 try
 {

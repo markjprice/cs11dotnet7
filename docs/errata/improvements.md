@@ -1,4 +1,4 @@
-**Improvements** (29 items)
+**Improvements** (30 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -11,6 +11,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 161 - Using lambdas in function implementations](#page-161---using-lambdas-in-function-implementations)
 - [Page 179 - Reviewing project packages](#page-179---reviewing-project-packages)
 - [Page 200 - Talking about OOP](#page-200---talking-about-oop)
+- [Page 235 - More about methods](#page-235---more-about-methods)
 - [Page 237 - Implementing functionality using methods](#page-237---implementing-functionality-using-methods)
 - [Page 241 - Defining flight passengers](#page-241---defining-flight-passengers)
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
@@ -233,6 +234,129 @@ interface ITheta { void M3() { } void M4(); }
 
 // A class inheriting the default implementation from an interface and must provide an implementation for M4.
 class Iota : ITheta { void M4() { } }
+```
+
+# Page 235 - More about methods
+
+> Thanks to [cgwid](https://github.com/cgwid) for raising this [issue on 12 April 2023](https://github.com/markjprice/cs11dotnet7/issues/59).
+
+In this section, we define some methods and operators so that two `Person` objects can get married and have babies. The example we model comes from the Bible story of Lamech and his two wives and their children. But the code I tell you to write does not allow Lamech to marry two women so later an exception is thrown when Lamech and his second wife try to make a baby. 
+
+cgwid suggested a solution in [the issue they raised](https://github.com/markjprice/cs11dotnet7/issues/59). 
+
+Here is my possible improvement. I might change it before using it in the next edition. We could use a `List<Person>` to store the zero, one or more people that a `Person` is married too. We could implement `Married` as a readonly property that calls the LINQ `Any` method to return `true` if there are any items in the `Spouses` list, as shown in the following code:
+```cs
+// Is this person married to anyone?
+public bool Married => Spouses.Any();
+
+// Allow multiple spouses.
+public List<Person> Spouses = new();
+```
+
+Then we can implement the `static Marry` method by checking if the person is already in the list and then adding them if they are not, as shown in the following code:
+```cs
+// static method to marry
+public static void Marry(Person p1, Person p2)
+{
+  if (p1.Spouses.Contains(p2) || p2.Spouses.Contains(p1))
+  {
+    throw new ArgumentException(
+      string.Format("{0} is already married to {1}.",
+      arg0: p1.Name, arg1: p2.Name));
+  }
+  else
+  {
+    p1.Spouses.Add(p2);
+    p2.Spouses.Add(p1);
+  }
+}
+
+// instance method to marry
+public void Marry(Person partner)
+{
+  Marry(this, partner);
+}
+```
+
+For convenience, we could create a method to output the number of and names of spouses of the current person, as shown in the following code:
+```cs
+public void OutputSpouses()
+{
+  if (Married)
+  {
+    string term = Spouses.Count == 1 ? "person" : "people";
+    WriteLine($"{Name} is married to {Spouses.Count} {term}:");
+    foreach (Person spouse in Spouses)
+    {
+      WriteLine($"  {spouse.Name}");
+    }
+  }
+  else
+  {
+    WriteLine($"{Name} is not married.");
+  }
+}
+```
+
+We would also need to change the `Procreate` method to check that the two people are married before allowing them to make a baby, as shown in the following code:
+```cs
+// static method to "multiply"
+public static Person Procreate(Person p1, Person p2)
+{
+  if (!p1.Spouses.Contains(p2))
+  {
+    throw new ArgumentException(
+      string.Format("{0} must be married to {1} to procreate with them.",
+      arg0: p1.Name, arg1: p2.Name));
+  }
+
+  Person baby = new()
+  {
+    Name = $"Baby of {p1.Name} and {p2.Name}",
+    DateOfBirth = DateTime.Now
+  };
+
+  p1.Children.Add(baby);
+  p2.Children.Add(baby);
+
+  return baby;
+}
+```
+
+Finally, we can call the `OutputSpouses` method in `Program.cs`, as shown in the following code:
+```cs
+// Implementing functionality using methods
+Person lamech = new() { Name = "Lamech" };
+Person adah = new() { Name = "Adah" };
+Person zillah = new() { Name = "Zillah" };
+
+lamech.Marry(adah);
+// Person.Marry(zillah, lamech);
+
+if (zillah + lamech)
+{
+  WriteLine($"{zillah.Name} and {lamech.Name} successfully got married.");
+}
+else
+{
+  WriteLine($"{zillah.Name} and {lamech.Name} failed to marry.");
+}
+
+lamech.OutputSpouses();
+adah.OutputSpouses();
+zillah.OutputSpouses();
+```
+
+The output should look like this:
+```
+Zillah and Lamech successfully got married.
+Lamech is married to 2 people:
+  Adah
+  Zillah
+Adah is married to 1 person:
+  Lamech
+Zillah is married to 1 person:
+  Lamech
 ```
 
 # Page 237 - Implementing functionality using methods

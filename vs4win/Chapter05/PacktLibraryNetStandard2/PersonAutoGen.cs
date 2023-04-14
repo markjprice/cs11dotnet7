@@ -74,33 +74,59 @@ public partial class Person
     }
   }
 
-  private bool married = false;
-  public bool Married => married;
+  // Is this person married to anyone?
+  public bool Married => Spouses.Any();
 
-  private Person? spouse = null;
-  public Person? Spouse => spouse;
+  // Allow multiple spouses.
+  public List<Person> Spouses = new();
 
   // static method to marry
   public static void Marry(Person p1, Person p2)
   {
-    p1.Marry(p2);
+    if (p1.Spouses.Contains(p2) || p2.Spouses.Contains(p1))
+    {
+      throw new ArgumentException(
+        string.Format("{0} is already married to {1}.",
+        arg0: p1.Name, arg1: p2.Name));
+    }
+    else
+    {
+      p1.Spouses.Add(p2);
+      p2.Spouses.Add(p1);
+    }
   }
 
   // instance method to marry
   public void Marry(Person partner)
   {
-    if (married) return;
-    spouse = partner;
-    married = true;
-    partner.Marry(this); // this is the current object
+    Marry(this, partner);
+  }
+
+  public void OutputSpouses()
+  {
+    if (Married)
+    {
+      string term = Spouses.Count == 1 ? "person" : "people";
+      WriteLine($"{Name} is married to {Spouses.Count} {term}:");
+      foreach (Person spouse in Spouses)
+      {
+        WriteLine($"  {spouse.Name}");
+      }
+    }
+    else
+    {
+      WriteLine($"{Name} is not married.");
+    }
   }
 
   // static method to "multiply"
   public static Person Procreate(Person p1, Person p2)
   {
-    if (p1.Spouse != p2)
+    if (!p1.Spouses.Contains(p2))
     {
-      throw new ArgumentException("You must be married to procreate.");
+      throw new ArgumentException(
+        string.Format("{0} must be married to {1} to procreate with them.",
+        arg0: p1.Name, arg1: p2.Name));
     }
 
     Person baby = new()
