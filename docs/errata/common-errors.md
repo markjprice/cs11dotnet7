@@ -1,4 +1,4 @@
-**Common Errors and How to Fix Them** (3 items)
+**Common Errors and How to Fix Them** (4 items)
 
 If you have suggestions for other common errors, then please [raise an issue in this repository](https://github.com/markjprice/cs12dotnet8/issues) or email me at markjprice (at) gmail.com.
 
@@ -8,6 +8,7 @@ If you have suggestions for other common errors, then please [raise an issue in 
 - [Missing functions in the partial Program class](#missing-functions-in-the-partial-program-class)
   - [CS0103 The name 'DoSomethingElse' does not exist in the current context](#cs0103-the-name-dosomethingelse-does-not-exist-in-the-current-context)
 - [Microsoft introduces a bug in a later version](#microsoft-introduces-a-bug-in-a-later-version)
+- [Service not started when you try to call it](#service-not-started-when-you-try-to-call-it)
 
 # Missing types and members in a utility class
 
@@ -120,3 +121,14 @@ For example, in the `Microsoft.Extensions.Configuration.Binder` package, version
 You can read more this specific example here: https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/errata.md#page-178---reviewing-project-packages
 
 If you add packages using the Visual Studio 2022 user interface or the `dotnet add package` command-line tool then it will use the most recent version by default which can cause this issue when Microsoft adds any bugs to any packages in future. If you have problems, try manually reverting to an older version.
+
+# Service not started when you try to call it
+
+A common mistake is to start a client app that talks to service without first starting the service. When you do this, you will likely see the following error:
+```
+The [project_name] service is not responding. Exception: No connection could be made because the target machine actively refused it. (localhost:[port_number])
+```
+
+To fix the issue, start the service project first, then start the client project. 
+
+If you use Visual Studio 2022 then you can configure multiple startup projects automatically by right-clicking a solution and choosing **Set Startup Projects...**.
