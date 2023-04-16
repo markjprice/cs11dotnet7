@@ -345,7 +345,7 @@ the following markup:
 
 In this section, we define some methods and operators so that two `Person` objects can get married and have babies. The example we model comes from the Bible story of Lamech and his two wives and their children. But the code I tell you to write does not allow Lamech to marry two women so later an exception is thrown when Lamech and his second wife try to make a baby. 
 
-cgwid suggested a solution in [the issue they raised](https://github.com/markjprice/cs11dotnet7/issues/59). I want to rethink this code example for the next edition to avoid it becoming overly complex so I will leave it to the reader to decide how they might want to solve it. 
+cgwid suggested a solution in [the issue they raised](https://github.com/markjprice/cs11dotnet7/issues/59). I want to rethink this code example for the next edition to avoid it becoming overly complex so I will leave it to the reader to decide how they might want to solve it. Meanwhile, I have added an improvement with suggested alternative code here: https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/improvements.md#page-235---more-about-methods
 
 # Page 244 - Init-only properties
 
