@@ -1,8 +1,9 @@
-**Improvements** (30 items)
+**Improvements** (31 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
 - [Page 25 - Adding a second project using Visual Studio 2022](#page-25---adding-a-second-project-using-visual-studio-2022)
+- [Page 56 - Examples of statements and blocks](#page-56---examples-of-statements-and-blocks)
 - [Page 69 - Raw interpolated string literals](#page-69---raw-interpolated-string-literals)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 128 - Rounding numbers](#page-128---rounding-numbers)
@@ -42,6 +43,23 @@ Current selection, and then click OK." Then in Step 7, I wrote, "In Solution Exp
 making the project name bold."
 
 In the next edition, I will add a note to explicitly explain that I recommend this way of setting the startup project because it then makes it very easy to switch startup projects by simply clicking a project (or any file in a project) to make it the startup project. Although you can right-click a project and set it as a startup project, if you then want to run a different project, you must manually change it again. Simply clicking anywhere in the project is easier. 
+
+# Page 56 - Examples of statements and blocks
+
+> Thanks to [Nickolay Chistov](https://github.com/nchistov) who raised this issue on [19 April 2023](https://github.com/markjprice/cs9dotnet5/issues/30).
+
+In the next edition, I will add a note to say, "I recommend that you follow the brace-style in Microsoft official documentation. For example, the for statement, as found at the following link:
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements"
+```cs
+for (int i = 0; i < 3; i++)
+{
+    Console.Write(i);
+}
+```
+The reason I use two spaces for indenting is because my code will be printed in a book and therefore has narrow width available.
+
+The official coding style conventions are here:
+https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
 
 # Page 69 - Raw interpolated string literals
 
