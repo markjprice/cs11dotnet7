@@ -61,6 +61,8 @@ The reason I use two spaces for indenting is because my code will be printed in 
 The official coding style conventions are here:
 https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
 
+But regardless of any official guidelines, I recommend that you conform to whatever standards have been adopted by your development team, unless you are a solo developer in which case as long as your code compiles you can use any conventions you like.
+
 # Page 69 - Raw interpolated string literals
 
 > Thanks to [Mahdi Jaberzadeh Ansari](https://github.com/mjza) who raised this issue on [6 March 2023](https://github.com/markjprice/cs11dotnet7/issues/36).
