@@ -1,4 +1,4 @@
-**Errata** (42 items)
+**Errata** (43 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -41,6 +41,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
   - [NorthwindDb class changes](#northwinddb-class-changes)
 - [Page 477 - Inserting entities](#page-477---inserting-entities)
 - [Page 478 - Updating entities](#page-478---updating-entities)
+- [Page 495 - Filtering entities with Where](#page-495---filtering-entities-with-where)
 - [Page 548 - Creating a class library for a Northwind database context](#page-548---creating-a-class-library-for-a-northwind-database-context)
 - [Page 550 - Creating a class library for entity models using SQL Server](#page-550---creating-a-class-library-for-entity-models-using-sql-server)
 - [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
@@ -587,6 +588,12 @@ Is missing the `$` prefix to make it an interpolated string, as shown in the fol
 ```cs
 WriteLine($"Increase price success for ID: {resultUpdate.productId}.");
 ```
+
+# Page 495 - Filtering entities with Where
+
+> Thanks to [Masoud](https://github.com/MAS-OUD) for raising this [issue on 20 April 2023](https://github.com/markjprice/cs11dotnet7/issues/62).
+
+In Steps 3 and 5, the screenshots in *Figure 11.1* and *Figure 11.2* show a solution name of **Chapter12** when it should be **Chapter11**. In the next edition, I will retake the screenshots.
 
 # Page 548 - Creating a class library for a Northwind database context
 
