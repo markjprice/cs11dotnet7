@@ -1,4 +1,4 @@
-**Errata** (43 items)
+**Errata** (44 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -24,6 +24,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 231 - Requiring properties to be set during instantiation](#page-231---requiring-properties-to-be-set-during-instantiation)
 - [Page 235 - More about methods](#page-235---more-about-methods)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
+- [Page 256 - Defining and handling delegates](#page-256---defining-and-handling-delegates)
 - [Page 258 - Defining and handling events](#page-258---defining-and-handling-events)
 - [Page 263 - Comparing objects using a separate class](#page-263---comparing-objects-using-a-separate-class)
 - [Page 272 - Defining struct types](#page-272---defining-struct-types)
@@ -353,6 +354,19 @@ cgwid suggested a solution in [the issue they raised](https://github.com/markjpr
 > Thanks to Bob Molloy for raising this issue via email.
 
 In Step 1, I say to add a new file named `Records.cs` to the `PacktLibraryNetStandard2` project/folder. I should have said to the `PacktLibraryModern` project/folder.
+
+# Page 256 - Defining and handling delegates
+
+> Thanks to **bfdhud**` for raising this issue via Discord.
+
+
+In Step 2, if you use Visual Studio 2022 to create the class file then it will have multiple statements of existing code. These statements should be deletd and replaced with the code as shown in Step 3. If you just add new statements inside those created by Visual Studio 2022 then it won't work because the `partial Program` class needs to be in the default empty namespace just like the auto-generated `Program` class is. 
+
+A similar issue is covered by these improvement items: 
+https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/improvements.md#page-149---writing-a-times-table-function
+https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/improvements.md#page-241---defining-flight-passengers
+
+In the next edition I will add notes to warn Visual Studio 2022 users to delete any existing statements.
 
 # Page 258 - Defining and handling events
 
