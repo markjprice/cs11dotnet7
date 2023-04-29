@@ -357,7 +357,7 @@ In Step 1, I say to add a new file named `Records.cs` to the `PacktLibraryNetSta
 
 # Page 256 - Defining and handling delegates
 
-> Thanks to **bfdhud**` for raising this issue via Discord.
+> Thanks to **bfdhud** for raising this issue via Discord.
 
 
 In Step 2, if you use Visual Studio 2022 to create the class file then it will have multiple statements of existing code. These statements should be deletd and replaced with the code as shown in Step 3. If you just add new statements inside those created by Visual Studio 2022 then it won't work because the `partial Program` class needs to be in the default empty namespace just like the auto-generated `Program` class is. 
