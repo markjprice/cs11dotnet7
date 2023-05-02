@@ -1,4 +1,4 @@
-**Improvements** (32 items)
+**Improvements** (33 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -7,6 +7,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 69 - Raw interpolated string literals](#page-69---raw-interpolated-string-literals)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
 - [Page 128 - Rounding numbers](#page-128---rounding-numbers)
+- [Page 146 - Understanding top-level programs and functions](#page-146---understanding-top-level-programs-and-functions)
 - [Page 149 - Writing a times table function](#page-149---writing-a-times-table-function)
 - [Page 153 - Writing a function that returns a value](#page-153---writing-a-function-that-returns-a-value)
 - [Page 161 - Using lambdas in function implementations](#page-161---using-lambdas-in-function-implementations)
@@ -100,6 +101,26 @@ In the next edition, I will add a note to explain that this method never actuall
 # Page 128 - Rounding numbers
 
 In this section, I wrote about rounding rules as taught in schools and compare them to rounding rules when using C# and .NET. In schools, children are introduced to rounding rules with positive numbers and so learn the term "rounding up" and "rounding down". I did not explicitly say that for negative numbers, those terms would be reversed which can be confusing, so those terms should be avoided. This is why the .NET API uses the enum values `AwayFromZero`, `ToZero`, `ToEven`, `ToPositiveInfinity` and `ToNegativeInfinity` for improved clarity. In the next edition I will add a note about this.
+
+# Page 146 - Understanding top-level programs and functions
+
+> Thanks to **bfdhud** in the Discord channel (and a few others who had similar issues) for raising this issue.
+
+Pages 146 and 147 explain how the top-level program feature works in detail. But what I do not explicitly highlight is that the auto-generated `Program` class is defined *without a namespace*. This is why, when extending the partial class by explicitly defining your own `partial Program` class in a separate file, you must NOT define a namespace for your class! 
+
+For example, on page 147, note there is no `namespace` statement, as shown in the code below:
+```cs
+// in a file named Program.Functions.cs
+partial class Program
+{
+  static void DoSomething() // define a non-local static function
+  {
+    WriteLine("Doing something!");
+  }
+}
+```
+
+In the next edition, I will highlight this, and add some code that will output the type's namespace so the reader can literally see that it is empty.
 
 # Page 149 - Writing a times table function
 
