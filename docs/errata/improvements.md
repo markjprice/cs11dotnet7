@@ -272,7 +272,7 @@ class Episilon : Delta { }
 // A class with at least one abstract member must be decorated with the abstract keyword to prevent instantiation.
 abstract class Zeta { void M3() { } abstract void M4(); }
 
-// A class inheriting the M3 method but must provide an implementarion for M4.
+// A class inheriting the M3 method but must provide an implementation for M4.
 class Eta : Zeta { void M4() { } }
 
 // In C# 8 and later, interfaces can have default implementatations as well as members that must be implemented.
