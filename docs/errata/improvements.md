@@ -1,4 +1,4 @@
-**Improvements** (33 items)
+**Improvements** (34 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -97,6 +97,23 @@ And therefore the output should be:
 In Step 1, I note that the `ReadLine` method is declared to return `string?`, meaning that it could return a `null` value instead of a `string` value (including an empty one). I also note that this is treated as a warning by the compiler. 
 
 In the next edition, I will add a note to explain that this method never actually returns `null` so there is no point in checking for that in functional code. A more useful check is `string.IsNullOrEmpty` so I will add more steps to show how to use that method and `string.IsNullOrWhiteSpace` to validate text input. 
+
+# Page 91 - Passing arguments to a console app
+
+> Thanks to `MINIMA#8536` for raising this issue in the Discord channel for this book.
+
+I give instructions for Visual Studio 2022 for Windows and Visual Studio Code. A few readers use Visual Studio 2022 for Mac but it is different to Visual Studio 2022 for Windows.
+
+In the next edition, I will add steps for Visual Studio 2022 for Mac:
+
+1. In Visual Studio for Mac, right-click the `Arguments` project.
+2. In the popup menu, select **Properties**. 
+3. In the **Project Properties - Arguments** dialog box, in the left-hand navigation section, select **Run** | **Configurations** | **Default**.
+4. In the **Arguments** box, enter the arguments: `firstarg second-arg third:arg "fourth arg"`, as shown in the following screenshot.
+5. Click **OK**.
+6. Run the console app.
+
+![Passing arguments using Visual Studio 2022 for Mac](images/vsmac-arguments.png)
 
 # Page 128 - Rounding numbers
 
