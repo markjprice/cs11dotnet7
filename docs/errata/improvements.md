@@ -6,6 +6,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 56 - Examples of statements and blocks](#page-56---examples-of-statements-and-blocks)
 - [Page 69 - Raw interpolated string literals](#page-69---raw-interpolated-string-literals)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
+- [Page 91 - Passing arguments to a console app](#page-91---passing-arguments-to-a-console-app)
 - [Page 128 - Rounding numbers](#page-128---rounding-numbers)
 - [Page 146 - Understanding top-level programs and functions](#page-146---understanding-top-level-programs-and-functions)
 - [Page 149 - Writing a times table function](#page-149---writing-a-times-table-function)
