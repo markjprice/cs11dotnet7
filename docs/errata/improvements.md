@@ -483,7 +483,7 @@ Will give the following compile error:
 CS8803: Top-level statements must precede namespace and type declarations.
 ```
 
-If you try to enter it along with the following code in `Program.cs`:
+If you try to enter it before the following code in `Program.cs`:
 
 ```cs
 // create a delegate instance that points to the method
@@ -493,7 +493,7 @@ DelegateWithMatchingSignature d = new(p1.MethodIWantToCall);
 int answer2 = d("Frog");
 ```
 
-In the next edition, I will add a note to warn the reader either not to enter this code, or to tell them to put the in a separate file, as shown in the following code:
+In the next edition, I will add a note to warn the reader either not to enter this code, or to tell them to put at the bottom of `Program.cs` or in a separate file, as shown in the following code:
 ```cs
 // In a separate file like Program.Delegates.cs.
 delegate int DelegateWithMatchingSignature(string s);
