@@ -19,6 +19,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 237 - Implementing functionality using methods](#page-237---implementing-functionality-using-methods)
 - [Page 241 - Defining flight passengers](#page-241---defining-flight-passengers)
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
+- [Page 254 - Calling methods using delegates](#page-254---calling-methods-using-delegates)
 - [Page 270 - Equality of types](#page-270---equality-of-types)
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
 - [Page 339 - Viewing source links with Visual Studio 2022](#page-339---viewing-source-links-with-visual-studio-2022)
@@ -464,6 +465,38 @@ message saying that required assets are missing, click Yes to add them.
 9. Run the `PeopleApp` project and note the result, as shown in the following output:
 ```
 Harry was born on a Sunday.
+```
+
+# Page 254 - Calling methods using delegates
+
+> Thanks to `Jovis#7721` in the Discord channel for raising this issue.
+
+This section shows example code that defines a method and a matching delegate. This code is not meant to be entered into your existing project. The reason is because you cannot just declare a type (like a class, or a delegate as in this example) in the middle of a top-level program. 
+
+A delegate declaration, as shown in the following code:
+```cs
+delegate int DelegateWithMatchingSignature(string s);
+```
+
+Will give the following compile error:
+```
+CS8803: Top-level statements must precede namespace and type declarations.
+```
+
+If you try to enter it along with the following code in `Program.cs`:
+
+```cs
+// create a delegate instance that points to the method
+DelegateWithMatchingSignature d = new(p1.MethodIWantToCall);
+
+// call the delegate, who then calls the method
+int answer2 = d("Frog");
+```
+
+In the next edition, I will add a note to warn the reader either not to enter this code, or to tell them to put the in a separate file, as shown in the following code:
+```cs
+// In a separate file like Program.Delegates.cs.
+delegate int DelegateWithMatchingSignature(string s);
 ```
 
 # Page 270 - Equality of types
