@@ -1,4 +1,4 @@
-**Common Errors and How to Fix Them** (5 items)
+**Common Errors and How to Fix Them** (6 items)
 
 If you have suggestions for other common errors, then please [raise an issue in this repository](https://github.com/markjprice/cs12dotnet8/issues) or email me at markjprice (at) gmail.com.
 
@@ -31,6 +31,8 @@ To solve this problem, close the running console app.
 If you cannot find the console app to close it, then it might still be running but not visible in the operating system. 
 
 To solve this problem, reboot your computer.
+
+> Although I use a console app (EXE) in the example above, this issue also applies to class libraries (DLL). You would need to shut down any processes that have the DLL loaded into memory before you can rebuild the class library.
 
 # Microsoft introduces a bug in a later version
 
