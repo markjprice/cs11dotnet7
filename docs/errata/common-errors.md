@@ -4,7 +4,7 @@ If you have suggestions for other common errors, then please [raise an issue in 
 
 - [MSB3026/MSB3027 Cannot rebuild/compile a project](#msb3026msb3027-cannot-rebuildcompile-a-project)
 - [Microsoft introduces a bug in a later version](#microsoft-introduces-a-bug-in-a-later-version)
-- [Visual Studio removes an important file](#visual-studio-removes-an-important-file)
+- [Visual Studio removes a required file from the build process](#visual-studio-removes-a-required-file-from-the-build-process)
 - [Service not started when you try to call it](#service-not-started-when-you-try-to-call-it)
 - [Missing types and members in a utility class](#missing-types-and-members-in-a-utility-class)
   - [CS0103 The name 'DoSomething' does not exist in the current context](#cs0103-the-name-dosomething-does-not-exist-in-the-current-context)
@@ -42,7 +42,7 @@ You can read more this specific example here: https://github.com/markjprice/cs11
 
 If you add packages using the Visual Studio 2022 user interface or the `dotnet add package` command-line tool then it will use the most recent version by default which can cause this issue when Microsoft adds any bugs to any packages in future. If you have problems, try manually reverting to an older version.
 
-# Visual Studio removes an important file
+# Visual Studio removes a required file from the build process
 
 You might be working on any type of project, although it happens most often with ASP.NET Core projects, and you have added a new file. 
 
