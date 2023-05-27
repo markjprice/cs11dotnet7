@@ -468,20 +468,20 @@ public Person this[int index]
 }
 ```
 
-If you do not define the indexer, then you cannot use in it the `for` statement, and you will see the following compile error:
+If you do not define the indexer, then you cannot use it in the `for` statement, and you will see the following compile error:
 ```
 Error	CS0021	Cannot apply indexing with [] to an expression of type 'Person'
-
 ```
 
-In the next edition, I will add a note in the section where you define the indexer to warn that it will be used later in the chapter, and I will add a comment in the `for` statement to warn the reader that use of the indexer requires that the indexer be defined, as shown in the following code:
+In the next edition, I will add a comment in the `for` statement to warn the reader that use of the indexer requires that the indexer be defined, and to offer an alternative if it has not been defined, as shown in the following code:
 ```cs
 for (int i = 0; i < lamech.Children.Count; i++)
 {
   WriteLine(format: "{0}'s child #{1} is named \"{2}\".",
     arg0: lamech.Name, arg1: i, 
-    // The following requires an indexer to be defined for Person:
-    // public Person this[int index]
+    // The following requires an indexer to be defined for Person.
+    // You should have done that in the previous section.
+    // Alternatively, use lamech.Children[i].Name instead.
     arg2: lamech[i].Name);
 }
 ```
