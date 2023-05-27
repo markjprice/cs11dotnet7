@@ -3,13 +3,14 @@
 If you have suggestions for other common errors, then please [raise an issue in this repository](https://github.com/markjprice/cs12dotnet8/issues) or email me at markjprice (at) gmail.com.
 
 - [MSB3026/MSB3027 Cannot rebuild/compile a project](#msb3026msb3027-cannot-rebuildcompile-a-project)
+- [Microsoft introduces a bug in a later version](#microsoft-introduces-a-bug-in-a-later-version)
+- [Visual Studio removes an important file](#visual-studio-removes-an-important-file)
+- [Service not started when you try to call it](#service-not-started-when-you-try-to-call-it)
 - [Missing types and members in a utility class](#missing-types-and-members-in-a-utility-class)
   - [CS0103 The name 'DoSomething' does not exist in the current context](#cs0103-the-name-dosomething-does-not-exist-in-the-current-context)
   - [CS0122 'Util.DoSomething()' is inaccessible due to its protection level](#cs0122-utildosomething-is-inaccessible-due-to-its-protection-level)
 - [Missing functions in the partial Program class](#missing-functions-in-the-partial-program-class)
   - [CS0103 The name 'DoSomethingElse' does not exist in the current context](#cs0103-the-name-dosomethingelse-does-not-exist-in-the-current-context)
-- [Microsoft introduces a bug in a later version](#microsoft-introduces-a-bug-in-a-later-version)
-- [Service not started when you try to call it](#service-not-started-when-you-try-to-call-it)
 
 # MSB3026/MSB3027 Cannot rebuild/compile a project
 
@@ -30,6 +31,46 @@ To solve this problem, close the running console app.
 If you cannot find the console app to close it, then it might still be running but not visible in the operating system. 
 
 To solve this problem, reboot your computer.
+
+# Microsoft introduces a bug in a later version
+
+Although rare, it is possible that by using a later version of a NuGet package than the one I used to write the book, you experience different behavior, especially negative behavior if it is due to a bug. 
+
+For example, in the `Microsoft.Extensions.Configuration.Binder` package, version `7.0.3` has a bug that causes an exception to be thrown when it tries to parse a trace level set in an `appsettings.json` file. Previous versions from `7.0.0` to `7.0.2` did not have this bug.
+
+You can read more this specific example here: https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/errata.md#page-178---reviewing-project-packages
+
+If you add packages using the Visual Studio 2022 user interface or the `dotnet add package` command-line tool then it will use the most recent version by default which can cause this issue when Microsoft adds any bugs to any packages in future. If you have problems, try manually reverting to an older version.
+
+# Visual Studio removes an important file
+
+You might be working on any type of project, although it happens most often with ASP.NET Core projects, and you have added a new file. 
+
+For example, you might have added a new Razor Page file in the `Pages` folder named `index.cshtml`. You start the web server but the page does not appear. Or you are working on a GraphQL service and you add a file named `seafoodProducts.graphql`. But when you run the GraphQL tool to auto-generate client-side proxies, it fails.
+
+These are both common indications that Visual Studio 2022 has decided that the new file should not be part of the project. It has automatically added an entry to the project file to remove the file without telling you.
+
+To solve this type of problem, review the project file for unexpected entries like the following, and delete them:
+```xml
+<ItemGroup>
+  <Content Remove="Pages\index.cshtml" />
+</ItemGroup>
+
+<ItemGroup>
+  <GraphQL Remove="seafoodProducts.graphql" />
+</ItemGroup>
+```
+
+# Service not started when you try to call it
+
+A common mistake is to start a client app that talks to service without first starting the service. When you do this, you will likely see the following error:
+```
+The [project_name] service is not responding. Exception: No connection could be made because the target machine actively refused it. (localhost:[port_number])
+```
+
+To fix the issue, start the service project first, then start the client project. 
+
+If you use Visual Studio 2022 then you can configure multiple startup projects automatically by right-clicking a solution and choosing **Set Startup Projects...**.
 
 # Missing types and members in a utility class
 
@@ -132,24 +173,3 @@ partial class Program
 ```
 
 > Note: The filename is not important and you can have as many files as you like, for example, `Program.Helpers.cs`, `Program.Functions.cs`, `Any.Thing.cs`, and even `Muppets.cs`.
-
-# Microsoft introduces a bug in a later version
-
-Although rare, it is possible that by using a later version of a NuGet package than the one I used to write the book, you experience different behavior, especially negative behavior if it is due to a bug. 
-
-For example, in the `Microsoft.Extensions.Configuration.Binder` package, version `7.0.3` has a bug that causes an exception to be thrown when it tries to parse a trace level set in an `appsettings.json` file. Previous versions from `7.0.0` to `7.0.2` did not have this bug.
-
-You can read more this specific example here: https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/errata.md#page-178---reviewing-project-packages
-
-If you add packages using the Visual Studio 2022 user interface or the `dotnet add package` command-line tool then it will use the most recent version by default which can cause this issue when Microsoft adds any bugs to any packages in future. If you have problems, try manually reverting to an older version.
-
-# Service not started when you try to call it
-
-A common mistake is to start a client app that talks to service without first starting the service. When you do this, you will likely see the following error:
-```
-The [project_name] service is not responding. Exception: No connection could be made because the target machine actively refused it. (localhost:[port_number])
-```
-
-To fix the issue, start the service project first, then start the client project. 
-
-If you use Visual Studio 2022 then you can configure multiple startup projects automatically by right-clicking a solution and choosing **Set Startup Projects...**.
