@@ -4,7 +4,7 @@ If you find any mistakes in the seventh edition, *C# 11 and .NET 7 - Modern Cros
 
 [**Errata** (44 items)](errata.md): Typos, tool user interface changes, or mistakes in code that would cause a compilation error that prevents a successful build.
 
-[**Improvements** (34 items)](improvements.md): Changes to text or code that would improve the content. These are optional.
+[**Improvements** (35 items)](improvements.md): Changes to text or code that would improve the content. These are optional.
 
 [**Common Errors** (4 items)](common-errors.md): These are some of the most common errors that a reader might encounter when trying to get code in book tasks to work, or when trying to write your own code. 
 

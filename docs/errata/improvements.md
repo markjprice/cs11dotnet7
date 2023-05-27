@@ -1,4 +1,4 @@
-**Improvements** (34 items)
+**Improvements** (35 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -17,6 +17,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 200 - Talking about OOP](#page-200---talking-about-oop)
 - [Page 235 - More about methods](#page-235---more-about-methods)
 - [Page 237 - Implementing functionality using methods](#page-237---implementing-functionality-using-methods)
+- [Page 238 - Implementing functionality using methods](#page-238---implementing-functionality-using-methods)
 - [Page 241 - Defining flight passengers](#page-241---defining-flight-passengers)
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
 - [Page 254 - Calling methods using delegates](#page-254---calling-methods-using-delegates)
@@ -439,6 +440,51 @@ Console.WriteLine(result);
 ```
 
 In the 8th edition, I will add a similar explanation of the operator `??` to the **Chapter 3, Operating on variables** section.
+
+# Page 238 - Implementing functionality using methods
+
+In Step 4, you write a `for` statement that enumerates the children of a `Person` object named `lamech`, as shown in the following code:
+```cs
+for (int i = 0; i < lamech.Children.Count; i++)
+{
+  WriteLine(format: "{0}'s child #{1} is named \"{2}\".",
+    arg0: lamech.Name, arg1: i, arg2: lamech[i].Name);
+}
+```
+
+Previously on page 233 you define an indexer for the `Person` class that accepts an integer parameter, as shown in the following code:
+```cs
+// indexers
+public Person this[int index]
+{
+  get
+  {
+    return Children[index]; // pass on to the List<T> indexer
+  }
+  set
+  {
+    Children[index] = value;
+  }
+}
+```
+
+If you do not define the indexer, then you cannot use in it the `for` statement, and you will see the following compile error:
+```
+Error	CS0021	Cannot apply indexing with [] to an expression of type 'Person'
+
+```
+
+In the next edition, I will add a note in the section where you define the indexer to warn that it will be used later in the chapter, and I will add a comment in the `for` statement to warn the reader that use of the indexer requires that the indexer be defined, as shown in the following code:
+```cs
+for (int i = 0; i < lamech.Children.Count; i++)
+{
+  WriteLine(format: "{0}'s child #{1} is named \"{2}\".",
+    arg0: lamech.Name, arg1: i, 
+    // The following requires an indexer to be defined for Person:
+    // public Person this[int index]
+    arg2: lamech[i].Name);
+}
+```
 
 # Page 241 - Defining flight passengers
 
