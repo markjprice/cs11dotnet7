@@ -38,11 +38,30 @@ To solve this problem, reboot your computer.
 
 Although rare, it is possible that by using a later version of a NuGet package than the one I used to write the book, you experience different behavior, especially negative behavior if it is due to a bug. 
 
-For example, in the `Microsoft.Extensions.Configuration.Binder` package, version `7.0.3` has a bug that causes an exception to be thrown when it tries to parse a trace level set in an `appsettings.json` file. Previous versions from `7.0.0` to `7.0.2` did not have this bug.
+For example, in the `Microsoft.Extensions.Configuration.Binder` package, versions `7.0.3` and `7.0.4` have a bug that causes an exception to be thrown when it tries to parse a trace level set in an `appsettings.json` file. Previous versions from `7.0.0` to `7.0.2` did not have this bug.
 
 You can read more this specific example here: https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/errata.md#page-178---reviewing-project-packages
 
 If you add packages using the Visual Studio 2022 user interface or the `dotnet add package` command-line tool then it will use the most recent version by default which can cause this issue when Microsoft adds any bugs to any packages in future. If you have problems, try manually reverting to an older version.
+
+You can output the assembly version using the following code:
+```cs
+Console.WriteLine("Microsoft.Extensions.Configuration.Binder version: {0}", 
+  typeof(ConfigurationBinder).Assembly.GetCustomAttribute
+  <AssemblyFileVersionAttribute>()?.Version);
+```
+
+If you reference the `Microsoft.Extensions.Configuration.Binder` package version `7.0.2`, then the preceding code will output the following:
+```
+Microsoft.Extensions.Configuration.Binder version: 7.0.222.60605
+```
+
+If you reference the `Microsoft.Extensions.Configuration.Binder` package version `7.0.4`, then the preceding code will output the following:
+```
+Microsoft.Extensions.Configuration.Binder version: 7.0.423.11508
+```
+
+> When changing a package version in the project file, you must **rebuild** the project when using Visual Studio, not just build it, otherwise it will try to be "smart" and not restore the correct packages!
 
 # Visual Studio removes a required file from the build process
 
