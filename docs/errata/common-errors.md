@@ -1,7 +1,8 @@
-**Common Errors and How to Fix Them** (4 items)
+**Common Errors and How to Fix Them** (5 items)
 
 If you have suggestions for other common errors, then please [raise an issue in this repository](https://github.com/markjprice/cs12dotnet8/issues) or email me at markjprice (at) gmail.com.
 
+- [MSB3026/MSB3027 Cannot rebuild/compile a project](#msb3026msb3027-cannot-rebuildcompile-a-project)
 - [Missing types and members in a utility class](#missing-types-and-members-in-a-utility-class)
   - [CS0103 The name 'DoSomething' does not exist in the current context](#cs0103-the-name-dosomething-does-not-exist-in-the-current-context)
   - [CS0122 'Util.DoSomething()' is inaccessible due to its protection level](#cs0122-utildosomething-is-inaccessible-due-to-its-protection-level)
@@ -9,6 +10,26 @@ If you have suggestions for other common errors, then please [raise an issue in 
   - [CS0103 The name 'DoSomethingElse' does not exist in the current context](#cs0103-the-name-dosomethingelse-does-not-exist-in-the-current-context)
 - [Microsoft introduces a bug in a later version](#microsoft-introduces-a-bug-in-a-later-version)
 - [Service not started when you try to call it](#service-not-started-when-you-try-to-call-it)
+
+# MSB3026/MSB3027 Cannot rebuild/compile a project
+
+While actively working on a project, you often run an app, it "crashes", you make a code change, recompile, and run it again. Sometimes recompiling will fail with the following warning:
+```
+Warning	MSB3026	Could not copy "C:\cs11dotnet7\Chapter02\Ch02Ex03Numbers\obj\Debug\net7.0\apphost.exe" to "bin\Debug\net7.0\Ch02Ex03Numbers.exe". Beginning retry 1 in 1000ms. The process cannot access the file 'bin\Debug\net7.0\Ch02Ex03Numbers.exe' because it is being used by another process. The file is locked by: "Ch02Ex03Numbers (9728)"
+```
+
+By default, the warning repeats ten times and then you will see the following error:
+```
+Error	MSB3027	Could not copy "C:\cs11dotnet7\Chapter02\Ch02Ex03Numbers\obj\Debug\net7.0\apphost.exe" to "bin\Debug\net7.0\Ch02Ex03Numbers.exe". Exceeded retry count of 10. Failed. The file is locked by: "Ch02Ex03Numbers (9728)"
+```
+
+These messages tell you that you are still running the old console app process so that the build process cannot copy the new version over the old version. 
+
+To solve this problem, close the running console app. 
+
+If you cannot find the console app to close it, then it might still be running but not visible in the operating system. 
+
+To solve this problem, reboot your computer.
 
 # Missing types and members in a utility class
 
