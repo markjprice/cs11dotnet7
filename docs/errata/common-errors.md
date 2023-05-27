@@ -1,6 +1,6 @@
-**Common Errors and How to Fix Them** (6 items)
+**Common Mistakes and How to Fix Them** (6 items)
 
-If you have suggestions for other common errors, then please [raise an issue in this repository](https://github.com/markjprice/cs12dotnet8/issues) or email me at markjprice (at) gmail.com.
+If you have suggestions for other common mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
 - [MSB3026/MSB3027 Cannot rebuild/compile a project](#msb3026msb3027-cannot-rebuildcompile-a-project)
 - [Microsoft introduces a bug in a later version](#microsoft-introduces-a-bug-in-a-later-version)
