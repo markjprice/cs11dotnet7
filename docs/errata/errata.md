@@ -248,7 +248,7 @@ But the immediately following section is *Navigating with the debugging toolbar*
 
 > Thanks to [Nick Bettes](https://github.com/bettesn) and [Zhang Cheng](https://github.com/Matrix-Zhang) for raising this issue on [16 February 2023](https://github.com/markjprice/cs11dotnet7/issues/29), and a special thanks to [Huynh Loc Le](https://github.com/huynhloc-1110), who identified that the issue was caused by a Microsoft bug.
 
-In Step 1, you add package references to enable an `appsettings.json` file to configure a trace switch. If you reference `Microsoft.Extensions.Configuration.Binder` package version `7.0.3`, it has a bug that causes an exception to be thrown, as shown in the following output:
+In Step 1, you add package references to enable an `appsettings.json` file to configure a trace switch. If you reference `Microsoft.Extensions.Configuration.Binder` package versions `7.0.3` or `7.0.4`, they have a bug that causes an exception to be thrown, as shown in the following output:
 ```
 Reading from appsettings.json in C:\cs11dotnet7\Chapter04\Instrumenting\bin\Debug\net7.0
 Unhandled exception. System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
@@ -270,6 +270,8 @@ Until Microsoft fixes the bug, use version `7.0.2`, the latest version that work
   <!--<PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />-->
 </ItemGroup>
 ```
+
+See also this common mistake item: https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/common-errors.md#microsoft-introduces-a-bug-in-a-later-version
 
 # Page 180 - Reviewing project packages
 
