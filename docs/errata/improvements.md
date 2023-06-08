@@ -1192,10 +1192,12 @@ public async Task<IActionResult> DeleteCustomerPost(string customerId)
     <div class="form-text">
       Customer ID must be five (5) upper case characters.
     </div>
+    <span asp-validation-for="CustomerId" class="text-danger" />
   </div>
   <div class="mb-3">
     <label class="form-label" asp-for="CompanyName">Company Name</label>
     <input class="form-control" asp-for="CompanyName" />
+    <span asp-validation-for="CompanyName" class="text-danger" />
   </div>
   <div class="mb-3">
     <label class="form-label" asp-for="ContactName">Contact Name</label>
@@ -1232,9 +1234,15 @@ public async Task<IActionResult> DeleteCustomerPost(string customerId)
        class="btn btn-outline-secondary">
       Cancel and return to Customers
     </a>
-    @Html.ValidationSummary()
+    <div asp-validation-summary="All" class="text-danger" />
   </div>
 </form>
+
+@section Scripts {
+  @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+  }
+}
 ```
 
 **DeleteCustomer.cshtml Razor view**
