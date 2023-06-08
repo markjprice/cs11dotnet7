@@ -1,0 +1,68 @@
+﻿@using Packt.Shared
+@model Customer
+
+<h2>@ViewData["Title"]</h2>
+
+<!--
+  Show an editable form with a blank customer. Postback to the action
+  method AddCustomer to perform the actual insert.
+-->
+<form asp-action="AddCustomer" method="post">
+  <div class="mb-3">
+    <label class="form-label" for="customerId">Customer ID</label>
+    @Html.EditorFor(model => model.CustomerId, 
+      new { htmlAttributes = new { @class = "form-control" } })
+    <div class="form-text">
+      Customer ID must be five (5) upper case characters.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="companyName">Company Name</label>
+    @Html.EditorFor(model => model.CompanyName,
+      new { htmlAttributes = new { @class = "form-control" } })
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="contactName">Contact Name</label>
+    @Html.EditorFor(model => model.ContactName,
+      new { htmlAttributes = new { @class = "form-control" } })
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="address">Address</label>
+    @Html.EditorFor(model => model.Address,
+      new { htmlAttributes = new { @class = "form-control" } })
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="city">City</label>
+    @Html.EditorFor(model => model.City,
+      new { htmlAttributes = new { @class = "form-control" } })
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="region">Region</label>
+    @Html.EditorFor(model => model.Region,
+      new { htmlAttributes = new { @class = "form-control" } })
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="country">Country</label>
+    @Html.EditorFor(model => model.Country,
+      new { htmlAttributes = new { @class = "form-control" } })
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="postalCode">Postal Code</label>
+    @Html.EditorFor(model => model.PostalCode,
+      new { htmlAttributes = new { @class = "form-control" } })
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="phone">Phone</label>
+    @Html.EditorFor(model => model.Phone,
+      new { htmlAttributes = new { @class = "form-control" } })
+  </div>
+  <div class="mb-3">
+    <input type="submit" value="Add Customer"
+           class="btn btn-outline-primary" />
+    <a asp-controller="Home" asp-action="Customers" 
+       class="btn btn-outline-secondary">
+      Cancel and return to Customers
+    </a>
+    @Html.ValidationSummary()
+  </div>
+</form>
