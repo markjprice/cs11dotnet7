@@ -1295,3 +1295,15 @@ public async Task<IActionResult> DeleteCustomerPost(string customerId)
   </div>
 </form>
 ```
+
+![Table of customers with add and delete buttons](images/Page700a.png)
+
+![Adding a customer, top of form](images/Page700b.png)
+
+![Adding a customer, bottom of form](images/Page700c.png)
+
+![Customer is added to the table](images/Page700d.png)
+
+![Deleting a customer, top of form](images/Page700e.png)
+
+![Deleting a customer, bottom of form](images/Page700f.png)
