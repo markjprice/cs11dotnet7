@@ -1055,13 +1055,13 @@ The project already has a page to show customers, either all of them or only tho
 
 **At the top of the Customers page**
 ```html
-@if (ViewData["error-message"] is not null)
+@if (TempData["error-message"] is not null)
 {
-  <p class="alert alert-danger">Error! @ViewData["error-message"]</p>
+  <p class="alert alert-danger">Error! @TempData["error-message"]</p>
 }
-@if (ViewData["success-message"] is not null)
+@if (TempData["success-message"] is not null)
 {
-  <p class="alert alert-success">Congratulations! @ViewData["success-message"]</p>
+  <p class="alert alert-success">Congratulations! @TempData["success-message"]</p>
 }
 
 <a asp-controller="Home" asp-action="AddCustomer" 
@@ -1113,11 +1113,11 @@ public async Task<IActionResult> AddCustomer(Customer customer)
 
   if (response.IsSuccessStatusCode)
   {
-    ViewData["success-message"] = "Customer successfully added.";
+    TempData["success-message"] = "Customer successfully added.";
   }
   else
   {
-    ViewData["error-message"] = "Customer was NOT added.";
+    TempData["error-message"] = "Customer was NOT added.";
   }
 
   // Show the full customers list to see if it was added.
@@ -1154,11 +1154,11 @@ public async Task<IActionResult> DeleteCustomerPost(string customerId)
 
   if (response.IsSuccessStatusCode)
   {
-    ViewData["success-message"] = "Customer successfully deleted.";
+    TempData["success-message"] = "Customer successfully deleted.";
   }
   else
   {
-    ViewData["error-message"] = $"Customer {customerId} was NOT deleted.";
+    TempData["error-message"] = $"Customer {customerId} was NOT deleted.";
   }
 
   // Show the full customers list to see if it was deleted.
