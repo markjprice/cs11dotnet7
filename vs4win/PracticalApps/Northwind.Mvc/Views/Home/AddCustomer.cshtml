@@ -9,52 +9,43 @@
 -->
 <form asp-action="AddCustomer" method="post">
   <div class="mb-3">
-    <label class="form-label" for="customerId">Customer ID</label>
-    @Html.EditorFor(model => model.CustomerId, 
-      new { htmlAttributes = new { @class = "form-control" } })
+    <label class="form-label" asp-for="CustomerId">Customer ID</label>
+    <input class="form-control" asp-for="CustomerId" />
     <div class="form-text">
       Customer ID must be five (5) upper case characters.
     </div>
   </div>
   <div class="mb-3">
-    <label class="form-label" for="companyName">Company Name</label>
-    @Html.EditorFor(model => model.CompanyName,
-      new { htmlAttributes = new { @class = "form-control" } })
+    <label class="form-label" asp-for="CompanyName">Company Name</label>
+    <input class="form-control" asp-for="CompanyName" />
   </div>
   <div class="mb-3">
-    <label class="form-label" for="contactName">Contact Name</label>
-    @Html.EditorFor(model => model.ContactName,
-      new { htmlAttributes = new { @class = "form-control" } })
+    <label class="form-label" asp-for="ContactName">Contact Name</label>
+    <input class="form-control" asp-for="ContactName" />
   </div>
   <div class="mb-3">
-    <label class="form-label" for="address">Address</label>
-    @Html.EditorFor(model => model.Address,
-      new { htmlAttributes = new { @class = "form-control" } })
+    <label class="form-label" asp-for="Address">Address</label>
+    <input class="form-control" asp-for="Address" />
   </div>
   <div class="mb-3">
-    <label class="form-label" for="city">City</label>
-    @Html.EditorFor(model => model.City,
-      new { htmlAttributes = new { @class = "form-control" } })
+    <label class="form-label" asp-for="City">City</label>
+    <input class="form-control" asp-for="City" />
   </div>
   <div class="mb-3">
-    <label class="form-label" for="region">Region</label>
-    @Html.EditorFor(model => model.Region,
-      new { htmlAttributes = new { @class = "form-control" } })
+    <label class="form-label" asp-for="Region">Region</label>
+    <input class="form-control" asp-for="Region" />
   </div>
   <div class="mb-3">
-    <label class="form-label" for="country">Country</label>
-    @Html.EditorFor(model => model.Country,
-      new { htmlAttributes = new { @class = "form-control" } })
+    <label class="form-label" asp-for="Country">Country</label>
+    <input class="form-control" asp-for="Country" />
   </div>
   <div class="mb-3">
-    <label class="form-label" for="postalCode">Postal Code</label>
-    @Html.EditorFor(model => model.PostalCode,
-      new { htmlAttributes = new { @class = "form-control" } })
+    <label class="form-label" asp-for="PostalCode">Postal Code</label>
+    <input class="form-control" asp-for="PostalCode" />
   </div>
   <div class="mb-3">
-    <label class="form-label" for="phone">Phone</label>
-    @Html.EditorFor(model => model.Phone,
-      new { htmlAttributes = new { @class = "form-control" } })
+    <label class="form-label" asp-for="Phone">Phone</label>
+    <input class="form-control" asp-for="Phone" />
   </div>
   <div class="mb-3">
     <input type="submit" value="Add Customer"
@@ -63,6 +54,6 @@
        class="btn btn-outline-secondary">
       Cancel and return to Customers
     </a>
-    @Html.ValidationSummary()
+    <div asp-validation-summary="ModelOnly" />
   </div>
 </form>
