@@ -1049,13 +1049,13 @@ public async Task<IActionResult> CategoryDetail(int? id)
 
 In this exercise, you are tasked to "extend the `Northwind.Mvc` website project to have pages where a visitor can fill in a form to create a new customer, or search for a customer and then delete them. The MVC controller should make calls to the Northwind web service to create and delete customers." 
 
-Without addtiional help and with no solution initially, it can be tricky for a new reader to complete this exercise.
+Without additional help and with no solution provided by me, it can be tricky for a new reader to complete this exercise.
 
 I have now provided a possible solution and updated the GitHub repository with it. In the next edition, I will also provide some hints, similar to the following.
 
 The project already has a page to show customers, either all of them or only those in a specified country. To avoid work, we will use this existing functionality. We just need to add a button in the `Customers.cshtml` view to **Add Customer**, a **Delete** button in a new column for each customer in the table, and areas to output success and errors messages, as shown in the following code:
 
-**At the top of the Customers page**
+**At the top of the Customers.cshtml Razor view**
 ```html
 @if (TempData["error-message"] is not null)
 {
@@ -1070,7 +1070,11 @@ The project already has a page to show customers, either all of them or only tho
    class="btn btn-outline-primary">Add Customer</a>
 ```
 
-**In the table of customers**
+**In the table of customers, a blank header and a new column for delete buttons**
+```html
+<th></th>
+```
+
 ```html
 <td>
   <a asp-controller="Home"
@@ -1082,13 +1086,15 @@ The project already has a page to show customers, either all of them or only tho
 
 A common design pattern for implementing add and delete functionality in an ASP.NET Core MVC website is to define pairs of action methods, one that responds to a `GET` request and one that responds to a `POST` request.
 
+For add functionality:
 - `GET /Home/AddCustomer`: This request means show me a page with a blank form to enter information about a new customer.
-- `POST /Home/AddCustomer`: This request means perform the actual customer insert using the form data provided in the body.
-  
-- `GET /Home/DeleteCustomer/{ID}`: This request means show me a page with a form loaded with an existing customer record to confirm this is the customer the will be deleted.
-- `POST /Home/DeleteCustomer`: This request means perform the actual customer delete using the form data provided in the body.
+- `POST /Home/AddCustomer`: This request means perform the actual customer insert using the form data provided in the body which is an entire customer.
 
-Here is example code that would implement this functionality:
+For delete functionality:
+- `GET /Home/DeleteCustomer/{ID}`: This request means show me a page with a form loaded with an existing customer record to confirm this is the customer the will be deleted.
+- `POST /Home/DeleteCustomer`: This request means perform the actual customer delete using the form data provided in the body which only needs to be the unique `customerId`.
+
+Here is some example code that would implement this functionality:
 ```cs
 // GET /Home/AddCustomer
 public IActionResult AddCustomer()
@@ -1126,7 +1132,7 @@ public async Task<IActionResult> AddCustomer(Customer customer)
   return RedirectToAction("Customers");
 }
 
-// GET /Home/DeleteCustomer
+// GET /Home/DeleteCustomer/{customerId}
 public async Task<IActionResult> DeleteCustomer(string customerId)
 {
   HttpClient client = clientFactory.CreateClient(
