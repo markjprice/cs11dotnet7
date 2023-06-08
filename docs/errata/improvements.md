@@ -1193,37 +1193,37 @@ public async Task<IActionResult> DeleteCustomerPost(string customerId)
   </div>
   <div class="mb-3">
     <label class="form-label" for="contactName">Contact Name</label>
-    @Html.EditorFor(model => model.CompanyName,
+    @Html.EditorFor(model => model.ContactName,
       new { htmlAttributes = new { @class = "form-control" } })
   </div>
   <div class="mb-3">
     <label class="form-label" for="address">Address</label>
-    @Html.EditorFor(model => model.CompanyName,
+    @Html.EditorFor(model => model.Address,
       new { htmlAttributes = new { @class = "form-control" } })
   </div>
   <div class="mb-3">
     <label class="form-label" for="city">City</label>
-    @Html.EditorFor(model => model.CompanyName,
+    @Html.EditorFor(model => model.City,
       new { htmlAttributes = new { @class = "form-control" } })
   </div>
   <div class="mb-3">
     <label class="form-label" for="region">Region</label>
-    @Html.EditorFor(model => model.CompanyName,
+    @Html.EditorFor(model => model.Region,
       new { htmlAttributes = new { @class = "form-control" } })
   </div>
   <div class="mb-3">
     <label class="form-label" for="country">Country</label>
-    @Html.EditorFor(model => model.CompanyName,
+    @Html.EditorFor(model => model.Country,
       new { htmlAttributes = new { @class = "form-control" } })
   </div>
   <div class="mb-3">
     <label class="form-label" for="postalCode">Postal Code</label>
-    @Html.EditorFor(model => model.CompanyName,
+    @Html.EditorFor(model => model.PostalCode,
       new { htmlAttributes = new { @class = "form-control" } })
   </div>
   <div class="mb-3">
     <label class="form-label" for="phone">Phone</label>
-    @Html.EditorFor(model => model.CompanyName,
+    @Html.EditorFor(model => model.Phone,
       new { htmlAttributes = new { @class = "form-control" } })
   </div>
   <div class="mb-3">
