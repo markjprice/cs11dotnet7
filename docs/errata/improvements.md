@@ -1047,7 +1047,9 @@ public async Task<IActionResult> CategoryDetail(int? id)
 
 # Page 700 - Exercise 15.2 – Practice creating and deleting customers with HttpClient
 
-In this exercise, you are tasked to extend the `Northwind.Mvc` website project to have pages where a visitor can fill in a form to create a new customer, or search for a customer and then delete them. The MVC controller should make calls to the Northwind web service to create and delete customers. Without addtiional help and with no solution initially, it can be tricky for a new reader to complete this exercise.
+In this exercise, you are tasked to "extend the `Northwind.Mvc` website project to have pages where a visitor can fill in a form to create a new customer, or search for a customer and then delete them. The MVC controller should make calls to the Northwind web service to create and delete customers." 
+
+Without addtiional help and with no solution initially, it can be tricky for a new reader to complete this exercise.
 
 I have now provided a possible solution and updated the GitHub repository with it. In the next edition, I will also provide some hints, similar to the following.
 
