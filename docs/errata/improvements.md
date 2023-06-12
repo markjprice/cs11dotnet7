@@ -1,4 +1,4 @@
-**Improvements** (37 items)
+**Improvements** (38 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -39,6 +39,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 650 - Varying cached data by query string](#page-650---varying-cached-data-by-query-string)
 - [Page 654 - Making controller action methods asynchronous](#page-654---making-controller-action-methods-asynchronous)
 - [Page 655 - Exercise 14.2 – Practice implementing MVC by implementing a category detail page](#page-655---exercise-142--practice-implementing-mvc-by-implementing-a-category-detail-page)
+- [Page 673 - Configuring the customer repository and Web API controller](#page-673---configuring-the-customer-repository-and-web-api-controller)
 - [Page 700 - Exercise 15.2 – Practice creating and deleting customers with HttpClient](#page-700---exercise-152--practice-creating-and-deleting-customers-with-httpclient)
 
 # Page 25 - Adding a second project using Visual Studio 2022
@@ -1044,6 +1045,19 @@ If you want to keep the original link format, then you would need to decorate th
 [Route("category/{id}")]
 public async Task<IActionResult> CategoryDetail(int? id)
 ```
+
+# Page 673 - Configuring the customer repository and Web API controller
+
+In Step 4, you add a `CustomersController.cs` file and define a `CustomersController` class, as shown in the following partial code:
+```cs
+// base address: api/customers
+[Route("api/[controller]")]
+[ApiController]
+public class CustomersController : ControllerBase
+{
+```
+
+In the next edition, I will add more explanation about how the route is defined by the `[Route]` attribute. The `[controller]` part is automatically replaced with the class name with the `Controller` suffix removed. Therefore the base address of the route to the `CustomersController` is `api/customers`.
 
 # Page 700 - Exercise 15.2 – Practice creating and deleting customers with HttpClient
 
