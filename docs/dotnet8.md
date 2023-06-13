@@ -10,7 +10,7 @@ Microsoft will release previews of .NET 8 monthly starting in February 2023 unti
 - March 14, 2023: [Announcing .NET 8 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-2/)
 - April 11, 2023: [Announcing .NET 8 Preview 3](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-3/)
 - May 16, 2023: [Announcing .NET 8 Preview 4](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-4/)
-- June, 2023: [Announcing .NET 8 Preview 5](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-5/)
+- June 13, 2023: [Announcing .NET 8 Preview 5](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-5/)
 - July, 2023: [Announcing .NET 8 Preview 6](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-6/)
 - August, 2023: [Announcing .NET 8 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-preview-7/)
 - September, 2023: [Announcing .NET 8 Release Candidate 1](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8-rc-1/)
