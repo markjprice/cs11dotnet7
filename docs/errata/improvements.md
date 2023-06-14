@@ -1,4 +1,4 @@
-**Improvements** (38 items)
+**Improvements** (39 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -663,7 +663,9 @@ Throughout the rest of the book, I will replace the `Filename` parameter with `D
 
 # Page 453 - Scaffolding models using an existing database
 
-In Step 2, I show text that must be entered as a single line at the command-line, as shown in the following command formatted as in the print book:
+There are two potential issues on this page.
+
+First, in Step 2, I show text that must be entered as a single line at the command prompt or terminal, as shown in the following command formatted as in the print book:
 ```
 dotnet ef dbcontext scaffold "Filename=Northwind.db" Microsoft.
 EntityFrameworkCore.Sqlite --table Categories --table Products --output-
@@ -677,6 +679,15 @@ For convenience, here is the same command as a single line to make it easier to 
 ```
 dotnet ef dbcontext scaffold "Filename=Northwind.db" Microsoft.EntityFrameworkCore.Sqlite --table Categories --table Products --output-dir AutoGenModels --namespace WorkingWithEFCore.AutoGen --data-annotations --context Northwind
 ```
+
+Second, I tell the reader to enter the preceding command in the `WorkingWithEFCore` folder. If you have created the project file named `WorkingWithEFCore.csproj` in that folder as directed then every works. But if that folder does not contain your project file then you will see the following error:
+```
+No project was found. Change the current working directory or use the --project option.
+```
+
+To fix this issue, change to the folder that contains your `WorkingWithEFCore.csproj` project file and then run the command. Alternatively, you can specific the path to the `WorkingWithEFCore.csproj` project file using the `--project` switch.
+
+In the 8th edition, I will add a note about this.
 
 # Page 512 - Group-joining sequences
 
