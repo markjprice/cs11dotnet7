@@ -67,9 +67,9 @@ I wrote that "They cannot read input from the user, for example, you cannot use 
 
 # Page 8 - Installing other extensions
 
-In the table, the C# for Visual Studio Code says it is "powered by OmniSharp". This is true up to the most recent release version `1.25.9`. But if you install the pre-release version `2.0.x` then it does not include OmniSharp any more.
+In the table, the **C# for Visual Studio Code** extension says it is "powered by OmniSharp". This is true up to the most recent release version `1.25.9`. But if you install the pre-release version `2.0.x` then it does not include OmniSharp any more.
 
-To follow the instructions in the book, if you have installed the pre-release version `2.0.x` then I recommend that you click the button Switch to Release Version to revert back to the current release version `1.25.9`.
+To follow the instructions in the book, if you have installed the pre-release version `2.0.x` then on the **C#** extension page, I recommend that you click the button **Switch to Release Version** to revert back to the current release version `1.25.9`.
 
 # Page 11 - Understanding the journey to one .NET and Understanding .NET support
 
@@ -87,7 +87,7 @@ On October 28, 2022, the .NET team changed the name *again*, to [**Standard Term
 
 In Step 18, I wrote, "Visual Studio Code may have to download and install C# dependencies like OmniSharp, .NET Core Debugger, and Razor Language Server". This is true up to the most recent release version `1.25.9`. But if you install the pre-release version `2.0.x` then it does not include OmniSharp any more.
 
-To follow the instructions in the book, if you have installed the pre-release version `2.0.x` then I recommend that you click the button Switch to Release Version to revert back to the current release version `1.25.9`.
+To follow the instructions in the book, if you have installed the pre-release version `2.0.x` then on the **C#** extension page, I recommend that you click the button **Switch to Release Version** to revert back to the current release version `1.25.9`.
 
 # Page 31 - Adding a second project using Visual Studio Code
 
@@ -95,7 +95,7 @@ In Step 7, I wrote, "Enter `omni`, and then, in the drop-down list that appears,
 
 This works if you installed the most recent release version `1.25.9`. But if you installed the pre-release version `2.0.x` then it does not include OmniSharp any more.
 
-To follow the instructions in the book, if you have installed the pre-release version `2.0.x` then I recommend that you click the button Switch to Release Version to revert back to the current release version `1.25.9`.
+To follow the instructions in the book, if you have installed the pre-release version `2.0.x` then on the **C#** extension page, I recommend that you click the button **Switch to Release Version** to revert back to the current release version `1.25.9`.
 
 # Page 36 - Getting help for the dotnet tool
 
