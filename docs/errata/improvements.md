@@ -1,4 +1,4 @@
-**Improvements** (39 items)
+**Improvements** (41 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -31,7 +31,9 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
 - [Page 512 - Group-joining sequences](#page-512---group-joining-sequences)
 - [Page 533 - Building websites using ASP.NET Core](#page-533---building-websites-using-aspnet-core)
+- [Page 541 - Creating a class library for entity models using SQLite](#page-541---creating-a-class-library-for-entity-models-using-sqlite)
 - [Page 547 - Creating a class library for a Northwind database context](#page-547---creating-a-class-library-for-a-northwind-database-context)
+- [Page 550 - Creating a class library for entity models using SQL Server](#page-550---creating-a-class-library-for-entity-models-using-sql-server)
 - [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
 - [Page 573 - Adding code to a Razor Page](#page-573---adding-code-to-a-razor-page)
 - [Page 586 - Creating a Razor class library, Page 587 - Implementing a partial view to show a single employee](#page-586---creating-a-razor-class-library-page-587---implementing-a-partial-view-to-show-a-single-employee)
@@ -771,6 +773,15 @@ A **Razor Layout** file like `_MyCustomLayout.cshtml` is identical to a **Razor 
 
 ![Visual Studio 2022 Razor project item types](images/razor-file-types.png)
 
+# Page 541 - Creating a class library for entity models using SQLite
+
+In Step 9, you enter a `dotnet-ef` command. You must be in the project folder containing the `.csproj` file or you will see the following error:
+```
+No project was found. Change the current working directory or use the --project option.
+```
+
+In the 8th edition, I will add a note about this.
+
 # Page 547 - Creating a class library for a Northwind database context
 
 In Step 8, you write code to implement the `OnConfiguring` method so that it sets the Filename path to the SQLite database file correctly when running in both Visual Studio 2022 and at the command-line with Visual Studio Code, as shown in the following code:
@@ -872,6 +883,15 @@ public static IServiceCollection AddNorthwindContext(
   return services;
 }
 ```
+
+# Page 550 - Creating a class library for entity models using SQL Server
+
+In Step 6, you enter a `dotnet-ef` command. You must be in the project folder containing the `.csproj` file or you will see the following error:
+```
+No project was found. Change the current working directory or use the --project option.
+```
+
+In the 8th edition, I will add a note about this.
 
 # Page 551 - Creating a class library for entity models using SQL Server
 
