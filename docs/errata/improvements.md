@@ -1,8 +1,10 @@
-**Improvements** (41 items)
+**Improvements** (42 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
+- [Page 8 - Installing other extensions](#page-8---installing-other-extensions)
 - [Page 25 - Adding a second project using Visual Studio 2022](#page-25---adding-a-second-project-using-visual-studio-2022)
+- [Page 31 - Adding a second project using Visual Studio Code](#page-31---adding-a-second-project-using-visual-studio-code)
 - [Page 56 - Examples of statements and blocks](#page-56---examples-of-statements-and-blocks)
 - [Page 69 - Raw interpolated string literals](#page-69---raw-interpolated-string-literals)
 - [Page 86 - Getting text input from the user](#page-86---getting-text-input-from-the-user)
@@ -44,6 +46,18 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 673 - Configuring the customer repository and Web API controller](#page-673---configuring-the-customer-repository-and-web-api-controller)
 - [Page 700 - Exercise 15.2 – Practice creating and deleting customers with HttpClient](#page-700---exercise-152--practice-creating-and-deleting-customers-with-httpclient)
 
+# Page 8 - Installing other extensions
+
+In the next edition, I will tell the reader to install the **C# Dev Kit**. This has the **C#** extension as a dependency so that will be installed as well but it uses a newer version that is currently a pre-release. 
+
+**C#** extension version `2.0` or later has removed OmniSharp and it has been replaced by a new Lamguage processor and . The **C# Dev Kit** also adds a **Solution Explorer** to **Explorer** view in Visual Studio Code when you open a folder or project that contains a solution file (`.sln`).
+
+In the next edition, I will therefore no longer need separate folder structures for Visual Studio 2022 and its `.sln` files, and Visual Studio Code and its `.code-workspace` files. I will just create a single unified folder structure. This does mean however that readers will need to be careful about switching between code editors. They will need to clean a solution (or manually delete the `bin` and `obj` folders) when they switch.
+
+In the next edition, I will change the Visual Studio Code instructions to open a chapter folder, like `Chapter01`, and then use the **Solution Explorer** to work with the projects.
+
+> Note: It will no longer necessary to use the **OmniSharp: Select Project** option. All projects in a recognized solution will have features like IntelliSense and debugging available.
+
 # Page 25 - Adding a second project using Visual Studio 2022
 
 > Thanks to [yoshist](https://github.com/yoshist) who raised this issue on [10 April 2023](https://github.com/markjprice/cs11dotnet7/issues/56).
@@ -53,6 +67,47 @@ Current selection, and then click OK." Then in Step 7, I wrote, "In Solution Exp
 making the project name bold."
 
 In the next edition, I will add a note to explicitly explain that I recommend this way of setting the startup project because it then makes it very easy to switch startup projects by simply clicking a project (or any file in a project) to make it the startup project. Although you can right-click a project and set it as a startup project, if you then want to run a different project, you must manually change it again. Simply clicking anywhere in the project is easier. 
+
+# Page 31 - Adding a second project using Visual Studio Code
+
+In Step 7, I wrote, "Enter `omni`, and then, in the drop-down list that appears, select **OmniSharp: Select Project**." 
+
+This works if you installed the most recent release version `1.25.9`. But if you installed the pre-release version `2.0.x` then it does not include OmniSharp any more.
+
+In the next edition, I will tell readers to install the **C# Dev Kit** which has some improvements that mean we can use the same solution files as Visual Studio 2022 and other tasks are simplified. So throughout the book I will rewrite the step-by-step instructions for Visual Studio Code users.
+
+For example, it is no longer necessary to use the **OmniSharp: Select Project** option. All projects in a recognized solution will have features like IntelliSense and debugging available. To recognize a solution, we need to create a solution file. As an example, in Chapter 1, after the reader has created the two projects, I will rewrite the instructions to create a solution for them as follows:
+
+1. At the command prompt or terminal, open the `Chapter01` folder.
+2. Create a new solution file, as shown in the following command:
+```
+dotnet new sln
+```
+For example:
+```
+C:\cs12dotnet8\Chapter01>dotnet new sln
+The template "Solution File" was created successfully.
+```
+
+3. Add the two subfolders and their projects to the solution file, as shown in the following command:
+```
+dotnet sln add HelloWorld AboutMyEnvironment
+```
+For example:
+```
+C:\cs12dotnet8\Chapter01>dotnet sln add HelloCS AboutMyEnvironment
+Project `HelloCS\HelloCS.csproj` added to the solution.
+Project `AboutMyEnvironment\AboutMyEnvironment.csproj` added to the solution.
+```
+
+4. In Visual Studio Code, open the `Chapter01` folder.
+5. In **EXPLORER**, wait for the solution file to be recognized, as shown in the following figure:
+
+![C# Dev Kit recognizing a solution file](images/csharp-dev-kit-01.png)
+
+6. Click **Solution Explorer** to expand it, as shown in the following figure:
+
+![Solution Explorer in Visual Studio Code](images/csharp-dev-kit-02.png)
 
 # Page 56 - Examples of statements and blocks
 

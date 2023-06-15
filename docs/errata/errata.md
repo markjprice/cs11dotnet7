@@ -71,6 +71,8 @@ In the table, the **C# for Visual Studio Code** extension says it is "powered by
 
 To follow the instructions in the book, if you have installed the pre-release version `2.0.x` then on the **C#** extension page, I recommend that you click the button **Switch to Release Version** to revert back to the current release version `1.25.9`.
 
+If you have installed the **C# Dev Kit** then it will install the pre-release version of the **C#** extension. If you want to use them, then I have written instructions in the improvements page and I will use these in the next edition.
+
 # Page 11 - Understanding the journey to one .NET and Understanding .NET support
 
 Even-numbered .NET releases like .NET 6 and .NET 8 have a support level named **Long Term Support (LTS)** with a duration of 3 years. Odd-numbered .NET releases like .NET 5 and .NET 7 had a support level named **Current** with a duration of 18 months. 
