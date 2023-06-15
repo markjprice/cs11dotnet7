@@ -71,7 +71,9 @@ In the table, the **C# for Visual Studio Code** extension says it is "powered by
 
 To follow the instructions in the book, if you have installed the pre-release version `2.0.x` then on the **C#** extension page, I recommend that you click the button **Switch to Release Version** to revert back to the current release version `1.25.9`.
 
-If you have installed the **C# Dev Kit** then it will install the pre-release version of the **C#** extension. If you want to use them, then I have written instructions in the improvements page and I will use these in the next edition.
+If you have installed the **C# Dev Kit** then it will install the pre-release version of the **C#** extension. If you want to use them, then I have written [instructions in the improvements page](https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/improvements.md#page-31---adding-a-second-project-using-visual-studio-code) and I will use these in the next edition.
+
+> **More Information**: You can read the announcement about **C# Dev Kit** at the following link: https://devblogs.microsoft.com/visualstudio/announcing-csharp-dev-kit-for-visual-studio-code/
 
 # Page 11 - Understanding the journey to one .NET and Understanding .NET support
 
