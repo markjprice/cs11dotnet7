@@ -50,7 +50,9 @@ If you have suggestions for improvements, then please [raise an issue in this re
 
 In the next edition, I will tell the reader to install the **C# Dev Kit**. This has the **C#** extension as a dependency so that will be installed as well but it uses a newer version that is currently a pre-release. 
 
-**C#** extension version `2.0` or later has removed OmniSharp and it has been replaced by a new Lamguage processor and . The **C# Dev Kit** also adds a **Solution Explorer** to **Explorer** view in Visual Studio Code when you open a folder or project that contains a solution file (`.sln`).
+**C#** extension version `2.0` or later has removed OmniSharp and it has been replaced by a Language Server Protocol (LSP) Tools Host which integrates with open source components like Roslyn and Razor to provide rich type information and a faster, more reliable C# experience. 
+
+The **C# Dev Kit** also adds a **Solution Explorer** to Visual Studio Code's **EXPLORER** view when you open a folder or project that contains a solution file (`.sln`).
 
 In the next edition, I will therefore no longer need separate folder structures for Visual Studio 2022 and its `.sln` files, and Visual Studio Code and its `.code-workspace` files. I will just create a single unified folder structure. This does mean however that readers will need to be careful about switching between code editors. They will need to clean a solution (or manually delete the `bin` and `obj` folders) when they switch.
 
