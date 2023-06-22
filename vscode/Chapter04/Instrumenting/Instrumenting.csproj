@@ -9,9 +9,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.2" />
+    <!--Do NOT use version 7.0.3 or 7.0.4 because they have a bug that causes an exception.-->
+
+    <!--The following packages are included anyway due to dependencies-->
+    <!--<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />-->
+    <!--<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />-->
   </ItemGroup>
 
   <ItemGroup>
