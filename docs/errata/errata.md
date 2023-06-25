@@ -607,7 +607,7 @@ public virtual DbSet<Category> Categories { get; set; }
 
 # Page 477 - Inserting entities
 
-> Thanks to [Chadwick Geyser](https://github.com/chadwickgeyser) for raising this [issue on 29 November 2022](https://github.com/markjprice/cs11dotnet7/issues/5).
+> Thanks to [Chadwick Geyser](https://github.com/chadgdotme) for raising this [issue on 29 November 2022](https://github.com/markjprice/cs11dotnet7/issues/5).
 
 In Step 4, the code statement to list the products uses an older version of the method signature that I removed before publishing that only allows a single `productId` to be highlighted, as shown in the following code:
 ```cs
