@@ -1,12 +1,5 @@
 ﻿using System.Diagnostics;
-using System.Reflection;
 using Microsoft.Extensions.Configuration;
-
-Console.WriteLine("Warning! Versions 7.0.3xx and 7.0.4xx have bugs that cause an exception:");
-Console.WriteLine("Microsoft.Extensions.Configuration.Binder version: {0}", 
-  typeof(ConfigurationBinder).Assembly.GetCustomAttribute
-  <AssemblyFileVersionAttribute>()?.Version);
-Console.WriteLine();
 
 string logPath = Path.Combine(Environment.GetFolderPath(
     Environment.SpecialFolder.DesktopDirectory), "log.txt");
@@ -52,6 +45,7 @@ configuration.GetSection("PacktSwitch").Bind(ts);
 
 // Output the trace switch level from appsettings.json.
 Console.WriteLine($"Trace switch level: {ts.Level}");
+Console.WriteLine($"Trace switch value: {ts.Value}");
 
 Trace.WriteLineIf(ts.TraceError, "Trace error");
 Trace.WriteLineIf(ts.TraceWarning, "Trace warning");

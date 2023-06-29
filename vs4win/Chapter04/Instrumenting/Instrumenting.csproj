@@ -8,8 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!--Do NOT use version 7.0.3 or 7.0.4 because they have a bug that causes an exception.-->
-    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
 
     <!--The following packages are included anyway due to dependencies-->
