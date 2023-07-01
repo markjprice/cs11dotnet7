@@ -273,9 +273,9 @@ But the immediately following section is *Navigating with the debugging toolbar*
 
 # Page 178 - Reviewing project packages
 
-> Thanks to [Nick Bettes](https://github.com/bettesn) and [Zhang Cheng](https://github.com/Matrix-Zhang) for raising this issue on [16 February 2023](https://github.com/markjprice/cs11dotnet7/issues/29), a special thanks to [Huynh Loc Le](https://github.com/huynhloc-1110), who identified that the issue was caused by a Microsoft bug, and finally thanks to [richshi](https://github.com/richshi) who raised this issue again on [28 June 2023](https://github.com/markjprice/cs11dotnet7/issues/76) and consequently made me dig deeper to find a more complete explanation and solution.
+> Thanks to [Nick Bettes](https://github.com/bettesn) and [Zhang Cheng](https://github.com/Matrix-Zhang) for raising this issue on [16 February 2023](https://github.com/markjprice/cs11dotnet7/issues/29), a special thanks to [Huynh Loc Le](https://github.com/huynhloc-1110), who identified that the issue was caused by a Microsoft fix to one of their bugs, and finally thanks to [richshi](https://github.com/richshi) who raised this issue again on [28 June 2023](https://github.com/markjprice/cs11dotnet7/issues/76) and consequently made me dig deeper to find a more complete explanation and solution.
 
-In Step 1, you add package references to enable an `appsettings.json` file to configure a trace switch. If you reference `Microsoft.Extensions.Configuration.Binder` package versions `7.0.3` or later, then they have fixed an ancient bug, but the fix means that unless we change how we set the trace switch level an exception will be thrown, as shown in the following output:
+In Step 1, you add package references to enable an `appsettings.json` file to configure a trace switch. If you reference `Microsoft.Extensions.Configuration.Binder` package versions `7.0.3` or later, then they have fixed a bug, but the fix causes a regression in expected behavior which means that unless we change how we set the trace switch level an exception will be thrown, as shown in the following output:
 ```
 Reading from appsettings.json in C:\cs11dotnet7\Chapter04\Instrumenting\bin\Debug\net7.0
 Unhandled exception. System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
@@ -286,17 +286,19 @@ Unhandled exception. System.Reflection.TargetInvocationException: Exception has 
    at System.Diagnostics.TraceSwitch.OnValueChanged()
 ```
 
-Originally, it seemed the only fix was to avoid later versions, so use 7.0.2 or earlier. But the change in 7.0.3 was to fix a bug, so we need a solution that will allow us to use the latest package version and also works for older versions too.
+Originally, it seemed the best solution was to avoid the later versions that cause the changed behavior, so I advised to use 7.0.2 or earlier. But the change in 7.0.3 was to fix a bug, so we really need a solution that will allow us to use the latest package version and also works for older versions too.
 
-To fix the issue, we must set both the `Level` property and the `Value` property of the trace switch, as shown in the following code:
+To fix the issue, we can set both the `Level` property and the `Value` property of the trace switch, as shown in the following code:
 ```json
 {
   "PacktSwitch": {
     "Value": "Info", // Must be set to work with 7.0.3 or later.
-    "Level": "Info" // To work with 7.0.2 or earlier including .NET 6.
+    "Level": "Info" // Works with 7.0.2 or earlier including .NET 6.
   }
 }
 ```
+
+In the eighth edition, I will instruct readers to just set the `Value` property because this implicitly sets the `Level` as well.
 
 > See the following explanation from Microsoft about the bug they fixed that cause this problem: https://github.com/dotnet/runtime/issues/82998
 
