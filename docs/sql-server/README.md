@@ -89,6 +89,8 @@ For backward compatibility, there are multiple possible keywords we can use in a
 - `Data Source` or `server` or `addr`: These keywords are the name of the server (and an optional instance). You can use a dot `.` to mean the local server.
 - `Initial Catalog` or `database`: These keywords are the name of the database.
 - `Integrated Security` or `trusted_connection`: These keywords are set to `true` or `SSPI` to pass the thread's current Windows user credentials.
+- `Encrypt`: This keyword enables SSL encryption of the transmitted data if set to `true`. Default is `false`. On a local computer it will use the local developer certificate to encrypt so this must be trusted.
+- `TrustServerCertificate`: This keyword enables trusting the local certificate if set to `true`.
 - `MultipleActiveResultSets`: This keyword is set to `true` to enable a single connection to be used to work with multiple tables simultaneously to improve efficiency. It is used for lazy loading rows from related tables.
 
 As described in the list above, when you write code to connect to an SQL Server database, you need to know its server name. The server name depends on the edition and version of SQL Server that you will connect to, as shown in the following table:
@@ -122,20 +124,27 @@ As described in the list above, when you write code to connect to an SQL Server 
 3.	Add a new class file named `Northwind.cs`.
 4.	In `Northwind.cs`, define a class named `Northwind`, import the main namespace for EF Core, make the class inherit from `DbContext`, and in an `OnConfiguring` method, configure the options builder to use SQL Server, as shown in the following code:
 ```cs
-using Microsoft.EntityFrameworkCore; // DbContext, DbContextOptionsBuilder
+using Microsoft.Data.SqlClient; // To use SqlConnectionStringBuilder.
+using Microsoft.EntityFrameworkCore; // To use DbContext, DbContextOptionsBuilder.
 
 namespace Packt.Shared;
 
-// this manages the connection to the database
+// This manages the connection to the database.
 public class Northwind : DbContext
 {
   protected override void OnConfiguring(
     DbContextOptionsBuilder optionsBuilder)
   {
-    string connection = "Data Source=.;" +
-        "Initial Catalog=Northwind;" +
-        "Integrated Security=true;" +
-        "MultipleActiveResultSets=true;";
+    SqlConnectionStringBuilder builder = new();
+
+    builder.DataSource = "."; // "ServerName\InstanceName" e.g. @".\sqlexpress"
+    builder.InitialCatalog = "Northwind";
+    builder.IntegratedSecurity = true;
+    builder.TrustServerCertificate = true;
+    builder.MultipleActiveResultSets = true;
+    builder.ConnectTimeout = 3; // Because we want to fail fast. Default is 15 seconds.
+
+    string? connection = builder.ConnectionString;
 	
     ConsoleColor previousColor = ForegroundColor;
     ForegroundColor = ConsoleColor.DarkYellow;
@@ -155,7 +164,7 @@ WriteLine($"Provider: {db.Database.ProviderName}");
 ```
 6.	Run the console app and note the output showing the database connection string and which database provider you are using, as shown in the following output:
 ```
-Connection string: Data Source=.;Initial Catalog=Northwind;Integrated Security=true;MultipleActiveResultSets=true;
+Connection string: Data Source=.;Initial Catalog=Northwind;Integrated Security=true;TrustServerCertificate=true;MultipleActiveResultSets=true;
 Provider: Microsoft.EntityFrameworkCore.SqlServer
 ```
 
@@ -163,6 +172,6 @@ Provider: Microsoft.EntityFrameworkCore.SqlServer
 
 For SQL Server, change the database provider and connection string, as shown in the following command:
 ```
-dotnet ef dbcontext scaffold "Data Source=.;Initial Catalog=Northwind;Integrated Security=true;" Microsoft.EntityFrameworkCore.SqlServer --table Categories --table Products --output-dir AutoGenModels --namespace WorkingWithEFCore.AutoGen --data-annotations --context Northwind
+dotnet ef dbcontext scaffold "Data Source=.;Initial Catalog=Northwind;Integrated Security=true;TrustServerCertificate=true;" Microsoft.EntityFrameworkCore.SqlServer --table Categories --table Products --output-dir AutoGenModels --namespace WorkingWithEFCore.AutoGen --data-annotations --context Northwind
 ```
 
