@@ -1,4 +1,14 @@
-# Using SQL Server for Windows
+**Using SQL Server for Windows**
+
+- [Introducing SQL Server for Windows](#introducing-sql-server-for-windows)
+- [Downloading and installing SQL Server](#downloading-and-installing-sql-server)
+- [Creating the Northwind sample database for SQL Server](#creating-the-northwind-sample-database-for-sql-server)
+- [Managing the Northwind sample database with Server Explorer](#managing-the-northwind-sample-database-with-server-explorer)
+- [Connecting to a database](#connecting-to-a-database)
+- [Defining the Northwind database context class](#defining-the-northwind-database-context-class)
+- [Scaffolding models using an existing database](#scaffolding-models-using-an-existing-database)
+
+# Introducing SQL Server for Windows
 
 Microsoft offers various editions of its popular and capable SQL Server product 
 for Windows, Linux, and Docker containers. We will use a free version that can 
@@ -6,7 +16,7 @@ run standalone, known as SQL Server Developer Edition. You can also use the
 Express edition or the free SQL Server LocalDB edition that can be installed 
 with Visual Studio for Windows.
 
-## Downloading and installing SQL Server
+# Downloading and installing SQL Server
 
 You can download SQL Server editions from the following link:
 https://www.microsoft.com/en-us/sql-server/sql-server-downloads
@@ -35,7 +45,7 @@ https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 18.	Run the installer and click **Install**.
 19.	When the installer has finished, click **Restart** if needed or **Close**.
 
-## Creating the Northwind sample database for SQL Server
+# Creating the Northwind sample database for SQL Server
 
 Now we can run a database script to create the Northwind sample database:
 
@@ -56,7 +66,7 @@ If you had to create a named instance, like `csdotnetbook`, then enter `.\csdotn
 10.	In the **Object Explorer** toolbar, click the **Disconnect** button.
 11.	Exit SQL Server Management Studio.
 
-## Managing the Northwind sample database with Server Explorer
+# Managing the Northwind sample database with Server Explorer
 
 We did not have to use SQL Server Management Studio to execute the database script. We can also use tools in Visual Studio including the SQL Server Object Explorer and Server Explorer:
 
@@ -76,7 +86,7 @@ We did not have to use SQL Server Management Studio to execute the database scri
 6.	Right-click the **Products** table, choose **Show Table Data**, and note the 77 rows of products are returned.
 7.	To see the details of the **Products** table columns and types, right-click **Products** and choose **Open Table Definition**, or double-click the table in **Server Explorer**.
 
-## Connecting to a database
+# Connecting to a database
 
 To connect to an SQL Server database, we need to know multiple pieces of information, as shown in the following list:
 - The name of the server (and the instance if it has one).
@@ -89,7 +99,7 @@ For backward compatibility, there are multiple possible keywords we can use in a
 - `Data Source` or `server` or `addr`: These keywords are the name of the server (and an optional instance). You can use a dot `.` to mean the local server.
 - `Initial Catalog` or `database`: These keywords are the name of the database.
 - `Integrated Security` or `trusted_connection`: These keywords are set to `true` or `SSPI` to pass the thread's current Windows user credentials.
-- `Encrypt`: This keyword enables SSL encryption of the transmitted data if set to `true`. Default is `false`. On a local computer it will use the local developer certificate to encrypt so this must be trusted.
+- `Encrypt`: This keyword enables SSL/TLS encryption of the transmitted data if set to `true`. Default is `false`. On a local computer it will use the local developer certificate to encrypt so this must be trusted.
 - `TrustServerCertificate`: This keyword enables trusting the local certificate if set to `true`.
 - `MultipleActiveResultSets`: This keyword is set to `true` to enable a single connection to be used to work with multiple tables simultaneously to improve efficiency. It is used for lazy loading rows from related tables.
 
@@ -106,7 +116,7 @@ As described in the list above, when you write code to connect to an SQL Server 
 
 > **Good Practice**: Use a dot `.` as shorthand for the local computer name. Remember that server names for SQL Server are made of two parts: the name of the computer and the name of an SQL Server instance. You provide instance names during custom installation.
 
-## Defining the Northwind database context class
+# Defining the Northwind database context class
 
 1.	In the `WorkingWithEFCore` project, add a package reference to the EF Core data provider for SQL Server and globally and statically import the `System.Console` class for all C# files, as shown in the following markup:
 ```xml
@@ -164,11 +174,11 @@ WriteLine($"Provider: {db.Database.ProviderName}");
 ```
 6.	Run the console app and note the output showing the database connection string and which database provider you are using, as shown in the following output:
 ```
-Connection string: Data Source=.;Initial Catalog=Northwind;Integrated Security=true;TrustServerCertificate=true;MultipleActiveResultSets=true;
+Connection: Data Source=.;Initial Catalog=Northwind;Integrated Security=true;TrustServerCertificate=true;MultipleActiveResultSets=true;
 Provider: Microsoft.EntityFrameworkCore.SqlServer
 ```
 
-## Scaffolding models using an existing database
+# Scaffolding models using an existing database
 
 For SQL Server, change the database provider and connection string, as shown in the following command:
 ```
