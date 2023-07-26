@@ -1,4 +1,4 @@
-**Improvements** (42 items)
+**Improvements** (43 items)
 
 If you have suggestions for improvements, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -28,6 +28,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 339 - Viewing source links with Visual Studio 2022](#page-339---viewing-source-links-with-visual-studio-2022)
 - [Page 343 - Packaging a library for NuGet](#page-343---packaging-a-library-for-nuget)
 - [Page 351 - Using non-.NET Standard libraries](#page-351---using-non-net-standard-libraries)
+- [Page 369 - Activating regular expression syntax coloring](#page-369---activating-regular-expression-syntax-coloring)
 - [Page 378 - Dictionaries](#page-378---dictionaries)
 - [Page 444 - Connecting to a database](#page-444---connecting-to-a-database)
 - [Page 453 - Scaffolding models using an existing database](#page-453---scaffolding-models-using-an-existing-database)
@@ -705,6 +706,17 @@ for (int i = 0; i < matrix.Axes[1].Points.Length; i++)
   matrix.Axes[1].Points[i].Label = $"y{i}";
 }
 ```
+
+# Page 369 - Activating regular expression syntax coloring
+
+In Step 2, I wrote, "Right-click in the `StringSyntax` attribute, select **Go To Implementation**, and note..."
+
+Visual Studio 2022 has two similar features:
+
+- **Go To Definition** *F12*: Should go to the decompiled metadata for a member or type. But if you have previously viewed source link, then it goes to source link!
+- **Go To Implementation** *Ctrl* + *F12*: Should go to the source link implementation for a member or type. But if you have disabled source link, then it goes to the decompiled metadata.
+
+In the next edition, I will add a note about this.
 
 # Page 378 - Dictionaries
 
