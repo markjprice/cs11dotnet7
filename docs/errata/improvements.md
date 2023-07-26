@@ -709,6 +709,8 @@ for (int i = 0; i < matrix.Axes[1].Points.Length; i++)
 
 # Page 369 - Activating regular expression syntax coloring
 
+> Thanks to [cjparsonson](https://github.com/cjparsonson) for raising this [issue on 26 July 2023](https://github.com/markjprice/cs11dotnet7/issues/80).
+
 In Step 2, I wrote, "Right-click in the `StringSyntax` attribute, select **Go To Implementation**, and note..."
 
 Visual Studio 2022 has two similar features:
