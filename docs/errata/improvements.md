@@ -716,9 +716,9 @@ In Step 2, I wrote, "Right-click in the `StringSyntax` attribute, select **Go To
 Visual Studio 2022 has two similar features:
 
 - **Go To Definition** *F12*: Should go to the decompiled metadata for a member or type. But if you have previously viewed source link, then it goes to source link!
-- **Go To Implementation** *Ctrl* + *F12*: Should go to the source link implementation for a member or type. But if you have disabled source link, then it goes to the decompiled metadata.
+- **Go To Implementation** *Ctrl*+*F12*: Should go to the source link implementation for a member or type. But if you have disabled source link, then it goes to the decompiled metadata. This was the behavior I was expecting because I usually have source link disabled.
 
-In the next edition, I will add a note about this.
+In the next edition, I will add a note about this and change the instructions to use **Go To Definition**.
 
 # Page 378 - Dictionaries
 
