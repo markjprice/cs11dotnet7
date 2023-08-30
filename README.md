@@ -65,7 +65,10 @@ Corrections for typos and other mistakes and improvements like refactoring code.
 - [Seventh edition's support for .NET 8](docs/dotnet8.md)
 
 ## Microsoft Certifications
-Microsoft used to have exams and certifications for developers that covered skills like C# and ASP.NET. Sadly, they have retired them all. These days, the only developer-adjacent exams and certifications are for Azure or Power Platform, as you can see from the certification poster: https://aka.ms/traincertposter
+Announcing the New Foundational C# Certification with freeCodeCamp:
+https://devblogs.microsoft.com/dotnet/announcing-foundational-csharp-certification/
+
+Microsoft used to have professional exams and certifications for developers that covered skills like C# and ASP.NET. Sadly, they have retired them all. These days, the only developer-adjacent exams and certifications are for Azure or Power Platform, as you can see from the certification poster: https://aka.ms/traincertposter
 
 ## Microsoft .NET community support
 - [.NET Developer Community](https://dotnet.microsoft.com/platform/community)
