@@ -2,6 +2,8 @@
 
 # C# 11 and .NET 7 - Modern Cross-Platform Development Fundamentals, Seventh Edition
 
+> **Announcement** about the next edition: https://www.linkedin.com/feed/update/urn:li:activity:7109860790651731968/
+
 With every Packt book you get a DRM-free PDF version of that book at no cost. Submit your proof of purchase at the following link:
 https://packt.link/free-ebook/9781803237800
 
