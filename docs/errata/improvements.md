@@ -692,7 +692,7 @@ human.Lose(); // Calls the public implicit implementation.
 ((IGamePlayer)human).Lose(); // Calls the explicit implementation.
 // Outputs: Implementation for losing a game.
 
-IGamePlayer player = human as IGamePlayer;
+IGamePlayer player = human;
 player.Lose(); // Calls the explicit implementation.
 // Outputs: Implementation for losing a game.
 
