@@ -23,6 +23,7 @@ If you have suggestions for improvements, then please [raise an issue in this re
 - [Page 241 - Defining flight passengers](#page-241---defining-flight-passengers)
 - [Page 251 - Setting up a class library and console application](#page-251---setting-up-a-class-library-and-console-application)
 - [Page 254 - Calling methods using delegates](#page-254---calling-methods-using-delegates)
+- [Page 265 - Implicit and explicit interface implementations](#page-265---implicit-and-explicit-interface-implementations)
 - [Page 270 - Equality of types](#page-270---equality-of-types)
 - [Page 299 - Treating warnings as errors](#page-299---treating-warnings-as-errors)
 - [Page 339 - Viewing source links with Visual Studio 2022](#page-339---viewing-source-links-with-visual-studio-2022)
@@ -606,6 +607,94 @@ In the next edition, I will add a note to warn the reader either not to enter th
 ```cs
 // In a separate file like Program.Delegates.cs.
 delegate int DelegateWithMatchingSignature(string s);
+```
+
+# Page 265 - Implicit and explicit interface implementations
+
+> Thanks to Rajiv S. for emailing with a question about this that caused me to think how to improve this section.
+
+In this section, I explain the difference between implicit and explicit interface implementations. 
+
+I give an example of two interfaces, as shown in the following code:
+
+```cs
+public interface IGamePlayer
+{
+  void Lose();
+}
+public interface IKeyHolder
+{
+  void Lose();
+}
+```
+
+An improvement would be to point out that for interfaces, the default access modifier is `internal` and the default access modifier for interface members is `public` (instead of `private` which is the default for types like classes). 
+
+In the examples above, both `Lose` methods must be `public` in any types that implement them. The members of an interface can only be `public` or `internal` unless they are given default implementations.
+
+In the next edition, I will add comments, as shown in the following code:
+
+```cs
+public interface IGamePlayer // Defaults to internal.
+{
+  void Lose(); // Defaults to public. Could be internal.
+}
+
+public interface IKeyHolder
+{
+  void Lose();
+}
+```
+
+Then I show a class that implements the two interfaces, as shown in the following code:
+
+```cs
+public class Person : IGamePlayer, IKeyHolder
+{
+  public void Lose() // implicit implementation
+  {
+    // implement losing a key
+  }
+
+  void IGamePlayer.Lose() // explicit implementation
+  {
+    // implement losing a game
+  }
+}
+```
+
+To avoid conflicts with the `Person` class defined earlier in the chapter, in future editions I will change the class name to `Human`. I will also explain that any implicit implementations must be `public`, implement the methods by writing a suitable message to the console, and add comments too, as shown in the following code:
+
+```cs
+public class Human : IGamePlayer, IKeyHolder
+{
+  // Implicit implementation must be public.
+  public void Lose() 
+  {
+    WriteLine("Implementation for losing a key.");
+  }
+
+  void IGamePlayer.Lose() // Explicit implementation can be private.
+  {
+    WriteLine("Implementation for losing a game.");
+  }
+}
+```
+
+I will also update the code to show how to use the class, as shown in the following code:
+
+```cs
+#region Calling implicit and explicit implementations
+
+Human human = new();
+human.Lose(); // Calls the implicit implementation i.e. losing a key.
+
+((IGamePlayer)human).Lose(); // Calls the explicit implementation.
+
+IGamePlayer player = human as IGamePlayer;
+player.Lose(); // Calls explicit implementation of losing a game.
+
+#endregion
 ```
 
 # Page 270 - Equality of types
