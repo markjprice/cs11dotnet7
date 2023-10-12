@@ -628,9 +628,7 @@ public interface IKeyHolder
 }
 ```
 
-An improvement would be to point out that for interfaces, the default access modifier is `internal` and the default access modifier for interface members is `public` (instead of `private` which is the default for types like classes). 
-
-In the examples above, both `Lose` methods must be `public` in any types that implement them. The members of an interface can only be `public` or `internal` unless they are given default implementations.
+An improvement would be to point out that for interfaces, the default access modifier is `internal` and the default access modifier for interface members is `public` (instead of `private` which is the default for types like classes). The members of an interface can only be `public` or `internal` unless they are given default implementations.
 
 In the next edition, I will add comments, as shown in the following code:
 
