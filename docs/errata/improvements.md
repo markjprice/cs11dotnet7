@@ -672,7 +672,8 @@ public class Human : IGamePlayer, IKeyHolder
     WriteLine("Implementation for losing a key.");
   }
 
-  void IGamePlayer.Lose() // Explicit implementation can be private.
+  // Explicit implementation can be any access modifier.
+  void IGamePlayer.Lose() // Defaults to private.
   {
     WriteLine("Implementation for losing a game.");
   }
@@ -685,15 +686,20 @@ I will also update the code to show how to use the class, as shown in the follow
 #region Calling implicit and explicit implementations
 
 Human human = new();
-human.Lose(); // Calls the implicit implementation i.e. losing a key.
+human.Lose(); // Calls the public implicit implementation.
+// Outputs: Implementation for losing a key.
 
 ((IGamePlayer)human).Lose(); // Calls the explicit implementation.
+// Outputs: Implementation for losing a game.
 
 IGamePlayer player = human as IGamePlayer;
-player.Lose(); // Calls explicit implementation of losing a game.
+player.Lose(); // Calls the explicit implementation.
+// Outputs: Implementation for losing a game.
 
 #endregion
 ```
+
+> Note that although the implementation of `IGamePlayer.Lose` in `Human` is `private`, the `IGamePlayer.Lose` member itself has an access modifier of `public`, so if we cast the `Human` instance into the interface type then that `Lose` implementation is accessible.
 
 # Page 270 - Equality of types
 
