@@ -26,6 +26,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 188 - Running unit tests using Visual Studio Code](#page-188---running-unit-tests-using-visual-studio-code)
 - [Page 231 - Requiring properties to be set during instantiation](#page-231---requiring-properties-to-be-set-during-instantiation)
 - [Page 235 - More about methods](#page-235---more-about-methods)
+- [Page 244 - Enhancements to pattern matching in C# 9 or later](#page-244---enhancements-to-pattern-matching-in-c-9-or-later)
 - [Page 244 - Init-only properties](#page-244---init-only-properties)
 - [Page 256 - Defining and handling delegates](#page-256---defining-and-handling-delegates)
 - [Page 258 - Defining and handling events](#page-258---defining-and-handling-events)
@@ -381,6 +382,25 @@ the following markup:
 In this section, we define some methods and operators so that two `Person` objects can get married and have babies. The example we model comes from the Bible story of Lamech and his two wives and their children. But the code I tell you to write does not allow Lamech to marry two women so later an exception is thrown when Lamech and his second wife try to make a baby. 
 
 cgwid suggested a solution in [the issue they raised](https://github.com/markjprice/cs11dotnet7/issues/59). I want to rethink this code example for the next edition to avoid it becoming overly complex so I will leave it to the reader to decide how they might want to solve it. Meanwhile, I have added an improvement with suggested alternative code here: https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/improvements.md#page-235---more-about-methods
+
+# Page 244 - Enhancements to pattern matching in C# 9 or later
+
+> Thanks to [Noel Arzola Jr](https://github.com/NoelArzola) for raising this [issue on 22 October 2023](https://github.com/markjprice/cs11dotnet7/issues/87).
+
+At the end of this section, I wrote, "You could also use the relational pattern in combination with the property pattern to avoid the nested
+switch expression, as shown in the following code:"
+```cs
+FirstClassPassenger { AirMiles: > 35000 } => 1500,
+FirstClassPassenger { AirMiles: > 15000 } => 1750M,
+FirstClassPassenger => 2000M,"
+```
+
+The `1500` return value is missing the decimal suffix `M`. The code should be:
+```cs
+FirstClassPassenger { AirMiles: > 35000 } => 1500M,
+FirstClassPassenger { AirMiles: > 15000 } => 1750M,
+FirstClassPassenger => 2000M,"
+```
 
 # Page 244 - Init-only properties
 
