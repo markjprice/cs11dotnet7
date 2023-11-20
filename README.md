@@ -2,7 +2,7 @@
 
 # C# 11 and .NET 7 - Modern Cross-Platform Development Fundamentals, Seventh Edition
 
-> **Announcement** about the next edition: https://www.linkedin.com/feed/update/urn:li:activity:7109860790651731968/
+> .NET 7 will reach its end-of-life on [Tuesday, May 14, 2024](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core#lifecycle). I recommend upgrading to [.NET 8](https://github.com/markjprice/cs12dotnet8/blob/main/README.md) as soon as possible.
 
 With every Packt book you get a DRM-free PDF version of that book at no cost. Submit your proof of purchase at the following link:
 https://packt.link/free-ebook/9781803237800
