@@ -1,4 +1,4 @@
-**Errata** (48 items)
+**Errata** (49 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -50,6 +50,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 548 - Creating a class library for a Northwind database context](#page-548---creating-a-class-library-for-a-northwind-database-context)
 - [Page 550 - Creating a class library for entity models using SQL Server](#page-550---creating-a-class-library-for-entity-models-using-sql-server)
 - [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
+- [Page 623 - Views](#page-623---views)
 - [Page 627 - Defining a typed view](#page-627---defining-a-typed-view)
 - [Page 631 - Passing parameters using a route value](#page-631---passing-parameters-using-a-route-value)
 - [Page 641 - Enabling role management and creating a role programmatically](#page-641---enabling-role-management-and-creating-a-role-programmatically)
@@ -771,6 +772,21 @@ public static class NorthwindContextExtensions {
 ```
 
 > Note that I have also written a related improvement here: https://github.com/markjprice/cs11dotnet7/blob/main/docs/errata/improvements.md#page-551---creating-a-class-library-for-entity-models-using-sql-server
+
+# Page 623 - Views
+
+> Thanks to Peter Haugstad for sending this issue via email on December 5, 2023.
+
+At the bottom of page 623, I wrote, "The `<a>` elements use Tag Helper attributes named `asp-controller` and `asp-action` to specify the controller name and action name that will execute when the link is clicked on. If you want to navigate to a feature in a Razor Class Library, like the employees component that you created in the previous chapter, then you use `asp-area` to specify the feature name."
+
+My example of the employees component was wrong because it is a Razor Page component, not an MVC component, so you cannot set the `asp-controller` and `asp-action` attributes to navigate to the employees component. 
+
+If you want to navigate to the employees component from an MVC view, then similar syntax as we used in *Chapter 13*, as shown in the following markup without Tag Helpers:
+```html
+<a class="btn btn-primary" href="packtfeatures/employees">
+  Contact our employees
+</a>
+```
 
 # Page 627 - Defining a typed view
 
