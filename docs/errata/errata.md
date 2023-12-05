@@ -788,6 +788,8 @@ If you want to navigate to the employees component from an MVC view, then simila
 </a>
 ```
 
+In the next edition, I will delete the following sentence, "If you want to navigate to a feature in a Razor Class Library, like the employees component that you created in the previous chapter, then you use `asp-area` to specify the feature name."
+
 # Page 627 - Defining a typed view
 
 > Thanks to [Chadwick Geyser](https://github.com/chadwickgeyser) for raising this [issue on 4 December 2022](https://github.com/markjprice/cs11dotnet7/issues/6).
