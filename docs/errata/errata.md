@@ -779,9 +779,9 @@ public static class NorthwindContextExtensions {
 
 At the bottom of page 623, I wrote, "The `<a>` elements use Tag Helper attributes named `asp-controller` and `asp-action` to specify the controller name and action name that will execute when the link is clicked on. If you want to navigate to a feature in a Razor Class Library, like the employees component that you created in the previous chapter, then you use `asp-area` to specify the feature name."
 
-My example of the employees component was wrong because it is a Razor Page component, not an MVC component, so you cannot set the `asp-controller` and `asp-action` attributes to navigate to the employees component. 
+I mixed up incompatible technologies. The `<a>` Tag Helper only works with MVC, not Razor Pages. My example of the employees component was therefore wrong because it is a Razor Page component, not an MVC component. You cannot set the `asp-controller` and `asp-action` attributes to navigate to the employees component. 
 
-If you want to navigate to the employees component from an MVC view, then similar syntax as we used in *Chapter 13*, as shown in the following markup without Tag Helpers:
+If you want to navigate to the employees component from an MVC view, then you must use similar syntax to what we used in *Chapter 13*, as shown in the following markup without Tag Helpers:
 ```html
 <a class="btn btn-primary" href="packtfeatures/employees">
   Contact our employees
