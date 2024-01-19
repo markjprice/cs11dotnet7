@@ -1,4 +1,4 @@
-**Errata** (49 items)
+**Errata** (50 items)
 
 If you find any mistakes, then please [raise an issue in this repository](https://github.com/markjprice/cs11dotnet7/issues) or email me at markjprice (at) gmail.com.
 
@@ -47,6 +47,7 @@ If you find any mistakes, then please [raise an issue in this repository](https:
 - [Page 477 - Inserting entities](#page-477---inserting-entities)
 - [Page 478 - Updating entities](#page-478---updating-entities)
 - [Page 495 - Filtering entities with Where](#page-495---filtering-entities-with-where)
+- [Page 515 - Be careful with Count!](#page-515---be-careful-with-count)
 - [Page 548 - Creating a class library for a Northwind database context](#page-548---creating-a-class-library-for-a-northwind-database-context)
 - [Page 550 - Creating a class library for entity models using SQL Server](#page-550---creating-a-class-library-for-entity-models-using-sql-server)
 - [Page 551 - Creating a class library for entity models using SQL Server](#page-551---creating-a-class-library-for-entity-models-using-sql-server)
@@ -663,6 +664,27 @@ WriteLine($"Increase price success for ID: {resultUpdate.productId}.");
 
 In Steps 3 and 5, the screenshots in *Figure 11.1* and *Figure 11.2* show a solution name of **Chapter12** when it should be **Chapter11**. In the next edition, I will retake the screenshots.
 
+# Page 515 - Be careful with Count!
+
+> Thanks to Clint Mayers who submitted this issue via email.
+
+I showed a code teaser by Amichai Mantinband, a software engineer at Microsoft, as shown in the following code:
+```cs
+IEnumerable<Task> tasks = Enumerable.Range(0, 2)
+  .Select(_ => Task.Run(() => Console.WriteLine("*")));
+
+await Task.WhenAll(tasks);
+Console.WriteLine($"{tasks.Count()} stars!");
+```
+
+But the `WriteLine` methods should have been `Write` methods, as shown in the following code:
+```cs
+IEnumerable<Task> tasks = Enumerable.Range(0, 2)
+  .Select(_ => Task.Run(() => Console.Write("*")));
+
+await Task.WhenAll(tasks);
+Console.Write($"{tasks.Count()} stars!");
+```
 # Page 548 - Creating a class library for a Northwind database context
 
 In Step 11, you write an extension method that registers the `NorthwindContext` class for use as a dependency service. In later chapters, this will be used in ASP.NET Core and Blazor projects. By default, a `DbContext` class is registered using `Scope` lifetime, meaning that multiple threads can share the same instance. If more than one thread attempts to use the same `NorthwindContext` class instance at the same time then you will see the following runtime exception thrown:
